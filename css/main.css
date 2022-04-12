@@ -121,7 +121,7 @@ html,
 body {
   height: 100vh;
   font-size: 16px;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+  font-family: PingFangSC-Regular, sans-serif;;
   color: var(--text-color);
   background-color: var(--body-background-color);
   box-sizing: border-box;
@@ -230,8 +230,8 @@ pre {
   --post-link-color: #d71a1b;
   --link-hover-color: #6596e5;
   --info-text-color: #60656a;
-  --widget-background-color: #fff;
-  --body-background-color: #f2f5f8;
+  --widget-background-color: #F5F5F5;
+  --body-background-color: #c0c1c3;
   --badge-background-color: #edeff3;
   --badge-hover-background-color: #adb7d0;
   --border-color: #e1e4e9;
