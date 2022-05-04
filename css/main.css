@@ -35,6 +35,11 @@ h6 {
   line-height: 1.25;
   color: var(--title-color);
 }
+h1 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.15rem;
+}
 h2 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
@@ -120,7 +125,7 @@ div {
 html,
 body {
   height: 100vh;
-  font-size: 16px;
+  font-size: 14px;
   font-family: PingFangSC-Regular, sans-serif;;
   color: var(--text-color);
   background-color: var(--body-background-color);
@@ -424,10 +429,10 @@ pre[class*='highlight'] {
 }
 .archive-card-header {
   margin-bottom: 6px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .archive-card-header .iconfont {
-  font-size: 16px;
+  font-size: 14px;
 }
 .archive-card-list-item {
   display: block;
@@ -663,10 +668,10 @@ pre[class*='highlight'] {
 }
 .categories-header {
   margin-bottom: 6px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .categories-header .iconfont {
-  font-size: 16px;
+  font-size: 14px;
 }
 .categories-list-item {
   color: var(--text-color);
@@ -1200,10 +1205,10 @@ mjx-container svg:focus {
 }
 .recent-posts-header {
   margin-bottom: 16px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .recent-posts-header .iconfont {
-  font-size: 16px;
+  font-size: 14px;
 }
 .recent-posts-item {
   padding-left: 6px;
@@ -1320,10 +1325,10 @@ mjx-container svg:focus {
 }
 .tags-header {
   margin-bottom: 16px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .tags-header .iconfont {
-  font-size: 16px;
+  font-size: 14px;
 }
 .tags-list {
   overflow: hidden;
@@ -1361,7 +1366,7 @@ mjx-container svg:focus {
 }
 .toc-header {
   margin-bottom: 6px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .toc-header .iconfont {
   font-size: 1.15rem;
