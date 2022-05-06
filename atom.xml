@@ -40,9 +40,31 @@
   </entry>
   
   <entry>
+    <title>测试计划任务</title>
+    <link href="http://uerlink.github.io/2022/05/06/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/"/>
+    <id>http://uerlink.github.io/2022/05/06/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</id>
+    <published>2022-05-05T16:00:00.000Z</published>
+    <updated>2022-05-06T05:47:02.095Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="看到这个消息就表示成功啦"><a href="#看到这个消息就表示成功啦" class="headerlink" title="看到这个消息就表示成功啦"></a>看到这个消息就表示成功啦</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;看到这个消息就表示成功啦&quot;&gt;&lt;a href=&quot;#看到这个消息就表示成功啦&quot; class=&quot;headerlink&quot; title=&quot;看到这个消息就表示成功啦&quot;&gt;&lt;/a&gt;看到这个消息就表示成功啦&lt;/h2&gt;</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>机顶盒搭建FTP</title>
-    <link href="http://uerlink.github.io/2022/05/04/%E6%9C%BA%E9%A1%B6%E7%9B%92%E6%90%AD%E5%BB%BAFTP/"/>
-    <id>http://uerlink.github.io/2022/05/04/%E6%9C%BA%E9%A1%B6%E7%9B%92%E6%90%AD%E5%BB%BAFTP/</id>
+    <link href="http://uerlink.github.io/2022/05/04/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%9C%BA%E9%A1%B6%E7%9B%92%E6%90%AD%E5%BB%BAFTP/"/>
+    <id>http://uerlink.github.io/2022/05/04/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%9C%BA%E9%A1%B6%E7%9B%92%E6%90%AD%E5%BB%BAFTP/</id>
     <published>2022-05-04T09:38:18.000Z</published>
     <updated>2022-05-04T10:34:41.903Z</updated>
     
@@ -68,8 +90,8 @@
   
   <entry>
     <title>C#打开文件夹或文件</title>
-    <link href="http://uerlink.github.io/2022/05/04/C%20sharp%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E5%A4%B9%E6%88%96%E6%96%87%E4%BB%B6/"/>
-    <id>http://uerlink.github.io/2022/05/04/C%20sharp%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E5%A4%B9%E6%88%96%E6%96%87%E4%BB%B6/</id>
+    <link href="http://uerlink.github.io/2022/05/04/%E6%96%87%E6%A1%A3%E5%8C%BA/C%20sharp%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E5%A4%B9%E6%88%96%E6%96%87%E4%BB%B6/"/>
+    <id>http://uerlink.github.io/2022/05/04/%E6%96%87%E6%A1%A3%E5%8C%BA/C%20sharp%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E5%A4%B9%E6%88%96%E6%96%87%E4%BB%B6/</id>
     <published>2022-05-04T08:47:16.000Z</published>
     <updated>2022-05-04T10:34:37.033Z</updated>
     
@@ -92,8 +114,8 @@
   
   <entry>
     <title>C#创建并连接数据库以及增删查改</title>
-    <link href="http://uerlink.github.io/2022/05/04/C%20sharp%E6%93%8D%E6%8E%A7Access%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    <id>http://uerlink.github.io/2022/05/04/C%20sharp%E6%93%8D%E6%8E%A7Access%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+    <link href="http://uerlink.github.io/2022/05/04/%E6%96%87%E6%A1%A3%E5%8C%BA/C%20sharp%E6%93%8D%E6%8E%A7Access%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>http://uerlink.github.io/2022/05/04/%E6%96%87%E6%A1%A3%E5%8C%BA/C%20sharp%E6%93%8D%E6%8E%A7Access%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
     <published>2022-05-04T06:12:36.000Z</published>
     <updated>2022-05-04T11:17:21.619Z</updated>
     
@@ -113,30 +135,6 @@
     <category term="C#" scheme="http://uerlink.github.io/tags/C/"/>
     
     <category term="数据库" scheme="http://uerlink.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>个人感想</title>
-    <link href="http://uerlink.github.io/2022/04/23/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%83%B3/"/>
-    <id>http://uerlink.github.io/2022/04/23/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%83%B3/</id>
-    <published>2022-04-22T16:00:00.000Z</published>
-    <updated>2022-05-04T11:16:57.418Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="我们都在不断成长………"><a href="#我们都在不断成长………" class="headerlink" title="我们都在不断成长………"></a>我们都在不断成长………</h3><h3 id="爱情："><a href="#爱情：" class="headerlink" title="爱情："></a>爱情：</h3><ul><li>第一次遇见的那个人，也许未来很难再一起，肯定会留下很多遗憾，但是不要为此感到难过，这些都是人生总会经历的事情，不如放开一点，让此成为一段美好回忆。</li><li>如果有一天:你不再寻找爱情,只是去爱;不在渴望成功,只是去做;不再追求空泛的成长,只是开始修养自己的性情;那么你的人生才真正开始.</li><li>今天的月亮很美，但风也有它的归宿</li><li>别担心，我们地球的光会到达遥远的星系，在每个太阳系中，我们都将重生，所以我们会永远在一起</li><li>同一辆列车，不同的终点</li></ul><h3 id="事业"><a href="#事业" class="headerlink" title="事业"></a>事业</h3><ul><li>行动是治愈恐惧的良药，而犹豫和拖延将不断滋生恐惧</li><li>假装专心既是坏习惯，也浪费时间</li><li>想要成功,就必须克服拖延</li><li>不要害怕，过去已无法改变，未来还等待到来！</li></ul><h3 id="人生"><a href="#人生" class="headerlink" title="人生"></a>人生</h3><ul><li><p>人生本来就是一个不断犯错，并改正的过程，但前提是不犯错的认识错误。</p></li><li><p>我们总是怀恋过去，却没想到现在也是未来的过去</p></li><li><p>心老了，人就老了</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;我们都在不断成长………&quot;&gt;&lt;a href=&quot;#我们都在不断成长………&quot; class=&quot;headerlink&quot; title=&quot;我们都在不断成长………&quot;&gt;&lt;/a&gt;我们都在不断成长………&lt;/h3&gt;&lt;h3 id=&quot;爱情：&quot;&gt;&lt;a href=&quot;#爱情：&quot; class=&quot;he</summary>
-      
-    
-    
-    
-    <category term="读书笔记" scheme="http://uerlink.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="大师我悟了！" scheme="http://uerlink.github.io/tags/%E5%A4%A7%E5%B8%88%E6%88%91%E6%82%9F%E4%BA%86%EF%BC%81/"/>
     
   </entry>
   
