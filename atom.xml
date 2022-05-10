@@ -40,29 +40,6 @@
   </entry>
   
   <entry>
-    <title>cs</title>
-    <link href="http://uerlink.github.io/2022/05/10/%E6%96%87%E6%A1%A3%E5%8C%BA/cs/"/>
-    <id>http://uerlink.github.io/2022/05/10/%E6%96%87%E6%A1%A3%E5%8C%BA/cs/</id>
-    <published>2022-05-09T16:00:00.000Z</published>
-    <updated>2022-05-10T02:46:41.361Z</updated>
-    
-    <content type="html"><![CDATA[<p>cscscscscs</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;cscscscscs&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>markdown语法</title>
     <link href="http://uerlink.github.io/2022/05/08/%E6%96%87%E6%A1%A3%E5%8C%BA/markdown%E8%AF%AD%E6%B3%95/"/>
     <id>http://uerlink.github.io/2022/05/08/%E6%96%87%E6%A1%A3%E5%8C%BA/markdown%E8%AF%AD%E6%B3%95/</id>
@@ -132,6 +109,32 @@
     
     
     <category term="C#" scheme="http://uerlink.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#创建并连接数据库以及增删查改</title>
+    <link href="http://uerlink.github.io/2022/05/04/%E6%96%87%E6%A1%A3%E5%8C%BA/C%20sharp%E6%93%8D%E6%8E%A7Access%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>http://uerlink.github.io/2022/05/04/%E6%96%87%E6%A1%A3%E5%8C%BA/C%20sharp%E6%93%8D%E6%8E%A7Access%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+    <published>2022-05-04T06:12:36.000Z</published>
+    <updated>2022-05-04T11:17:21.619Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="引入命名空间"><a href="#引入命名空间" class="headerlink" title="引入命名空间"></a>引入命名空间</h2><pre class="highlight"><span class="line"><span class="keyword">using</span> System.Data.OleDb;</span><br><span class="line"><span class="keyword">using</span> System.IO;</span><br><span class="line"><span class="keyword">using</span> ADOX;</span><br></pre><h2 id="动态创建数据库"><a href="#动态创建数据库" class="headerlink" title="动态创建数据库"></a>动态创建数据库</h2><pre class="highlight"><span class="line"><span class="comment">//数据库路径</span></span><br><span class="line">String filePath = <span class="string">&quot;C:\\Users\\18144\\OneDrive\\文档\\Access\\test2.accdb&quot;</span>;</span><br><span class="line"><span class="keyword">if</span> (!File.Exists(filePath))</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//数据库不存在</span></span><br><span class="line"><span class="comment">// 创建Access数据库</span></span><br><span class="line">   ADOX.Catalog catalog = <span class="keyword">new</span> ADOX.Catalog();</span><br><span class="line">   catalog.Create(<span class="string">&quot;Provider=Microsoft.Jet.OLEDB.4.0;Data Source = C:\\Users\\18144\\OneDrive\\文档\\Access\\test2.accdb;Jet OLEDB:Database Password = 123456&quot;</span>);</span><br><span class="line">   <span class="comment">//Data Source = .\\Data\\Student.accdb;  当前位置创建</span></span><br><span class="line">    </span><br><span class="line">   <span class="comment">//释放Catalog对数据库文件的占用</span></span><br><span class="line">   System.Runtime.InteropServices.Marshal.FinalReleaseComObject(catalog.ActiveConnection);</span><br><span class="line">   System.Runtime.InteropServices.Marshal.FinalReleaseComObject(catalog);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//数据库已存在</span></span><br><span class="line">    MessageBox.Show(<span class="string">&quot;数据库文件已存在&quot;</span>);         </span><br><span class="line">&#125;</span><br></pre><h2 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h2><pre class="highlight"><span class="line"><span class="comment">//合并连接字符串</span></span><br><span class="line"><span class="built_in">string</span> DataLinkString = <span class="string">&quot;Provider = Microsoft.Jet.OLEDB.4.0;&quot;</span>;</span><br><span class="line">DataLinkString += <span class="string">@&quot;Data Source = C:\Users\18144\OneDrive\文档\Access\test2.accdb;&quot;</span>;</span><br><span class="line">DataLinkString += <span class="string">@&quot;Jet OLEDB:Database Password = 123456&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//根据连接字符串，连接数据库</span></span><br><span class="line">OleDbConnection AD = <span class="keyword">new</span> OleDbConnection(DataLinkString);</span><br><span class="line"><span class="comment">//开启数据库</span></span><br><span class="line">AD.Open();</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建sql命令---删除表命令</span></span><br><span class="line">OleDbCommand sql_cmd1 = <span class="keyword">new</span> OleDbCommand(<span class="string">&quot;drop table Info&quot;</span>, AD);</span><br><span class="line"><span class="comment">//执行sql命令</span></span><br><span class="line">sql_cmd1.ExecuteNonQuery();</span><br><span class="line">sql_cmd1.Dispose();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建sql命令----创建表命令</span></span><br><span class="line">OleDbCommand sql_cmd2 = <span class="keyword">new</span> OleDbCommand(<span class="string">&quot;create table Info (id char(15) primary key, name char(50))&quot;</span>, AD);</span><br><span class="line"><span class="comment">//执行sql命令</span></span><br><span class="line">sql_cmd2.ExecuteNonQuery();</span><br><span class="line">sql_cmd2.Dispose();</span><br><span class="line"></span><br><span class="line"><span class="comment">//关闭数据库</span></span><br><span class="line">AD.Close();</span><br><span class="line">AD.Dispose();</span><br></pre><h2 id="执行sql命令"><a href="#执行sql命令" class="headerlink" title="执行sql命令"></a>执行sql命令</h2><pre class="highlight"><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">RunSQL</span>(<span class="params"><span class="built_in">string</span> sql_cmd</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//void作用：运行sql代码//</span></span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//合并连接字符串</span></span><br><span class="line">        <span class="built_in">string</span> DataLinkString = <span class="string">&quot;Provider = Microsoft.Jet.OLEDB.4.0;&quot;</span>;</span><br><span class="line">        DataLinkString += <span class="string">@&quot;Data Source = C:\Users\18144\OneDrive\文档\Access\test2.accdb;&quot;</span>;</span><br><span class="line">        DataLinkString += <span class="string">@&quot;Jet OLEDB:Database Password = 123456&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//根据连接字符串，连接数据库</span></span><br><span class="line">        OleDbConnection conn = <span class="keyword">new</span> OleDbConnection(DataLinkString);</span><br><span class="line">        <span class="comment">//开启数据库</span></span><br><span class="line">        conn.Open();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建sql命令</span></span><br><span class="line">        OleDbCommand cmd = <span class="keyword">new</span> OleDbCommand(sql_cmd, conn);</span><br><span class="line">        <span class="comment">//执行sql命令</span></span><br><span class="line">        cmd.ExecuteNonQuery();</span><br><span class="line">        cmd.Dispose();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭数据库</span></span><br><span class="line">        conn.Close();</span><br><span class="line">        conn.Dispose();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (Exception e)</span><br><span class="line">    &#123;</span><br><span class="line">        MessageBox.Show(e.ToString(), <span class="string">&quot;提示&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre><h2 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h2><pre class="highlight"><span class="line"><span class="comment">//sql增加命令</span></span><br><span class="line"><span class="built_in">string</span> insert = <span class="string">&quot;insert into student values(&quot;</span> + id + <span class="string">&quot;, &#x27;&quot;</span> + name + <span class="string">&quot;&#x27;, &quot;</span> + age + <span class="string">&quot;);&quot;</span>;</span><br><span class="line">RunSQL(insert);</span><br></pre><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><pre class="highlight"><span class="line"><span class="comment">//sql删除命令</span></span><br><span class="line"><span class="built_in">string</span> delete = <span class="string">&quot;delete from student where id = &quot;</span> + id;</span><br><span class="line">RunSQL(delete);</span><br></pre><h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><pre class="highlight"><span class="line"><span class="comment">//sql修改命令</span></span><br><span class="line"><span class="built_in">string</span> update = <span class="string">&quot;update student set Name = &#x27;&quot;</span> + name + <span class="string">&quot;&#x27;, Age = &quot;</span> + age + <span class="string">&quot; where Id = &quot;</span> + id;</span><br><span class="line">RunSQL(update);</span><br></pre><h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><pre class="highlight"><span class="line">         <span class="comment">// 如果连接是关闭的，才进行打开</span></span><br><span class="line">          <span class="keyword">if</span> (odc.State == ConnectionState.Closed) &#123;</span><br><span class="line">              conn.Open();</span><br><span class="line">          &#125;</span><br><span class="line"><span class="comment">// sql操作语句</span></span><br><span class="line">          <span class="built_in">string</span> <span class="keyword">select</span> = <span class="string">&quot;select * from student where Age = &quot;</span> + age;</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 创建设配器对象   【OleDbDataAdapter】</span></span><br><span class="line">          OleDbDataAdapter dbDataAdapter = <span class="keyword">new</span> OleDbDataAdapter(<span class="keyword">select</span>, cmd);</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 新建表对象</span></span><br><span class="line">          DataTable dataTable = <span class="keyword">new</span> DataTable();</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 用设配器对象填充表对象</span></span><br><span class="line">          dbDataAdapter.Fill(dataTable);</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 将查找到的数据遍历输出</span></span><br><span class="line">          <span class="keyword">foreach</span> (DataRow dr <span class="keyword">in</span> dataTable.Rows) &#123;</span><br><span class="line">              Console.WriteLine(<span class="string">&quot;id = &#123;0&#125; name = &#123;1&#125; age = &#123;2&#125;&quot;</span>, dr[<span class="number">0</span>], dr[<span class="number">1</span>], dr[<span class="number">2</span>]);</span><br><span class="line">          &#125;</span><br></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;引入命名空间&quot;&gt;&lt;a href=&quot;#引入命名空间&quot; class=&quot;headerlink&quot; title=&quot;引入命名空间&quot;&gt;&lt;/a&gt;引入命名空间&lt;/h2&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;ke</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="C#" scheme="http://uerlink.github.io/tags/C/"/>
+    
+    <category term="数据库" scheme="http://uerlink.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
