@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="https://s1.ax1x.com/2022/05/12/OBqeGq.png">
-  <title>C#项目打包</title>
+  <title>php连接数据库并执行sql语句查询</title>
   
     
       <meta 
         property="og:title" 
-        content="C#项目打包">
+        content="php连接数据库并执行sql语句查询">
     
     
       <meta 
         property="og:url" 
-        content="http://uerlink.github.io/2022/05/12/%E6%96%87%E6%A1%A3%E5%8C%BA/C_shap%E6%89%93%E5%8C%85/index.html">
+        content="http://uerlink.github.io/2022/06/16/%E6%96%87%E6%A1%A3%E5%8C%BA/php%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E6%89%A7%E8%A1%8Csql%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2/index.html">
     
     
       <meta 
@@ -42,18 +42,14 @@
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2022-05-12">
+        content="2022-06-16">
       <meta 
         property="og:article:modified_time" 
-        content="2022-05-12">
+        content="2022-06-16">
       <meta 
         property="og:article:author" 
         content="UerLink">
       
-        
-          <meta 
-            property="og:article:tag" 
-            content="C#">
         
       
     
@@ -260,16 +256,16 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      C#项目打包
+      php连接数据库并执行sql语句查询
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2022-05-11T16:00:00.000Z">
+    <time datetime="2022-06-15T16:00:00.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2022-05-12</span>
+      <span>2022-06-16</span>
     </time>
     
       <span class="dot"></span>
@@ -283,59 +279,44 @@
     
     
       <span class="dot"></span>
-      <span>261 字</span>
+      <span>378 字</span>
     
   </div>
-  
-    <div 
-      class="post-meta post-show-meta" 
-      style="margin-top: -10px;">
-      <div style="display: flex; align-items: center;">
-        <i 
-          class="iconfont icon-biaoqian" 
-          style="margin-right: 2px; font-size: 1.15rem;">
-        </i>
-        
-          
-          <a 
-            href="/tags/C/" 
-            class="post-meta-link">
-            C#
-          </a>
-        
-      </div>
-    </div>
   
   </header>
   <div 
     id="section" 
     class="post-content">
-    <h2 id="安装打包插件"><a href="#安装打包插件" class="headerlink" title="安装打包插件"></a>安装打包插件</h2><ul>
-<li><p>在Visual Studio的扩展中搜索<strong>installer</strong>然后选择并下载创建者为Microsoft的插件(安装量最多的那个).</p>
-</li>
-<li><p>下载完成后会提示关闭当前项目,点击关闭.</p>
-</li>
-<li><p>进行安装.</p>
-</li>
-</ul>
-<h2 id="创建打包项目"><a href="#创建打包项目" class="headerlink" title="创建打包项目"></a>创建打包项目</h2><ul>
-<li><p>在Visual Studio启动界面(或者文件选项卡)新建一个<strong>Setup Project</strong>(如果找不到就搜索模板处输入<strong>SetUp</strong>).</p>
-</li>
-<li><p>创建完项目后,会出现三个文件夹, 然后再<strong>Apelication Folder</strong>上右键添加需要打包的文件.</p>
-</li>
-<li><p>添加完成后, 再给启动入口程序, 右键创建快捷方式, 然后拖动到, 剩下两个文件夹中(一个是桌面,一个是开始菜单).</p>
-</li>
-<li><p>接着在属性窗口分别自定义图标.ICON.</p>
-</li>
-</ul>
-<h2 id="生成打包文件"><a href="#生成打包文件" class="headerlink" title="生成打包文件"></a>生成打包文件</h2><ul>
-<li><p>右键解决方案下方项目, 点击生成.</p>
-</li>
-<li><p>生成路径在项目文件夹中的Debug文件夹中(如果是Release就在Release文件夹中).</p>
-</li>
-<li><p>Debug下会生成一个exe文件一个msi文件, 两个都可以用, 自行选择.</p>
-</li>
-</ul>
+    <h2 id="php连接数据库并执行sql语句查询：通过html表单提交数据给php"><a href="#php连接数据库并执行sql语句查询：通过html表单提交数据给php" class="headerlink" title="php连接数据库并执行sql语句查询：通过html表单提交数据给php"></a>php连接数据库并执行sql语句查询：通过html表单提交数据给php</h2><h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><hr>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>登录</title>
+    </head>
+    <body>
+        <form action="index.php" method="post">
+            用户名:<br>
+            <input type="text" name="username" value="UerLink">
+            <br>
+            密码:<br>
+            <input type="text" name="password" value="123456">
+            <br><br>
+            <input type="submit" value="提交">
+        </form> 
+    </body>
+</html>
+ ---
+ #### 全部文件
+- index.php
+- index.html
+
+<h3 id="index-php文件代码"><a href="#index-php文件代码" class="headerlink" title="index.php文件代码:"></a>index.php文件代码:</h3><hr>
+<pre class="highlight"><span class="line"><span class="meta">&lt;?</span>PHP</span><br><span class="line">    <span class="variable">$date_db</span>=<span class="string">&#x27;test1&#x27;</span>;</span><br><span class="line">    <span class="variable">$conn</span>=<span class="title function_ invoke__">mysqli_connect</span>(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;root&quot;</span>);<span class="comment">//连接字符串</span></span><br><span class="line">    <span class="variable">$comm</span>=<span class="title function_ invoke__">mysqli_select_db</span>(<span class="variable">$conn</span>,<span class="variable">$date_db</span>);<span class="comment">//利用连接字符串选择数据库</span></span><br><span class="line">    <span class="variable">$username</span> = <span class="title function_ invoke__">addslashes</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;username&#x27;</span>]);<span class="comment">//得到数据</span></span><br><span class="line">    <span class="variable">$password</span> = <span class="title function_ invoke__">addslashes</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;password&#x27;</span>]);<span class="comment">//得到数据    </span></span><br><span class="line">    <span class="variable">$sql_data</span>=<span class="string">&quot;select * from users where userName=&#x27;<span class="subst">$username</span>&#x27; and password=&#x27;<span class="subst">$password</span>&#x27;&quot;</span>;<span class="comment">//sql查询语句赋值给变量</span></span><br><span class="line">    <span class="variable">$query</span>= <span class="title function_ invoke__">mysqli_query</span>(<span class="variable">$conn</span>,<span class="variable">$sql_data</span>);<span class="comment">//利用连接字符串运行sql语句</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$conn</span>)&#123;</span><br><span class="line">        <span class="keyword">echo</span><span class="string">&quot;--连接MySQL成功--&quot;</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span><span class="string">&quot;--连接MySQL失败--&quot;</span>;    </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$comm</span>)&#123;</span><br><span class="line">        <span class="keyword">echo</span><span class="string">&#x27;--连接数据库:&#x27;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$date_db</span>;</span><br><span class="line">        <span class="keyword">echo</span><span class="string">&#x27;成功--&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span>( <span class="title function_ invoke__">mysqli_num_rows</span>(<span class="variable">$query</span>)&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">echo</span><span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$sql_data</span>;</span><br><span class="line">        <span class="keyword">echo</span><span class="string">&#x27;----查询成功--&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">       <span class="variable">$url</span>=<span class="string">&#x27;index.html&#x27;</span>;</span><br><span class="line">       <span class="keyword">echo</span> <span class="string">&quot;&lt;script&gt;location.href=&#x27;<span class="subst">$url</span>&#x27;&lt;/script&gt;&quot;</span>;<span class="comment">//跳转指定网页</span></span><br><span class="line">       </span><br><span class="line">       </span><br><span class="line">        <span class="keyword">echo</span><span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$sql_data</span>;        </span><br><span class="line">        <span class="keyword">echo</span><span class="string">&#x27;----语句查询失败--&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre>
+
+<h3 id="index-html文件代码："><a href="#index-html文件代码：" class="headerlink" title="index.html文件代码："></a>index.html文件代码：</h3><hr>
+<pre class="highlight"><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;index.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">			用户名:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;UerLink&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">			密码:<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;123456&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;提交&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">form</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre>
+
+
 
   </div>
   <div>
@@ -346,13 +327,13 @@
   
     <div class="nav-item-prev">
       <a 
-        href="/2022/06/16/%E6%96%87%E6%A1%A3%E5%8C%BA/php%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E6%89%A7%E8%A1%8Csql%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2/" 
+        href="/2101/08/03/%E5%B7%A5%E5%85%B7%E5%8C%BA/%E5%85%AC%E5%91%8A%E6%A0%8F%E5%92%8C%E7%95%99%E8%A8%80%E6%9D%BF/" 
         class="nav-link">
         <i class="iconfont icon-left nav-prev-icon"></i>
         <div>
           <div class="nav-label">上一篇</div>
           
-            <div class="nav-title">php连接数据库并执行sql语句查询 </div>
+            <div class="nav-title">公告栏/留言板 </div>
           
         </div>
       </a>
@@ -361,12 +342,12 @@
   
     <div class="nav-item-next">
       <a 
-        href="/2022/05/08/%E6%96%87%E6%A1%A3%E5%8C%BA/markdown%E8%AF%AD%E6%B3%95/" 
+        href="/2022/05/12/%E6%96%87%E6%A1%A3%E5%8C%BA/C_shap%E6%89%93%E5%8C%85/" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">markdown语法 </div>
+            <div class="nav-title">C#项目打包 </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -422,7 +403,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%89%93%E5%8C%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">安装打包插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">创建打包项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">生成打包文件</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#php%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E6%89%A7%E8%A1%8Csql%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%EF%BC%9A%E9%80%9A%E8%BF%87html%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E7%BB%99php"><span class="toc-number">1.</span> <span class="toc-text">php连接数据库并执行sql语句查询：通过html表单提交数据给php</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">效果图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#index-php%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.</span> <span class="toc-text">index.php文件代码:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#index-html%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">index.html文件代码：</span></a></li></ol></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -470,7 +451,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%89%93%E5%8C%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">安装打包插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">创建打包项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">生成打包文件</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#php%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E6%89%A7%E8%A1%8Csql%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%EF%BC%9A%E9%80%9A%E8%BF%87html%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E7%BB%99php"><span class="toc-number">1.</span> <span class="toc-text">php连接数据库并执行sql语句查询：通过html表单提交数据给php</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">效果图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#index-php%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.</span> <span class="toc-text">index.php文件代码:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#index-html%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">index.html文件代码：</span></a></li></ol></li></ol>
       </div>
     </article>
   
@@ -561,7 +542,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%89%93%E5%8C%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">安装打包插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">创建打包项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">生成打包文件</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#php%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E6%89%A7%E8%A1%8Csql%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%EF%BC%9A%E9%80%9A%E8%BF%87html%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E7%BB%99php"><span class="toc-number">1.</span> <span class="toc-text">php连接数据库并执行sql语句查询：通过html表单提交数据给php</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">效果图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#index-php%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.</span> <span class="toc-text">index.php文件代码:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#index-html%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">index.html文件代码：</span></a></li></ol></li></ol>
     </article>
   
   
