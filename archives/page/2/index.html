@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="https://s1.ax1x.com/2022/05/12/OBqeGq.png">
-  <title>C#项目打包</title>
+  <title>归档</title>
   
     
       <meta 
         property="og:title" 
-        content="C#项目打包">
+        content="归档">
     
     
       <meta 
         property="og:url" 
-        content="http://uerlink.github.io/2022/05/12/%E6%96%87%E6%A1%A3%E5%8C%BA/C_shap%E6%89%93%E5%8C%85/index.html">
+        content="http://uerlink.github.io/archives/page/2/index.html">
     
     
       <meta 
@@ -36,26 +36,6 @@
         content="https://s1.ax1x.com/2022/04/05/qXiutA.png">
     
     
-    
-      <meta 
-        property="og:type" 
-        content="article">
-      <meta 
-        property="og:article:published_time" 
-        content="2022-05-12">
-      <meta 
-        property="og:article:modified_time" 
-        content="2022-05-12">
-      <meta 
-        property="og:article:author" 
-        content="UerLink">
-      
-        
-          <meta 
-            property="og:article:tag" 
-            content="C#">
-        
-      
     
   
   <script>
@@ -163,8 +143,6 @@
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
   
-    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
-  
 <meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="UerLink_Blog" type="application/atom+xml">
 </head>
 
@@ -212,7 +190,7 @@
       </a>
     
       <a 
-        href="/links" 
+        href="/books" 
         class="navbar-menu-item">
         
           书单
@@ -220,7 +198,7 @@
       </a>
     
       <a 
-        href="/books" 
+        href="/links" 
         class="navbar-menu-item">
         
           关于
@@ -257,173 +235,50 @@
         <div class="container">
           <div class="columns">
             <main class="main-column">
-<article class="card card-content">
-  <header>
-    <h1 class="post-title">
-      C#项目打包
-    </h1>
-  </header>
-  <div class="post-meta post-show-meta">
-    <time datetime="2022-05-11T16:00:00.000Z">
-      <i 
-        class="iconfont icon-calendar" 
-        style="margin-right: 2px;">
-      </i>
-      <span>2022-05-12</span>
-    </time>
-    
-      <span class="dot"></span>
-      
-        <a 
-          href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/" 
-          class="post-meta-link">
-          文档区
-        </a>
-      
-    
-    
-      <span class="dot"></span>
-      <span>261 字</span>
-    
-  </div>
+<div class="card card-content">
+  <h1 class="widget-title">归档</h1>
+</div>
+<div class="archive-timeline">
   
-    <div 
-      class="post-meta post-show-meta" 
-      style="margin-top: -10px;">
-      <div style="display: flex; align-items: center;">
-        <i 
-          class="iconfont icon-biaoqian" 
-          style="margin-right: 2px; font-size: 1.15rem;">
-        </i>
-        
-          
-          <a 
-            href="/tags/C/" 
-            class="post-meta-link">
-            C#
-          </a>
-        
+  
+    
+      <div class="archive-timeline-tag"><span>2022</span></div>
+      
+    
+    <div class="archive-timeline-item">
+      <div class="archive-timeline-post">
+        <div class="card card-content">
+          <div class="archive-timeline-post-date">2022-04-05</div>
+          <div class="archive-timeline-post-content">
+            <a 
+              href="/2022/04/05/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E6%97%B6%E9%97%B4%E7%9A%84%E7%A7%A9%E5%BA%8F%E3%80%8B/"
+              class="archive-timeline-post-item">
+              《时间的秩序》
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   
-  </header>
-  <div 
-    id="section" 
-    class="post-content">
-    <h2 id="安装打包插件"><a href="#安装打包插件" class="headerlink" title="安装打包插件"></a>安装打包插件</h2><ul>
-<li><p>在Visual Studio的扩展中搜索<strong>installer</strong>然后选择并下载创建者为Microsoft的插件(安装量最多的那个).</p>
-</li>
-<li><p>下载完成后会提示关闭当前项目,点击关闭.</p>
-</li>
-<li><p>进行安装.</p>
-</li>
-</ul>
-<h2 id="创建打包项目"><a href="#创建打包项目" class="headerlink" title="创建打包项目"></a>创建打包项目</h2><ul>
-<li><p>在Visual Studio启动界面(或者文件选项卡)新建一个<strong>Setup Project</strong>(如果找不到就搜索模板处输入<strong>SetUp</strong>).</p>
-</li>
-<li><p>创建完项目后,会出现三个文件夹, 然后再<strong>Apelication Folder</strong>上右键添加需要打包的文件.</p>
-</li>
-<li><p>添加完成后, 再给启动入口程序, 右键创建快捷方式, 然后拖动到, 剩下两个文件夹中(一个是桌面,一个是开始菜单).</p>
-</li>
-<li><p>接着在属性窗口分别自定义图标.ICON.</p>
-</li>
-</ul>
-<h2 id="生成打包文件"><a href="#生成打包文件" class="headerlink" title="生成打包文件"></a>生成打包文件</h2><ul>
-<li><p>右键解决方案下方项目, 点击生成.</p>
-</li>
-<li><p>生成路径在项目文件夹中的Debug文件夹中(如果是Release就在Release文件夹中).</p>
-</li>
-<li><p>Debug下会生成一个exe文件一个msi文件, 两个都可以用, 自行选择.</p>
-</li>
-</ul>
+</div>
 
-  </div>
-  <div>
-    
-  </div>
-</article>
-<div class="nav">
+  <div class="nav">
   
     <div class="nav-item-prev">
       <a 
-        href="/2022/05/22/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%A1%8C%E9%9D%A2%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/" 
+        href="/archives/" 
         class="nav-link">
         <i class="iconfont icon-left nav-prev-icon"></i>
         <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">桌面语音助手 </div>
+          <div class="nav-label">上一页</div>
           
         </div>
       </a>
     </div>
   
   
-    <div class="nav-item-next">
-      <a 
-        href="/2022/05/08/%E6%96%87%E6%A1%A3%E5%8C%BA/markdown%E8%AF%AD%E6%B3%95/" 
-        class="nav-link">
-        <div>
-          <div class="nav-label">下一篇</div>
-          
-            <div class="nav-title">markdown语法 </div>
-          
-        </div>
-        <i class="iconfont icon-right nav-next-icon"></i>
-      </a>
-    </div>
-  
 </div>
-
-  <div 
-    class="card card-content comment-card" 
-    style="margin-top: 16px;">
-    <div class="comment-card-title">评论</div>
-    
-  <div id="vcomments"></div>
-  
-  <script>
-    loadScript("//unpkg.com/valine/dist/Valine.min.js");
-    var oldLoadVa = window.onload;
-    window.onload = function () {
-      oldLoadVa && oldLoadVa();
-      new Valine({
-        el: '#vcomments',
-        appId: 'dbuFz1yfy2qSTkmEcal6GMTh-gzGzoHsz',
-        appKey: '4H0yl75j9o1e1brS9al4GS1T',
-        placeholder: '点我填写内容&lt;&lt;昵称推荐填写QQ号,可以自动获取头像或邮箱,网址可以不填',
-        path: window.location.pathname,
-        avatar: 'mp',
-        meta: ["nick","mail","link"],
-        pageSize: '10',
-        lang: '',
-        visitor: 'true',
-        highlight: true,
-        recordIP: false,
-        
-        serverURLs: 'https://dbufz1yf.lc-cn-n1-shared.com',
-        
-        
-        
-        enableQQ: 'true',
-        requiredFields: [],
-      });
-    };
-  </script>
-
-  </div>
-
-<div 
-  class="card card-content toc-card" 
-  id="mobiletoc">
-  <div class="toc-header">
-  <i 
-    class="iconfont icon-menu" 
-    style="padding-right: 2px;">
-  </i>目录
-</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%89%93%E5%8C%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">安装打包插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">创建打包项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">生成打包文件</span></a></li></ol>
-</div></main>
+</main>
             <aside class="left-column">
               
               <div class="card card-author">
@@ -441,13 +296,13 @@
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>10</span>
+    <span>11</span>
     <span>文章</span>
   </a>
   <a 
     class="author-categories-count" 
     href="/categories">
-    <span>2</span>
+    <span>3</span>
     <span>分类</span>
   </a>
   <a 
@@ -461,18 +316,6 @@
               </div>
                <div class="sticky-tablet">
   
-  
-    <article class="display-when-two-columns spacer">
-      <div class="card card-content toc-card">
-        <div class="toc-header">
-  <i 
-    class="iconfont icon-menu" 
-    style="padding-right: 2px;">
-  </i>目录
-</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%89%93%E5%8C%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">安装打包插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">创建打包项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">生成打包文件</span></a></li></ol>
-      </div>
-    </article>
   
   
   <article class="card card-content categories-widget">
@@ -488,13 +331,20 @@
       <a href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/">
         <div class="categories-list-item">
           文档区
-          <span class="categories-list-item-badge">7</span>
+          <span class="categories-list-item-badge">5</span>
         </div>
       </a>
     
       <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
         <div class="categories-list-item">
           读书笔记
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/">
+        <div class="categories-list-item">
+          实践项目
           <span class="categories-list-item-badge">2</span>
         </div>
       </a>
@@ -548,21 +398,90 @@
   </article>
   
   
+    <article class="card card-content widescreen-archive archive-widget">
+      <div class="archive-card">
+  <div class="archive-card-header">
+    <i 
+      class="iconfont icon-wodebaobiao" 
+      style="padding-right: 2px;">
+    </i>归档
+  </div>
+  <div class="archive-card-list">
+    
+    
+    
+      
+        
+        
+        
+      
+    
+      
+        
+          <a 
+            href="/archives/2101" 
+            class="archive-card-list-item">
+            2101
+            <span class="archive-card-list-item-badge">1</span>
+          </a>
+        
+        
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+    
+      <a 
+        href="/archives/2022" 
+        class="archive-card-list-item">
+        2022
+        <span class="archive-card-list-item-badge">10</span>
+      </a>
+    
+  </div>
+</div>
+    </article>
+  
 </div>
             </aside>
             <aside class="right-column">
               <div class="sticky-widescreen">
   
-  
-    <article class="card card-content toc-card">
-      <div class="toc-header">
-  <i 
-    class="iconfont icon-menu" 
-    style="padding-right: 2px;">
-  </i>目录
-</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%89%93%E5%8C%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">安装打包插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text">创建打包项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">生成打包文件</span></a></li></ol>
-    </article>
   
   
   <article class="card card-content">
@@ -581,24 +500,103 @@
       </div>
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2022-06-20</div>
+        <a href="/2022/06/20/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E8%AF%BB%E4%B9%A6%E6%B1%87%E3%80%8B/"><div class="recent-posts-item-content">《读书汇》</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-06-16</div>
         <a href="/2022/06/16/%E6%96%87%E6%A1%A3%E5%8C%BA/php%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E6%89%A7%E8%A1%8Csql%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2/"><div class="recent-posts-item-content">php连接数据库并执行sql语句查询</div></a>
       </div>
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2022-05-22</div>
-        <a href="/2022/05/22/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%A1%8C%E9%9D%A2%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/"><div class="recent-posts-item-content">桌面语音助手</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-05-12</div>
-        <a href="/2022/05/12/%E6%96%87%E6%A1%A3%E5%8C%BA/C_shap%E6%89%93%E5%8C%85/"><div class="recent-posts-item-content">C#项目打包</div></a>
+        <a href="/2022/05/22/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/%E6%A1%8C%E9%9D%A2%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B/"><div class="recent-posts-item-content">桌面语音助手</div></a>
       </div>
     
   </div>
 </div>
   </article>
   
+  
+    <article class="card card-content">
+      <div class="archive-card">
+  <div class="archive-card-header">
+    <i 
+      class="iconfont icon-wodebaobiao" 
+      style="padding-right: 2px;">
+    </i>归档
+  </div>
+  <div class="archive-card-list">
+    
+    
+    
+      
+        
+        
+        
+      
+    
+      
+        
+          <a 
+            href="/archives/2101" 
+            class="archive-card-list-item">
+            2101
+            <span class="archive-card-list-item-badge">1</span>
+          </a>
+        
+        
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+    
+      <a 
+        href="/archives/2022" 
+        class="archive-card-list-item">
+        2022
+        <span class="archive-card-list-item-badge">10</span>
+      </a>
+    
+  </div>
+</div>
+    </article>
   
 </div>
             </aside>
@@ -672,36 +670,6 @@
 </a> 
      
      
-     
-      <script>
-  var addImgLayout = function () {
-    var img = document.querySelectorAll('.post-content img')
-    var i
-    for (i = 0; i < img.length; i++) {
-      var wrapper = document.createElement('a')
-      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
-      wrapper.setAttribute('aria-label', 'illustration')
-      wrapper.style.cssText =
-        'width: 100%; display: flex; justify-content: center;'
-      if (img[i].alt) wrapper.dataset.caption = img[i].alt
-      wrapper.dataset.nolink = true
-      img[i].before(wrapper)
-      wrapper.append(img[i])
-      var divWrap = document.createElement('div')
-      divWrap.classList.add('gallery')
-      wrapper.before(divWrap)
-      divWrap.append(wrapper)
-    }
-    baguetteBox.run('.gallery')
-  }
-</script>
-<script>
-  loadScript(
-    "/js/lib/lightbox/baguetteBox.min.js",
-    addImgLayout
-  )
-</script>
- 
      
      
     <script src="/js/main.js"></script> 
