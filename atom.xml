@@ -40,6 +40,29 @@
   </entry>
   
   <entry>
+    <title>3d模型嵌入测试</title>
+    <link href="http://uerlink.github.io/2022/07/17/%E6%96%87%E6%A1%A3%E5%8C%BA/3d%E6%A8%A1%E5%9E%8B%E5%B5%8C%E5%85%A5%E6%B5%8B%E8%AF%95/"/>
+    <id>http://uerlink.github.io/2022/07/17/%E6%96%87%E6%A1%A3%E5%8C%BA/3d%E6%A8%A1%E5%9E%8B%E5%B5%8C%E5%85%A5%E6%B5%8B%E8%AF%95/</id>
+    <published>2022-07-16T16:00:00.000Z</published>
+    <updated>2022-07-17T01:35:09.198Z</updated>
+    
+    <content type="html"><![CDATA[<div><iframe src="https://hub.realibox.com/public/2355827666029903955" width='800' height='600' frameborder='no' allowfullscreen='true'></iframe></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div&gt;
+&lt;iframe src=&quot;https://hub.realibox.com/public/2355827666029903955&quot; width=&#39;800&#39; height=&#39;600&#39; frameborder=&#39;no&#39; allowfullscreen=&#39;true&#39;&gt;&lt;/i</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>《读书汇》</title>
     <link href="http://uerlink.github.io/2022/06/20/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E8%AF%BB%E4%B9%A6%E6%B1%87%E3%80%8B/"/>
     <id>http://uerlink.github.io/2022/06/20/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E8%AF%BB%E4%B9%A6%E6%B1%87%E3%80%8B/</id>
@@ -106,31 +129,6 @@
     
     <category term="实践项目" scheme="http://uerlink.github.io/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>C#项目打包</title>
-    <link href="http://uerlink.github.io/2022/05/12/%E6%96%87%E6%A1%A3%E5%8C%BA/C_sharp%E6%89%93%E5%8C%85/"/>
-    <id>http://uerlink.github.io/2022/05/12/%E6%96%87%E6%A1%A3%E5%8C%BA/C_sharp%E6%89%93%E5%8C%85/</id>
-    <published>2022-05-11T16:00:00.000Z</published>
-    <updated>2022-05-11T19:49:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装打包插件"><a href="#安装打包插件" class="headerlink" title="安装打包插件"></a>安装打包插件</h2><ul><li><p>在Visual Studio的扩展中搜索<strong>installer</strong>然后选择并下载创建者为Microsoft的插件(安装量最多的那个).</p></li><li><p>下载完成后会提示关闭当前项目,点击关闭.</p></li><li><p>进行安装.</p></li></ul><h2 id="创建打包项目"><a href="#创建打包项目" class="headerlink" title="创建打包项目"></a>创建打包项目</h2><ul><li><p>在Visual Studio启动界面(或者文件选项卡)新建一个<strong>Setup Project</strong>(如果找不到就搜索模板处输入<strong>SetUp</strong>).</p></li><li><p>创建完项目后,会出现三个文件夹, 然后再<strong>Apelication Folder</strong>上右键添加需要打包的文件.</p></li><li><p>添加完成后, 再给启动入口程序, 右键创建快捷方式, 然后拖动到, 剩下两个文件夹中(一个是桌面,一个是开始菜单).</p></li><li><p>接着在属性窗口分别自定义图标.ICON.</p></li></ul><h2 id="生成打包文件"><a href="#生成打包文件" class="headerlink" title="生成打包文件"></a>生成打包文件</h2><ul><li><p>右键解决方案下方项目, 点击生成.</p></li><li><p>生成路径在项目文件夹中的Debug文件夹中(如果是Release就在Release文件夹中).</p></li><li><p>Debug下会生成一个exe文件一个msi文件, 两个都可以用, 自行选择.</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;安装打包插件&quot;&gt;&lt;a href=&quot;#安装打包插件&quot; class=&quot;headerlink&quot; title=&quot;安装打包插件&quot;&gt;&lt;/a&gt;安装打包插件&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在Visual Studio的扩展中搜索&lt;strong&gt;installer&lt;/strong</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="C#" scheme="http://uerlink.github.io/tags/C/"/>
     
   </entry>
   
