@@ -109,13 +109,13 @@
     <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
     
     
+    <category term="Linux" scheme="http://uerlink.github.io/tags/Linux/"/>
+    
     <category term="python" scheme="http://uerlink.github.io/tags/python/"/>
     
     <category term="框架" scheme="http://uerlink.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
     
     <category term="frask" scheme="http://uerlink.github.io/tags/frask/"/>
-    
-    <category term="Linux" scheme="http://uerlink.github.io/tags/Linux/"/>
     
   </entry>
   
