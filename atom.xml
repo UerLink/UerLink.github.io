@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-06-13T14:49:15.869Z</updated>
+  <updated>2023-06-13T14:51:12.049Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://uerlink.github.io/2023/06/13/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/arduino%E4%B8%8B%E8%BD%BD%E5%88%B0esp8266%E6%8A%A5%E9%94%99/"/>
     <id>http://uerlink.github.io/2023/06/13/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/arduino%E4%B8%8B%E8%BD%BD%E5%88%B0esp8266%E6%8A%A5%E9%94%99/</id>
     <published>2023-06-12T16:00:00.000Z</published>
-    <updated>2023-06-13T14:49:15.869Z</updated>
+    <updated>2023-06-13T14:51:12.049Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="错误日志"><a class="markdownIt-Anchor" href="#错误日志"></a> 错误日志：</h3><div class="post-note note-danger"><p>A fatal <a href="http://esptool.py">esptool.py</a> error occurred: Cannot configure port, something went wrong. Original message: PermissionError(13, ‘����ϵͳ�ϵ��豸û�з������á�’, None, 31)</p></div><h3 id="解决办法"><a class="markdownIt-Anchor" href="#解决办法"></a> 解决办法：</h3><p>重新安装ch340驱动，（注意需要安装<strong>老版本的ch340驱动</strong>）</p><p>下载链接：<a href="https://electropeak.com/learn/download/ch341ser-zip/#">CH341SER.zip - Electropeak</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="错误日志"><a class="markdownIt-Anchor" href="#错误日志"></a> 错误日志：</h3><pre class="highlight"><code class="hljs css"><span class="hljs-selector-tag">A</span> fatal esptool<span class="hljs-selector-class">.py</span> error occurred: Cannot configure port, something went wrong. Original message: <span class="hljs-built_in">PermissionError</span>(<span class="hljs-number">13</span>, <span class="hljs-string">&#x27;����ϵͳ�ϵ��豸û�з������á�&#x27;</span>, None, <span class="hljs-number">31</span>)<br></code></pre><h3 id="解决办法"><a class="markdownIt-Anchor" href="#解决办法"></a> 解决办法：</h3><p>重新安装ch340驱动，（注意需要安装<strong>老版本的ch340驱动</strong>）</p><p>下载链接：<a href="https://electropeak.com/learn/download/ch341ser-zip/#">CH341SER.zip - Electropeak</a></p>]]></content>
     
     
       
       
     <summary type="html">&lt;h3 id=&quot;错误日志&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#错误日志&quot;&gt;&lt;/a&gt; 错误日志：&lt;/h3&gt;
-&lt;div class=&quot;post-note note-danger&quot;&gt;&lt;p&gt;A fatal &lt;a href=&quot;http://esptoo</summary>
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;hljs css&quot;&gt;&lt;span class=&quot;hljs-sele</summary>
       
     
     
