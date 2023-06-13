@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-06-13T12:59:31.121Z</updated>
+  <updated>2023-06-13T14:49:15.869Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>arduino下载到esp8266报错</title>
+    <link href="http://uerlink.github.io/2023/06/13/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/arduino%E4%B8%8B%E8%BD%BD%E5%88%B0esp8266%E6%8A%A5%E9%94%99/"/>
+    <id>http://uerlink.github.io/2023/06/13/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/arduino%E4%B8%8B%E8%BD%BD%E5%88%B0esp8266%E6%8A%A5%E9%94%99/</id>
+    <published>2023-06-12T16:00:00.000Z</published>
+    <updated>2023-06-13T14:49:15.869Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="错误日志"><a class="markdownIt-Anchor" href="#错误日志"></a> 错误日志：</h3><div class="post-note note-danger"><p>A fatal <a href="http://esptool.py">esptool.py</a> error occurred: Cannot configure port, something went wrong. Original message: PermissionError(13, ‘����ϵͳ�ϵ��豸û�з������á�’, None, 31)</p></div><h3 id="解决办法"><a class="markdownIt-Anchor" href="#解决办法"></a> 解决办法：</h3><p>重新安装ch340驱动，（注意需要安装<strong>老版本的ch340驱动</strong>）</p><p>下载链接：<a href="https://electropeak.com/learn/download/ch341ser-zip/#">CH341SER.zip - Electropeak</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;错误日志&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#错误日志&quot;&gt;&lt;/a&gt; 错误日志：&lt;/h3&gt;
+&lt;div class=&quot;post-note note-danger&quot;&gt;&lt;p&gt;A fatal &lt;a href=&quot;http://esptoo</summary>
+      
+    
+    
+    
+    <category term="踩坑记录" scheme="http://uerlink.github.io/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="踩坑记录" scheme="http://uerlink.github.io/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="arduino" scheme="http://uerlink.github.io/tags/arduino/"/>
+    
+  </entry>
   
   <entry>
     <title>Stable Diffusion模型-AI画画</title>
@@ -108,29 +135,6 @@
 &lt;p&gt;2023-04-18 保存备份&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;pre class=&quot;highlight&quot;&gt;&lt;c</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>c++读取和保存数据到文件</title>
-    <link href="http://uerlink.github.io/2023/04/18/%E6%96%87%E6%A1%A3%E5%8C%BA/c++%E8%AF%BB%E5%8F%96%E5%92%8C%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0%E6%96%87%E4%BB%B6/"/>
-    <id>http://uerlink.github.io/2023/04/18/%E6%96%87%E6%A1%A3%E5%8C%BA/c++%E8%AF%BB%E5%8F%96%E5%92%8C%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%88%B0%E6%96%87%E4%BB%B6/</id>
-    <published>2023-04-17T16:00:00.000Z</published>
-    <updated>2023-04-18T10:00:51.226Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="c进行读取和保存"><a class="markdownIt-Anchor" href="#c进行读取和保存"></a> c++进行读取和保存</h3><p>使用<strong>fstream</strong>和<strong>sstream</strong></p><pre class="highlight"><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;fstream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;sstream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br><span class="hljs-comment">//------------读取文件----------</span><br>    <span class="hljs-comment">//定义文件对象</span><br>    ifstream inFile;<br>    ofstream outFile;<br>    string line;<br>    <span class="hljs-type">int</span> arr[<span class="hljs-number">3</span>];<br>    inFile.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;decode.in&quot;</span>, ios::in);<br><br>    <span class="hljs-keyword">if</span> (!inFile.<span class="hljs-built_in">is_open</span>())<br>    &#123;<br>        cout &lt;&lt; <span class="hljs-string">&quot;读取文件失败&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-comment">//getline可以文件文件内容保存每行的数据到line</span><br>        <span class="hljs-keyword">while</span> (<span class="hljs-built_in">getline</span>(inFile,line))<br>        &#123;<br>            <span class="hljs-comment">//使用stringstream</span><br>            stringstream <span class="hljs-built_in">ss</span>(line);<br>            <span class="hljs-comment">//读取当前行每列的内容，并保存到数组</span><br>            <span class="hljs-type">int</span> Column=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">while</span> (ss &gt;&gt; arr[Column]) &#123;<br>                Column++;<br>            &#125;<br>        &#125;<br>    &#125;<br><span class="hljs-comment">// --------保存文件----------</span><br>    ofstream outFile;<br><br>    <span class="hljs-comment">//打开文件,ios::app是追加数据</span><br>    outFile.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;decode.out&quot;</span>,ios::app);<br><br>    <span class="hljs-comment">//存放数据</span><br>    outFile &lt;&lt;<span class="hljs-string">&quot;A&quot;</span>&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;<span class="hljs-string">&quot;B&quot;</span>&lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>    outFile.<span class="hljs-built_in">close</span>();<br><br>    <span class="hljs-comment">//清空decode.out文件的内容,ios::trunc</span><br>    outFile.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;decode.out&quot;</span>,ios::trunc);<br>    outFile.<span class="hljs-built_in">close</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br><br>&#125;<br></code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;c进行读取和保存&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#c进行读取和保存&quot;&gt;&lt;/a&gt; c++进行读取和保存&lt;/h3&gt;
-&lt;p&gt;使用&lt;strong&gt;fstream&lt;/strong&gt;和&lt;strong&gt;sstream&lt;/strong&gt;&lt;</summary>
       
     
     
