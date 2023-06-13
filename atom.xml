@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-05-23T01:20:22.213Z</updated>
+  <updated>2023-06-09T11:03:40.097Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Stable Diffusion模型-AI画画</title>
+    <link href="http://uerlink.github.io/2023/06/09/%E6%96%87%E6%A1%A3%E5%8C%BA/Stable%20Diffusion%E6%A8%A1%E5%9E%8B-AI%E7%94%BB%E7%94%BB/"/>
+    <id>http://uerlink.github.io/2023/06/09/%E6%96%87%E6%A1%A3%E5%8C%BA/Stable%20Diffusion%E6%A8%A1%E5%9E%8B-AI%E7%94%BB%E7%94%BB/</id>
+    <published>2023-06-08T16:00:00.000Z</published>
+    <updated>2023-06-09T11:03:40.097Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="stable-diffusion模型-ai画画"><a class="markdownIt-Anchor" href="#stable-diffusion模型-ai画画"></a> Stable Diffusion模型-AI画画</h1><h3 id="ai画画笔记"><a class="markdownIt-Anchor" href="#ai画画笔记"></a> AI画画笔记</h3><h3 id="下载整合包"><a class="markdownIt-Anchor" href="#下载整合包"></a> 下载整合包</h3><p>首先下载“电子菩萨” – <strong>秋葉aaaki</strong>  的 整合包</p><p><a href="https://space.bilibili.com/12566101">秋葉aaaki的个人空间_哔哩哔哩_bilibili</a></p><p><a href="https://www.bilibili.com/video/BV1iM4y1y7oA/?spm_id_from=333.999.0.0">【AI绘画】Stable Diffusion整合包v4发布！全新加速 解压即用 防爆显存 三分钟入门AI绘画 ☆可更新 ☆训练 ☆汉化_哔哩哔哩_bilibili</a></p><h4 id="踩坑的问题"><a class="markdownIt-Anchor" href="#踩坑的问题"></a> 踩坑的问题</h4><p>下载下来的整合包.zip 一直解压错误，后来更换下载器重新下载就可以了</p><h3 id="新知识"><a class="markdownIt-Anchor" href="#新知识"></a> 新知识</h3><h4 id="1更换绘画模型"><a class="markdownIt-Anchor" href="#1更换绘画模型"></a> 1.更换绘画模型</h4><p><a href="https://www.liandange.com/">炼丹阁</a></p><blockquote><p>国内的模型下载网站</p></blockquote><p><a href="https://huggingface.co/xiaolxl/GuoFeng3">Hugging Face</a></p><blockquote><p>国外的模型下载网站<br />我也没太弄懂</p></blockquote><h4 id="2lora模型"><a class="markdownIt-Anchor" href="#2lora模型"></a> 2.LoRA模型</h4><p>LoRA相当于对图像进行风格化修改</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;stable-diffusion模型-ai画画&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#stable-diffusion模型-ai画画&quot;&gt;&lt;/a&gt; Stable Diffusion模型-AI画画&lt;/h1&gt;
+&lt;h3 id=&quot;ai画画</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
+    
+    <category term="画画" scheme="http://uerlink.github.io/tags/%E7%94%BB%E7%94%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>webmin工具的安装</title>
@@ -110,37 +137,6 @@
     
     <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下搭建frask框架</title>
-    <link href="http://uerlink.github.io/2023/04/15/%E6%96%87%E6%A1%A3%E5%8C%BA/Linux%E4%B8%8B%E6%90%AD%E5%BB%BAfrask%E6%A1%86%E6%9E%B6/"/>
-    <id>http://uerlink.github.io/2023/04/15/%E6%96%87%E6%A1%A3%E5%8C%BA/Linux%E4%B8%8B%E6%90%AD%E5%BB%BAfrask%E6%A1%86%E6%9E%B6/</id>
-    <published>2023-04-14T16:00:00.000Z</published>
-    <updated>2023-04-15T08:48:20.699Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="安装flask"><a class="markdownIt-Anchor" href="#安装flask"></a> 安装Flask</h3><h4 id="安装python和虚拟环境venv"><a class="markdownIt-Anchor" href="#安装python和虚拟环境venv"></a> 安装python和虚拟环境(venv)</h4><pre class="highlight"><code class="hljs shell">sudo apt install python3<br>sudo apt install python3-pip<br>sudo apt install python3-venv<br></code></pre><h4 id="创建虚拟环境"><a class="markdownIt-Anchor" href="#创建虚拟环境"></a> 创建虚拟环境</h4><ol><li>新建一个空白文件夹，并进入</li></ol><pre class="highlight"><code class="hljs shell">mkdir flask_app &amp;&amp; cd flask_app<br></code></pre><ol start="2"><li>创建一个名为venv的虚拟环境</li></ol><pre class="highlight"><code class="hljs shell">python3 -m venv venv<br></code></pre><h4 id="进入退出-虚拟环境"><a class="markdownIt-Anchor" href="#进入退出-虚拟环境"></a> 进入/退出 虚拟环境</h4><ul><li>进入</li></ul><pre class="highlight"><code class="hljs shell">source venv/bin/activate<br></code></pre><ul><li>退出</li></ul><pre class="highlight"><code class="hljs shell">deactivate<br></code></pre><h4 id="下载flask"><a class="markdownIt-Anchor" href="#下载flask"></a> 下载Flask</h4><ol><li>进入虚拟环境，使用pip工具安装flask</li></ol><pre class="highlight"><code class="hljs shell">pip install Flask<br></code></pre><ol start="2"><li>验证安装是否成功</li></ol><pre class="highlight"><code class="hljs shell">python -m flask --version<br></code></pre><h4 id="测试"><a class="markdownIt-Anchor" href="#测试"></a> 测试</h4><ol><li>创建一个最小应用程序，下面内容写入名为 <strong><a href="http://main.py">main.py</a></strong> 文件</li></ol><pre class="highlight"><code class="hljs python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask <br>app = Flask(__name__) <br><br><span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&#x27;/&#x27;</span></span>) </span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">hello_world</span>(): <br><span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello World!&#x27;</span><br></code></pre><ol start="2"><li>设置<strong>FLASK_APP</strong>环境变量</li></ol><pre class="highlight"><code class="hljs shell">export FLASK_APP=main.py<br></code></pre><ol start="3"><li>运行应用</li></ol><pre class="highlight"><code class="hljs shell">flask run<br></code></pre><ol start="4"><li>访问生成的网站，测试完成</li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;安装flask&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#安装flask&quot;&gt;&lt;/a&gt; 安装Flask&lt;/h3&gt;
-&lt;h4 id=&quot;安装python和虚拟环境venv&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="Linux" scheme="http://uerlink.github.io/tags/Linux/"/>
-    
-    <category term="python" scheme="http://uerlink.github.io/tags/python/"/>
-    
-    <category term="框架" scheme="http://uerlink.github.io/tags/%E6%A1%86%E6%9E%B6/"/>
-    
-    <category term="frask" scheme="http://uerlink.github.io/tags/frask/"/>
     
   </entry>
   
