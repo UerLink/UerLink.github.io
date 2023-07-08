@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-06-13T14:51:12.049Z</updated>
+  <updated>2023-07-08T17:09:02.447Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本地部署Chat-RWKV-LM</title>
+    <link href="http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2Chat-RWKV-LM/"/>
+    <id>http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2Chat-RWKV-LM/</id>
+    <published>2023-07-08T16:00:00.000Z</published>
+    <updated>2023-07-08T17:09:02.447Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="本地部署类chatgpt模型-rwkv-lm"><a class="markdownIt-Anchor" href="#本地部署类chatgpt模型-rwkv-lm"></a> 本地部署类ChatGPT模型-RWKV-LM</h1><blockquote><p>无需联网，使用GPU或CPU进行计算得出结果</p></blockquote><h4 id="rwkv-lm官方github地址"><a class="markdownIt-Anchor" href="#rwkv-lm官方github地址"></a> RWKV-LM官方GitHub地址：</h4><p><a href="https://github.com/BlinkDL/RWKV-LM">https://github.com/BlinkDL/RWKV-LM</a></p><h4 id="rwkv-runner-启动器github地址"><a class="markdownIt-Anchor" href="#rwkv-runner-启动器github地址"></a> RWKV-Runner 启动器GitHub地址：</h4><p><a href="https://github.com/josStorer/RWKV-Runner">https://github.com/josStorer/RWKV-Runner</a></p><h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2><ol><li>下载好启动器，把exe放在一个空文件夹</li><li>运行exe，并随便点击一个模型运行，提示需要python环境，下载即可</li></ol><h4 id="参考视频"><a class="markdownIt-Anchor" href="#参考视频"></a> 参考视频</h4><p>【RWKV-Runner发布并开源，可商用的大语言模型，一键启动管理，2-32G显存适配，API兼容，一切前端皆可用】<br /><a href="https://www.bilibili.com/video/BV1hM4y1v76R/?share_source=copy_web&amp;vd_source=17fc3f0d3cf17f45237a57cc5ba97e0e">https://www.bilibili.com/video/BV1hM4y1v76R/?share_source=copy_web&amp;vd_source=17fc3f0d3cf17f45237a57cc5ba97e0e</a></p><h3 id="注意事项"><a class="markdownIt-Anchor" href="#注意事项"></a> 注意事项</h3><blockquote><p>每个模型的所呈现的效果都不用，选择最适合的模型</p></blockquote><h4 id="模型名称"><a class="markdownIt-Anchor" href="#模型名称"></a> 模型名称</h4><p>例如：GPU-2G-3B-world<br />使用GPU计算，显存需要2G，模型参数3B大小，（一般world表示最新的模型）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;本地部署类chatgpt模型-rwkv-lm&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#本地部署类chatgpt模型-rwkv-lm&quot;&gt;&lt;/a&gt; 本地部署类ChatGPT模型-RWKV-LM&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>arduino下载到esp8266报错</title>
@@ -109,32 +135,6 @@
       
     <summary type="html">&lt;h3 id=&quot;切换至root用户并安装nginx&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#切换至root用户并安装nginx&quot;&gt;&lt;/a&gt; 切换至root用户,并安装nginx&lt;/h3&gt;
 &lt;p&gt;Nginx 在默认的 Ubuntu 源仓库中可用&lt;/</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>C++对一元二次求解</title>
-    <link href="http://uerlink.github.io/2023/04/18/%E6%96%87%E6%A1%A3%E5%8C%BA/C++%E5%AF%B9%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%B1%82%E8%A7%A3/"/>
-    <id>http://uerlink.github.io/2023/04/18/%E6%96%87%E6%A1%A3%E5%8C%BA/C++%E5%AF%B9%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%B1%82%E8%A7%A3/</id>
-    <published>2023-04-17T16:00:00.000Z</published>
-    <updated>2023-04-18T09:53:31.732Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="求解"><a class="markdownIt-Anchor" href="#求解"></a> 求解</h3><blockquote><p>2023-04-18 保存备份</p></blockquote><pre class="highlight"><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;fstream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;sstream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">operation_data</span><span class="hljs-params">(<span class="hljs-type">int</span> n,<span class="hljs-type">int</span> e,<span class="hljs-type">int</span> d)</span></span>&#123;<br>    <span class="hljs-comment">//定义文件对象</span><br>    ofstream outFile;<br>    <span class="hljs-comment">//题目数学公式转换</span><br>    <span class="hljs-comment">//n = p * q;</span><br>    <span class="hljs-comment">//e * d = (p-1)*(q-1)+1</span><br>    <span class="hljs-comment">//-(q*q) + [n+2-(e*d)]*q - n = 0</span><br><br>    <span class="hljs-type">int</span> a = <span class="hljs-number">-1</span>;<br>    <span class="hljs-type">double</span> b = (n + <span class="hljs-number">2</span> - (e * d));<br>    <span class="hljs-type">double</span> c = -n;<br>    <span class="hljs-comment">//求解</span><br>    <span class="hljs-type">double</span> q = (-b + <span class="hljs-built_in">sqrt</span>(b*b - <span class="hljs-number">4</span>*a*c))/<span class="hljs-number">2</span>*a;<br>    <span class="hljs-type">double</span> p = (-b - <span class="hljs-built_in">sqrt</span>(b*b - <span class="hljs-number">4</span>*a*c))/<span class="hljs-number">2</span>*a;<br>    <span class="hljs-comment">//打开文件</span><br>    outFile.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;decode.out&quot;</span>,ios::app);<br>    <span class="hljs-comment">//判断q和p是否为整数，如果为整数就保存，否则就保存&quot;NO&quot;</span><br>    <span class="hljs-comment">//floor() 函数返回不大于给定实数的最大整数</span><br>    <span class="hljs-keyword">if</span>(q == <span class="hljs-built_in">floor</span>(q) &amp;&amp; p == <span class="hljs-built_in">floor</span>(p))&#123;<br>        cout&lt;&lt;q&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;p&lt;&lt;endl;<br>        outFile &lt;&lt; q &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        cout&lt;&lt;<span class="hljs-string">&quot;NO&quot;</span>&lt;&lt;endl;<br>        outFile &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt;<span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<br>    outFile.<span class="hljs-built_in">close</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">//定义文件对象</span><br>    ifstream inFile;<br>    ofstream outFile;<br>    string line;<br>    <span class="hljs-type">int</span> Column=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> Row=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> arr[<span class="hljs-number">3</span>];<br><br><br>    <span class="hljs-comment">//清空decode.out文件的内容</span><br>    outFile.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;decode.out&quot;</span>,ios::trunc);<br>    outFile.<span class="hljs-built_in">close</span>();<br>    <span class="hljs-comment">//读取文件</span><br>    inFile.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;decode.in&quot;</span>, ios::in);<br>    <span class="hljs-keyword">if</span> (!inFile.<span class="hljs-built_in">is_open</span>())<br>    &#123;<br>        cout &lt;&lt; <span class="hljs-string">&quot;读取文件失败&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-comment">//getline可以文件文件内容保存每行的数据到line</span><br>        <span class="hljs-keyword">while</span> (<span class="hljs-built_in">getline</span>(inFile,line))<br>        &#123;<br>            <span class="hljs-comment">//使用stringstream</span><br>            stringstream <span class="hljs-built_in">ss</span>(line);<br>            <span class="hljs-comment">//读取当前行每列的内容，并保存到数组</span><br>            Column=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">while</span> (ss &gt;&gt; arr[Column]) &#123;<br>                Column++;<br>            &#125;<br>            <span class="hljs-comment">//去除读取文件时开头的0，我也不知道为啥会有个0</span><br>            <span class="hljs-keyword">if</span>(Row!=<span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-comment">//执行数据计算函数</span><br>                <span class="hljs-built_in">operation_data</span>(arr[<span class="hljs-number">0</span>],arr[<span class="hljs-number">1</span>],arr[<span class="hljs-number">2</span>]);<br>            &#125;<br>            Row++;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;求解&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#求解&quot;&gt;&lt;/a&gt; 求解&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;2023-04-18 保存备份&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre class=&quot;highlight&quot;&gt;&lt;c</summary>
       
     
     
