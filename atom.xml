@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-07-09T06:43:55.709Z</updated>
+  <updated>2023-07-08T17:09:02.447Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,36 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>调用非官方GPT的api</title>
-    <link href="http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E8%B0%83%E7%94%A8%E9%9D%9E%E5%AE%98%E6%96%B9GPT%E7%9A%84api/"/>
-    <id>http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E8%B0%83%E7%94%A8%E9%9D%9E%E5%AE%98%E6%96%B9GPT%E7%9A%84api/</id>
-    <published>2023-07-08T16:00:00.000Z</published>
-    <updated>2023-07-09T06:43:55.709Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="调用非官方gpt的api"><a class="markdownIt-Anchor" href="#调用非官方gpt的api"></a> 调用非官方GPT的api</h1><blockquote><p>因为OPEN AI 的GPT在只能在环大陆地区使用，注册账号并充值很麻烦不稳定，有一定门槛。调用api也需要魔法环境，偶然间发现一个GPTapi提供网站，使用了一下，感觉不错，费用比OPENAI相对便宜调用API时不需要魔法。</p></blockquote><h3 id="网址"><a class="markdownIt-Anchor" href="#网址"></a> 网址：</h3><p><a href="https://console.api2gpt.com/">https://console.api2gpt.com/</a></p><h3 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法"></a> 使用方法</h3><p>把openai的接口地址换成<a href="https://api.api2gpt.com">https://api.api2gpt.com</a>，然后把Key填入就可以了。其实就是和访问OPEN AI 的接口一样。</p><h4 id="吐槽"><a class="markdownIt-Anchor" href="#吐槽"></a> 吐槽：</h4><p>我的OPEN AI 账号，7月1日到期了，想充值都没办法充！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;调用非官方gpt的api&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#调用非官方gpt的api&quot;&gt;&lt;/a&gt; 调用非官方GPT的api&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;因为OPEN AI 的GPT在只能在环大陆地区使用，注册账</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="api" scheme="http://uerlink.github.io/tags/api/"/>
-    
-    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
-    
-    <category term="GPT" scheme="http://uerlink.github.io/tags/GPT/"/>
-    
-  </entry>
   
   <entry>
     <title>本地部署Chat-RWKV-LM</title>
@@ -69,6 +39,36 @@
     
     
     <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>调用非官方GPT的api</title>
+    <link href="http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E8%B0%83%E7%94%A8%E9%9D%9E%E5%AE%98%E6%96%B9GPT%E7%9A%84api/"/>
+    <id>http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E8%B0%83%E7%94%A8%E9%9D%9E%E5%AE%98%E6%96%B9GPT%E7%9A%84api/</id>
+    <published>2023-07-08T16:00:00.000Z</published>
+    <updated>2023-07-09T06:43:55.709Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="调用非官方gpt的api"><a class="markdownIt-Anchor" href="#调用非官方gpt的api"></a> 调用非官方GPT的api</h1><blockquote><p>因为OPEN AI 的GPT在只能在环大陆地区使用，注册账号并充值很麻烦不稳定，有一定门槛。调用api也需要魔法环境，偶然间发现一个GPTapi提供网站，使用了一下，感觉不错，费用比OPENAI相对便宜调用API时不需要魔法。</p></blockquote><h3 id="网址"><a class="markdownIt-Anchor" href="#网址"></a> 网址：</h3><p><a href="https://console.api2gpt.com/">https://console.api2gpt.com/</a></p><h3 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法"></a> 使用方法</h3><p>把openai的接口地址换成<a href="https://api.api2gpt.com">https://api.api2gpt.com</a>，然后把Key填入就可以了。其实就是和访问OPEN AI 的接口一样。</p><h4 id="吐槽"><a class="markdownIt-Anchor" href="#吐槽"></a> 吐槽：</h4><p>我的OPEN AI 账号，7月1日到期了，想充值都没办法充！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;调用非官方gpt的api&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#调用非官方gpt的api&quot;&gt;&lt;/a&gt; 调用非官方GPT的api&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因为OPEN AI 的GPT在只能在环大陆地区使用，注册账</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
+    
+    <category term="api" scheme="http://uerlink.github.io/tags/api/"/>
+    
+    <category term="GPT" scheme="http://uerlink.github.io/tags/GPT/"/>
     
   </entry>
   
