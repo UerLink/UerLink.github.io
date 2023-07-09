@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-07-08T17:09:02.447Z</updated>
+  <updated>2023-07-09T06:43:55.709Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>调用非官方GPT的api</title>
+    <link href="http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E8%B0%83%E7%94%A8%E9%9D%9E%E5%AE%98%E6%96%B9GPT%E7%9A%84api/"/>
+    <id>http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E8%B0%83%E7%94%A8%E9%9D%9E%E5%AE%98%E6%96%B9GPT%E7%9A%84api/</id>
+    <published>2023-07-08T16:00:00.000Z</published>
+    <updated>2023-07-09T06:43:55.709Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="调用非官方gpt的api"><a class="markdownIt-Anchor" href="#调用非官方gpt的api"></a> 调用非官方GPT的api</h1><blockquote><p>因为OPEN AI 的GPT在只能在环大陆地区使用，注册账号并充值很麻烦不稳定，有一定门槛。调用api也需要魔法环境，偶然间发现一个GPTapi提供网站，使用了一下，感觉不错，费用比OPENAI相对便宜调用API时不需要魔法。</p></blockquote><h3 id="网址"><a class="markdownIt-Anchor" href="#网址"></a> 网址：</h3><p><a href="https://console.api2gpt.com/">https://console.api2gpt.com/</a></p><h3 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法"></a> 使用方法</h3><p>把openai的接口地址换成<a href="https://api.api2gpt.com">https://api.api2gpt.com</a>，然后把Key填入就可以了。其实就是和访问OPEN AI 的接口一样。</p><h4 id="吐槽"><a class="markdownIt-Anchor" href="#吐槽"></a> 吐槽：</h4><p>我的OPEN AI 账号，7月1日到期了，想充值都没办法充！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;调用非官方gpt的api&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#调用非官方gpt的api&quot;&gt;&lt;/a&gt; 调用非官方GPT的api&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因为OPEN AI 的GPT在只能在环大陆地区使用，注册账</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="api" scheme="http://uerlink.github.io/tags/api/"/>
+    
+    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
+    
+    <category term="GPT" scheme="http://uerlink.github.io/tags/GPT/"/>
+    
+  </entry>
   
   <entry>
     <title>本地部署Chat-RWKV-LM</title>
@@ -118,29 +148,6 @@
     
     
     <category term="Linux" scheme="http://uerlink.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu安装nginx，部署网站</title>
-    <link href="http://uerlink.github.io/2023/04/26/%E6%96%87%E6%A1%A3%E5%8C%BA/Ubuntu%E5%AE%89%E8%A3%85nginx%EF%BC%8C%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99/"/>
-    <id>http://uerlink.github.io/2023/04/26/%E6%96%87%E6%A1%A3%E5%8C%BA/Ubuntu%E5%AE%89%E8%A3%85nginx%EF%BC%8C%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99/</id>
-    <published>2023-04-25T16:00:00.000Z</published>
-    <updated>2023-05-04T16:06:38.631Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="切换至root用户并安装nginx"><a class="markdownIt-Anchor" href="#切换至root用户并安装nginx"></a> 切换至root用户,并安装nginx</h3><p>Nginx 在默认的 Ubuntu 源仓库中可用</p><pre class="highlight"><code class="hljs bash">sudo apt update<br>sudo su root<br>apt-get install nginx<br></code></pre><h3 id="查看nginx是否安装成功"><a class="markdownIt-Anchor" href="#查看nginx是否安装成功"></a> 查看nginx是否安装成功</h3><pre class="highlight"><code class="hljs ebnf"><span class="hljs-attribute">nginx -v</span><br></code></pre><h3 id="运行控制"><a class="markdownIt-Anchor" href="#运行控制"></a> 运行控制</h3><h4 id="启动nginx"><a class="markdownIt-Anchor" href="#启动nginx"></a> 启动nginx</h4><pre class="highlight"><code class="hljs crmsh">service nginx <span class="hljs-literal">start</span><br></code></pre><h4 id="各种重启"><a class="markdownIt-Anchor" href="#各种重启"></a> 各种重启</h4><pre class="highlight"><code class="hljs maxima">service nginx <span class="hljs-built_in">restart</span><br><br>sudo systemctl <span class="hljs-built_in">restart</span> nginx<br><br>nginx -s reload<br></code></pre><h4 id="停止"><a class="markdownIt-Anchor" href="#停止"></a> 停止</h4><pre class="highlight"><code class="hljs arduino">service nginx stop<br></code></pre><h3 id="nginx文件安装完成之后的文件位置"><a class="markdownIt-Anchor" href="#nginx文件安装完成之后的文件位置"></a> nginx文件安装完成之后的文件位置：</h3><p>/usr/sbin/nginx：主程序<br />/etc/nginx：存放配置文件<br />/usr/share/nginx：存放静态文件<br />/var/log/nginx：存放日志</p><h4 id="配置网站"><a class="markdownIt-Anchor" href="#配置网站"></a> 配置网站</h4><p>在/etc/nginx/conf.d目录中新建后缀名为 .conf 的空白文件 test.conf<br />写入配置表</p><pre class="highlight"><code class="hljs txt">server &#123;<br>    listen       80;<br>    server_name  example.com;<br>    #开启openai接口的gzip压缩，大量重复文本的压缩率高，节省服务端流量<br>    gzip  on;<br>    gzip_min_length 1k;<br>    gzip_types text/event-stream;<br><br>    #如需部署在网站子路径，如&quot;example.com/chatgpt&quot;，配置如下<br>    #location ^~ /chatgpt/v1 &#123;<br>    location ^~ /v1 &#123;<br>        proxy_pass https://api.openai.com/v1;<br>        proxy_set_header Host api.openai.com;<br>        proxy_ssl_name api.openai.com;<br>        proxy_ssl_server_name on;<br>        #注意Bearer 后改为正确的token。如需网页设置自定义API key使用，则注释掉下一行<br>        proxy_set_header  Authorization &quot;Bearer sk-your-token&quot;;<br>        proxy_pass_header Authorization;<br>        #流式传输，不关闭buffering缓存会卡顿卡死，必须配置！！！<br>        proxy_buffering off;<br>    &#125;<br>    #与上面反代接口的路径保持一致<br>    #location /chatgpt &#123;<br>    location / &#123;<br>        alias /usr/share/nginx/html/;<br>        index index.html;<br>    &#125;<br>&#125;<br></code></pre><p>检查配置是否生效</p><pre class="highlight"><code class="hljs ebnf"><span class="hljs-attribute">nginx -t</span><br><br></code></pre><h5 id="配置ssl证书"><a class="markdownIt-Anchor" href="#配置ssl证书"></a> 配置ssl证书</h5><p>参考教程链接：<a href="https://zhuanlan.zhihu.com/p/85040625">Nginx操作 | Nginx配置SSL证书 - 知乎 (zhihu.com)</a></p><p>配置完以后要重启</p><pre class="highlight"><code class="hljs bash">sudo service nginx restart<br></code></pre><p>注意ssl认证文件的路径要正确</p><pre class="highlight"><code class="hljs text">server &#123;<br>    listen 443;<br>    # 你的域名<br>    server_name xxx.cn;<br>    ssl on;<br>    # 你网站的根目录<br>    root /usr/share/nginx/html; <br>    index index.html index.htm;<br>    ssl_certificate  cert/hk.uerlink.cn.pem;<br>    ssl_certificate_key cert/hk.uerlink.cn.key;<br>    ssl_session_timeout 5m;<br>    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;<br>    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;<br>    ssl_prefer_server_ciphers on;<br>&#125;<br></code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;切换至root用户并安装nginx&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#切换至root用户并安装nginx&quot;&gt;&lt;/a&gt; 切换至root用户,并安装nginx&lt;/h3&gt;
-&lt;p&gt;Nginx 在默认的 Ubuntu 源仓库中可用&lt;/</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
     
   </entry>
   
