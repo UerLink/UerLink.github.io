@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-07-08T17:09:02.447Z</updated>
+  <updated>2023-07-14T14:18:49.095Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>StableDiffusion绘制二维码</title>
+    <link href="http://uerlink.github.io/2023/07/14/%E6%96%87%E6%A1%A3%E5%8C%BA/StableDiffusion%E7%BB%98%E5%88%B6%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
+    <id>http://uerlink.github.io/2023/07/14/%E6%96%87%E6%A1%A3%E5%8C%BA/StableDiffusion%E7%BB%98%E5%88%B6%E4%BA%8C%E7%BB%B4%E7%A0%81/</id>
+    <published>2023-07-13T16:00:00.000Z</published>
+    <updated>2023-07-14T14:18:49.095Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="stablediffusion绘制二维码"><a class="markdownIt-Anchor" href="#stablediffusion绘制二维码"></a> StableDiffusion绘制二维码</h1><h2 id="效果图"><a class="markdownIt-Anchor" href="#效果图"></a> 效果图</h2><p><img src="https://s1.ax1x.com/2023/07/14/pC4XV3t.png" alt="" / srcset="https://s1.ax1x.com/2022/05/03/OAe0fI.png" data-src="https://s1.ax1x.com/2023/07/14/pC4XV3t.png" class="lozad post-image"></p><h2 id="模型"><a class="markdownIt-Anchor" href="#模型"></a> 模型</h2><p>需要在controlnet中使用该模型<br /><a href="https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/tree/main">monster-labs/control_v1p_sd15_qrcode_monster at main (huggingface.co)</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;stablediffusion绘制二维码&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#stablediffusion绘制二维码&quot;&gt;&lt;/a&gt; StableDiffusion绘制二维码&lt;/h1&gt;
+&lt;h2 id=&quot;效果图&quot;&gt;&lt;a class</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
+    
+    <category term="画画" scheme="http://uerlink.github.io/tags/%E7%94%BB%E7%94%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>stableDiffusion安装roop插件</title>
+    <link href="http://uerlink.github.io/2023/07/14/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/stableDiffusion%E5%AE%89%E8%A3%85roop%E6%8F%92%E4%BB%B6/"/>
+    <id>http://uerlink.github.io/2023/07/14/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/stableDiffusion%E5%AE%89%E8%A3%85roop%E6%8F%92%E4%BB%B6/</id>
+    <published>2023-07-13T16:00:00.000Z</published>
+    <updated>2023-07-14T14:19:16.220Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="stablediffusion安装roop插件折腾的过程"><a class="markdownIt-Anchor" href="#stablediffusion安装roop插件折腾的过程"></a> stableDiffusion安装roop插件折腾的过程</h2><h3 id="过程"><a class="markdownIt-Anchor" href="#过程"></a> 过程</h3><p><a href="https://www.bilibili.com/video/BV14V4y1y7R1/?spm_id_from=333.788.recommend_more_video.0&amp;vd_source=5c893cd1bede64cb1b4c78285c3c2ac2">秋叶版本Stablediffusion的Roop插件的安装_哔哩哔哩_bilibili</a><br />照着这个视频安装完成后，开始运行出现错误</p><h3 id="错误"><a class="markdownIt-Anchor" href="#错误"></a> 错误</h3><p><a href="https://zhuanlan.zhihu.com/p/639488723">Stable Diffusion入门（十三）：深度换脸 | roop - 知乎 (zhihu.com)</a><br />也就是这个教程，第二个错误，下载包不完整</p><p><strong>踩坑：下载buffalo_l.zip以后要解压，把里面的文件放出来到buffalo_l文件夹，要不然一直下载，而且下载速度极慢</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;stablediffusion安装roop插件折腾的过程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#stablediffusion安装roop插件折腾的过程&quot;&gt;&lt;/a&gt; stableDiffusion安装roop插件折腾的过程&lt;/h</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
+    
+    <category term="画画" scheme="http://uerlink.github.io/tags/%E7%94%BB%E7%94%BB/"/>
+    
+    <category term="踩坑记录" scheme="http://uerlink.github.io/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>本地部署Chat-RWKV-LM</title>
@@ -64,9 +119,9 @@
     <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
     
     
-    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
-    
     <category term="api" scheme="http://uerlink.github.io/tags/api/"/>
+    
+    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
     
     <category term="GPT" scheme="http://uerlink.github.io/tags/GPT/"/>
     
@@ -96,58 +151,6 @@
     <category term="踩坑记录" scheme="http://uerlink.github.io/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
     
     <category term="arduino" scheme="http://uerlink.github.io/tags/arduino/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Stable Diffusion模型-AI画画</title>
-    <link href="http://uerlink.github.io/2023/06/09/%E6%96%87%E6%A1%A3%E5%8C%BA/Stable%20Diffusion%E6%A8%A1%E5%9E%8B-AI%E7%94%BB%E7%94%BB/"/>
-    <id>http://uerlink.github.io/2023/06/09/%E6%96%87%E6%A1%A3%E5%8C%BA/Stable%20Diffusion%E6%A8%A1%E5%9E%8B-AI%E7%94%BB%E7%94%BB/</id>
-    <published>2023-06-08T16:00:00.000Z</published>
-    <updated>2023-06-13T12:59:31.121Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="stable-diffusion模型-ai画画"><a class="markdownIt-Anchor" href="#stable-diffusion模型-ai画画"></a> Stable Diffusion模型-AI画画</h1><h3 id="ai画画笔记"><a class="markdownIt-Anchor" href="#ai画画笔记"></a> AI画画笔记</h3><p>[<img src="https://s1.ax1x.com/2023/06/13/pCmRYWV.png" alt="pCmRYWV.png" / srcset="https://s1.ax1x.com/2022/05/03/OAe0fI.png" data-src="https://s1.ax1x.com/2023/06/13/pCmRYWV.png" class="lozad post-image"></p><h3 id="下载整合包"><a class="markdownIt-Anchor" href="#下载整合包"></a> 下载整合包</h3><p>首先下载“电子菩萨” – <strong>秋葉aaaki</strong>  的 整合包</p><p><a href="https://space.bilibili.com/12566101">秋葉aaaki的个人空间_哔哩哔哩_bilibili</a></p><p><a href="https://www.bilibili.com/video/BV1iM4y1y7oA/?spm_id_from=333.999.0.0">【AI绘画】Stable Diffusion整合包v4发布！全新加速 解压即用 防爆显存 三分钟入门AI绘画 ☆可更新 ☆训练 ☆汉化_哔哩哔哩_bilibili</a></p><h4 id="踩坑的问题"><a class="markdownIt-Anchor" href="#踩坑的问题"></a> 踩坑的问题</h4><p>下载下来的整合包.zip 一直解压错误，后来更换下载器重新下载就可以了</p><h3 id="新知识"><a class="markdownIt-Anchor" href="#新知识"></a> 新知识</h3><h4 id="1更换绘画模型"><a class="markdownIt-Anchor" href="#1更换绘画模型"></a> 1.更换绘画模型</h4><p><a href="https://www.liandange.com/">炼丹阁</a></p><blockquote><p>国内的模型下载网站</p></blockquote><p><a href="https://huggingface.co/xiaolxl/GuoFeng3">Hugging Face</a></p><blockquote><p>国外的模型下载网站<br />我也没太弄懂</p></blockquote><h4 id="2lora模型"><a class="markdownIt-Anchor" href="#2lora模型"></a> 2.LoRA模型</h4><p>LoRA相当于对图像进行风格化修改</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;stable-diffusion模型-ai画画&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#stable-diffusion模型-ai画画&quot;&gt;&lt;/a&gt; Stable Diffusion模型-AI画画&lt;/h1&gt;
-&lt;h3 id=&quot;ai画画</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
-    
-    <category term="画画" scheme="http://uerlink.github.io/tags/%E7%94%BB%E7%94%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>webmin工具的安装</title>
-    <link href="http://uerlink.github.io/2023/05/23/%E6%96%87%E6%A1%A3%E5%8C%BA/webmin%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85/"/>
-    <id>http://uerlink.github.io/2023/05/23/%E6%96%87%E6%A1%A3%E5%8C%BA/webmin%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85/</id>
-    <published>2023-05-22T16:00:00.000Z</published>
-    <updated>2023-05-23T01:20:22.213Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="通过webmin工具远程管理配置服务器"><a class="markdownIt-Anchor" href="#通过webmin工具远程管理配置服务器"></a> 通过webmin工具远程管理配置服务器</h1><h3 id="安装配置面板-webmin"><a class="markdownIt-Anchor" href="#安装配置面板-webmin"></a> 安装配置面板 WebMin</h3><h4 id="使用deb包进行安装"><a class="markdownIt-Anchor" href="#使用deb包进行安装"></a> 使用deb包进行安装</h4><p>下载路径：<a href="http://sourceforge.net/projects/webadmin/files/webmin/">http://sourceforge.net/projects/webadmin/files/webmin/</a></p><pre class="highlight"><code class="hljs bash">sudo dpkg -i webmin_1.981_all.deb<br></code></pre><p>处理依赖关系</p><pre class="highlight"><code class="hljs bash">sudo apt install -f<br></code></pre><h4 id="启动服务"><a class="markdownIt-Anchor" href="#启动服务"></a> 启动服务</h4><p>开启端口10000</p><pre class="highlight"><code class="hljs bash">sudo ufw allow 10000<br></code></pre><p>重启</p><pre class="highlight"><code class="hljs bash">reboot<br></code></pre><p>登录</p><pre class="highlight"><code class="hljs bash">https：//服务器 ip：10000<br></code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;通过webmin工具远程管理配置服务器&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#通过webmin工具远程管理配置服务器&quot;&gt;&lt;/a&gt; 通过webmin工具远程管理配置服务器&lt;/h1&gt;
-&lt;h3 id=&quot;安装配置面板-webmin&quot;&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="Linux" scheme="http://uerlink.github.io/tags/Linux/"/>
     
   </entry>
   
