@@ -95,15 +95,15 @@
     <link href="http://uerlink.github.io/2023/08/01/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1/2023-08-01_TP4056%E8%8A%AF%E7%89%87%E5%85%85%E7%94%B5%E7%94%B5%E8%B7%AF/"/>
     <id>http://uerlink.github.io/2023/08/01/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1/2023-08-01_TP4056%E8%8A%AF%E7%89%87%E5%85%85%E7%94%B5%E7%94%B5%E8%B7%AF/</id>
     <published>2023-07-31T16:00:00.000Z</published>
-    <updated>2023-08-01T15:42:39.747Z</updated>
+    <updated>2023-08-02T13:54:17.254Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="tp4056芯片充电电路"><a class="markdownIt-Anchor" href="#tp4056芯片充电电路"></a> TP4056芯片充电电路</h1><h3 id="芯片说明"><a class="markdownIt-Anchor" href="#芯片说明"></a> 芯片说明</h3><blockquote><p><a href="https://www.elecfans.com/dianlutu/app/20180326652308.html">锂电池管理芯片tp4056中文资料及应用电路图汇总 - IC应用电路图 - 电子发烧友网 (elecfans.com)</a></p></blockquote><p>TP4056是一款完整的单节锂离子电池采用恒定电流/恒定电压线性充电器。其底部带有散热片的SOP8封装与较少的外部元件数目使得TP4056成为便携式应用的理想选择。TP4056可以适合USB电源和适配器电源工作。由于采用了内部PMOSFET架构，加上防倒充电路，所以不需要外部隔离二极管。热反馈可对充电电流进行自动调节，以便在大功率操作或高环境温度条件下对芯片温度加以限制。充电电压固定于4.2V，而充电电流可通过一个电阻器进行外部设置。当充电电流在达到最终浮充电压之后降至设定值1/10时，TP4056将自动终止充电循环。</p><h3 id="引脚"><a class="markdownIt-Anchor" href="#引脚"></a> 引脚</h3><p>VCC：电压输入<br />GND：接地<br />CE：芯片使能输入端。高电平有效<br />BAT：电池正极（+）连接端<br />TEMP：电池温度检测输入端<br />PROG：恒流充电电流设置端<br />CHRG：充电状态指示端，输出<br />STDBY：充电完成指示端，输出</p><h3 id="限流电阻阻值表"><a class="markdownIt-Anchor" href="#限流电阻阻值表"></a> 限流电阻阻值表</h3><blockquote><p><a href="https://blog.csdn.net/qq_36229876/article/details/104037501">锂电池充电IC-TP4056电路设计详解_tp4056充电电路图_董程森的博客-CSDN博客</a></p></blockquote><p>通过设置R3(下图中)电阻，阻值大小，更改BAT端输出电流大小</p><h3 id="原理图"><a class="markdownIt-Anchor" href="#原理图"></a> 原理图</h3><p><a href="https://imgse.com/i/pPCT4mT"><img src="https://s1.ax1x.com/2023/08/01/pPCT4mT.png" alt="pPCT4mT.png" / srcset="https://s1.ax1x.com/2022/05/03/OAe0fI.png" data-src="https://s1.ax1x.com/2023/08/01/pPCT4mT.png" class="lozad post-image"></a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="使用tp4056芯片实现对锂电池进行充电"><a class="markdownIt-Anchor" href="#使用tp4056芯片实现对锂电池进行充电"></a> 使用TP4056芯片实现对锂电池进行充电</h1><h3 id="芯片说明"><a class="markdownIt-Anchor" href="#芯片说明"></a> 芯片说明</h3><blockquote><p><a href="https://www.elecfans.com/dianlutu/app/20180326652308.html">锂电池管理芯片tp4056中文资料及应用电路图汇总 - IC应用电路图 - 电子发烧友网 (elecfans.com)</a></p></blockquote><p>TP4056是一款完整的单节锂离子电池采用恒定电流/恒定电压线性充电器。其底部带有散热片的SOP8封装与较少的外部元件数目使得TP4056成为便携式应用的理想选择。TP4056可以适合USB电源和适配器电源工作。由于采用了内部PMOSFET架构，加上防倒充电路，所以不需要外部隔离二极管。热反馈可对充电电流进行自动调节，以便在大功率操作或高环境温度条件下对芯片温度加以限制。充电电压固定于4.2V，而充电电流可通过一个电阻器进行外部设置。当充电电流在达到最终浮充电压之后降至设定值1/10时，TP4056将自动终止充电循环。</p><h3 id="引脚"><a class="markdownIt-Anchor" href="#引脚"></a> 引脚</h3><p>VCC：电压输入<br />GND：接地<br />CE：芯片使能输入端。高电平有效<br />BAT：电池正极（+）连接端<br />TEMP：电池温度检测输入端<br />PROG：恒流充电电流设置端<br />CHRG：充电状态指示端，输出<br />STDBY：充电完成指示端，输出</p><h3 id="限流电阻阻值表"><a class="markdownIt-Anchor" href="#限流电阻阻值表"></a> 限流电阻阻值表</h3><blockquote><p><a href="https://blog.csdn.net/qq_36229876/article/details/104037501">锂电池充电IC-TP4056电路设计详解_tp4056充电电路图_董程森的博客-CSDN博客</a></p></blockquote><p>通过设置R3(下图中)电阻，阻值大小，更改BAT端输出电流大小</p><h3 id="原理图"><a class="markdownIt-Anchor" href="#原理图"></a> 原理图</h3><p><a href="https://imgse.com/i/pPCT4mT"><img src="https://s1.ax1x.com/2023/08/01/pPCT4mT.png" alt="pPCT4mT.png" / srcset="https://s1.ax1x.com/2022/05/03/OAe0fI.png" data-src="https://s1.ax1x.com/2023/08/01/pPCT4mT.png" class="lozad post-image"></a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;tp4056芯片充电电路&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#tp4056芯片充电电路&quot;&gt;&lt;/a&gt; TP4056芯片充电电路&lt;/h1&gt;
-&lt;h3 id=&quot;芯片说明&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; hr</summary>
+    <summary type="html">&lt;h1 id=&quot;使用tp4056芯片实现对锂电池进行充电&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#使用tp4056芯片实现对锂电池进行充电&quot;&gt;&lt;/a&gt; 使用TP4056芯片实现对锂电池进行充电&lt;/h1&gt;
+&lt;h3 id=&quot;芯片说明&quot;&gt;&lt;a clas</summary>
       
     
     

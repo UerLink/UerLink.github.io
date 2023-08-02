@@ -46,7 +46,7 @@
         content="2023-08-01">
       <meta 
         property="og:article:modified_time" 
-        content="2023-08-01">
+        content="2023-08-02">
       <meta 
         property="og:article:author" 
         content="UerLink">
@@ -293,7 +293,7 @@
     
     
       <span class="dot"></span>
-      <span>389 字</span>
+      <span>397 字</span>
     
   </div>
   
@@ -329,7 +329,7 @@
   <div 
     id="section" 
     class="post-content">
-    <h1 id="tp4056芯片充电电路"><a class="markdownIt-Anchor" href="#tp4056芯片充电电路"></a> TP4056芯片充电电路</h1>
+    <h1 id="使用tp4056芯片实现对锂电池进行充电"><a class="markdownIt-Anchor" href="#使用tp4056芯片实现对锂电池进行充电"></a> 使用TP4056芯片实现对锂电池进行充电</h1>
 <h3 id="芯片说明"><a class="markdownIt-Anchor" href="#芯片说明"></a> 芯片说明</h3>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.elecfans.com/dianlutu/app/20180326652308.html">锂电池管理芯片tp4056中文资料及应用电路图汇总 - IC应用电路图 - 电子发烧友网 (elecfans.com)</a></p>
@@ -399,7 +399,7 @@ STDBY：充电完成指示端，输出</p>
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#tp4056%E8%8A%AF%E7%89%87%E5%85%85%E7%94%B5%E7%94%B5%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text"> TP4056芯片充电电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E8%AF%B4%E6%98%8E"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 芯片说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%84%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 引脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E6%B5%81%E7%94%B5%E9%98%BB%E9%98%BB%E5%80%BC%E8%A1%A8"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 限流电阻阻值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 原理图</span></a></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8tp4056%E8%8A%AF%E7%89%87%E5%AE%9E%E7%8E%B0%E5%AF%B9%E9%94%82%E7%94%B5%E6%B1%A0%E8%BF%9B%E8%A1%8C%E5%85%85%E7%94%B5"><span class="toc-number">1.</span> <span class="toc-text"> 使用TP4056芯片实现对锂电池进行充电</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E8%AF%B4%E6%98%8E"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 芯片说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%84%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 引脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E6%B5%81%E7%94%B5%E9%98%BB%E9%98%BB%E5%80%BC%E8%A1%A8"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 限流电阻阻值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 原理图</span></a></li></ol></li></ol></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -449,7 +449,7 @@ STDBY：充电完成指示端，输出</p>
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#tp4056%E8%8A%AF%E7%89%87%E5%85%85%E7%94%B5%E7%94%B5%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text"> TP4056芯片充电电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E8%AF%B4%E6%98%8E"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 芯片说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%84%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 引脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E6%B5%81%E7%94%B5%E9%98%BB%E9%98%BB%E5%80%BC%E8%A1%A8"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 限流电阻阻值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 原理图</span></a></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8tp4056%E8%8A%AF%E7%89%87%E5%AE%9E%E7%8E%B0%E5%AF%B9%E9%94%82%E7%94%B5%E6%B1%A0%E8%BF%9B%E8%A1%8C%E5%85%85%E7%94%B5"><span class="toc-number">1.</span> <span class="toc-text"> 使用TP4056芯片实现对锂电池进行充电</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E8%AF%B4%E6%98%8E"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 芯片说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%84%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 引脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E6%B5%81%E7%94%B5%E9%98%BB%E9%98%BB%E5%80%BC%E8%A1%A8"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 限流电阻阻值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 原理图</span></a></li></ol></li></ol></li></ol>
       </div>
     </article>
   
@@ -634,7 +634,7 @@ STDBY：充电完成指示端，输出</p>
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#tp4056%E8%8A%AF%E7%89%87%E5%85%85%E7%94%B5%E7%94%B5%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text"> TP4056芯片充电电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E8%AF%B4%E6%98%8E"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 芯片说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%84%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 引脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E6%B5%81%E7%94%B5%E9%98%BB%E9%98%BB%E5%80%BC%E8%A1%A8"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 限流电阻阻值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 原理图</span></a></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8tp4056%E8%8A%AF%E7%89%87%E5%AE%9E%E7%8E%B0%E5%AF%B9%E9%94%82%E7%94%B5%E6%B1%A0%E8%BF%9B%E8%A1%8C%E5%85%85%E7%94%B5"><span class="toc-number">1.</span> <span class="toc-text"> 使用TP4056芯片实现对锂电池进行充电</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E8%AF%B4%E6%98%8E"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 芯片说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%84%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 引脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E6%B5%81%E7%94%B5%E9%98%BB%E9%98%BB%E5%80%BC%E8%A1%A8"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 限流电阻阻值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 原理图</span></a></li></ol></li></ol></li></ol>
     </article>
   
   
