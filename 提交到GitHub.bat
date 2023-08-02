@@ -1,4 +1,6 @@
 @echo off
+chcp 65001
+echo "已切换中文编码"
 cd /d  D:\UerLinkBlog
 title HexoGo
 cd 
