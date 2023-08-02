@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-08-01T15:42:39.747Z</updated>
+  <updated>2023-08-02T06:55:18.787Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mod开发笔记</title>
+    <link href="http://uerlink.github.io/2023/08/02/%E6%96%87%E6%A1%A3%E5%8C%BA/mod%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
+    <id>http://uerlink.github.io/2023/08/02/%E6%96%87%E6%A1%A3%E5%8C%BA/mod%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-08-01T16:00:00.000Z</published>
+    <updated>2023-08-02T06:55:18.787Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="星露谷物语mod开发"><a class="markdownIt-Anchor" href="#星露谷物语mod开发"></a> 星露谷物语mod开发</h2><h3 id="每天早晨打印一条消息"><a class="markdownIt-Anchor" href="#每天早晨打印一条消息"></a> 每天早晨打印一条消息</h3><pre class="highlight"><code class="hljs C#"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span>模组的主要入口点。<span class="hljs-doctag">&lt;/summary&gt;</span></span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ModEntry</span> : <span class="hljs-title">Mod</span><br>&#123;<br>    <span class="hljs-comment">/**********</span><br><span class="hljs-comment">    ** 公共方法</span><br><span class="hljs-comment">    *********/</span><br>    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span>模组入口点，加载模组后自动调用<span class="hljs-doctag">&lt;/summary&gt;</span></span><br>    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name=&quot;helper&quot;&gt;</span>提供用于编写模组的简化API<span class="hljs-doctag">&lt;/param&gt;</span></span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Entry</span>(<span class="hljs-params">IModHelper helper</span>)</span><br>    &#123;<br>        <span class="hljs-comment">// 事件 += 方法</span><br>        helper.Events.GameLoop.DayStarted += <span class="hljs-keyword">this</span>.OnDayStarted;<br>    &#125;<br>    <br>    <span class="hljs-comment">/**********</span><br><span class="hljs-comment">    ** 私有方法</span><br><span class="hljs-comment">    *********/</span><br>    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span>在新的一天开始后调用的方法<span class="hljs-doctag">&lt;/summary&gt;</span></span><br>    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name=&quot;sender&quot;&gt;</span>事件对象<span class="hljs-doctag">&lt;/param&gt;</span></span><br>    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name=&quot;e&quot;&gt;</span>事件参数<span class="hljs-doctag">&lt;/param&gt;</span></span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnDayStarted</span>(<span class="hljs-params"><span class="hljs-built_in">object</span> sender, DayStartedEventArgs e</span>)</span><br>    &#123;<br>       <span class="hljs-keyword">this</span>.Monitor.Log(<span class="hljs-string">$&quot;新的一天到来了！<span class="hljs-subst">&#123;Game1.player.Name&#125;</span> 享受你的新一天吧&quot;</span>, LogLevel.Debug);<br>    &#125;<br>&#125;<br></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;星露谷物语mod开发&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#星露谷物语mod开发&quot;&gt;&lt;/a&gt; 星露谷物语mod开发&lt;/h2&gt;
+&lt;h3 id=&quot;每天早晨打印一条消息&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; hr</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="mod" scheme="http://uerlink.github.io/tags/mod/"/>
+    
+    <category term="game" scheme="http://uerlink.github.io/tags/game/"/>
+    
+  </entry>
   
   <entry>
     <title>TP4056芯片充电电路</title>
@@ -40,34 +67,6 @@
     <category term="PCB" scheme="http://uerlink.github.io/tags/PCB/"/>
     
     <category term="芯片" scheme="http://uerlink.github.io/tags/%E8%8A%AF%E7%89%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>stableDiffusion安装roop插件</title>
-    <link href="http://uerlink.github.io/2023/07/14/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/stableDiffusion%E5%AE%89%E8%A3%85roop%E6%8F%92%E4%BB%B6/"/>
-    <id>http://uerlink.github.io/2023/07/14/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/stableDiffusion%E5%AE%89%E8%A3%85roop%E6%8F%92%E4%BB%B6/</id>
-    <published>2023-07-13T16:00:00.000Z</published>
-    <updated>2023-07-14T14:19:16.220Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="stablediffusion安装roop插件折腾的过程"><a class="markdownIt-Anchor" href="#stablediffusion安装roop插件折腾的过程"></a> stableDiffusion安装roop插件折腾的过程</h2><h3 id="过程"><a class="markdownIt-Anchor" href="#过程"></a> 过程</h3><p><a href="https://www.bilibili.com/video/BV14V4y1y7R1/?spm_id_from=333.788.recommend_more_video.0&amp;vd_source=5c893cd1bede64cb1b4c78285c3c2ac2">秋叶版本Stablediffusion的Roop插件的安装_哔哩哔哩_bilibili</a><br />照着这个视频安装完成后，开始运行出现错误</p><h3 id="错误"><a class="markdownIt-Anchor" href="#错误"></a> 错误</h3><p><a href="https://zhuanlan.zhihu.com/p/639488723">Stable Diffusion入门（十三）：深度换脸 | roop - 知乎 (zhihu.com)</a><br />也就是这个教程，第二个错误，下载包不完整</p><p><strong>踩坑：下载buffalo_l.zip以后要解压，把里面的文件放出来到buffalo_l文件夹，要不然一直下载，而且下载速度极慢</strong></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;stablediffusion安装roop插件折腾的过程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#stablediffusion安装roop插件折腾的过程&quot;&gt;&lt;/a&gt; stableDiffusion安装roop插件折腾的过程&lt;/h</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
-    
-    <category term="踩坑记录" scheme="http://uerlink.github.io/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
-    
-    <category term="画画" scheme="http://uerlink.github.io/tags/%E7%94%BB%E7%94%BB/"/>
     
   </entry>
   
@@ -99,6 +98,34 @@
   </entry>
   
   <entry>
+    <title>stableDiffusion安装roop插件</title>
+    <link href="http://uerlink.github.io/2023/07/14/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/stableDiffusion%E5%AE%89%E8%A3%85roop%E6%8F%92%E4%BB%B6/"/>
+    <id>http://uerlink.github.io/2023/07/14/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/stableDiffusion%E5%AE%89%E8%A3%85roop%E6%8F%92%E4%BB%B6/</id>
+    <published>2023-07-13T16:00:00.000Z</published>
+    <updated>2023-07-14T14:19:16.220Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="stablediffusion安装roop插件折腾的过程"><a class="markdownIt-Anchor" href="#stablediffusion安装roop插件折腾的过程"></a> stableDiffusion安装roop插件折腾的过程</h2><h3 id="过程"><a class="markdownIt-Anchor" href="#过程"></a> 过程</h3><p><a href="https://www.bilibili.com/video/BV14V4y1y7R1/?spm_id_from=333.788.recommend_more_video.0&amp;vd_source=5c893cd1bede64cb1b4c78285c3c2ac2">秋叶版本Stablediffusion的Roop插件的安装_哔哩哔哩_bilibili</a><br />照着这个视频安装完成后，开始运行出现错误</p><h3 id="错误"><a class="markdownIt-Anchor" href="#错误"></a> 错误</h3><p><a href="https://zhuanlan.zhihu.com/p/639488723">Stable Diffusion入门（十三）：深度换脸 | roop - 知乎 (zhihu.com)</a><br />也就是这个教程，第二个错误，下载包不完整</p><p><strong>踩坑：下载buffalo_l.zip以后要解压，把里面的文件放出来到buffalo_l文件夹，要不然一直下载，而且下载速度极慢</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;stablediffusion安装roop插件折腾的过程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#stablediffusion安装roop插件折腾的过程&quot;&gt;&lt;/a&gt; stableDiffusion安装roop插件折腾的过程&lt;/h</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
+    
+    <category term="画画" scheme="http://uerlink.github.io/tags/%E7%94%BB%E7%94%BB/"/>
+    
+    <category term="踩坑记录" scheme="http://uerlink.github.io/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>本地部署Chat-RWKV-LM</title>
     <link href="http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2Chat-RWKV-LM/"/>
     <id>http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2Chat-RWKV-LM/</id>
@@ -121,36 +148,6 @@
     
     
     <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>调用非官方GPT的api</title>
-    <link href="http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E8%B0%83%E7%94%A8%E9%9D%9E%E5%AE%98%E6%96%B9GPT%E7%9A%84api/"/>
-    <id>http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E8%B0%83%E7%94%A8%E9%9D%9E%E5%AE%98%E6%96%B9GPT%E7%9A%84api/</id>
-    <published>2023-07-08T16:00:00.000Z</published>
-    <updated>2023-07-09T06:43:55.709Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="调用非官方gpt的api"><a class="markdownIt-Anchor" href="#调用非官方gpt的api"></a> 调用非官方GPT的api</h1><blockquote><p>因为OPEN AI 的GPT在只能在环大陆地区使用，注册账号并充值很麻烦不稳定，有一定门槛。调用api也需要魔法环境，偶然间发现一个GPTapi提供网站，使用了一下，感觉不错，费用比OPENAI相对便宜调用API时不需要魔法。</p></blockquote><h3 id="网址"><a class="markdownIt-Anchor" href="#网址"></a> 网址：</h3><p><a href="https://console.api2gpt.com/">https://console.api2gpt.com/</a></p><h3 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法"></a> 使用方法</h3><p>把openai的接口地址换成<a href="https://api.api2gpt.com">https://api.api2gpt.com</a>，然后把Key填入就可以了。其实就是和访问OPEN AI 的接口一样。</p><h4 id="吐槽"><a class="markdownIt-Anchor" href="#吐槽"></a> 吐槽：</h4><p>我的OPEN AI 账号，7月1日到期了，想充值都没办法充！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;调用非官方gpt的api&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#调用非官方gpt的api&quot;&gt;&lt;/a&gt; 调用非官方GPT的api&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;因为OPEN AI 的GPT在只能在环大陆地区使用，注册账</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
-    
-    <category term="api" scheme="http://uerlink.github.io/tags/api/"/>
-    
-    <category term="GPT" scheme="http://uerlink.github.io/tags/GPT/"/>
     
   </entry>
   
