@@ -48,21 +48,46 @@
     <link href="http://uerlink.github.io/2023/08/02/%E6%B5%8B%E8%AF%95%E5%8C%BA/%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B5%8B%E8%AF%95/"/>
     <id>http://uerlink.github.io/2023/08/02/%E6%B5%8B%E8%AF%95%E5%8C%BA/%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B5%8B%E8%AF%95/</id>
     <published>2023-08-01T16:00:00.000Z</published>
-    <updated>2023-08-02T08:02:53.047Z</updated>
+    <updated>2023-08-02T08:21:37.218Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="博客上传命令行测试"><a class="markdownIt-Anchor" href="#博客上传命令行测试"></a> 博客上传命令行测试</h3><pre class="highlight"><code class="hljs bash">@<span class="hljs-built_in">echo</span> off<br><span class="hljs-built_in">cd</span> /d  D:\UerLinkBlog<br>title HexoGo<br><span class="hljs-built_in">cd</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;清除缓存已禁用...如果博客样式出现问题，请重新开启&quot;</span><br>%call hexo clean%<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;博客开始重新生成:&quot;</span><br>call hexo g<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;博客开始上传GitHub:&quot;</span><br>call hexo d<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;博客预览服务启动:&quot;</span><br>call hexo s<br>pause<br></code></pre>]]></content>
+    <content type="html"><![CDATA[<h3 id="博客上传命令行测试"><a class="markdownIt-Anchor" href="#博客上传命令行测试"></a> 博客上传命令行测试</h3><pre class="highlight"><code class="bash">@<span class="hljs-built_in">echo</span> offchcp 65001<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬【提示】已切换中文编码&quot;</span><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬【注意】清除缓存已禁用！如果博客样式出现问题，请重新开启&quot;</span><span class="hljs-built_in">cd</span> /d  D:\UerLinkBlogtitle HexoGo<span class="hljs-built_in">cd</span>%call hexo clean%<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬【提示】博客开始重新生成:&quot;</span>call hexo g<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬【提示】博客开始上传GitHub:&quot;</span>call hexo d<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬【提示】博客预览服务启动:&quot;</span>call hexo spause```</code></pre>]]></content>
     
     
       
       
     <summary type="html">&lt;h3 id=&quot;博客上传命令行测试&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#博客上传命令行测试&quot;&gt;&lt;/a&gt; 博客上传命令行测试&lt;/h3&gt;
-&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;hljs bash&quot;&gt;@&lt;span </summary>
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;bash&quot;&gt;@&lt;span class</summary>
       
     
     
     
     <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>博客上传常见问题</title>
+    <link href="http://uerlink.github.io/2023/08/02/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    <id>http://uerlink.github.io/2023/08/02/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</id>
+    <published>2023-08-01T16:00:00.000Z</published>
+    <updated>2023-08-02T08:22:12.008Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="博客上传常见问题"><a class="markdownIt-Anchor" href="#博客上传常见问题"></a> 博客上传常见问题</h1><h2 id="解决上传时提示warning-lf-will-be-replaced-by-crlf-in的方法"><a class="markdownIt-Anchor" href="#解决上传时提示warning-lf-will-be-replaced-by-crlf-in的方法"></a> 解决上传时提示warning: LF will be replaced by CRLF in的方法</h2><h4 id="原因"><a class="markdownIt-Anchor" href="#原因"></a> 原因</h4><p>不同操作系统行尾结束符不一样：</p><pre class="highlight"><code class="hljs bash">Uinx/Linux --- \n(LF); <br>windows --- \r\n(CRLF)<br></code></pre><h4 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法</h4><p>在git上配置core.autocrlf属性为false，默认为trun</p> <pre class="highlight"><code class="hljs bash">git config --get core.autocrlf   //查看命令<br><br>git config --global core.autocrlf <span class="hljs-literal">false</span>    //修改命令<br><br></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;博客上传常见问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#博客上传常见问题&quot;&gt;&lt;/a&gt; 博客上传常见问题&lt;/h1&gt;
+&lt;h2 id=&quot;解决上传时提示warning-lf-will-be-replaced-by-crlf-in的方法&quot;</summary>
+      
+    
+    
+    
+    <category term="踩坑记录" scheme="http://uerlink.github.io/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="blog" scheme="http://uerlink.github.io/tags/blog/"/>
     
   </entry>
   
@@ -117,34 +142,6 @@
     <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
     
     <category term="画画" scheme="http://uerlink.github.io/tags/%E7%94%BB%E7%94%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>stableDiffusion安装roop插件</title>
-    <link href="http://uerlink.github.io/2023/07/14/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/stableDiffusion%E5%AE%89%E8%A3%85roop%E6%8F%92%E4%BB%B6/"/>
-    <id>http://uerlink.github.io/2023/07/14/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/stableDiffusion%E5%AE%89%E8%A3%85roop%E6%8F%92%E4%BB%B6/</id>
-    <published>2023-07-13T16:00:00.000Z</published>
-    <updated>2023-07-14T14:19:16.220Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="stablediffusion安装roop插件折腾的过程"><a class="markdownIt-Anchor" href="#stablediffusion安装roop插件折腾的过程"></a> stableDiffusion安装roop插件折腾的过程</h2><h3 id="过程"><a class="markdownIt-Anchor" href="#过程"></a> 过程</h3><p><a href="https://www.bilibili.com/video/BV14V4y1y7R1/?spm_id_from=333.788.recommend_more_video.0&amp;vd_source=5c893cd1bede64cb1b4c78285c3c2ac2">秋叶版本Stablediffusion的Roop插件的安装_哔哩哔哩_bilibili</a><br />照着这个视频安装完成后，开始运行出现错误</p><h3 id="错误"><a class="markdownIt-Anchor" href="#错误"></a> 错误</h3><p><a href="https://zhuanlan.zhihu.com/p/639488723">Stable Diffusion入门（十三）：深度换脸 | roop - 知乎 (zhihu.com)</a><br />也就是这个教程，第二个错误，下载包不完整</p><p><strong>踩坑：下载buffalo_l.zip以后要解压，把里面的文件放出来到buffalo_l文件夹，要不然一直下载，而且下载速度极慢</strong></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;stablediffusion安装roop插件折腾的过程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#stablediffusion安装roop插件折腾的过程&quot;&gt;&lt;/a&gt; stableDiffusion安装roop插件折腾的过程&lt;/h</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
-    
-    <category term="画画" scheme="http://uerlink.github.io/tags/%E7%94%BB%E7%94%BB/"/>
-    
-    <category term="踩坑记录" scheme="http://uerlink.github.io/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
