@@ -285,7 +285,7 @@
     
     
       <span class="dot"></span>
-      <span>110 字</span>
+      <span>118 字</span>
     
   </div>
   
@@ -294,37 +294,7 @@
     id="section" 
     class="post-content">
     <h3 id="博客上传命令行测试"><a class="markdownIt-Anchor" href="#博客上传命令行测试"></a> 博客上传命令行测试</h3>
-<pre class="highlight"><code class="bash">@<span class="hljs-built_in">echo</span> off
-
-chcp 65001
-
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬【提示】已切换中文编码&quot;</span>
-
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬【注意】清除缓存已禁用！如果博客样式出现问题，请重新开启&quot;</span>
-
-<span class="hljs-built_in">cd</span> /d  D:\UerLinkBlog
-
-title HexoGo
-
-<span class="hljs-built_in">cd</span>
-
-%call hexo clean%
-
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬【提示】博客开始重新生成:&quot;</span>
-
-call hexo g
-
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬【提示】博客开始上传GitHub:&quot;</span>
-
-call hexo d
-
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬【提示】博客预览服务启动:&quot;</span>
-
-call hexo s
-
-pause```
-
-</code></pre>
+<pre class="highlight"><code class="hljs bash">@<span class="hljs-built_in">echo</span> off<br><br>chcp 65001<br><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▶\033[0m 已切换中文编码&quot;</span><br><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▶\033[0m 清除缓存已禁用！如果博客样式出现问题，请重新开启&quot;</span><br><br><span class="hljs-built_in">cd</span> /d  D:\UerLinkBlog<br><br>title HexoGo<br><br><span class="hljs-built_in">cd</span><br><br>%call hexo clean%<br><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▶\033[0m 博客开始重新生成:&quot;</span><br><br>call hexo g<br><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▶\033[0m 博客开始上传GitHub:&quot;</span><br><br>call hexo d<br><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[36m▬▬▬▬▬▬▬▬▬▬▬▬▬▶\033[0m 博客预览服务启动:&quot;</span><br><br>call hexo s<br><br>pause<br><br></code></pre>
 
   </div>
   <div>
