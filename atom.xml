@@ -44,6 +44,29 @@
   </entry>
   
   <entry>
+    <title>博客上传命令行测试</title>
+    <link href="http://uerlink.github.io/2023/08/02/%E6%B5%8B%E8%AF%95%E5%8C%BA/%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B5%8B%E8%AF%95/"/>
+    <id>http://uerlink.github.io/2023/08/02/%E6%B5%8B%E8%AF%95%E5%8C%BA/%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B5%8B%E8%AF%95/</id>
+    <published>2023-08-01T16:00:00.000Z</published>
+    <updated>2023-08-02T08:02:53.047Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="博客上传命令行测试"><a class="markdownIt-Anchor" href="#博客上传命令行测试"></a> 博客上传命令行测试</h3><pre class="highlight"><code class="hljs bash">@<span class="hljs-built_in">echo</span> off<br><span class="hljs-built_in">cd</span> /d  D:\UerLinkBlog<br>title HexoGo<br><span class="hljs-built_in">cd</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;清除缓存已禁用...如果博客样式出现问题，请重新开启&quot;</span><br>%call hexo clean%<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;博客开始重新生成:&quot;</span><br>call hexo g<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;博客开始上传GitHub:&quot;</span><br>call hexo d<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;博客预览服务启动:&quot;</span><br>call hexo s<br>pause<br></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;博客上传命令行测试&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#博客上传命令行测试&quot;&gt;&lt;/a&gt; 博客上传命令行测试&lt;/h3&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;hljs bash&quot;&gt;@&lt;span </summary>
+      
+    
+    
+    
+    <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>TP4056芯片充电电路</title>
     <link href="http://uerlink.github.io/2023/08/01/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1/TP4056%E8%8A%AF%E7%89%87%E5%85%85%E7%94%B5%E7%94%B5%E8%B7%AF/"/>
     <id>http://uerlink.github.io/2023/08/01/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1/TP4056%E8%8A%AF%E7%89%87%E5%85%85%E7%94%B5%E7%94%B5%E8%B7%AF/</id>
@@ -122,32 +145,6 @@
     <category term="画画" scheme="http://uerlink.github.io/tags/%E7%94%BB%E7%94%BB/"/>
     
     <category term="踩坑记录" scheme="http://uerlink.github.io/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>本地部署Chat-RWKV-LM</title>
-    <link href="http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2Chat-RWKV-LM/"/>
-    <id>http://uerlink.github.io/2023/07/09/%E6%96%87%E6%A1%A3%E5%8C%BA/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2Chat-RWKV-LM/</id>
-    <published>2023-07-08T16:00:00.000Z</published>
-    <updated>2023-07-08T17:09:02.447Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="本地部署类chatgpt模型-rwkv-lm"><a class="markdownIt-Anchor" href="#本地部署类chatgpt模型-rwkv-lm"></a> 本地部署类ChatGPT模型-RWKV-LM</h1><blockquote><p>无需联网，使用GPU或CPU进行计算得出结果</p></blockquote><h4 id="rwkv-lm官方github地址"><a class="markdownIt-Anchor" href="#rwkv-lm官方github地址"></a> RWKV-LM官方GitHub地址：</h4><p><a href="https://github.com/BlinkDL/RWKV-LM">https://github.com/BlinkDL/RWKV-LM</a></p><h4 id="rwkv-runner-启动器github地址"><a class="markdownIt-Anchor" href="#rwkv-runner-启动器github地址"></a> RWKV-Runner 启动器GitHub地址：</h4><p><a href="https://github.com/josStorer/RWKV-Runner">https://github.com/josStorer/RWKV-Runner</a></p><h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2><ol><li>下载好启动器，把exe放在一个空文件夹</li><li>运行exe，并随便点击一个模型运行，提示需要python环境，下载即可</li></ol><h4 id="参考视频"><a class="markdownIt-Anchor" href="#参考视频"></a> 参考视频</h4><p>【RWKV-Runner发布并开源，可商用的大语言模型，一键启动管理，2-32G显存适配，API兼容，一切前端皆可用】<br /><a href="https://www.bilibili.com/video/BV1hM4y1v76R/?share_source=copy_web&amp;vd_source=17fc3f0d3cf17f45237a57cc5ba97e0e">https://www.bilibili.com/video/BV1hM4y1v76R/?share_source=copy_web&amp;vd_source=17fc3f0d3cf17f45237a57cc5ba97e0e</a></p><h3 id="注意事项"><a class="markdownIt-Anchor" href="#注意事项"></a> 注意事项</h3><blockquote><p>每个模型的所呈现的效果都不用，选择最适合的模型</p></blockquote><h4 id="模型名称"><a class="markdownIt-Anchor" href="#模型名称"></a> 模型名称</h4><p>例如：GPU-2G-3B-world<br />使用GPU计算，显存需要2G，模型参数3B大小，（一般world表示最新的模型）</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;本地部署类chatgpt模型-rwkv-lm&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#本地部署类chatgpt模型-rwkv-lm&quot;&gt;&lt;/a&gt; 本地部署类ChatGPT模型-RWKV-LM&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="AI" scheme="http://uerlink.github.io/tags/AI/"/>
     
   </entry>
   
