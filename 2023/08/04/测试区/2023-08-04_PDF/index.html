@@ -285,7 +285,7 @@
     
     
       <span class="dot"></span>
-      <span>137 字</span>
+      <span>198 字</span>
     
   </div>
   
@@ -295,9 +295,20 @@
     class="post-content">
     <h1 id="hexo框架下博客页面嵌入pdf文件预览"><a class="markdownIt-Anchor" href="#hexo框架下博客页面嵌入pdf文件预览"></a> hexo框架下博客页面嵌入PDF文件预览</h1>
 <h2 id="pdf预览"><a class="markdownIt-Anchor" href="#pdf预览"></a> PDF预览</h2>
+<blockquote>
+<p>由于文件挂载到GitHub上的可能访问有点慢</p>
+</blockquote>
 <h3 id="方法-1"><a class="markdownIt-Anchor" href="#方法-1"></a> 方法 1</h3>
-<h4 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h4>
-<pre class="highlight"><code class="hljs bash">&#123;% pdf pdf/test.pdf %&#125;   ---注意这个test.pdf在<span class="hljs-built_in">source</span>文件下的pdf文件夹中<br></code></pre>
+<h4 id="嵌入代码"><a class="markdownIt-Anchor" href="#嵌入代码"></a> 嵌入代码</h4>
+<pre class="highlight"><code class="hljs awk">&#123;% pdf https:<span class="hljs-regexp">//u</span>erlink.cn<span class="hljs-regexp">/file/</span>pdf/test.pdf %&#125;   <br></code></pre>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>需要在博客根目录中使用git bash或power shell 安装插件</li>
+</ol>
+<pre class="highlight"><code class="hljs ada">$ npm install <span class="hljs-comment">--save hexo-pdf</span><br></code></pre>
+<ol start="2">
+<li>此方法下这个test.pdf在需要外部路径，不能使用/file/pdf/test.pdf</li>
+</ol>
 
 
 	<div class="row">
@@ -307,13 +318,13 @@
 
 
 <h3 id="方法-2"><a class="markdownIt-Anchor" href="#方法-2"></a> 方法 2</h3>
-<h4 id="代码-2"><a class="markdownIt-Anchor" href="#代码-2"></a> 代码</h4>
+<h4 id="嵌入代码-2"><a class="markdownIt-Anchor" href="#嵌入代码-2"></a> 嵌入代码</h4>
 <pre class="highlight"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/file/pdf/test.pdf&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;application/pdf&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;100%&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre>
 <div>
 <embed src="/file/pdf/test.pdf" type="application/pdf" width="100%" height="100%">
 </div>
 <h3 id="方法-3"><a class="markdownIt-Anchor" href="#方法-3"></a> 方法 3</h3>
-<h4 id="代码-3"><a class="markdownIt-Anchor" href="#代码-3"></a> 代码</h4>
+<h4 id="嵌入代码-3"><a class="markdownIt-Anchor" href="#嵌入代码-3"></a> 嵌入代码</h4>
 <pre class="highlight"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/file/pdf/test.pdf&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;100%&quot;</span>&gt;</span> This browser does not support PDFs. Please download the PDF to view it: <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/index.pdf&quot;</span>&gt;</span>Download PDF<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br></code></pre>
 <iframe src="/file/pdf/test.pdf" width="100%" height="100%"> 请您下载预览 <a 
 href="/file/pdf/test.pdf">Download PDF</a> </iframe>
@@ -350,7 +361,7 @@ href="/file/pdf/test.pdf">Download PDF</a> </iframe>
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%85%A5pdf%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text"> hexo框架下博客页面嵌入PDF文件预览</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pdf%E9%A2%84%E8%A7%88"><span class="toc-number">1.1.</span> <span class="toc-text"> PDF预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 方法 1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-2"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 方法 2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-3"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 方法 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 代码</span></a></li></ol></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%85%A5pdf%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text"> hexo框架下博客页面嵌入PDF文件预览</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pdf%E9%A2%84%E8%A7%88"><span class="toc-number">1.1.</span> <span class="toc-text"> PDF预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 方法 1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 嵌入代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-2"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 方法 2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 嵌入代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-3"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 方法 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E4%BB%A3%E7%A0%81-3"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 嵌入代码</span></a></li></ol></li></ol></li></ol></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -400,7 +411,7 @@ href="/file/pdf/test.pdf">Download PDF</a> </iframe>
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%85%A5pdf%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text"> hexo框架下博客页面嵌入PDF文件预览</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pdf%E9%A2%84%E8%A7%88"><span class="toc-number">1.1.</span> <span class="toc-text"> PDF预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 方法 1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-2"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 方法 2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-3"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 方法 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 代码</span></a></li></ol></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%85%A5pdf%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text"> hexo框架下博客页面嵌入PDF文件预览</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pdf%E9%A2%84%E8%A7%88"><span class="toc-number">1.1.</span> <span class="toc-text"> PDF预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 方法 1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 嵌入代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-2"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 方法 2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 嵌入代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-3"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 方法 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E4%BB%A3%E7%A0%81-3"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 嵌入代码</span></a></li></ol></li></ol></li></ol></li></ol>
       </div>
     </article>
   
@@ -585,7 +596,7 @@ href="/file/pdf/test.pdf">Download PDF</a> </iframe>
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%85%A5pdf%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text"> hexo框架下博客页面嵌入PDF文件预览</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pdf%E9%A2%84%E8%A7%88"><span class="toc-number">1.1.</span> <span class="toc-text"> PDF预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 方法 1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-2"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 方法 2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-3"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 方法 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 代码</span></a></li></ol></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%85%A5pdf%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text"> hexo框架下博客页面嵌入PDF文件预览</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pdf%E9%A2%84%E8%A7%88"><span class="toc-number">1.1.</span> <span class="toc-text"> PDF预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 方法 1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 嵌入代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-2"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 方法 2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 嵌入代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-3"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 方法 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5%E4%BB%A3%E7%A0%81-3"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 嵌入代码</span></a></li></ol></li></ol></li></ol></li></ol>
     </article>
   
   
