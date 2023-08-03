@@ -40,6 +40,29 @@
   </entry>
   
   <entry>
+    <title>PDF嵌入测试</title>
+    <link href="http://uerlink.github.io/2023/08/04/%E6%B5%8B%E8%AF%95%E5%8C%BA/2023-08-04_PDF%E5%B5%8C%E5%85%A5%E6%B5%8B%E8%AF%95/"/>
+    <id>http://uerlink.github.io/2023/08/04/%E6%B5%8B%E8%AF%95%E5%8C%BA/2023-08-04_PDF%E5%B5%8C%E5%85%A5%E6%B5%8B%E8%AF%95/</id>
+    <published>2023-08-03T16:00:00.000Z</published>
+    <updated>2023-08-03T17:04:25.991Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="hexo框架下博客页面嵌入pdf文件预览"><a class="markdownIt-Anchor" href="#hexo框架下博客页面嵌入pdf文件预览"></a> hexo框架下博客页面嵌入PDF文件预览</h1><h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3><pre class="highlight"><code class="hljs html">&#123;% pdf pdf/test.pdf %&#125;   ---注意这个test.pdf在source文件下的pdf文件夹中<br></code></pre><h3 id="pdf预览"><a class="markdownIt-Anchor" href="#pdf预览"></a> PDF预览</h3><div class="row">    <embed src="pdf/test.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;hexo框架下博客页面嵌入pdf文件预览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#hexo框架下博客页面嵌入pdf文件预览&quot;&gt;&lt;/a&gt; hexo框架下博客页面嵌入PDF文件预览&lt;/h1&gt;
+&lt;h3 id=&quot;代码&quot;&gt;&lt;a class=</summary>
+      
+    
+    
+    
+    <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>mod开发笔记</title>
     <link href="http://uerlink.github.io/2023/08/02/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-02_mod%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
     <id>http://uerlink.github.io/2023/08/02/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-02_mod%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</id>
@@ -109,30 +132,6 @@
     
     <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>博客上传常见问题</title>
-    <link href="http://uerlink.github.io/2023/08/02/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/2023-08-02_%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
-    <id>http://uerlink.github.io/2023/08/02/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/2023-08-02_%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</id>
-    <published>2023-08-01T16:00:00.000Z</published>
-    <updated>2023-08-02T13:40:50.171Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="解决上传时提示warning-lf-will-be-replaced-by-crlf-in的方法"><a class="markdownIt-Anchor" href="#解决上传时提示warning-lf-will-be-replaced-by-crlf-in的方法"></a> 解决上传时提示warning: LF will be replaced by CRLF in的方法</h2><h4 id="原因"><a class="markdownIt-Anchor" href="#原因"></a> 原因</h4><p>不同操作系统行尾结束符不一样：</p><pre class="highlight"><code class="hljs bash">Uinx/Linux --- \n(LF); <br>windows --- \r\n(CRLF)<br></code></pre><h4 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法</h4><p>在git上配置core.autocrlf属性为false，默认为trun</p> <pre class="highlight"><code class="hljs bash">git config --get core.autocrlf   //查看命令<br><br>git config --global core.autocrlf <span class="hljs-literal">false</span>    //修改命令<br><br></code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;解决上传时提示warning-lf-will-be-replaced-by-crlf-in的方法&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#解决上传时提示warning-lf-will-be-replaced-by-crlf-in的</summary>
-      
-    
-    
-    
-    <category term="踩坑记录" scheme="http://uerlink.github.io/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="blog" scheme="http://uerlink.github.io/tags/blog/"/>
     
   </entry>
   
