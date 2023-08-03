@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-08-03T17:27:51.881Z</updated>
+  <updated>2023-08-03T17:46:34.995Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -21,48 +21,20 @@
     <link href="http://uerlink.github.io/2023/08/04/%E6%B5%8B%E8%AF%95%E5%8C%BA/2023-08-04_PDF/"/>
     <id>http://uerlink.github.io/2023/08/04/%E6%B5%8B%E8%AF%95%E5%8C%BA/2023-08-04_PDF/</id>
     <published>2023-08-03T16:00:00.000Z</published>
-    <updated>2023-08-03T17:27:51.881Z</updated>
+    <updated>2023-08-03T17:46:34.995Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="hexo框架下博客页面嵌入pdf文件预览"><a class="markdownIt-Anchor" href="#hexo框架下博客页面嵌入pdf文件预览"></a> hexo框架下博客页面嵌入PDF文件预览</h1><h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3><pre class="highlight"><code class="hljs html">&#123;% pdf pdf/test.pdf %&#125;   ---注意这个test.pdf在source文件下的pdf文件夹中<br></code></pre><h3 id="pdf预览"><a class="markdownIt-Anchor" href="#pdf预览"></a> PDF预览</h3><div class="row">    <embed src="pdf/test.pdf" width="100%" height="550" type="application/pdf"></div><h2 id="1"><a class="markdownIt-Anchor" href="#1"></a> 1</h2><div class="row">    <embed src="./pdf/test.pdf" width="100%" height="550" type="application/pdf"></div><h2 id="2"><a class="markdownIt-Anchor" href="#2"></a> 2</h2><div class="row">    <embed src="https://github.com/UerLink/UerLink.github.io/tree/main/pdf/test.pdf" width="100%" height="550" type="application/pdf"></div><h2 id="3"><a class="markdownIt-Anchor" href="#3"></a> 3</h2><div class="row">    <embed src="test1.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    <content type="html"><![CDATA[<h1 id="hexo框架下博客页面嵌入pdf文件预览"><a class="markdownIt-Anchor" href="#hexo框架下博客页面嵌入pdf文件预览"></a> hexo框架下博客页面嵌入PDF文件预览</h1><h5 id="结果失败-改天再来弄这个"><a class="markdownIt-Anchor" href="#结果失败-改天再来弄这个"></a> 结果失败-改天再来弄这个</h5><h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3><pre class="highlight"><code class="hljs html">&#123;% pdf pdf/test.pdf %&#125;   ---注意这个test.pdf在source文件下的pdf文件夹中<br></code></pre><h3 id="pdf预览"><a class="markdownIt-Anchor" href="#pdf预览"></a> PDF预览</h3><div class="row">    <embed src="pdf/test.pdf" width="100%" height="550" type="application/pdf"></div><h2 id="1"><a class="markdownIt-Anchor" href="#1"></a> 1</h2><div class="row">    <embed src="./pdf/test.pdf" width="100%" height="550" type="application/pdf"></div><h2 id="2"><a class="markdownIt-Anchor" href="#2"></a> 2</h2><div class="row">    <embed src="https://github.com/UerLink/UerLink.github.io/tree/main/pdf/test.pdf" width="100%" height="550" type="application/pdf"></div><h2 id="3"><a class="markdownIt-Anchor" href="#3"></a> 3</h2><div class="row">    <embed src="test1.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     
       
       
     <summary type="html">&lt;h1 id=&quot;hexo框架下博客页面嵌入pdf文件预览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#hexo框架下博客页面嵌入pdf文件预览&quot;&gt;&lt;/a&gt; hexo框架下博客页面嵌入PDF文件预览&lt;/h1&gt;
-&lt;h3 id=&quot;代码&quot;&gt;&lt;a class=</summary>
+&lt;h5 id=&quot;结果失败-改天再来弄这个&quot;</summary>
       
     
     
     
     <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>pdf-test</title>
-    <link href="http://uerlink.github.io/2023/08/04/pdf.md/"/>
-    <id>http://uerlink.github.io/2023/08/04/pdf.md/</id>
-    <published>2023-08-03T16:00:00.000Z</published>
-    <updated>2023-08-03T17:35:19.129Z</updated>
-    
-    <content type="html"><![CDATA[<div class="row">    <embed src="./test.pdf" width="100%" height="550" type="application/pdf"></div><h2 id="1"><a class="markdownIt-Anchor" href="#1"></a> 1</h2><div class="row">    <embed src="./pdf/test.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;./test.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
-	&lt;/div&gt;
-
-
-
-&lt;h2 id=&quot;1&quot;&gt;&lt;a class=&quot;markdownI</summary>
-      
-    
-    
     
     
   </entry>
@@ -136,6 +108,29 @@
     
     
     <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>博客上传命令行测试</title>
+    <link href="http://uerlink.github.io/2023/08/02/%E6%B5%8B%E8%AF%95%E5%8C%BA/2023-08-02_%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B5%8B%E8%AF%95/"/>
+    <id>http://uerlink.github.io/2023/08/02/%E6%B5%8B%E8%AF%95%E5%8C%BA/2023-08-02_%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B5%8B%E8%AF%95/</id>
+    <published>2023-08-01T16:00:00.000Z</published>
+    <updated>2023-08-02T14:18:49.233Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="批处理bat命令行"><a class="markdownIt-Anchor" href="#批处理bat命令行"></a> 批处理BAT命令行</h1><pre class="highlight"><code class="hljs bash">@<span class="hljs-built_in">echo</span> off<br><br>chcp 65001<br><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬▶ 已切换中文编码&quot;</span><br><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬▶ 清除缓存已禁用！如果博客样式出现问题，请重新开启&quot;</span><br><br><span class="hljs-built_in">cd</span> /d  D:\UerLinkBlog<br><br>title HexoGo<br><br><span class="hljs-built_in">cd</span><br><br>%call hexo clean%<br><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬▶ 博客开始重新生成:&quot;</span><br><br>call hexo g<br><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬▶ 博客开始上传GitHub:&quot;</span><br><br>call hexo d<br><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;▬▬▬▬▬▬▬▬▬▬▬▬▬▶ 博客预览服务启动:&quot;</span><br><br>call hexo s<br><br>pause<br><br></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;批处理bat命令行&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#批处理bat命令行&quot;&gt;&lt;/a&gt; 批处理BAT命令行&lt;/h1&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;hljs bash&quot;&gt;@&lt;span </summary>
+      
+    
+    
+    
+    <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
     
     
   </entry>
