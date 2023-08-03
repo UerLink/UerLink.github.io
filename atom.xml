@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-08-03T16:29:39.130Z</updated>
+  <updated>2023-08-03T17:04:25.991Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>PCB贴片焊接练习</title>
-    <link href="http://uerlink.github.io/2023/08/04/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-03_PCB%E8%B4%B4%E7%89%87%E7%84%8A%E6%8E%A5%E7%BB%83%E4%B9%A0/"/>
-    <id>http://uerlink.github.io/2023/08/04/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-03_PCB%E8%B4%B4%E7%89%87%E7%84%8A%E6%8E%A5%E7%BB%83%E4%B9%A0/</id>
-    <published>2023-08-03T16:00:00.000Z</published>
-    <updated>2023-08-03T16:29:39.130Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="常用贴片元器件焊接练习技巧记录"><a class="markdownIt-Anchor" href="#常用贴片元器件焊接练习技巧记录"></a> 常用贴片元器件焊接练习技巧记录</h1><h4 id="视频如下"><a class="markdownIt-Anchor" href="#视频如下"></a> 视频如下：</h4><div><iframe src="//player.bilibili.com/player.html?aid=346646950&bvid=BV1aR4y1X7wN&cid=866348877&page=1" allowfullscreen="allowfullscreen" width="100%" height="450" scrolling="no" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" allowfullscreen="true"></iframe></div><p>【贴片集成IC如何用电烙铁焊接？掌握这些技巧，几分钟从入门到熟练】 <a href="https://www.bilibili.com/video/BV1aR4y1X7wN/?share_source=copy_web&amp;vd_source=17fc3f0d3cf17f45237a57cc5ba97e0e">https://www.bilibili.com/video/BV1aR4y1X7wN/?share_source=copy_web&amp;vd_source=17fc3f0d3cf17f45237a57cc5ba97e0e</a></p><h3 id="0805封装下的贴片电阻电容"><a class="markdownIt-Anchor" href="#0805封装下的贴片电阻电容"></a> 0805封装下的贴片电阻，电容</h3><ol><li>先在焊头挂一点锡，挂不住可以沾点助焊剂</li><li>再焊盘一端点上一点锡，另一端先不管</li><li>镊子夹住元器件，放好位置</li><li>焊头点上一点助焊剂，焊盘上的锡融化，固定好元器件</li><li>pcb转180度，焊接另一半，左手拿锡丝，挂到焊头上。焊头再把锡挂到元器件上</li></ol><h4 id="特殊情况"><a class="markdownIt-Anchor" href="#特殊情况"></a> 特殊情况</h4><p><strong>注意</strong>：镊子要夹稳，一点要固定好元器件再焊另一端，不然元器件会沾到焊头上去了<br /><strong>处理点锡拉尖</strong>：焊头沾一点锡膏，再把尖头压下去。</p><h3 id="多引脚芯片焊接"><a class="markdownIt-Anchor" href="#多引脚芯片焊接"></a> 多引脚芯片焊接</h3><ol><li>先摆好芯片，然后固定芯片的对角线引脚</li><li>刷上助焊剂，采用拖焊技巧，对芯片进行焊接</li></ol><h4 id="特殊情况-2"><a class="markdownIt-Anchor" href="#特殊情况-2"></a> 特殊情况</h4><p><strong>注意</strong>：芯片焊接时，最长时间不要超过3秒，温度260~350，可轻微的用手指感受一下芯片温度，过烫就让芯片冷却再焊接</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;常用贴片元器件焊接练习技巧记录&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#常用贴片元器件焊接练习技巧记录&quot;&gt;&lt;/a&gt; 常用贴片元器件焊接练习技巧记录&lt;/h1&gt;
-&lt;h4 id=&quot;视频如下&quot;&gt;&lt;a class=&quot;markdownIt-A</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>PDF嵌入测试</title>
@@ -58,6 +35,29 @@
     
     
     <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PCB贴片焊接练习</title>
+    <link href="http://uerlink.github.io/2023/08/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-03_PCB%E8%B4%B4%E7%89%87%E7%84%8A%E6%8E%A5%E7%BB%83%E4%B9%A0/"/>
+    <id>http://uerlink.github.io/2023/08/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-03_PCB%E8%B4%B4%E7%89%87%E7%84%8A%E6%8E%A5%E7%BB%83%E4%B9%A0/</id>
+    <published>2023-08-02T16:00:00.000Z</published>
+    <updated>2023-08-03T17:05:45.333Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="常用贴片元器件焊接练习技巧记录"><a class="markdownIt-Anchor" href="#常用贴片元器件焊接练习技巧记录"></a> 常用贴片元器件焊接练习技巧记录</h1><h4 id="视频如下"><a class="markdownIt-Anchor" href="#视频如下"></a> 视频如下：</h4><div><iframe src="//player.bilibili.com/player.html?aid=346646950&bvid=BV1aR4y1X7wN&cid=866348877&page=1" allowfullscreen="allowfullscreen" width="100%" height="450" scrolling="no" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" allowfullscreen="true"></iframe></div><p>【贴片集成IC如何用电烙铁焊接？掌握这些技巧，几分钟从入门到熟练】 <a href="https://www.bilibili.com/video/BV1aR4y1X7wN/?share_source=copy_web&amp;vd_source=17fc3f0d3cf17f45237a57cc5ba97e0e">https://www.bilibili.com/video/BV1aR4y1X7wN/?share_source=copy_web&amp;vd_source=17fc3f0d3cf17f45237a57cc5ba97e0e</a></p><h3 id="0805封装下的贴片电阻电容"><a class="markdownIt-Anchor" href="#0805封装下的贴片电阻电容"></a> 0805封装下的贴片电阻，电容</h3><ol><li>先在焊头挂一点锡，挂不住可以沾点助焊剂</li><li>再焊盘一端点上一点锡，另一端先不管</li><li>镊子夹住元器件，放好位置</li><li>焊头点上一点助焊剂，焊盘上的锡融化，固定好元器件</li><li>pcb转180度，焊接另一半，左手拿锡丝，挂到焊头上。焊头再把锡挂到元器件上</li></ol><h4 id="特殊情况"><a class="markdownIt-Anchor" href="#特殊情况"></a> 特殊情况</h4><p><strong>注意</strong>：镊子要夹稳，一点要固定好元器件再焊另一端，不然元器件会沾到焊头上去了<br /><strong>处理点锡拉尖</strong>：焊头沾一点锡膏，再把尖头压下去。</p><h3 id="多引脚芯片焊接"><a class="markdownIt-Anchor" href="#多引脚芯片焊接"></a> 多引脚芯片焊接</h3><ol><li>先摆好芯片，然后固定芯片的对角线引脚</li><li>刷上助焊剂，采用拖焊技巧，对芯片进行焊接</li></ol><h4 id="特殊情况-2"><a class="markdownIt-Anchor" href="#特殊情况-2"></a> 特殊情况</h4><p><strong>注意</strong>：芯片焊接时，最长时间不要超过3秒，温度260~350，可轻微的用手指感受一下芯片温度，过烫就让芯片冷却再焊接</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;常用贴片元器件焊接练习技巧记录&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#常用贴片元器件焊接练习技巧记录&quot;&gt;&lt;/a&gt; 常用贴片元器件焊接练习技巧记录&lt;/h1&gt;
+&lt;h4 id=&quot;视频如下&quot;&gt;&lt;a class=&quot;markdownIt-A</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
     
     
   </entry>
