@@ -1,4 +1,4 @@
-@media screen and (max-width: 877px) {
+@media screen and (max-width: 550px) {
     #book .page .content {
         flex-direction: column;
         align-items: center;
@@ -98,7 +98,7 @@
 }
 
 #book .content li {
-    width: 380px;
+    width: 320px;
     list-style: none;
     margin-bottom: 16px;
     border-radius: 8px;
@@ -115,7 +115,7 @@
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    padding: 16px 12px;
+    padding: 16px 0px;
     line-height: 1.7;
     list-style: none;
 }
@@ -189,7 +189,7 @@
 }
 
 #book .content li .info>div {
-    margin-left: 26px;
+    margin-left: 16px;
 }
 
 #book .content li .info h3 {
