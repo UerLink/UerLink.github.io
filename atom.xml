@@ -40,6 +40,30 @@
   </entry>
   
   <entry>
+    <title>格式化编辑插件</title>
+    <link href="http://uerlink.github.io/2024/03/16/%E6%B5%8B%E8%AF%95%E5%8C%BA/2024-03-16_%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%BC%96%E8%BE%91%E6%8F%92%E4%BB%B6/"/>
+    <id>http://uerlink.github.io/2024/03/16/%E6%B5%8B%E8%AF%95%E5%8C%BA/2024-03-16_%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%BC%96%E8%BE%91%E6%8F%92%E4%BB%B6/</id>
+    <published>2024-03-15T16:00:00.000Z</published>
+    <updated>2024-03-16T08:28:38.658Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="editing-toolbar-插件"><a class="markdownIt-Anchor" href="#editing-toolbar-插件"></a> Editing Toolbar 插件</h3><blockquote><p>显示一个标题栏在 obsidian 中，可以进行富文本操作</p></blockquote><h3 id="演示文案"><a class="markdownIt-Anchor" href="#演示文案"></a> 演示文案</h3><center>obsidian介绍</center><p><font color="#2DC26B">Obsidian</font>是一款强大的笔记和知识管理软件，它以其独特的特性和灵活的使用方式赢得了广大用户的喜爱。<sup>【1】</sup></p><p><span style="background:#d2cbff">Obsidian的核心在于其强大的链接功能</span>，用户可以轻松创建和管理笔记之间的关联，形成一张庞大的知识网络。这种网状的知识结构不仅便于用户快速找到所需信息，还能促进思维的发散和深化。</p><p>此外，Obsidian还支持Markdown语法，使得用户可以方便地编辑和格式化笔记内容。同时，它还提供了丰富的插件和主题选择，用户可以根据自己的喜好和需求进行个性化定制。</p><p>Obsidian的界面简洁明了，操作便捷，无论是对于<font color="#953734">学习、工作还是研究</font>，都能提供极大的帮助。它让知识管理变得更加高效和有趣，是一款值得一试的软件。</p><p>总的来说，Obsidian是一款功能强大、易于使用的笔记和<strong>知识管理软件</strong>，它能够帮助用户更好地组织和管理自己的知识和信息，<font color="#548dd4">提升学习和工作效率</font>。</p><p align="right">【1】文心一言3.5生成结果</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;editing-toolbar-插件&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#editing-toolbar-插件&quot;&gt;&lt;/a&gt; Editing Toolbar 插件&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;显示一个标题栏在 ob</summary>
+      
+    
+    
+    
+    <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>3D建模笔记</title>
     <link href="http://uerlink.github.io/2024/02/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2024/2024-02-03_3D%E5%BB%BA%E6%A8%A1%E7%AC%94%E8%AE%B0/"/>
     <id>http://uerlink.github.io/2024/02/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2024/2024-02-03_3D%E5%BB%BA%E6%A8%A1%E7%AC%94%E8%AE%B0/</id>
@@ -116,29 +140,6 @@
     
     
     <category term="读书笔记" scheme="http://uerlink.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《平面国》</title>
-    <link href="http://uerlink.github.io/2023/11/28/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/2023-11-28_%E5%B9%B3%E9%9D%A2%E5%9B%BD/"/>
-    <id>http://uerlink.github.io/2023/11/28/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/2023-11-28_%E5%B9%B3%E9%9D%A2%E5%9B%BD/</id>
-    <published>2023-11-27T16:00:00.000Z</published>
-    <updated>2023-12-18T06:02:41.903Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="平面国-读书笔记"><a class="markdownIt-Anchor" href="#平面国-读书笔记"></a> 平面国-读书笔记</h1><h3 id="感想"><a class="markdownIt-Anchor" href="#感想"></a> 感想</h3><p>这本书阅读的时间跨度很大，大概有几个学期了。买kindle的时候开始看的，每次都是在回家或去学校的火车上阅读的。2023-11-28 终于看完啦。<br />读完该书我的感想很多，开拓思维去想象二维的一个世界，里面的人长什么样子，世界运行的规则又是什么。<br />不要固步自封，”向上，而不是向北“。在成为直线国王、正方形或球形使者时要虚心听取意见。<br />带着现有的知识与思维去与别人讨论问题时，不要认为我已经了解东西，别人就也应该知道。不要认为自己比其他人多一点知识就高高自傲。</p><h3 id="摘抄"><a class="markdownIt-Anchor" href="#摘抄"></a> 摘抄</h3><pre><code>网络真的让我们接触更多信息、鼓励我们思考了吗？还是恰恰相反，科技允许我们制作出巨大的泡泡，每天生活于其中，只与和自己观点相近的人交流？若是后者，这种所谓的“交流”与点国国王的自言自语有何不同？</code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;平面国-读书笔记&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#平面国-读书笔记&quot;&gt;&lt;/a&gt; 平面国-读书笔记&lt;/h1&gt;
-&lt;h3 id=&quot;感想&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#感想&quot;&gt;&lt;/a&gt; </summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
     
   </entry>
   
