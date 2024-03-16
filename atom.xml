@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2023-08-03T18:31:51.997Z</updated>
+  <updated>2024-03-16T02:28:23.776Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -17,41 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>PDF嵌入测试</title>
-    <link href="http://uerlink.github.io/2023/08/04/%E6%B5%8B%E8%AF%95%E5%8C%BA/2023-08-04_PDF/"/>
-    <id>http://uerlink.github.io/2023/08/04/%E6%B5%8B%E8%AF%95%E5%8C%BA/2023-08-04_PDF/</id>
-    <published>2023-08-03T16:00:00.000Z</published>
-    <updated>2023-08-03T18:31:51.997Z</updated>
+    <title>obsidian + picgo 图片上传</title>
+    <link href="http://uerlink.github.io/2024/03/16/%E6%B5%8B%E8%AF%95%E5%8C%BA/2024-03-16_picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/"/>
+    <id>http://uerlink.github.io/2024/03/16/%E6%B5%8B%E8%AF%95%E5%8C%BA/2024-03-16_picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/</id>
+    <published>2024-03-15T16:00:00.000Z</published>
+    <updated>2024-03-16T02:28:23.776Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="hexo框架下博客页面嵌入pdf文件预览"><a class="markdownIt-Anchor" href="#hexo框架下博客页面嵌入pdf文件预览"></a> hexo框架下博客页面嵌入PDF文件预览</h1><h2 id="pdf预览"><a class="markdownIt-Anchor" href="#pdf预览"></a> PDF预览</h2><blockquote><p>由于文件挂载到GitHub上的可能访问有点慢</p></blockquote><h3 id="方法-1"><a class="markdownIt-Anchor" href="#方法-1"></a> 方法 1</h3><h4 id="嵌入代码"><a class="markdownIt-Anchor" href="#嵌入代码"></a> 嵌入代码</h4><pre class="highlight"><code class="hljs awk">&#123;% pdf https:<span class="hljs-regexp">//u</span>erlink.cn<span class="hljs-regexp">/file/</span>pdf/test.pdf %&#125;   <br></code></pre><p><strong>注意</strong>：</p><ol><li>需要在博客根目录中使用git bash或power shell 安装插件</li></ol><pre class="highlight"><code class="hljs ada">$ npm install <span class="hljs-comment">--save hexo-pdf</span><br></code></pre><ol start="2"><li>此方法下这个test.pdf在需要外部路径，不能使用/file/pdf/test.pdf</li></ol><div class="row">    <embed src="https://uerlink.cn/file/pdf/test.pdf" width="100%" height="550" type="application/pdf"></div><h3 id="方法-2"><a class="markdownIt-Anchor" href="#方法-2"></a> 方法 2</h3><h4 id="嵌入代码-2"><a class="markdownIt-Anchor" href="#嵌入代码-2"></a> 嵌入代码</h4><pre class="highlight"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/file/pdf/test.pdf&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;application/pdf&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;100%&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre><div><embed src="/file/pdf/test.pdf" type="application/pdf" width="100%" height="100%"></div><h3 id="方法-3"><a class="markdownIt-Anchor" href="#方法-3"></a> 方法 3</h3><h4 id="嵌入代码-3"><a class="markdownIt-Anchor" href="#嵌入代码-3"></a> 嵌入代码</h4><pre class="highlight"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/file/pdf/test.pdf&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;100%&quot;</span>&gt;</span> This browser does not support PDFs. Please download the PDF to view it: <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/index.pdf&quot;</span>&gt;</span>Download PDF<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br></code></pre><iframe src="/file/pdf/test.pdf" width="100%" height="100%"> 请您下载预览 <a href="/file/pdf/test.pdf">Download PDF</a> </iframe>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;hexo框架下博客页面嵌入pdf文件预览&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#hexo框架下博客页面嵌入pdf文件预览&quot;&gt;&lt;/a&gt; hexo框架下博客页面嵌入PDF文件预览&lt;/h1&gt;
-&lt;h2 id=&quot;pdf预览&quot;&gt;&lt;a cla</summary>
-      
-    
-    
-    
-    <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Office文件下载</title>
-    <link href="http://uerlink.github.io/2023/08/04/%E6%B5%8B%E8%AF%95%E5%8C%BA/2023-08-04_office%E6%96%87%E4%BB%B6/"/>
-    <id>http://uerlink.github.io/2023/08/04/%E6%B5%8B%E8%AF%95%E5%8C%BA/2023-08-04_office%E6%96%87%E4%BB%B6/</id>
-    <published>2023-08-03T16:00:00.000Z</published>
-    <updated>2023-08-03T18:34:04.037Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="将文件保存在sourcefile文件夹内上传github并通过链接下载"><a class="markdownIt-Anchor" href="#将文件保存在sourcefile文件夹内上传github并通过链接下载"></a> 将文件保存在source/file/文件夹内上传GitHub并通过链接下载</h1><h3 id="测试下载word"><a class="markdownIt-Anchor" href="#测试下载word"></a> 测试下载Word</h3><h4 id="嵌入代码"><a class="markdownIt-Anchor" href="#嵌入代码"></a> 嵌入代码</h4><pre class="highlight"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>test.docx<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/file/office/test.docx&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>下载<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre><div><b>test.docx</b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/file/office/test.docx"><button name="1">下载</button></a></div><h3 id="测试下载execl"><a class="markdownIt-Anchor" href="#测试下载execl"></a> 测试下载Execl</h3><h4 id="嵌入代码-2"><a class="markdownIt-Anchor" href="#嵌入代码-2"></a> 嵌入代码</h4><pre class="highlight"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>test.docx<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/file/office/test.xlsx&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>下载<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre><div><b>test.xlsx</b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/file/office/test.xlsx"><button name="1">下载</button></a></div><h3 id="测试下载ppt"><a class="markdownIt-Anchor" href="#测试下载ppt"></a> 测试下载PPT</h3><h4 id="嵌入代码-3"><a class="markdownIt-Anchor" href="#嵌入代码-3"></a> 嵌入代码</h4><pre class="highlight"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>test.pptx<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/file/office/test.pptx&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>下载<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre><div><b>test.pptx</b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/file/office/test.pptx"><button name="1">下载</button></a></div>]]></content>
+    <content type="html"><![CDATA[<h1 id="obsidian-picgo-图片上传"><a class="markdownIt-Anchor" href="#obsidian-picgo-图片上传"></a> obsidian + picgo 图片上传</h1><h3 id="教程"><a class="markdownIt-Anchor" href="#教程"></a> 教程</h3><h4 id="1安装-picgo-软件"><a class="markdownIt-Anchor" href="#1安装-picgo-软件"></a> 1.安装 picgo 软件</h4><p><a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo</a></p><h4 id="2配置picgo软件"><a class="markdownIt-Anchor" href="#2配置picgo软件"></a> 2.配置picgo软件</h4><p>图床使用SMMS<br /><a href="https://smms.app/">https://smms.app/</a></p><h4 id="3安装-obsidian-image-auto-upload-plugin-插件"><a class="markdownIt-Anchor" href="#3安装-obsidian-image-auto-upload-plugin-插件"></a> 3.安装 obsidian-image-auto-upload-plugin 插件</h4><p><a href="https://github.com/renmu123/obsidian-image-auto-upload-plugin/blob/master/readme-zh.md">obsidian-image-auto-upload-plugin/readme-zh.md at master · renmu123/obsidian-image-auto-upload-plugin · GitHub</a></p><h3 id="测试图片效果"><a class="markdownIt-Anchor" href="#测试图片效果"></a> 测试图片效果</h3><p><code>![]-(附件/2024-03-16_picgo图片上传/image-20240316100436702.png)</code><br /><img src="https://s2.loli.net/2024/03/16/BnbUzAQLE3tqXSM.png" alt="" / srcset="/file/image/缓冲加载.gif" data-src="https://s2.loli.net/2024/03/16/BnbUzAQLE3tqXSM.png" class="lozad post-image"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;将文件保存在sourcefile文件夹内上传github并通过链接下载&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#将文件保存在sourcefile文件夹内上传github并通过链接下载&quot;&gt;&lt;/a&gt; 将文件保存在source/file</summary>
+    <summary type="html">&lt;h1 id=&quot;obsidian-picgo-图片上传&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#obsidian-picgo-图片上传&quot;&gt;&lt;/a&gt; obsidian + picgo 图片上传&lt;/h1&gt;
+&lt;h3 id=&quot;教程&quot;&gt;&lt;a class=&quot;</summary>
       
     
     
@@ -62,42 +40,21 @@
   </entry>
   
   <entry>
-    <title>PCB贴片焊接练习</title>
-    <link href="http://uerlink.github.io/2023/08/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-03_PCB%E8%B4%B4%E7%89%87%E7%84%8A%E6%8E%A5%E7%BB%83%E4%B9%A0/"/>
-    <id>http://uerlink.github.io/2023/08/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-03_PCB%E8%B4%B4%E7%89%87%E7%84%8A%E6%8E%A5%E7%BB%83%E4%B9%A0/</id>
-    <published>2023-08-02T16:00:00.000Z</published>
-    <updated>2023-08-03T17:05:45.333Z</updated>
+    <title>3D建模笔记</title>
+    <link href="http://uerlink.github.io/2024/02/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2024/2024-02-03_3D%E5%BB%BA%E6%A8%A1%E7%AC%94%E8%AE%B0/"/>
+    <id>http://uerlink.github.io/2024/02/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2024/2024-02-03_3D%E5%BB%BA%E6%A8%A1%E7%AC%94%E8%AE%B0/</id>
+    <published>2024-02-02T16:00:00.000Z</published>
+    <updated>2024-03-01T08:12:59.043Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="常用贴片元器件焊接练习技巧记录"><a class="markdownIt-Anchor" href="#常用贴片元器件焊接练习技巧记录"></a> 常用贴片元器件焊接练习技巧记录</h1><h4 id="视频如下"><a class="markdownIt-Anchor" href="#视频如下"></a> 视频如下：</h4><div><iframe src="//player.bilibili.com/player.html?aid=346646950&bvid=BV1aR4y1X7wN&cid=866348877&page=1" allowfullscreen="allowfullscreen" width="100%" height="450" scrolling="no" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" allowfullscreen="true"></iframe></div><p>【贴片集成IC如何用电烙铁焊接？掌握这些技巧，几分钟从入门到熟练】 <a href="https://www.bilibili.com/video/BV1aR4y1X7wN/?share_source=copy_web&amp;vd_source=17fc3f0d3cf17f45237a57cc5ba97e0e">https://www.bilibili.com/video/BV1aR4y1X7wN/?share_source=copy_web&amp;vd_source=17fc3f0d3cf17f45237a57cc5ba97e0e</a></p><h3 id="0805封装下的贴片电阻电容"><a class="markdownIt-Anchor" href="#0805封装下的贴片电阻电容"></a> 0805封装下的贴片电阻，电容</h3><ol><li>先在焊头挂一点锡，挂不住可以沾点助焊剂</li><li>再焊盘一端点上一点锡，另一端先不管</li><li>镊子夹住元器件，放好位置</li><li>焊头点上一点助焊剂，焊盘上的锡融化，固定好元器件</li><li>pcb转180度，焊接另一半，左手拿锡丝，挂到焊头上。焊头再把锡挂到元器件上</li></ol><h4 id="特殊情况"><a class="markdownIt-Anchor" href="#特殊情况"></a> 特殊情况</h4><p><strong>注意</strong>：镊子要夹稳，一点要固定好元器件再焊另一端，不然元器件会沾到焊头上去了<br /><strong>处理点锡拉尖</strong>：焊头沾一点锡膏，再把尖头压下去。</p><h3 id="多引脚芯片焊接"><a class="markdownIt-Anchor" href="#多引脚芯片焊接"></a> 多引脚芯片焊接</h3><ol><li>先摆好芯片，然后固定芯片的对角线引脚</li><li>刷上助焊剂，采用拖焊技巧，对芯片进行焊接</li></ol><h4 id="特殊情况-2"><a class="markdownIt-Anchor" href="#特殊情况-2"></a> 特殊情况</h4><p><strong>注意</strong>：芯片焊接时，最长时间不要超过3秒，温度260~350，可轻微的用手指感受一下芯片温度，过烫就让芯片冷却再焊接</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;常用贴片元器件焊接练习技巧记录&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#常用贴片元器件焊接练习技巧记录&quot;&gt;&lt;/a&gt; 常用贴片元器件焊接练习技巧记录&lt;/h1&gt;
-&lt;h4 id=&quot;视频如下&quot;&gt;&lt;a class=&quot;markdownIt-A</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>mod开发笔记</title>
-    <link href="http://uerlink.github.io/2023/08/02/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-02_mod%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
-    <id>http://uerlink.github.io/2023/08/02/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-02_mod%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</id>
-    <published>2023-08-01T16:00:00.000Z</published>
-    <updated>2023-08-02T14:19:53.049Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="星露谷物语mod开发"><a class="markdownIt-Anchor" href="#星露谷物语mod开发"></a> 星露谷物语mod开发</h1><h3 id="每天早晨打印一条消息的代码"><a class="markdownIt-Anchor" href="#每天早晨打印一条消息的代码"></a> 每天早晨打印一条消息的代码</h3><pre class="highlight"><code class="hljs C#"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span>模组的主要入口点。<span class="hljs-doctag">&lt;/summary&gt;</span></span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ModEntry</span> : <span class="hljs-title">Mod</span><br>&#123;<br>    <span class="hljs-comment">/**********</span><br><span class="hljs-comment">    ** 公共方法</span><br><span class="hljs-comment">    *********/</span><br>    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span>模组入口点，加载模组后自动调用<span class="hljs-doctag">&lt;/summary&gt;</span></span><br>    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name=&quot;helper&quot;&gt;</span>提供用于编写模组的简化API<span class="hljs-doctag">&lt;/param&gt;</span></span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Entry</span>(<span class="hljs-params">IModHelper helper</span>)</span><br>    &#123;<br>        <span class="hljs-comment">// 事件 += 方法</span><br>        helper.Events.GameLoop.DayStarted += <span class="hljs-keyword">this</span>.OnDayStarted;<br>    &#125;<br>    <br>    <span class="hljs-comment">/**********</span><br><span class="hljs-comment">    ** 私有方法</span><br><span class="hljs-comment">    *********/</span><br>    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span>在新的一天开始后调用的方法<span class="hljs-doctag">&lt;/summary&gt;</span></span><br>    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name=&quot;sender&quot;&gt;</span>事件对象<span class="hljs-doctag">&lt;/param&gt;</span></span><br>    <span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;param name=&quot;e&quot;&gt;</span>事件参数<span class="hljs-doctag">&lt;/param&gt;</span></span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnDayStarted</span>(<span class="hljs-params"><span class="hljs-built_in">object</span> sender, DayStartedEventArgs e</span>)</span><br>    &#123;<br>       <span class="hljs-keyword">this</span>.Monitor.Log(<span class="hljs-string">$&quot;新的一天到来了！<span class="hljs-subst">&#123;Game1.player.Name&#125;</span> 享受你的新一天吧&quot;</span>, LogLevel.Debug);<br>    &#125;<br>&#125;<br></code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="3d建模笔记"><a class="markdownIt-Anchor" href="#3d建模笔记"></a> 3D建模笔记</h1><pre><code>solidworks</code></pre><h3 id="绘制螺栓-螺母"><a class="markdownIt-Anchor" href="#绘制螺栓-螺母"></a> 绘制螺栓、螺母</h3><h4 id="螺母"><a class="markdownIt-Anchor" href="#螺母"></a> 螺母</h4><h5 id="绘制孔"><a class="markdownIt-Anchor" href="#绘制孔"></a> 绘制孔</h5><ol><li>使用异型孔向导</li><li>旋转“孔类型”为“孔”</li><li>标准为GB（国标）</li><li>类型为“螺钉间隙”</li><li>孔规格大小设置为“自己想要的大小“，包含三个尺寸（紧密、正常、松弛）</li><li>其他根据情况调节</li></ol><h5 id="绘制螺纹"><a class="markdownIt-Anchor" href="#绘制螺纹"></a> 绘制螺纹</h5><ol><li>异型孔向导下拉菜单选择”螺纹线“</li><li>类型选择”MericDie“</li><li>螺纹线方法选择”拉伸螺纹线“</li><li>镜像轮廓–垂直镜像</li><li>螺纹选项–根据开始面修剪–根据结束面修剪</li></ol><h4 id="螺栓"><a class="markdownIt-Anchor" href="#螺栓"></a> 螺栓</h4><h5 id="绘制螺柱"><a class="markdownIt-Anchor" href="#绘制螺柱"></a> 绘制螺柱</h5><ol><li>异型孔向导下拉菜单选择”螺柱向导“</li><li>标准选择”GB“</li><li>类型选择”机械螺纹“</li><li>大小选择自己想要的</li></ol><h5 id="绘制螺纹-2"><a class="markdownIt-Anchor" href="#绘制螺纹-2"></a> 绘制螺纹</h5><ol><li>异型孔向导下拉菜单选择”螺纹线“</li><li>类型选择”MericDie“</li><li>螺纹线方法选择”剪切螺纹线“</li><li>螺纹选项–根据开始面修剪–根据结束面修剪</li></ol><h3 id="旋转建模"><a class="markdownIt-Anchor" href="#旋转建模"></a> 旋转建模</h3><ol><li>先画一根中心线，然后沿着中心线画想要的形状</li><li>点击中心线，接着在在特征中旋转凸台</li></ol><h3 id="打孔误差"><a class="markdownIt-Anchor" href="#打孔误差"></a> 打孔误差</h3><p>1.放置磁铁时，将孔增大0.4mm</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;星露谷物语mod开发&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#星露谷物语mod开发&quot;&gt;&lt;/a&gt; 星露谷物语mod开发&lt;/h1&gt;
-&lt;h3 id=&quot;每天早晨打印一条消息的代码&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;3d建模笔记&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#3d建模笔记&quot;&gt;&lt;/a&gt; 3D建模笔记&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;solidworks
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;绘制螺栓-螺母&quot;&gt;&lt;a class=&quot;</summary>
       
     
     
@@ -105,26 +62,77 @@
     <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
     
     
-    <category term="mod" scheme="http://uerlink.github.io/tags/mod/"/>
+    <category term="3D建模" scheme="http://uerlink.github.io/tags/3D%E5%BB%BA%E6%A8%A1/"/>
     
-    <category term="game" scheme="http://uerlink.github.io/tags/game/"/>
+    <category term="3D打印" scheme="http://uerlink.github.io/tags/3D%E6%89%93%E5%8D%B0/"/>
     
   </entry>
   
   <entry>
-    <title>算法练习</title>
-    <link href="http://uerlink.github.io/2023/08/02/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-02_%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/"/>
-    <id>http://uerlink.github.io/2023/08/02/%E6%96%87%E6%A1%A3%E5%8C%BA/2023-08-02_%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0/</id>
-    <published>2023-08-01T16:00:00.000Z</published>
-    <updated>2023-08-02T14:31:10.861Z</updated>
+    <title>3D打印笔记</title>
+    <link href="http://uerlink.github.io/2024/02/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2024/2024-02-03_3D%E6%89%93%E5%8D%B0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://uerlink.github.io/2024/02/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2024/2024-02-03_3D%E6%89%93%E5%8D%B0%E7%AC%94%E8%AE%B0/</id>
+    <published>2024-02-02T16:00:00.000Z</published>
+    <updated>2024-03-01T08:23:56.373Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="简单算法练习"><a class="markdownIt-Anchor" href="#简单算法练习"></a> 简单算法练习</h1><h3 id="习题5-2"><a class="markdownIt-Anchor" href="#习题5-2"></a> 习题5-2</h3><p>分式化简。设计算法，将一个给定的真分数化简为最简分数形式，例如将6/8 化简为 3/4，使用C++语言</p><h4 id="关键代码辗转相除法必背"><a class="markdownIt-Anchor" href="#关键代码辗转相除法必背"></a> 关键代码(辗转相除法)（必背）</h4><p>gcd函数导入a，b，判断b是否等于0，如果等于就返回a的值，然后接着执行gcd函数将b填入a，a % b</p><pre class="highlight"><code class="hljs C++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">gcd</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">gcd</span>(b, a % b);<br>&#125;<br></code></pre><h4 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h4><pre class="highlight"><code class="hljs c++"><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">gcd</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> </span>&#123;<br><br>    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) &#123;<br><br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">gcd</span>(b, a % b);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> x, y;<br>    cout &lt;&lt; <span class="hljs-string">&quot;请输入分子和分母：&quot;</span> &lt;&lt; endl;<br>    cin &gt;&gt; x &gt;&gt; y;<br>    <span class="hljs-type">int</span> g = <span class="hljs-built_in">gcd</span>(x, y);<br>    x /= g;<br>    y /= g;<br>    cout &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot;/&quot;</span> &lt;&lt; y &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre><h4 id="解释"><a class="markdownIt-Anchor" href="#解释"></a> 解释</h4><pre class="highlight"><code class="hljs C++"><br><span class="hljs-number">1.</span> 求出分子和分母的最大公约数（使用辗转相除法）。<br><br><span class="hljs-number">2.</span> 将分子和分母同时除以最大公约数，得到最简分数形式。<br><br></code></pre><h3 id="习题5-3"><a class="markdownIt-Anchor" href="#习题5-3"></a> 习题5-3</h3><p>设计算法，判断一个大整数能否被11整除。可以采用以下方法：将该数的十进制表示从右端开始，每两位一组构成一个整数，然后将这些数相加，判断其能否被11整除，例如将562843748 分割成 5，62，84，37，48，然后判断（5+62+84+37+48）能否被11整除</p><h4 id="关键代码必背"><a class="markdownIt-Anchor" href="#关键代码必背"></a> 关键代码（必背）</h4><pre class="highlight"><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">divisible</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>    <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) &#123;<br>        sum += n % <span class="hljs-number">100</span>;<br>        n /= <span class="hljs-number">100</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> (sum % <span class="hljs-number">11</span> == <span class="hljs-number">0</span>);<br>&#125;<br><br></code></pre><h4 id="代码-2"><a class="markdownIt-Anchor" href="#代码-2"></a> 代码</h4><pre class="highlight"><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">divisible</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>    <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) &#123;<br>        sum += n % <span class="hljs-number">100</span>;<br>        n /= <span class="hljs-number">100</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> (sum % <span class="hljs-number">11</span> == <span class="hljs-number">0</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">divisible</span>(n)) &#123;<br>        cout&lt;&lt;<span class="hljs-string">&quot;可以被11整除&quot;</span>&lt;&lt;endl;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        cout&lt;&lt;<span class="hljs-string">&quot;不可以被11整除&quot;</span>&lt;&lt;endl;<br>    &#125;<br>&#125;<br></code></pre><h4 id="解释-2"><a class="markdownIt-Anchor" href="#解释-2"></a> 解释</h4><pre class="highlight"><code class="hljs excel"><span class="hljs-number">1</span>. 初始化<span class="hljs-built_in">sum</span>为<span class="hljs-number">0</span>。<br><span class="hljs-number">2</span>. 将大整数<span class="hljs-built_in">n</span>逐步取出最后两位数字，加到<span class="hljs-built_in">sum</span>中，直到<span class="hljs-built_in">n</span>变为<span class="hljs-number">0</span>为止。<br><span class="hljs-number">3</span>. 判断<span class="hljs-built_in">sum</span>能否被<span class="hljs-number">11</span>整除，如果能，则该大整数能被<span class="hljs-number">11</span>整除，否则不能。<br><br></code></pre><h3 id="习题5-5题"><a class="markdownIt-Anchor" href="#习题5-5题"></a> 习题5 - 5题</h3><p>设计一个算法，在数组r[n]中删除重复的元素，要求移动元素的次数较少，并使剩余元素间的相对次序保持不变</p><h4 id="代码-3"><a class="markdownIt-Anchor" href="#代码-3"></a> 代码</h4><pre class="highlight"><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span> r[], <span class="hljs-type">int</span> n)</span> </span>&#123;<br>    <span class="hljs-type">int</span> i, j, k;<br>    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">for</span> (j = i + <span class="hljs-number">1</span>; j &lt; n;) &#123;<br>            <span class="hljs-keyword">if</span> (r[j] == r[i]) &#123;<br>                <span class="hljs-keyword">for</span> (k = j; k &lt; n - <span class="hljs-number">1</span>; k++) &#123;<br>                    r[k] = r[k + <span class="hljs-number">1</span>];<br>                &#125;<br>                n--;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                j++;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> r[] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">7</span>&#125;;<br>    <span class="hljs-type">int</span> n = <span class="hljs-built_in">sizeof</span>(r) / <span class="hljs-built_in">sizeof</span>(r[<span class="hljs-number">0</span>]);<br>    <span class="hljs-built_in">removeDuplicates</span>(r, n);<br>    cout &lt;&lt; <span class="hljs-string">&quot;After removing duplicates: &quot;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        cout &lt;&lt; r[i] &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    &#125;<br>    cout &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre><h4 id="解释-3"><a class="markdownIt-Anchor" href="#解释-3"></a> 解释</h4><pre class="highlight"><code class="hljs excel">这段代码实现了一个删除数组中重复元素的算法。它通过循环遍历数组中的每一个元素，并与后面的元素进行比较，如果发现重复的元素，则将后面的元素依次向前移动一位，直到将重复的元素删除。为了减少移动元素的次数，代码从后往前移动元素。最终，剩余元素间的相对次序保持不变。<br><br>主函数中，我们定义了一个数组 r 和数组长度 <span class="hljs-built_in">n</span>，然后调用 removeDuplicates 函数，将重复元素删除。最后，输出删除重复元素后的数组。<br><br>该算法的时间复杂度为 O(<span class="hljs-built_in">n</span>^<span class="hljs-number">2</span>)，因为需要循环遍历数组中的每一个元素，并与后面的元素进行比较。如果数组中包含大量重复元素，这个算法的效率会很低。<br><br></code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="3d打印学习笔记"><a class="markdownIt-Anchor" href="#3d打印学习笔记"></a> 3D打印学习笔记</h1><p>最近买了一台3D打印机学习一下怎么用。尝试打印了几个模型后，感觉机器还是可以，就是下次换成高速打印机。</p><h3 id="常见问题处理"><a class="markdownIt-Anchor" href="#常见问题处理"></a> 常见问题处理</h3><p>打印模型翘边：</p><ol><li>增加裙边</li><li>增加圆盘固定</li><li>喷涂固定胶水到打印平面</li></ol><p>支撑：</p><ol><li>不采用全部支撑，因该换成树形状支撑或其他支撑类型</li></ol><p>打印时堆料严重：</p><ol><li>开启Z轴回抽</li><li>提高一点点Z轴</li></ol><p>Z缝明显：</p><ol><li>可以将Z缝设置到拐角或模型内部</li></ol><p>表层空隙：</p><ol><li>启动熨平功能</li></ol><p>底层空隙：</p><ol><li>不要开启“滤除微小的间隙”<br /><a href="https://www.bilibili.com/video/BV1tU4y1a7DK/?vd_source=5c893cd1bede64cb1b4c78285c3c2ac2">【3D打印教程】CURA”填满顶部表层空隙”的6个相关参数(切片软件参数设定进阶教学)_哔哩哔哩_bilibili</a></li></ol><p>放置磁铁：<br /><a href="https://wiki.elegoo.com.cn/fdm/e1e9/502f">&gt;在特定层自动暂停教程 | ELEGOO Wiki</a></p><p>支撑拦截器：<br />可以设置自定义区域不生成支撑，这样打印螺丝孔就不会堵住。</p><h3 id="优化"><a class="markdownIt-Anchor" href="#优化"></a> 优化</h3><ol><li>打印不需要不受力的零件时，不需要设置为100%填充</li><li>熨平功能可以增加表面平整度</li><li>使用树形支撑记得设置填充比例，要不然浪费材料</li></ol>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;简单算法练习&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#简单算法练习&quot;&gt;&lt;/a&gt; 简单算法练习&lt;/h1&gt;
-&lt;h3 id=&quot;习题5-2&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#习题5-2&quot;&gt;&lt;/a&gt; </summary>
+    <summary type="html">&lt;h1 id=&quot;3d打印学习笔记&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#3d打印学习笔记&quot;&gt;&lt;/a&gt; 3D打印学习笔记&lt;/h1&gt;
+&lt;p&gt;最近买了一台3D打印机学习一下怎么用。尝试打印了几个模型后，感觉机器还是可以，就是下次换成高速打印机。&lt;/p</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="3D打印" scheme="http://uerlink.github.io/tags/3D%E6%89%93%E5%8D%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《克拉拉与太阳》</title>
+    <link href="http://uerlink.github.io/2023/12/19/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/2023-12-16_%E5%85%8B%E6%8B%89%E6%8B%89%E4%B8%8E%E5%A4%AA%E9%98%B3/"/>
+    <id>http://uerlink.github.io/2023/12/19/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/2023-12-16_%E5%85%8B%E6%8B%89%E6%8B%89%E4%B8%8E%E5%A4%AA%E9%98%B3/</id>
+    <published>2023-12-18T16:00:00.000Z</published>
+    <updated>2023-12-19T15:58:48.061Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="克拉拉与太阳"><a class="markdownIt-Anchor" href="#克拉拉与太阳"></a> 《克拉拉与太阳》</h1><p>了解事情的全貌，才做判断-----</p><p>读到克拉拉帮乔西送信到时候，根据前面里克出场的行为，我还以为里克是一个幼稚的小孩，控制欲很强，老是担心这担心那的。直到送信结束才发现是我自己误会了，果然正如里克所说的“一面之词”</p><p>读到他们想要“克拉拉”代替乔西，在乔西离去之后。全身鸡皮疙瘩都起来了。灵魂与躯壳的替换，究竟可行吗？正如乔西老爸说的，乔西真的是独一无二的吗？</p><p>…</p><p>12月16号日读完，这本书读起来平平淡淡，一些叙事感觉很跳跃，但读到最后还是可以，最后躺在废墟垃圾场的克拉拉还是那么单纯。因为她对人类的好都是提前设定的，怎么能看出她真正的心是什么样的，但是正是这单纯的心与复杂的人心截然不同。</p><p>送给自己的一句话 “读书的过程不要总是想要获取到什么，要多思考，慢慢的随着阅读量的增加，自己也才能够得到进步”</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;克拉拉与太阳&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#克拉拉与太阳&quot;&gt;&lt;/a&gt; 《克拉拉与太阳》&lt;/h1&gt;
+&lt;p&gt;了解事情的全貌，才做判断-----&lt;/p&gt;
+&lt;p&gt;读到克拉拉帮乔西送信到时候，根据前面里克出场的行为，我还以为里克是</summary>
+      
+    
+    
+    
+    <category term="读书笔记" scheme="http://uerlink.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="读书笔记" scheme="http://uerlink.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《平面国》</title>
+    <link href="http://uerlink.github.io/2023/11/28/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/2023-11-28_%E5%B9%B3%E9%9D%A2%E5%9B%BD/"/>
+    <id>http://uerlink.github.io/2023/11/28/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/2023-11-28_%E5%B9%B3%E9%9D%A2%E5%9B%BD/</id>
+    <published>2023-11-27T16:00:00.000Z</published>
+    <updated>2023-12-18T06:02:41.903Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="平面国-读书笔记"><a class="markdownIt-Anchor" href="#平面国-读书笔记"></a> 平面国-读书笔记</h1><h3 id="感想"><a class="markdownIt-Anchor" href="#感想"></a> 感想</h3><p>这本书阅读的时间跨度很大，大概有几个学期了。买kindle的时候开始看的，每次都是在回家或去学校的火车上阅读的。2023-11-28 终于看完啦。<br />读完该书我的感想很多，开拓思维去想象二维的一个世界，里面的人长什么样子，世界运行的规则又是什么。<br />不要固步自封，”向上，而不是向北“。在成为直线国王、正方形或球形使者时要虚心听取意见。<br />带着现有的知识与思维去与别人讨论问题时，不要认为我已经了解东西，别人就也应该知道。不要认为自己比其他人多一点知识就高高自傲。</p><h3 id="摘抄"><a class="markdownIt-Anchor" href="#摘抄"></a> 摘抄</h3><pre><code>网络真的让我们接触更多信息、鼓励我们思考了吗？还是恰恰相反，科技允许我们制作出巨大的泡泡，每天生活于其中，只与和自己观点相近的人交流？若是后者，这种所谓的“交流”与点国国王的自言自语有何不同？</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;平面国-读书笔记&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#平面国-读书笔记&quot;&gt;&lt;/a&gt; 平面国-读书笔记&lt;/h1&gt;
+&lt;h3 id=&quot;感想&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#感想&quot;&gt;&lt;/a&gt; </summary>
       
     
     

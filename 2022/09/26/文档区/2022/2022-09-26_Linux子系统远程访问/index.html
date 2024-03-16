@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <link rel="stylesheet" href="/js/prism/prism.css">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="UerLink_Blog">
+  <link 
+    rel="icon" 
+    href="/file/image/%E5%9B%BE%E6%A0%87.png">
+  <title>Linux子系统远程访问</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="Linux子系统远程访问">
+    
+    
+      <meta 
+        property="og:url" 
+        content="http://uerlink.github.io/2022/09/26/%E6%96%87%E6%A1%A3%E5%8C%BA/2022/2022-09-26_Linux%E5%AD%90%E7%B3%BB%E7%BB%9F%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="/file/image/头像.png">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2022-09-26">
+      <meta 
+        property="og:article:modified_time" 
+        content="2022-09-27">
+      <meta 
+        property="og:article:author" 
+        content="UerLink">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="Linux">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="UerLink_Blog" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="/file/image/%E5%9B%BE%E6%A0%87.png" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">UERLINK-博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/books" 
+        class="navbar-menu-item">
+        
+          书单
+        
+      </a>
+    
+      <a 
+        href="/progress" 
+        class="navbar-menu-item">
+        
+          进度
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/atom.xml" 
+        class="navbar-menu-item">
+        
+          RSS订阅
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容...(目前仅支持在“首页”时搜索)" />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      Linux子系统远程访问
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2022-09-25T16:00:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2022-09-26</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/" 
+          class="post-meta-link">
+          文档区
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>414 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/Linux/" 
+            class="post-meta-link">
+            Linux
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h3 id="安装ssh服务"><a class="markdownIt-Anchor" href="#安装ssh服务"></a> 安装ssh服务</h3>
+<p>apt-get remove openssh-server<br />
+apt-get install openssh-server</p>
+<h3 id="编辑sshd_config文件"><a class="markdownIt-Anchor" href="#编辑sshd_config文件"></a> 编辑sshd_config文件</h3>
+<p>vim /etc/ssh/sshd_config</p>
+<pre class="highlight"><code class="hljs nginx"><span class="hljs-attribute">Port</span> <span class="hljs-number">2222</span>  <br><span class="hljs-comment">#&gt;设置ssh的端口号, 由于22在windows中有别的用处, 尽量不修改系统的端口号</span><br><br>PermitRootLogin <span class="hljs-literal">yes</span>   <br><span class="hljs-comment">#&gt;可以root远程登录</span><br><br>PasswordAuthentication <span class="hljs-literal">yes</span>     <br><span class="hljs-comment">#&gt;密码验证登录</span><br></code></pre>
+<h3 id="重启服务"><a class="markdownIt-Anchor" href="#重启服务"></a> 重启服务</h3>
+<p>sudo service ssh --full-restart</p>
+<h3 id="启动ssh"><a class="markdownIt-Anchor" href="#启动ssh"></a> 启动ssh</h3>
+<p>sudo service sshd start</p>
+<h3 id="内网穿透"><a class="markdownIt-Anchor" href="#内网穿透"></a> 内网穿透</h3>
+<p>把子系统的ip地址做映射<br />
+有公网ip就不用啦，没有就用花生壳之类的软件</p>
+<h4 id="固定ip地址"><a class="markdownIt-Anchor" href="#固定ip地址"></a> 固定ip地址</h4>
+<p>因为wsl2以后，每次重新启动时候。Linux子系统会随机分配ip，然后内外穿透的ip就解析不到Linux的ip和端口</p>
+<h4 id="解决办法"><a class="markdownIt-Anchor" href="#解决办法"></a> 解决办法</h4>
+<p>创建一个脚本在Windows开机以后，分配一个固定的虚拟ip给Linux子系统，然后解析到虚拟ip上面</p>
+<p>1.bat脚本</p>
+<blockquote>
+<p>把debian替换成你自己的系统，ip默认是192.168.50.16（可以自己改）</p>
+</blockquote>
+<pre class="highlight"><code class="hljs awk">::强制获取管理员运行权限<br>%<span class="hljs-number">1</span> mshta vbscript:CreateObject(<span class="hljs-string">&quot;Shell.Application&quot;</span>).ShellExecute(<span class="hljs-string">&quot;cmd.exe&quot;</span>,<span class="hljs-string">&quot;/c %~s0 ::&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;runas&quot;</span>,<span class="hljs-number">1</span>)(window.close)&amp;&amp;<span class="hljs-keyword">exit</span><br>wsl -d debian -u root ip addr add <span class="hljs-number">192.168</span>.<span class="hljs-number">50.16</span>/<span class="hljs-number">24</span> broadcast <span class="hljs-number">192.168</span>.<span class="hljs-number">50.255</span> dev eth0 label eth0:<span class="hljs-number">1</span><br>netsh interface ip add address <span class="hljs-string">&quot;vEthernet (WSL)&quot;</span> <span class="hljs-number">192.168</span>.<span class="hljs-number">50.88</span> <span class="hljs-number">255.255</span>.<span class="hljs-number">255.0</span><br></code></pre>
+<p>2.把bat脚本放在Windows启动目录</p>
+<pre class="highlight"><code class="hljs dos"><span class="hljs-variable">%programdata%</span>\Microsoft\Windows\<span class="hljs-built_in">Start</span> Menu\Programs\Startup<br></code></pre>
+<h4 id="另一个问题"><a class="markdownIt-Anchor" href="#另一个问题"></a> 另一个问题</h4>
+<p>ssh连接内网穿透的域名，你可能还是无法使用，是因为Linux的ssh没有启动，你可以设置开机启动。</p>
+<h3 id="开机自启ssh"><a class="markdownIt-Anchor" href="#开机自启ssh"></a> 开机自启ssh</h3>
+<p>sudo systemctl enable ssh<br />
+sudo /etc/init.d/ssh start</p>
+<h3 id="ssh连接"><a class="markdownIt-Anchor" href="#ssh连接"></a> ssh连接</h3>
+<p>ssh <a href="mailto:fzl@120.12.1.21">fzl@120.12.1.21</a> -p2222</p>
+<blockquote>
+<p>-p后面是端口号</p>
+</blockquote>
+<p>hostname -I</p>
+<blockquote>
+<p>显示linux系统的ip地址</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>😁</p>
+</blockquote>
+</blockquote>
+
+  </div>
+  <div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/2022/09/26/%E6%96%87%E6%A1%A3%E5%8C%BA/2022/2022-09-26_Linux%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">Linux创建并管理用户 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2022/09/25/%E6%96%87%E6%A1%A3%E5%8C%BA/2022/2022-09-25_Linux%E8%BF%90%E8%A1%8CC++%E7%A8%8B%E5%BA%8F/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">Linux运行C++程序 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ssh%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text"> 安装ssh服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91sshd_config%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text"> 编辑sshd_config文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1"><span class="toc-number">3.</span> <span class="toc-text"> 重启服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8ssh"><span class="toc-number">4.</span> <span class="toc-text"> 启动ssh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-number">5.</span> <span class="toc-text"> 内网穿透</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BA%E5%AE%9Aip%E5%9C%B0%E5%9D%80"><span class="toc-number">5.1.</span> <span class="toc-text"> 固定ip地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">5.2.</span> <span class="toc-text"> 解决办法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="toc-number">5.3.</span> <span class="toc-text"> 另一个问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AFssh"><span class="toc-number">6.</span> <span class="toc-text"> 开机自启ssh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh%E8%BF%9E%E6%8E%A5"><span class="toc-number">7.</span> <span class="toc-text"> ssh连接</span></a></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="/file/image/头像.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">UerLink</p>
+<p class="author-description">“任何超脱飞扬的思想都会砰然坠地”</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>70</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>5</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>45</span>
+    <span>标签</span>
+  </a>
+</div>
+
+
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ssh%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text"> 安装ssh服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91sshd_config%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text"> 编辑sshd_config文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1"><span class="toc-number">3.</span> <span class="toc-text"> 重启服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8ssh"><span class="toc-number">4.</span> <span class="toc-text"> 启动ssh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-number">5.</span> <span class="toc-text"> 内网穿透</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BA%E5%AE%9Aip%E5%9C%B0%E5%9D%80"><span class="toc-number">5.1.</span> <span class="toc-text"> 固定ip地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">5.2.</span> <span class="toc-text"> 解决办法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="toc-number">5.3.</span> <span class="toc-text"> 另一个问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AFssh"><span class="toc-number">6.</span> <span class="toc-text"> 开机自启ssh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh%E8%BF%9E%E6%8E%A5"><span class="toc-number">7.</span> <span class="toc-text"> ssh连接</span></a></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/">
+        <div class="categories-list-item">
+          实践项目
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/">
+        <div class="categories-list-item">
+          文档区
+          <span class="categories-list-item-badge">41</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/">
+        <div class="categories-list-item">
+          测试区
+          <span class="categories-list-item-badge">8</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+        <div class="categories-list-item">
+          读书笔记
+          <span class="categories-list-item-badge">5</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+        <div class="categories-list-item">
+          踩坑记录
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>常用标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E6%97%A7%E7%89%A9%E6%94%B9%E9%80%A0/" 
+        title="旧物改造">
+        <div class="tags-list-item">旧物改造</div>
+      </a>
+    
+      <a 
+        href="/tags/C-sharp/" 
+        title="C_sharp">
+        <div class="tags-list-item">C_sharp</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
+        title="数据库">
+        <div class="tags-list-item">数据库</div>
+      </a>
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
+        href="/tags/Vim/" 
+        title="Vim">
+        <div class="tags-list-item">Vim</div>
+      </a>
+    
+      <a 
+        href="/tags/git/" 
+        title="git">
+        <div class="tags-list-item">git</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%9A%E4%BF%A1/" 
+        title="通信">
+        <div class="tags-list-item">通信</div>
+      </a>
+    
+      <a 
+        href="/tags/C/" 
+        title="C++">
+        <div class="tags-list-item">C++</div>
+      </a>
+    
+      <a 
+        href="/tags/Android/" 
+        title="Android">
+        <div class="tags-list-item">Android</div>
+      </a>
+    
+      <a 
+        href="/tags/api/" 
+        title="api">
+        <div class="tags-list-item">api</div>
+      </a>
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A1%86%E6%9E%B6/" 
+        title="框架">
+        <div class="tags-list-item">框架</div>
+      </a>
+    
+      <a 
+        href="/tags/frask/" 
+        title="frask">
+        <div class="tags-list-item">frask</div>
+      </a>
+    
+      <a 
+        href="/tags/AI/" 
+        title="AI">
+        <div class="tags-list-item">AI</div>
+      </a>
+    
+      <a 
+        href="/tags/GPT/" 
+        title="GPT">
+        <div class="tags-list-item">GPT</div>
+      </a>
+    
+      <a 
+        href="/tags/json/" 
+        title="json">
+        <div class="tags-list-item">json</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ssh%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text"> 安装ssh服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91sshd_config%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text"> 编辑sshd_config文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E6%9C%8D%E5%8A%A1"><span class="toc-number">3.</span> <span class="toc-text"> 重启服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8ssh"><span class="toc-number">4.</span> <span class="toc-text"> 启动ssh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-number">5.</span> <span class="toc-text"> 内网穿透</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BA%E5%AE%9Aip%E5%9C%B0%E5%9D%80"><span class="toc-number">5.1.</span> <span class="toc-text"> 固定ip地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">5.2.</span> <span class="toc-text"> 解决办法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%A6%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="toc-number">5.3.</span> <span class="toc-text"> 另一个问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AFssh"><span class="toc-number">6.</span> <span class="toc-text"> 开机自启ssh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh%E8%BF%9E%E6%8E%A5"><span class="toc-number">7.</span> <span class="toc-text"> ssh连接</span></a></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-03-16</div>
+        <a href="/2024/03/16/%E6%B5%8B%E8%AF%95%E5%8C%BA/2024-03-16_picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/"><div class="recent-posts-item-content">obsidian + picgo 图片上传</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-02-03</div>
+        <a href="/2024/02/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2024/2024-02-03_3D%E5%BB%BA%E6%A8%A1%E7%AC%94%E8%AE%B0/"><div class="recent-posts-item-content">3D建模笔记</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-02-03</div>
+        <a href="/2024/02/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2024/2024-02-03_3D%E6%89%93%E5%8D%B0%E7%AC%94%E8%AE%B0/"><div class="recent-posts-item-content">3D打印笔记</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2023-12-19</div>
+        <a href="/2023/12/19/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/2023-12-16_%E5%85%8B%E6%8B%89%E6%8B%89%E4%B8%8E%E5%A4%AA%E9%98%B3/"><div class="recent-posts-item-content">《克拉拉与太阳》</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2023
+          
+          
+                - 
+                2024
+          
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          UERLINK-博客
+        </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+</footer>
+<script src="/js/prism/prism.js" async></script> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
