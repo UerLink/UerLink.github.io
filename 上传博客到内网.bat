@@ -20,7 +20,20 @@ cd
 %call hexo clean%
 echo ▬▬▬▬▬▬▬▶ 博客开始重新生成
 call hexo g
+
+echo ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬【hexo内容复制到IIS-Web】▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+rmdir /s /q "D:\IIS-Web\Blog\"
+echo ▬▬▬▬▬▬▬▶ 已删除“D:\IIS-Web\Blog\”文件夹
+mkdir "D:\IIS-Web\Blog\"
+echo ▬▬▬▬▬▬▬▶ 已新建空的Blog文件夹
+xcopy /e "D:\UerLinkBlog\public\" "D:\IIS-Web\Blog\" 
+echo ▬▬▬▬▬▬▬▶ 已复制hexo的内容到IIS-Web\Blog文件夹
+
 echo ▬▬▬▬▬▬▬▶ 博客预览服务启动
 call hexo s
 
 pause
+
+
+
+
