@@ -97,15 +97,18 @@
     <link href="http://uerlink.github.io/2024/02/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2024/2024-02-03_3D%E6%89%93%E5%8D%B0%E7%AC%94%E8%AE%B0/"/>
     <id>http://uerlink.github.io/2024/02/03/%E6%96%87%E6%A1%A3%E5%8C%BA/2024/2024-02-03_3D%E6%89%93%E5%8D%B0%E7%AC%94%E8%AE%B0/</id>
     <published>2024-02-02T16:00:00.000Z</published>
-    <updated>2024-03-01T08:23:56.373Z</updated>
+    <updated>2024-03-24T06:49:30.027Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="3d打印学习笔记"><a class="markdownIt-Anchor" href="#3d打印学习笔记"></a> 3D打印学习笔记</h1><p>最近买了一台3D打印机学习一下怎么用。尝试打印了几个模型后，感觉机器还是可以，就是下次换成高速打印机。</p><h3 id="常见问题处理"><a class="markdownIt-Anchor" href="#常见问题处理"></a> 常见问题处理</h3><p>打印模型翘边：</p><ol><li>增加裙边</li><li>增加圆盘固定</li><li>喷涂固定胶水到打印平面</li></ol><p>支撑：</p><ol><li>不采用全部支撑，因该换成树形状支撑或其他支撑类型</li></ol><p>打印时堆料严重：</p><ol><li>开启Z轴回抽</li><li>提高一点点Z轴</li></ol><p>Z缝明显：</p><ol><li>可以将Z缝设置到拐角或模型内部</li></ol><p>表层空隙：</p><ol><li>启动熨平功能</li></ol><p>底层空隙：</p><ol><li>不要开启“滤除微小的间隙”<br /><a href="https://www.bilibili.com/video/BV1tU4y1a7DK/?vd_source=5c893cd1bede64cb1b4c78285c3c2ac2">【3D打印教程】CURA”填满顶部表层空隙”的6个相关参数(切片软件参数设定进阶教学)_哔哩哔哩_bilibili</a></li></ol><p>放置磁铁：<br /><a href="https://wiki.elegoo.com.cn/fdm/e1e9/502f">&gt;在特定层自动暂停教程 | ELEGOO Wiki</a></p><p>支撑拦截器：<br />可以设置自定义区域不生成支撑，这样打印螺丝孔就不会堵住。</p><h3 id="优化"><a class="markdownIt-Anchor" href="#优化"></a> 优化</h3><ol><li>打印不需要不受力的零件时，不需要设置为100%填充</li><li>熨平功能可以增加表面平整度</li><li>使用树形支撑记得设置填充比例，要不然浪费材料</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="3d打印学习笔记"><a class="markdownIt-Anchor" href="#3d打印学习笔记"></a> 3D打印学习笔记</h1><blockquote><p>最后更新：2024-03-24</p></blockquote><p>最近买了一台3D打印机学习一下怎么用。尝试打印了几个模型后，感觉机器还是可以，就是下次换成高速打印机。</p><h3 id="常见问题处理"><a class="markdownIt-Anchor" href="#常见问题处理"></a> 常见问题处理</h3><h4 id="打印模型翘边"><a class="markdownIt-Anchor" href="#打印模型翘边"></a> 打印模型翘边：</h4><ol><li>增加裙边</li><li>增加圆盘固定</li><li>喷涂固定胶水到打印平面</li></ol><h4 id="支撑"><a class="markdownIt-Anchor" href="#支撑"></a> 支撑：</h4><ol><li>不采用全部支撑，因该换成树形状支撑或其他支撑类型</li></ol><h4 id="打-印时堆料严重"><a class="markdownIt-Anchor" href="#打-印时堆料严重"></a> 打 印时堆料严重：</h4><ol><li>开启Z轴回抽</li><li>提高一点点Z轴</li></ol><h4 id="z缝明显"><a class="markdownIt-Anchor" href="#z缝明显"></a> Z缝明显：</h4><ol><li>可以将Z缝设置到拐角或模型内部</li></ol><h4 id="表层空隙"><a class="markdownIt-Anchor" href="#表层空隙"></a> 表层空隙：</h4><ol><li>启动熨平功能</li></ol><h4 id="夹角空隙"><a class="markdownIt-Anchor" href="#夹角空隙"></a> 夹角空隙：</h4><ol><li>不要开启“滤除微小的间隙”<br /><a href="https://www.bilibili.com/video/BV1tU4y1a7DK/?vd_source=5c893cd1bede64cb1b4c78285c3c2ac2">【3D打印教程】CURA”填满顶部表层空隙”的6个相关参数(切片软件参数设定进阶教学)_哔哩哔哩_bilibili</a></li></ol><h4 id="放置磁铁"><a class="markdownIt-Anchor" href="#放置磁铁"></a> 放置磁铁：</h4><p><a href="https://wiki.elegoo.com.cn/fdm/e1e9/502f">&gt;在特定层自动暂停教程 | ELEGOO Wiki</a></p><h4 id="支撑拦截器"><a class="markdownIt-Anchor" href="#支撑拦截器"></a> 支撑拦截器：</h4><pre><code>可以设置自定义区域不生成支撑，这样打印螺丝孔就不会堵住。</code></pre><h4 id="起始层"><a class="markdownIt-Anchor" href="#起始层"></a> 起始层</h4><p>打印时起始层（与打印平台接触的那一层），不好看，线之间有缝隙。<br />1.在”材料“选项中调整”起始层“流量（太多线容易拱起，太少线之间缝隙就越大）</p><p><code>![]-(附件/2024-02-03_3D打印笔记/image-20240324144648370.png)</code><br /><img src="https://s2.loli.net/2024/03/24/XxewIEKhu32Glra.png" alt="" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://s2.loli.net/2024/03/24/XxewIEKhu32Glra.png" class="lozad post-image"></p><h3 id="优化"><a class="markdownIt-Anchor" href="#优化"></a> 优化</h3><ol><li>打印不需要不受力的零件时，不需要设置为100%填充</li><li>熨平功能可以增加表面平整度</li><li>使用树形支撑记得设置填充比例，要不然浪费材料</li></ol>]]></content>
     
     
       
       
     <summary type="html">&lt;h1 id=&quot;3d打印学习笔记&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#3d打印学习笔记&quot;&gt;&lt;/a&gt; 3D打印学习笔记&lt;/h1&gt;
-&lt;p&gt;最近买了一台3D打印机学习一下怎么用。尝试打印了几个模型后，感觉机器还是可以，就是下次换成高速打印机。&lt;/p</summary>
+&lt;blockquote&gt;
+&lt;p&gt;最后更新：2024-03-24&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近买了</summary>
       
     
     
