@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2024-03-16T02:28:23.776Z</updated>
+  <updated>2024-03-31T04:31:21.950Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://uerlink.github.io/2024/03/16/%E6%B5%8B%E8%AF%95%E5%8C%BA/2024-03-16_picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/"/>
     <id>http://uerlink.github.io/2024/03/16/%E6%B5%8B%E8%AF%95%E5%8C%BA/2024-03-16_picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/</id>
     <published>2024-03-15T16:00:00.000Z</published>
-    <updated>2024-03-16T02:28:23.776Z</updated>
+    <updated>2024-03-31T04:31:21.950Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="obsidian-picgo-图片上传"><a class="markdownIt-Anchor" href="#obsidian-picgo-图片上传"></a> obsidian + picgo 图片上传</h1><h3 id="教程"><a class="markdownIt-Anchor" href="#教程"></a> 教程</h3><h4 id="1安装-picgo-软件"><a class="markdownIt-Anchor" href="#1安装-picgo-软件"></a> 1.安装 picgo 软件</h4><p><a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo</a></p><h4 id="2配置picgo软件"><a class="markdownIt-Anchor" href="#2配置picgo软件"></a> 2.配置picgo软件</h4><p>图床使用SMMS<br /><a href="https://smms.app/">https://smms.app/</a></p><h4 id="3安装-obsidian-image-auto-upload-plugin-插件"><a class="markdownIt-Anchor" href="#3安装-obsidian-image-auto-upload-plugin-插件"></a> 3.安装 obsidian-image-auto-upload-plugin 插件</h4><p><a href="https://github.com/renmu123/obsidian-image-auto-upload-plugin/blob/master/readme-zh.md">obsidian-image-auto-upload-plugin/readme-zh.md at master · renmu123/obsidian-image-auto-upload-plugin · GitHub</a></p><h3 id="测试图片效果"><a class="markdownIt-Anchor" href="#测试图片效果"></a> 测试图片效果</h3><p><code>![]-(附件/2024-03-16_picgo图片上传/image-20240316100436702.png)</code><br /><img src="https://s2.loli.net/2024/03/16/BnbUzAQLE3tqXSM.png" alt="" / srcset="/files/image/缓冲加载.gif" data-src="https://s2.loli.net/2024/03/16/BnbUzAQLE3tqXSM.png" class="lozad post-image"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="obsidian-picgo-图片上传"><a class="markdownIt-Anchor" href="#obsidian-picgo-图片上传"></a> obsidian + picgo 图片上传</h1><h3 id="教程"><a class="markdownIt-Anchor" href="#教程"></a> 教程</h3><h4 id="1安装-picgo-软件"><a class="markdownIt-Anchor" href="#1安装-picgo-软件"></a> 1.安装 picgo 软件</h4><p><a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo</a></p><h4 id="2配置picgo软件"><a class="markdownIt-Anchor" href="#2配置picgo软件"></a> 2.配置picgo软件</h4><p>图床使用SMMS<br /><a href="https://smms.app/">https://smms.app/</a></p><h4 id="3安装-obsidian-image-auto-upload-plugin-插件"><a class="markdownIt-Anchor" href="#3安装-obsidian-image-auto-upload-plugin-插件"></a> 3.安装 obsidian-image-auto-upload-plugin 插件</h4><p><a href="https://github.com/renmu123/obsidian-image-auto-upload-plugin/blob/master/readme-zh.md">obsidian-image-auto-upload-plugin/readme-zh.md at master · renmu123/obsidian-image-auto-upload-plugin · GitHub</a></p><h3 id="测试图片效果"><a class="markdownIt-Anchor" href="#测试图片效果"></a> 测试图片效果</h3><p><code>![]-(附件/2024-03-16_picgo图片上传/image-20240316100436702.png)</code><br /><img src="https://s2.loli.net/2024/03/16/BnbUzAQLE3tqXSM.png" alt="" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://s2.loli.net/2024/03/16/BnbUzAQLE3tqXSM.png" class="lozad post-image">[1]</p>]]></content>
     
     
       
