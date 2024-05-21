@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <link rel="stylesheet" href="/js/prism/prism.css">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="UerLink_Blog">
+  <link 
+    rel="icon" 
+    href="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png">
+  <title>《时间的秩序》- 卡洛·罗韦利</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="《时间的秩序》- 卡洛·罗韦利">
+    
+    
+      <meta 
+        property="og:url" 
+        content="http://uerlink.github.io/2021/01/18/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%97%B6%E9%97%B4%E7%9A%84%E7%A7%A9%E5%BA%8F-%E5%8D%A1%E6%B4%9B%C2%B7%E7%BD%97%E9%9F%A6%E5%88%A9/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://s2.loli.net/2024/03/18/O3F8CoGZ2Ws56lf.png">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2021-01-18">
+      <meta 
+        property="og:article:modified_time" 
+        content="2024-05-21">
+      <meta 
+        property="og:article:author" 
+        content="UerLink">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="读书笔记">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="UerLink_Blog" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">UERLINK-博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/books/index.html" 
+        class="navbar-menu-item">
+        
+          书单
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/atom.xml" 
+        class="navbar-menu-item">
+        
+          RSS订阅
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容...(目前仅支持在“首页”时搜索)" />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      《时间的秩序》- 卡洛·罗韦利
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-01-17T16:00:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2021-01-18</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" 
+          class="post-meta-link">
+          读书笔记
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>1.7k 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" 
+            class="post-meta-link">
+            读书笔记
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h1 id="书本摘要"><a class="markdownIt-Anchor" href="#书本摘要"></a> 书本摘要</h1>
+<blockquote>
+<p>[!abstract] 时间的秩序</p>
+<ul>
+<li><img src="https://cdn.weread.qq.com/weread/cover/88/YueWen_26026653/t7_YueWen_26026653.jpg" alt=" 时间的秩序|200" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://cdn.weread.qq.com/weread/cover/88/YueWen_26026653/t7_YueWen_26026653.jpg" class="lozad post-image"></li>
+<li>书名： 时间的秩序</li>
+<li>作者： 卡洛·罗韦利</li>
+<li>简介： 为什么我们记得过去，而非未来？时间“流逝”意味着什么？是我们存在于时间之内，还是时间存在于我们之中？卡洛·罗韦利用诗意的文字，邀请我们思考这一亘古难题——时间的本质。在我们的直觉里，时间是全宇宙统一的，稳定地从过去流向未来，可以用钟表度量。可罗韦利向我们揭示出一个奇怪的宇宙，在这里，时间的特质一一坍塌，在最基本的层面上，时间消失了。他告诉我们，我们对时间流逝的感知，取决于我们的视角。</li>
+<li>出版时间 2019-06-01 00:00:00</li>
+<li>ISBN： 9787571001636</li>
+<li>分类： 科学技术-自然科学</li>
+<li>出版社： 湖南科学技术出版社</li>
+<li>PC地址：<a target="_blank" rel="noopener" href="https://weread.qq.com/web/reader/b4532a30718d229db451c58">https://weread.qq.com/web/reader/b4532a30718d229db451c58</a></li>
+</ul>
+</blockquote>
+<h1 id="摘抄划线"><a class="markdownIt-Anchor" href="#摘抄划线"></a> 摘抄划线</h1>
+<h3 id="1统一性的消失"><a class="markdownIt-Anchor" href="#1统一性的消失"></a> 1．统一性的消失</h3>
+<blockquote>
+<p>📌 在物理学中，一个特定时钟测量的特定现象中的时间称为“固有时”（proper time）。<br />
+⏱ 2021-01-13 19:13:37 ^26026653-8-4449-4493</p>
+</blockquote>
+<h3 id="2方向的消失"><a class="markdownIt-Anchor" href="#2方向的消失"></a> 2．方向的消失</h3>
+<blockquote>
+<p>📌 每当过去与未来的差别显现，都会有热量参与其中。如果一个过程倒过来看很荒谬，那么一定有东西被加热了。<br />
+⏱ 2021-01-16 13:45:39 ^26026653-9-4336-4385</p>
+</blockquote>
+<blockquote>
+<p>📌 克劳修斯引入了一个量，来量度热量的单向不可逆过程。由于他是个很有学识的德国人，他用了古希腊语“熵”为之命名：<br />
+⏱ 2021-01-16 13:46:27 ^26026653-9-4605-4659</p>
+</blockquote>
+<blockquote>
+<p>📌 ΔS≥0读作“Delta S永远大于或等于零”，我们把它称为“热力学第二定律”（热力学第一定律是能量守恒定律）。<br />
+⏱ 2021-01-16 13:49:53 ^26026653-9-5055-5168</p>
+</blockquote>
+<blockquote>
+<p>📌 热量是分子的微观振动<br />
+⏱ 2021-01-16 13:54:01 ^26026653-9-6162-6172</p>
+</blockquote>
+<blockquote>
+<p>📌 每一种排列都是特殊的，每一种排列都是独一无二的，因为每一种排列都有其独特的一面。<br />
+⏱ 2021-01-16 14:06:08 ^26026653-9-7904-7944</p>
+</blockquote>
+<blockquote>
+<p>📌 只有当我们以一种模糊与近似的方式看待宇宙的时候，“特殊性”的概念才会出现。<br />
+⏱ 2021-01-16 14:07:11 ^26026653-9-8305-8342</p>
+</blockquote>
+<blockquote>
+<p>📌 玻尔兹曼说明了熵之所以会存在，是因为我们以一种模糊的方式描述世界。<br />
+⏱ 2021-01-16 14:07:32 ^26026653-9-8371-8404</p>
+</blockquote>
+<blockquote>
+<p>📌 熵仅仅是我们模糊的视野无法识别的微观状态的数量。<br />
+⏱ 2021-01-16 14:51:38 ^26026653-9-9579-9603</p>
+</blockquote>
+<h3 id="3当下的终结"><a class="markdownIt-Anchor" href="#3当下的终结"></a> 3．当下的终结</h3>
+<blockquote>
+<p>📌 在搞清楚质量可以延缓时间[插图]这件事的十年之前，爱因斯坦就意识到，时间会被速度延缓<br />
+⏱ 2021-01-16 14:59:48 ^26026653-10-757-876</p>
+</blockquote>
+<blockquote>
+<p>📌  现在让他们一个静止不动，另一个四处走动。对于不停运动的人，时间流逝得更慢。 ^26026653-10-1048-1085</p>
+</blockquote>
+<ul>
+<li>💭 所以说：<br />
+等待的时候感觉时间很慢，而做事情的时候却觉得很快。但是又一点想不通，这两个人在同一个地点时感受到的是同一时间线还是不同，或者像第一章所讲的一样。 - ⏱ 2021-01-16 15:00:43</li>
+</ul>
+<blockquote>
+<p>📌 和以前一样，这对好友会经历不同长度的时间间隔：运动的那个衰老得慢一些，他的表走的时间少一些；他可以用来思考的时间更少；携带的植物要更久才能发芽，等等。因为对于一切运动的物体，时间流逝得都要慢一些。<br />
+⏱ 2021-01-16 15:15:16 ^26026653-10-1114-1212</p>
+</blockquote>
+<blockquote>
+<p>📌 时间长短只与拥有既定轨迹的物体的运动有关。[插图]<br />
+⏱ 2021-01-16 15:44:34 ^26026653-10-2718-2740</p>
+</blockquote>
+<blockquote>
+<p>📌  取决于我们限定时间的精确程度 ^26026653-10-4973-4987</p>
+</blockquote>
+<ul>
+<li>💭 所以我们可以“预见未来”？   比如说我现在正在通过望远镜看“邻星b”，光传递需要4年，那么看到的是4年前的邻星b（时间按照我们地球时间算），但是如果可以加速信息传递直到消除时间差。那么站着邻星b上，按地球时间算，就可以看见邻星b的未来，但是不改变邻星b的任何事，只能预见！ - ⏱ 2021-01-17 22:43:37</li>
+</ul>
+<blockquote>
+<p>📌 “宇宙的现在”并不存在<br />
+⏱ 2021-01-17 23:09:18 ^26026653-10-11495-11506</p>
+</blockquote>
+<h3 id="4独立性的消失"><a class="markdownIt-Anchor" href="#4独立性的消失"></a> 4．独立性的消失</h3>
+<blockquote>
+<p>📌 爱因斯坦在1915年写出了引力场方程<br />
+⏱ 2021-01-18 12:12:01 ^26026653-11-12957-12975</p>
+</blockquote>
+<h3 id="5时间量子"><a class="markdownIt-Anchor" href="#5时间量子"></a> 5．时间量子</h3>
+<blockquote>
+<p>📌 量子力学导致的三个基本发现如下：分立性、不确定性、与物理量的关联性。<br />
+⏱ 2021-01-18 12:18:35 ^26026653-12-1379-1413</p>
+</blockquote>
+<blockquote>
+<p>📌 而最小的时间被称为“普朗克时间<br />
+⏱ 2021-01-18 12:19:43 ^26026653-12-1744-1759</p>
+</blockquote>
+<h1 id="读书笔记"><a class="markdownIt-Anchor" href="#读书笔记"></a> 读书笔记</h1>
+<h2 id="2方向的消失-2"><a class="markdownIt-Anchor" href="#2方向的消失-2"></a> 2．方向的消失</h2>
+<h1 id="划线评论"><a class="markdownIt-Anchor" href="#划线评论"></a> 划线评论</h1>
+<blockquote>
+<p>📌 请原谅我写了这个方程——这是本书中唯一一个方程。  ^355397844-7noCrw89o<br />
+- 💭 有趣  ✔<br />
+- ⏱ 2021-01-16 13:51:40</p>
+</blockquote>
+<h1 id="划线评论-2"><a class="markdownIt-Anchor" href="#划线评论-2"></a> 划线评论</h1>
+<blockquote>
+<p>📌 我们看着杯中的水，就像宇航员从月亮上看着地球：宁静，闪闪发光，湛蓝。在月球上，无法看到地球上生机勃勃的生命，无法看到植物与动物，无法看到欲望与绝望，只能看到一个蓝色的球体。在一杯水的表面之下，也有着类似的勃勃生机，由无数分子的运动构成——远比地球上的生物更多。  ^355397844-7noCSjre8<br />
+- 💭 很好的比喻，很容易让人们相信原子，分子存在！<br />
+- ⏱ 2021-01-16 13:58:16</p>
+</blockquote>
+<h2 id="3当下的终结-2"><a class="markdownIt-Anchor" href="#3当下的终结-2"></a> 3．当下的终结</h2>
+<h1 id="划线评论-3"><a class="markdownIt-Anchor" href="#划线评论-3"></a> 划线评论</h1>
+<blockquote>
+<p>📌 现在让他们一个静止不动，另一个四处走动。对于不停运动的人，时间流逝得更慢。  ^355397844-7noHda03K<br />
+- 💭 所以说：<br />
+等待的时候感觉时间很慢，而做事情的时候却觉得很快。但是又一点想不通，这两个人在同一个地点时感受到的是同一时间线还是不同，或者像第一章所讲的一样。<br />
+- ⏱ 2021-01-16 15:04:29</p>
+</blockquote>
+<h1 id="划线评论-4"><a class="markdownIt-Anchor" href="#划线评论-4"></a> 划线评论</h1>
+<blockquote>
+<p>📌 取决于我们限定时间的精确程度  ^355397844-7nqIsBvLp<br />
+- 💭 所以我们可以“预见未来”？   比如说我现在正在通过望远镜看“邻星b”，光传递需要4年，那么看到的是4年前的邻星b（时间按照我们地球时间算），但是如果可以加速信息传递直到消除时间差。那么站着邻星b上，按地球时间算，就可以看见邻星b的未来，但是不改变邻星b的任何事，只能预见！<br />
+- ⏱ 2021-01-17 22:56:54</p>
+</blockquote>
+<h1 id="划线评论-5"><a class="markdownIt-Anchor" href="#划线评论-5"></a> 划线评论</h1>
+<blockquote>
+<p>📌 “现在的宇宙”是没有意义的  ^355397844-7nqIDEOzT<br />
+- 💭 是不是我们看到的信息都是过去发生的，所以没有意义<br />
+- ⏱ 2021-01-17 22:59:37</p>
+</blockquote>
+<h1 id="本书评论"><a class="markdownIt-Anchor" href="#本书评论"></a> 本书评论</h1>
+
+  </div>
+  <div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/2021/06/04/%E6%96%87%E6%A1%A3%E5%8C%BA/2021/2021-06-04_51%E5%8D%95%E7%89%87%E6%9C%BA%E8%BF%9E%E6%8E%A5%E8%93%9D%E7%89%99%E6%A8%A1%E5%9D%97/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">51单片机连接蓝牙模块 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%A6%E6%9C%AC%E6%91%98%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text"> 书本摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%91%98%E6%8A%84%E5%88%92%E7%BA%BF"><span class="toc-number">2.</span> <span class="toc-text"> 摘抄划线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E7%BB%9F%E4%B8%80%E6%80%A7%E7%9A%84%E6%B6%88%E5%A4%B1"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 1．统一性的消失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E6%96%B9%E5%90%91%E7%9A%84%E6%B6%88%E5%A4%B1"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 2．方向的消失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E5%BD%93%E4%B8%8B%E7%9A%84%E7%BB%88%E7%BB%93"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 3．当下的终结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E7%8B%AC%E7%AB%8B%E6%80%A7%E7%9A%84%E6%B6%88%E5%A4%B1"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 4．独立性的消失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E6%97%B6%E9%97%B4%E9%87%8F%E5%AD%90"><span class="toc-number">2.0.5.</span> <span class="toc-text"> 5．时间量子</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="toc-number">3.</span> <span class="toc-text"> 读书笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E6%96%B9%E5%90%91%E7%9A%84%E6%B6%88%E5%A4%B1-2"><span class="toc-number">3.1.</span> <span class="toc-text"> 2．方向的消失</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA"><span class="toc-number">4.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-2"><span class="toc-number">5.</span> <span class="toc-text"> 划线评论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E5%BD%93%E4%B8%8B%E7%9A%84%E7%BB%88%E7%BB%93-2"><span class="toc-number">5.1.</span> <span class="toc-text"> 3．当下的终结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-3"><span class="toc-number">6.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-4"><span class="toc-number">7.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-5"><span class="toc-number">8.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="toc-number">9.</span> <span class="toc-text"> 本书评论</span></a></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://s2.loli.net/2024/03/18/O3F8CoGZ2Ws56lf.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">UerLink</p>
+<p class="author-description">“终身学习，希望不灭”</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>74</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>5</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>45</span>
+    <span>标签</span>
+  </a>
+</div>
+
+
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%A6%E6%9C%AC%E6%91%98%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text"> 书本摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%91%98%E6%8A%84%E5%88%92%E7%BA%BF"><span class="toc-number">2.</span> <span class="toc-text"> 摘抄划线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E7%BB%9F%E4%B8%80%E6%80%A7%E7%9A%84%E6%B6%88%E5%A4%B1"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 1．统一性的消失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E6%96%B9%E5%90%91%E7%9A%84%E6%B6%88%E5%A4%B1"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 2．方向的消失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E5%BD%93%E4%B8%8B%E7%9A%84%E7%BB%88%E7%BB%93"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 3．当下的终结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E7%8B%AC%E7%AB%8B%E6%80%A7%E7%9A%84%E6%B6%88%E5%A4%B1"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 4．独立性的消失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E6%97%B6%E9%97%B4%E9%87%8F%E5%AD%90"><span class="toc-number">2.0.5.</span> <span class="toc-text"> 5．时间量子</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="toc-number">3.</span> <span class="toc-text"> 读书笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E6%96%B9%E5%90%91%E7%9A%84%E6%B6%88%E5%A4%B1-2"><span class="toc-number">3.1.</span> <span class="toc-text"> 2．方向的消失</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA"><span class="toc-number">4.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-2"><span class="toc-number">5.</span> <span class="toc-text"> 划线评论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E5%BD%93%E4%B8%8B%E7%9A%84%E7%BB%88%E7%BB%93-2"><span class="toc-number">5.1.</span> <span class="toc-text"> 3．当下的终结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-3"><span class="toc-number">6.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-4"><span class="toc-number">7.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-5"><span class="toc-number">8.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="toc-number">9.</span> <span class="toc-text"> 本书评论</span></a></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/">
+        <div class="categories-list-item">
+          实践项目
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/">
+        <div class="categories-list-item">
+          文档区
+          <span class="categories-list-item-badge">40</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/">
+        <div class="categories-list-item">
+          测试区
+          <span class="categories-list-item-badge">9</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+        <div class="categories-list-item">
+          读书笔记
+          <span class="categories-list-item-badge">9</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+        <div class="categories-list-item">
+          踩坑记录
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>常用标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E6%97%A7%E7%89%A9%E6%94%B9%E9%80%A0/" 
+        title="旧物改造">
+        <div class="tags-list-item">旧物改造</div>
+      </a>
+    
+      <a 
+        href="/tags/C-sharp/" 
+        title="C_sharp">
+        <div class="tags-list-item">C_sharp</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
+        title="数据库">
+        <div class="tags-list-item">数据库</div>
+      </a>
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
+        href="/tags/Vim/" 
+        title="Vim">
+        <div class="tags-list-item">Vim</div>
+      </a>
+    
+      <a 
+        href="/tags/git/" 
+        title="git">
+        <div class="tags-list-item">git</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%9A%E4%BF%A1/" 
+        title="通信">
+        <div class="tags-list-item">通信</div>
+      </a>
+    
+      <a 
+        href="/tags/C/" 
+        title="C++">
+        <div class="tags-list-item">C++</div>
+      </a>
+    
+      <a 
+        href="/tags/Android/" 
+        title="Android">
+        <div class="tags-list-item">Android</div>
+      </a>
+    
+      <a 
+        href="/tags/api/" 
+        title="api">
+        <div class="tags-list-item">api</div>
+      </a>
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A1%86%E6%9E%B6/" 
+        title="框架">
+        <div class="tags-list-item">框架</div>
+      </a>
+    
+      <a 
+        href="/tags/frask/" 
+        title="frask">
+        <div class="tags-list-item">frask</div>
+      </a>
+    
+      <a 
+        href="/tags/AI/" 
+        title="AI">
+        <div class="tags-list-item">AI</div>
+      </a>
+    
+      <a 
+        href="/tags/GPT/" 
+        title="GPT">
+        <div class="tags-list-item">GPT</div>
+      </a>
+    
+      <a 
+        href="/tags/json/" 
+        title="json">
+        <div class="tags-list-item">json</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%A6%E6%9C%AC%E6%91%98%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text"> 书本摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%91%98%E6%8A%84%E5%88%92%E7%BA%BF"><span class="toc-number">2.</span> <span class="toc-text"> 摘抄划线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E7%BB%9F%E4%B8%80%E6%80%A7%E7%9A%84%E6%B6%88%E5%A4%B1"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 1．统一性的消失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E6%96%B9%E5%90%91%E7%9A%84%E6%B6%88%E5%A4%B1"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 2．方向的消失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E5%BD%93%E4%B8%8B%E7%9A%84%E7%BB%88%E7%BB%93"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 3．当下的终结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E7%8B%AC%E7%AB%8B%E6%80%A7%E7%9A%84%E6%B6%88%E5%A4%B1"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 4．独立性的消失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E6%97%B6%E9%97%B4%E9%87%8F%E5%AD%90"><span class="toc-number">2.0.5.</span> <span class="toc-text"> 5．时间量子</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="toc-number">3.</span> <span class="toc-text"> 读书笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E6%96%B9%E5%90%91%E7%9A%84%E6%B6%88%E5%A4%B1-2"><span class="toc-number">3.1.</span> <span class="toc-text"> 2．方向的消失</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA"><span class="toc-number">4.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-2"><span class="toc-number">5.</span> <span class="toc-text"> 划线评论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E5%BD%93%E4%B8%8B%E7%9A%84%E7%BB%88%E7%BB%93-2"><span class="toc-number">5.1.</span> <span class="toc-text"> 3．当下的终结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-3"><span class="toc-number">6.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-4"><span class="toc-number">7.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-5"><span class="toc-number">8.</span> <span class="toc-text"> 划线评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="toc-number">9.</span> <span class="toc-text"> 本书评论</span></a></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-05-15</div>
+        <a href="/2024/05/15/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9C%80%E5%A5%BD%E7%9A%84%E5%91%8A%E5%88%AB%EF%BC%9A%E5%85%B3%E4%BA%8E%E8%A1%B0%E8%80%81%E4%B8%8E%E6%AD%BB%E4%BA%A1%EF%BC%8C%E4%BD%A0%E5%BF%85%E9%A1%BB%E7%9F%A5%E9%81%93%E7%9A%84%E5%B8%B8%E8%AF%86-%E9%98%BF%E5%9B%BE%C2%B7%E8%91%9B%E6%96%87%E5%BE%B7/"><div class="recent-posts-item-content">《最好的告别：关于衰老与死亡，你必须知道的常识》- 阿图·葛文德</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-04-10</div>
+        <a href="/2024/04/10/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8-%E8%B5%AB%E4%BC%AF%E7%89%B9%C2%B7%E4%B9%94%E6%B2%BB%C2%B7%E5%A8%81%E5%B0%94%E6%96%AF/"><div class="recent-posts-item-content">《时间机器》- 赫伯特·乔治·威尔斯</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-03-16</div>
+        <a href="/2024/03/16/%E6%B5%8B%E8%AF%95%E5%8C%BA/2024-03-16_picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/"><div class="recent-posts-item-content">obsidian + picgo 图片上传</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-03-16</div>
+        <a href="/2024/03/16/%E6%B5%8B%E8%AF%95%E5%8C%BA/2024-03-16_%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%BC%96%E8%BE%91%E6%8F%92%E4%BB%B6/"><div class="recent-posts-item-content">格式化编辑插件</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2023
+          
+          
+                - 
+                2024
+          
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          UERLINK-博客
+        </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+</footer>
+<script src="/js/prism/prism.js" async></script> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
