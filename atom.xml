@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2025-02-25T09:24:01.197Z</updated>
+  <updated>2025-03-07T15:39:23.073Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git同步文件至个人服务器</title>
+    <link href="http://uerlink.github.io/2025/03/07/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-03-07_Git%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6%E8%87%B3%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://uerlink.github.io/2025/03/07/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-03-07_Git%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6%E8%87%B3%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2025-03-06T16:00:00.000Z</published>
+    <updated>2025-03-07T15:39:23.073Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git同步文件至个人服务器"><a class="markdownIt-Anchor" href="#git同步文件至个人服务器"></a> Git同步文件至个人服务器</h1><h3 id="目的"><a class="markdownIt-Anchor" href="#目的"></a> 目的</h3><p>git工具分为服务器端和客户端，本次需要在个人服务器上搭建git仓库，通过客户端git同步文件到服务器中，服务器检测到文件同步执行相应脚本。</p><h3 id="步骤"><a class="markdownIt-Anchor" href="#步骤"></a> 步骤</h3><h4 id="配置ssh并安装git"><a class="markdownIt-Anchor" href="#配置ssh并安装git"></a> 配置ssh并安装git</h4><blockquote><p><a href="https://blog.csdn.net/weixin_50964512/article/details/123588745">ssh安装与配置（详解版）-CSDN博客</a></p></blockquote><ol><li>服务器端配置ssh连接</li></ol><pre class="highlight"><code class="hljs bash">sudo apt update <span class="hljs-comment">#更新数据 </span><br>sudo apt upgrade <span class="hljs-comment">#更新软件 </span><br>sudo apt install openssh-server <span class="hljs-comment">#安装ssh服务</span><br>sudo systemctl <span class="hljs-built_in">enable</span> ssh <span class="hljs-comment">#开机自启动</span><br></code></pre><ol start="2"><li>在客户端中生成ssh公钥，生成的公钥在当前用户下的.ssh\id_rsa.pub文件中</li></ol><pre class="highlight"><code class="hljs bash">ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">&quot;邮箱&quot;</span> <span class="hljs-comment"># 填写邮箱，生成公钥</span><br></code></pre><ol start="3"><li>在服务器端用户文件夹下的.ssh中新建authorized_keys文件，并追加公钥</li></ol><pre class="highlight"><code class="hljs bash"><span class="hljs-built_in">touch</span> authorized_keys<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;公钥&quot;</span> &gt;&gt; authorized_keys<br></code></pre><ol start="4"><li>在服务器端和客户端分别安装git工具</li></ol><pre class="highlight"><code class="hljs bash">sudo apt install git <span class="hljs-comment">#Linux命令</span><br></code></pre><ol start="5"><li>git的全局用户名密码配置</li></ol><pre class="highlight"><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;邮箱&quot;</span><br></code></pre><h4 id="服务器配置git仓库"><a class="markdownIt-Anchor" href="#服务器配置git仓库"></a> 服务器配置git仓库</h4><ol><li>创建初始化仓库，（此时建立的是裸库，裸仓库没有默认的工作目录，必须显式指定代码检出位置。）</li></ol><pre class="highlight"><code class="hljs bash"><span class="hljs-built_in">mkdir</span> ~\gitspace\project1<br><span class="hljs-built_in">cd</span> ~\gitspace\project1<br>git init -bare<br><span class="hljs-comment"># git config --global init.defaultBranch &lt;defaultBranch&gt;   配置全局初始分支的默认名称</span><br>git config --global init.defaultBranch master<br></code></pre><ol start="2"><li>创建hook脚本，检测到push后，同步裸库的文件到工作目录</li></ol><pre class="highlight"><code class="hljs bash"><span class="hljs-built_in">cd</span> ~\gitspace\project1\hooks<br>vim post-receive<br></code></pre><ol start="3"><li>post-receive文件内容</li></ol><pre class="highlight"><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><br><span class="hljs-comment"># 定义部署目录</span><br>TARGET_DIR=<span class="hljs-string">&quot;/var/www/deploy&quot;</span><br><span class="hljs-comment"># 定义Git仓库目录</span><br>GIT_DIR=<span class="hljs-string">&quot;/path/to/repo.git&quot;</span><br><br><span class="hljs-comment"># 强制检出代码到目标目录</span><br>git --work-tree=<span class="hljs-variable">$TARGET_DIR</span> --git-dir=<span class="hljs-variable">$GIT_DIR</span> checkout -f<br><br><span class="hljs-comment"># 可选：执行额外操作（如安装依赖、重启服务）</span><br><span class="hljs-built_in">cd</span> <span class="hljs-variable">$TARGET_DIR</span><br>npm install<br>systemctl restart nginx<br><br></code></pre><h4 id="nginx相关链接"><a class="markdownIt-Anchor" href="#nginx相关链接"></a> nginx相关链接</h4><p><a href="https://blog.csdn.net/m0_52985087/article/details/132063280">Ubuntu环境下安装部署Nginx（有网）_ubuntu 安装nginx-CSDN博客</a></p><h4 id="备注"><a class="markdownIt-Anchor" href="#备注"></a> 备注</h4><p>简单写写~ (ง๑ •̀_•́)ง</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;git同步文件至个人服务器&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#git同步文件至个人服务器&quot;&gt;&lt;/a&gt; Git同步文件至个人服务器&lt;/h1&gt;
+&lt;h3 id=&quot;目的&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; h</summary>
+      
+    
+    
+    
+    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
+    
+    
+    <category term="git" scheme="http://uerlink.github.io/tags/git/"/>
+    
+    <category term="服务器" scheme="http://uerlink.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>斗罢艰险又出发</title>
@@ -111,34 +138,6 @@
 &lt;p&gt;[!abstract] 手机断舍离：如何快速摆脱手机成瘾&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;img src=&quot;h</summary>
-      
-    
-    
-    
-    <category term="读书笔记" scheme="http://uerlink.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="读书笔记" scheme="http://uerlink.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《蛤蟆先生去看心理医生》- 罗伯特·戴博德</title>
-    <link href="http://uerlink.github.io/2024/09/07/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%9B%A4%E8%9F%86%E5%85%88%E7%94%9F%E5%8E%BB%E7%9C%8B%E5%BF%83%E7%90%86%E5%8C%BB%E7%94%9F-%E7%BD%97%E4%BC%AF%E7%89%B9%C2%B7%E6%88%B4%E5%8D%9A%E5%BE%B7/"/>
-    <id>http://uerlink.github.io/2024/09/07/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%9B%A4%E8%9F%86%E5%85%88%E7%94%9F%E5%8E%BB%E7%9C%8B%E5%BF%83%E7%90%86%E5%8C%BB%E7%94%9F-%E7%BD%97%E4%BC%AF%E7%89%B9%C2%B7%E6%88%B4%E5%8D%9A%E5%BE%B7/</id>
-    <published>2024-09-06T16:00:00.000Z</published>
-    <updated>2024-11-06T13:29:39.978Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="书本摘要"><a class="markdownIt-Anchor" href="#书本摘要"></a> 书本摘要</h1><blockquote><p>[!abstract] 蛤蟆先生去看心理医生</p><ul><li><img src="https://cdn.weread.qq.com/weread/cover/81/YueWen_35551088/t7_YueWen_35551088.jpg" alt=" 蛤蟆先生去看心理医生|200" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://cdn.weread.qq.com/weread/cover/81/YueWen_35551088/t7_YueWen_35551088.jpg" class="lozad post-image"></li><li>书名： 蛤蟆先生去看心理医生</li><li>作者： 罗伯特·戴博德</li><li>简介： 蛤蟆先生一向爱笑爱闹，如今却一反常态地郁郁寡欢。他一个人躲在屋里，连起床梳洗的力气都没有。朋友们非常担心他，建议他去做心理咨询。在10次心理咨询中，蛤蟆在咨询师苍鹭的带领下，勇敢地探索了自己的内心世界，也逐渐找回了信心与希望……为了向大众读者普及心理学知识，作者借用了英国文学经典《柳林风声》的故事主角，让蛤蟆先生和他的朋友们再次登场，演绎了这个关于心理咨询的故事。读者犹如亲临现场，体验心理咨询的每一个细节，见证疗愈和改变的发生。作者借由蛤蟆和心理咨询师苍鹭的互动，探索了蛤蟆自卑、软弱、爱炫耀的个性与抑郁的情绪究竟来源于何处，以及如何才能在心理上真正长大成人，独立、自信、充满希望地生活。</li><li>出版时间 2020-08-01 00:00:00</li><li>ISBN： 9787201161693</li><li>分类： 心理-心理学应用</li><li>出版社： 天津人民出版社</li><li>PC地址：<a href="https://weread.qq.com/web/reader/66832530721e777066806c9">https://weread.qq.com/web/reader/66832530721e777066806c9</a></li></ul></blockquote><h1 id="摘抄划线"><a class="markdownIt-Anchor" href="#摘抄划线"></a> 摘抄划线</h1><h2 id="第五章-成长的寓言"><a class="markdownIt-Anchor" href="#第五章-成长的寓言"></a> 第五章 成长的寓言</h2><blockquote><p>📌 “‘儿童自我状态’，是由我们童年残留的遗迹搭建而成，包含我们小时候体验过的所有情感。你一定知道在刚出生时，我们只具备几种最基本的情感。幼年时，这些基本情感逐渐发展演变成更微妙、更复杂的行为模式，这些行为模式成为自我的核心，融为我们自身的一部分，定义了我们一生的行为。<br />⏱ 2024-06-16 22:41:55 ^35551088-26-1634-1767</p></blockquote><h2 id="第六章-探索童年"><a class="markdownIt-Anchor" href="#第六章-探索童年"></a> 第六章 探索童年</h2><blockquote><p>📌 顺从行为可能导致有些人学会了把依赖当成生活方式。换句话说，这些人永远都没有真正长大成人<br />⏱ 2024-06-16 22:41:54 ^35551088-27-8172-8215</p></blockquote><h2 id="第九章-秘密协议"><a class="markdownIt-Anchor" href="#第九章-秘密协议"></a> 第九章 秘密协议</h2><blockquote><p>📌 没有一种批判比自我批判更强烈，也没有一个法官比我们自己更严苛。<br />⏱ 2024-09-07 15:30:58 ^35551088-30-7553-7584</p></blockquote><h1 id="读书笔记"><a class="markdownIt-Anchor" href="#读书笔记"></a> 读书笔记</h1><h2 id="第五章-成长的寓言-2"><a class="markdownIt-Anchor" href="#第五章-成长的寓言-2"></a> 第五章 成长的寓言</h2><h1 id="划线评论"><a class="markdownIt-Anchor" href="#划线评论"></a> 划线评论</h1><blockquote><p>📌 嗯，当然了，婴幼儿确实不能用逻辑或有意识地去想明白这些问题，”苍鹭说，“但他们会从经验中学习。  ^355397844-7S01kv5Yc<br />- 💭 《与神对话》里面神也说过，“经验”是最宝贵的东西。<br />- ⏱ 2024-06-16 22:45:47</p></blockquote><h2 id="第六章-探索童年-2"><a class="markdownIt-Anchor" href="#第六章-探索童年-2"></a> 第六章 探索童年</h2><h1 id="章节评论-no1"><a class="markdownIt-Anchor" href="#章节评论-no1"></a> 章节评论 No.1</h1><ul><li>读完这章，才发现我的阅读方式错误了，我应该把自己当成蛤蟆先生，去接受并思考书中所提及的问题与观点。而不是站在旁观者的视角，要不然读完收获盛少。 ^355397844-7S01xRPg1<ul><li>⏱ 2024-06-16 22:49:04</li></ul></li></ul><h1 id="本书评论"><a class="markdownIt-Anchor" href="#本书评论"></a> 本书评论</h1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;书本摘要&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#书本摘要&quot;&gt;&lt;/a&gt; 书本摘要&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!abstract] 蛤蟆先生去看心理医生&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;img src=&quot;https:/</summary>
       
     
     
