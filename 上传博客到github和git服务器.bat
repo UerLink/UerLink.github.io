@@ -37,6 +37,7 @@ git commit -m "博客同步提交"
 git push origin master
 
 echo ▬▬▬▬▬▬▬▶ 博客预览服务启动
+cd /d  D:\UerLinkBlog
 call hexo s
 
 
