@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2025-03-11T08:08:07.568Z</updated>
+  <updated>2025-03-26T18:29:12.927Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>嵌入DeepSeek问答窗口</title>
+    <link href="http://uerlink.github.io/2025/03/27/%E6%B5%8B%E8%AF%95%E5%8C%BA/2025-03-27_%E5%B5%8C%E5%85%A5DeepSeek%E9%97%AE%E7%AD%94%E7%AA%97%E5%8F%A3/"/>
+    <id>http://uerlink.github.io/2025/03/27/%E6%B5%8B%E8%AF%95%E5%8C%BA/2025-03-27_%E5%B5%8C%E5%85%A5DeepSeek%E9%97%AE%E7%AD%94%E7%AA%97%E5%8F%A3/</id>
+    <published>2025-03-26T16:00:00.000Z</published>
+    <updated>2025-03-26T18:29:12.927Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="嵌入deepseek问答窗口"><a class="markdownIt-Anchor" href="#嵌入deepseek问答窗口"></a> 嵌入DeepSeek问答窗口</h1><pre class="highlight"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/files/html/DeepSeek.html&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;100%&quot;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br></code></pre><iframe src="/files/html/DeepSeek.html" width="100%" height="100%"> </iframe>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;嵌入deepseek问答窗口&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#嵌入deepseek问答窗口&quot;&gt;&lt;/a&gt; 嵌入DeepSeek问答窗口&lt;/h1&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;hlj</summary>
+      
+    
+    
+    
+    <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
+    
+    
+    <category term="ai" scheme="http://uerlink.github.io/tags/ai/"/>
+    
+  </entry>
   
   <entry>
     <title>Git同步文件至个人服务器</title>
@@ -110,34 +135,6 @@
 &lt;p&gt;[!abstract] 布鲁克林有棵树（果麦经典）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;img src=&quot;http</summary>
-      
-    
-    
-    
-    <category term="读书笔记" scheme="http://uerlink.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="读书笔记" scheme="http://uerlink.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《手机断舍离：如何快速摆脱手机成瘾》- 【美】凯瑟琳·普赖斯</title>
-    <link href="http://uerlink.github.io/2024/11/10/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%89%8B%E6%9C%BA%E6%96%AD%E8%88%8D%E7%A6%BB%EF%BC%9A%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%91%86%E8%84%B1%E6%89%8B%E6%9C%BA%E6%88%90%E7%98%BE-%E3%80%90%E7%BE%8E%E3%80%91%E5%87%AF%E7%91%9F%E7%90%B3%C2%B7%E6%99%AE%E8%B5%96%E6%96%AF/"/>
-    <id>http://uerlink.github.io/2024/11/10/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%89%8B%E6%9C%BA%E6%96%AD%E8%88%8D%E7%A6%BB%EF%BC%9A%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%91%86%E8%84%B1%E6%89%8B%E6%9C%BA%E6%88%90%E7%98%BE-%E3%80%90%E7%BE%8E%E3%80%91%E5%87%AF%E7%91%9F%E7%90%B3%C2%B7%E6%99%AE%E8%B5%96%E6%96%AF/</id>
-    <published>2024-11-09T16:00:00.000Z</published>
-    <updated>2024-12-31T11:50:49.566Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="书本摘要"><a class="markdownIt-Anchor" href="#书本摘要"></a> 书本摘要</h1><blockquote><p>[!abstract] 手机断舍离：如何快速摆脱手机成瘾</p><ul><li><img src="https://cdn.weread.qq.com/weread/cover/81/cpplatform_b2ldzktpimwywmegfhddpm/t7_cpplatform_b2ldzktpimwywmegfhddpm1727083869.jpg" alt=" 手机断舍离：如何快速摆脱手机成瘾|200" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://cdn.weread.qq.com/weread/cover/81/cpplatform_b2ldzktpimwywmegfhddpm/t7_cpplatform_b2ldzktpimwywmegfhddpm1727083869.jpg" class="lozad post-image"></li><li>书名： 手机断舍离：如何快速摆脱手机成瘾</li><li>作者： 【美】凯瑟琳·普赖斯</li><li>简介： 你早起的第一件事和睡前最后一件事是看手机吗？你是否经常拿起它“只是为了看一下有没有信息”，回过神来却是45分钟后了，你也很想知道时间都到哪里去了。你是否想少花点时间在手机上，但又不知道如何在不彻底放弃手机的情况下做到这一点？如果是这样，这本书就是你的解决方案。作者提出了一个实用的、易操作的“分手”计划——然后再和手机“和好”。我们的目标是什么？是一段让你感觉良好的长期关系。<br />在本书中，你会发现手机和应用程序是如何让人上瘾的，并了解花在手机上的时间如何损害了我们的注意力、深度思考和形成新记忆的能力。然后，你将对你的手机设置、应用程序和自己的心态进行自定义更改，最终做到能够重新掌控自己的生活。</li><li>出版时间 2024-09-26 00:00:00</li><li>ISBN：</li><li>分类： 心理-心理学应用</li><li>出版社：</li><li>PC地址：<a href="https://weread.qq.com/web/reader/06e32a20813ab93b2g018a88">https://weread.qq.com/web/reader/06e32a20813ab93b2g018a88</a></li></ul></blockquote><h1 id="摘抄划线"><a class="markdownIt-Anchor" href="#摘抄划线"></a> 摘抄划线</h1><h2 id="引言"><a class="markdownIt-Anchor" href="#引言"></a> 引言</h2><blockquote><p>📌 起初，我们一直忍不住想去拿手机，还自我开脱说是因为担心错过什么重要电话或信息，可要是诚实面对自己，这其实就是一种依赖的表现。<br />⏱ 2024-11-01 14:06:00 ^3300115708-6-11751-11813</p></blockquote><blockquote><p>📌 重新找回丢失的那份自我<br />⏱ 2024-11-01 14:16:22 ^3300115708-6-14439-14450</p></blockquote><h3 id="第3章-操控我们的伎俩"><a class="markdownIt-Anchor" href="#第3章-操控我们的伎俩"></a> 第3章 操控我们的伎俩</h3><blockquote><p>📌 错失恐惧症<br />⏱ 2024-11-10 15:52:37 ^3300115708-10-4101-4106</p></blockquote><blockquote><p>📌 我们越是关注所能获得的可选功能，就越能发现这些选项无法满足我们的真正需求<br />⏱ 2024-11-10 15:58:38 ^3300115708-10-7635-7671</p></blockquote><blockquote><p>📌 我们害怕与自己的思想独处<br />⏱ 2024-11-10 16:02:22 ^3300115708-10-8252-8264</p></blockquote><h1 id="读书笔记"><a class="markdownIt-Anchor" href="#读书笔记"></a> 读书笔记</h1><h2 id="第1章-手机就是为了让我们上瘾而设计的"><a class="markdownIt-Anchor" href="#第1章-手机就是为了让我们上瘾而设计的"></a> 第1章 手机就是为了让我们上瘾而设计的</h2><h3 id="章节评论-no1"><a class="markdownIt-Anchor" href="#章节评论-no1"></a> 章节评论 No.1</h3><ul><li>没错！绝大多数产品从生产出来那一刻，其商业性质就是要让更多人去使用它，拥有它。利用夸大且潜移默化的宣传，去告诉人们，“它”对人们有用。 ^355397844-7VnpsFxcN<ul><li>⏱ 2024-11-01 14:28:24</li></ul></li></ul><h2 id="本书评论"><a class="markdownIt-Anchor" href="#本书评论"></a> 本书评论</h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;书本摘要&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#书本摘要&quot;&gt;&lt;/a&gt; 书本摘要&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!abstract] 手机断舍离：如何快速摆脱手机成瘾&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;img src=&quot;h</summary>
       
     
     
