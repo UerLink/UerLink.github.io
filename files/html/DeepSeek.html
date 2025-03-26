@@ -1,0 +1,117 @@
+<!-- 可嵌入的DeepSeek对话组件 -->
+<div id="deepseek-chat-container" style="max-width: 600px; margin: 20px auto; border: 1px solid #e5e7eb; border-radius: 8px;">
+    <div style="background: #f3f4f6; padding: 12px; border-radius: 8px 8px 0 0;">
+      <h3 style="margin: 0; color: #374151;">DeepSeek智能助手</h3>
+    </div>
+    
+    <!-- 对话显示区域 -->
+    <div id="chat-history" style="height: 400px; overflow-y: auto; padding: 16px; background: white;">
+      <div class="message bot-message">您好！我是DeepSeek AI，请问有什么可以帮您？</div>
+    </div>
+  
+    <!-- 输入区域 -->
+    <div style="padding: 16px; background: #f9fafb; border-radius: 0 0 8px 8px;">
+      <div style="display: flex; gap: 8px;">
+        <input 
+          type="text" 
+          id="user-input" 
+          placeholder="输入您的问题..." 
+          style="flex:1; padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 4px;"
+        >
+        <button 
+          onclick="sendMessage()" 
+          style="padding: 8px 16px; background: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer;"
+        >发送</button>
+      </div>
+      <div style="margin-top: 8px; font-size: 12px; color: #6b7280;">
+        提示：按Enter键发送，Shift+Enter换行
+      </div>
+    </div>
+  </div>
+  
+  <script>
+  // 配置参数（需替换为实际值）
+  const API_KEY = 'sk-337dbbcd40734b009baaed999aa30a10'; // 从DeepSeek平台获取[5,6](@ref)
+  const MODEL_NAME = 'deepseek-chat';  // 可选模型：deepseek-chat / deepseek-reasoner[6](@ref)
+  
+  // 流式响应处理
+  async function sendMessage() {
+    const inputElem = document.getElementById('user-input');
+    const message = inputElem.value.trim();
+    if (!message) return;
+  
+    // 添加用户消息
+    appendMessage(message, 'user');
+    inputElem.value = '';
+  
+    try {
+      const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify({
+          model: MODEL_NAME,
+          messages: [{ role: 'user', content: message }],
+          stream: true
+        })
+      });
+  
+      // 创建消息容器
+      const messageId = `msg-${Date.now()}`;
+      appendMessage('', 'bot', messageId);
+  
+      // 处理流式数据
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+  
+        const chunk = decoder.decode(value);
+        chunk.split('\n').forEach(line => {
+          if (line.startsWith('data: ')) {
+            try {
+              const data = JSON.parse(line.slice(6));
+              if (data.choices[0].delta.content) {
+                document.getElementById(messageId).innerHTML += 
+                  data.choices[0].delta.content.replace(/\n/g, '<br>');
+              }
+            } catch (e) {}
+          }
+        });
+      }
+    } catch (error) {
+      console.error('API请求错误:', error);
+      appendMessage('服务暂时不可用，请稍后再试', 'bot');
+    }
+  }
+  
+  // 消息展示功能
+  function appendMessage(content, type, id) {
+    const container = document.getElementById('chat-history');
+    const messageElem = document.createElement('div');
+    messageElem.className = `message ${type}-message`;
+    messageElem.style.margin = '8px 0';
+    messageElem.style.padding = '8px 12px';
+    messageElem.style.borderRadius = type === 'user' ? '12px 12px 0 12px' : '12px 12px 12px 0';
+    messageElem.style.background = type === 'user' ? '#3b82f6' : '#f3f4f6';
+    messageElem.style.color = type === 'user' ? 'white' : '#374151';
+    messageElem.style.maxWidth = '80%';
+    messageElem.style.float = type === 'user' ? 'right' : 'left';
+    messageElem.style.clear = 'both';
+    if (id) messageElem.id = id;
+    messageElem.innerHTML = content;
+    container.appendChild(messageElem);
+    container.scrollTop = container.scrollHeight;
+  }
+  
+  // 输入框快捷键支持
+  document.getElementById('user-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+  </script>
