@@ -8,7 +8,7 @@ echo ▬▬▬▬▬▬▬▶ 已删除“D:\UerLinkBlog\source\”文件夹
 mkdir "D:\UerLinkBlog\source\"
 echo ▬▬▬▬▬▬▬▶ 已新建空的source文件夹
 
-xcopy /e "C:\Users\UerLi\OneDrive\个人管理\知识库\我的博客" "D:\UerLinkBlog\source\" 
+xcopy /e "C:\Users\UerLi\OneDrive\个人管理\知识库\我的博客" "D:\UerLinkBlog\source\" /Y /Q >nul 2>&1
 
 echo ▬▬▬▬▬▬▬▶ 已复制obsidian的内容到source文件夹
 
@@ -29,7 +29,7 @@ rmdir /s /q "D:\GitSpace\uerlinkblog\public\"
 echo ▬▬▬▬▬▬▬▶ 已删除“D:\GitSpace\uerlinkblog\public\”文件夹
 mkdir "D:\GitSpace\uerlinkblog\public"
 echo ▬▬▬▬▬▬▬▶ 已新建空的public文件夹
-xcopy /e "D:\UerLinkBlog\public\" "D:\GitSpace\uerlinkblog\public\" 
+xcopy /e "D:\UerLinkBlog\public\" "D:\GitSpace\uerlinkblog\public\" /Y /Q >nul 2>&1
 echo ▬▬▬▬▬▬▬▶ 已复制hexo的内容到D:\GitSpace\uerlinkblog\public\文件夹
 cd /d  D:\GitSpace\uerlinkblog
 git add .
