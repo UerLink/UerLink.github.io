@@ -1,5 +1,7 @@
 @echo off
 chcp 65001
+
+REG ADD HKCU\CONSOLE /f /v VirtualTerminalLevel /t REG_DWORD /d 1 >nul 2>&1
 set "RED=^[[91m"
 set "GREEN=^[[92m"
 set "YELLOW=^[[93m"
