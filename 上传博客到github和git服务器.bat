@@ -1,8 +1,7 @@
 @echo off
 chcp 65001
 
-powershell -Command "Write-Host '这是绿色文本' -ForegroundColor Green"
-echo   复制obsidian文件夹内容
+powershell -Command "Write-Host 'ECHO  复制obsidian文件夹内容' -ForegroundColor Green"
 rmdir /s /q "D:\UerLinkBlog\source\"
 echo     ▷ 已删除“D:\UerLinkBlog\source\”文件夹
 mkdir "D:\UerLinkBlog\source\"
@@ -11,8 +10,7 @@ echo     ▷ 已新建空的source文件夹
 xcopy /e "C:\Users\UerLi\OneDrive\个人管理\知识库\我的博客" "D:\UerLinkBlog\source\" /Y /Q >nul 2>&1
 
 echo     ▷ 复制完成
-
-echo   上传至GitHub服务器
+powershell -Command "Write-Host 'ECHO  上传至GitHub服务器' -ForegroundColor Green"
 echo     ▷ 清除缓存已禁用
 cd /d  D:\UerLinkBlog
 title HexoGo
@@ -22,8 +20,7 @@ echo     ▷ 重新生成并上传...
 call hexo g
 call hexo d
 
- 
-echo   同步至git服务器
+powershell -Command "Write-Host 'ECHO  同步至git服务器' -ForegroundColor Green"
 rmdir /s /q "D:\GitSpace\uerlinkblog\public\"
 echo     ▷ 已删除“D:\GitSpace\uerlinkblog\public\”文件夹
 mkdir "D:\GitSpace\uerlinkblog\public"
