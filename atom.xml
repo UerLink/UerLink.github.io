@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2025-04-21T16:34:08.211Z</updated>
+  <updated>2025-04-22T18:14:34.835Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自动开关灯控制</title>
+    <link href="http://uerlink.github.io/2025/04/22/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/2025-04-22_%E8%87%AA%E5%8A%A8%E5%BC%80%E5%85%B3%E7%81%AF%E6%8E%A7%E5%88%B6/"/>
+    <id>http://uerlink.github.io/2025/04/22/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/2025-04-22_%E8%87%AA%E5%8A%A8%E5%BC%80%E5%85%B3%E7%81%AF%E6%8E%A7%E5%88%B6/</id>
+    <published>2025-04-21T16:00:00.000Z</published>
+    <updated>2025-04-22T18:14:34.835Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="自动开关灯控制"><a class="markdownIt-Anchor" href="#自动开关灯控制"></a> 自动开关灯控制</h1><h3 id="设计需求"><a class="markdownIt-Anchor" href="#设计需求"></a> 设计需求</h3><ol><li>每天晚上去上厕所需要开走廊的灯，重复性的事情做多了就烦，所以做一个简单的自动控制</li><li>单片机与建模的练手项目（虽然淘宝30块甚至更便宜就能买一个不改变原有结构的控制开关）</li></ol><h3 id="方案"><a class="markdownIt-Anchor" href="#方案"></a> 方案</h3><h4 id="详情"><a class="markdownIt-Anchor" href="#详情"></a> 详情</h4><p>使用180°舵机加人体检测传感器配合ESP32完成控制，控制内容：当人靠近时控制舵机进行开灯，几分钟后没有检测到人就关灯（加一个限制条件在设置的时间段如晚上该功能才启用）</p><h4 id="程序逻辑"><a class="markdownIt-Anchor" href="#程序逻辑"></a> 程序逻辑</h4><p><img src="https://s2.loli.net/2025/04/23/B13U2azvRp6LZgF.png" alt="300" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://s2.loli.net/2025/04/23/B13U2azvRp6LZgF.png" class="lozad post-image"></p><pre class="highlight"><code class="hljs subunit">![300](附件/2025<span class="hljs-string">-04</span><span class="hljs-string">-22</span>_自动开关灯控制/image<span class="hljs-string">-20250423001224776</span>.png)<br></code></pre><h4 id="结构草图"><a class="markdownIt-Anchor" href="#结构草图"></a> 结构草图</h4><p><img src="https://s2.loli.net/2025/04/23/98nbtQK7JIWZefp.png" alt="300" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://s2.loli.net/2025/04/23/98nbtQK7JIWZefp.png" class="lozad post-image"></p><pre class="highlight"><code class="hljs subunit">![300](附件/2025<span class="hljs-string">-04</span><span class="hljs-string">-22</span>_自动开关灯控制/image<span class="hljs-string">-20250423001851180</span>.png)<br></code></pre><h4 id="实践中的难点"><a class="markdownIt-Anchor" href="#实践中的难点"></a> 实践中的难点</h4><ol><li>舵机不好固定在86开关盒上，目前有3个开关盒连在一起，而控制走廊3个灯的开关盒在中间，又不想使用粘胶进行固定，出现故障不好拆除。</li></ol><blockquote><p>解决办法：发现旁边一个插座盒的面板可以取下来，可以尝试在面板上钻两个固定孔，用螺丝结合3D打印结构件进行固定</p></blockquote><ol start="2"><li>获取时间异步控制</li></ol><blockquote><p>换了一种方式，直接联网后同步ESP32的NTP时间，需要用的时候直接获取单片机上的，每次启动联网更新一下就可以了（断电后会导致时间丢失，恢复成默认）。</p></blockquote><pre class="highlight"><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;WiFi.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;NTPClient.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;WiFiUdp.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;TimeLib.h&gt;</span></span><br>WiFiUDP ntpUDP;<br>NTPClient <span class="hljs-title function_">timeClient</span><span class="hljs-params">(ntpUDP, <span class="hljs-string">&quot;ntp1.aliyun.com&quot;</span>, <span class="hljs-number">28800</span>)</span>; <span class="hljs-comment">// 使用国内NTP服务器</span><br>...<br><span class="hljs-comment">// NTP时间同步</span><br>Serial.println(<span class="hljs-string">&quot;[NTP] NTP Time update&quot;</span>);<br>timeClient.begin();<br><span class="hljs-keyword">while</span> (!timeClient.update()) delay(<span class="hljs-number">500</span>);<br>setTime(timeClient.getEpochTime());<br>timeClient.update();<span class="hljs-comment">//更新时间</span><br>...<br></code></pre><h3 id="结果"><a class="markdownIt-Anchor" href="#结果"></a> 结果</h3><h4 id="实物图片"><a class="markdownIt-Anchor" href="#实物图片"></a> 实物图片</h4><p><img src="https://s2.loli.net/2025/04/23/qfWsQVdOtoBHar5.png" alt="300" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://s2.loli.net/2025/04/23/qfWsQVdOtoBHar5.png" class="lozad post-image"></p><pre class="highlight"><code class="hljs subunit">![300](附件/2025<span class="hljs-string">-04</span><span class="hljs-string">-22</span>_自动开关灯控制/image<span class="hljs-string">-20250423020049545</span>.png)<br></code></pre><h4 id="新增笔记知识点"><a class="markdownIt-Anchor" href="#新增笔记知识点"></a> 新增笔记知识点</h4><ol><li>3D打印件的建模与实际部件结合需要增加0.4mm公差</li><li>3D打印件嵌入花纹沉头螺母（M3，光滑外径3.9mm，花纹外径4.8mm）时，开孔半径R设置成2.15mm</li><li>使用180°舵机时，设定角度后舵机将上电维持该角度，有时候齿轮会咔咔响。此项目中并不需要维持，可以使用myServo.detach();//停止舵机的角度维持（停止后再启用需要重新设定引脚和角度）。</li><li>MG90S舵机尺寸。</li><li>NTP同步协议</li></ol><h4 id="后续改进"><a class="markdownIt-Anchor" href="#后续改进"></a> 后续改进</h4><ol><li>ESP32可换成更便宜的ESP8266、ESP01等芯片</li><li>电路控制部分可以画一块PCB板进行集成</li><li>优化机械机构与外壳设计</li><li><strong>HC-SR501模块（红外）太容易受到干扰了</strong>，后续改进强烈建议改为人在传感器，或者多传感器结合。</li><li>舵机力度不够，三个开关刚好只能按动两个多一个都不行（也有可能是力臂太长了）。</li></ol><h3 id="备份"><a class="markdownIt-Anchor" href="#备份"></a> 备份</h3><h4 id="3d文件"><a class="markdownIt-Anchor" href="#3d文件"></a> 3D文件</h4><p>创想云网站： <a href="https://www.crealitycloud.cn/model-detail/6807dc58f1b106626821c980">https://www.crealitycloud.cn/model-detail/6807dc58f1b106626821c980</a></p><h4 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h4><p>GitHub仓库：<a href="https://github.com/UerLink/IOTProject">UerLink/IOTProject</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;自动开关灯控制&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#自动开关灯控制&quot;&gt;&lt;/a&gt; 自动开关灯控制&lt;/h1&gt;
+&lt;h3 id=&quot;设计需求&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#设计需求&quot;&gt;&lt;/a&gt;</summary>
+      
+    
+    
+    
+    <category term="实践项目" scheme="http://uerlink.github.io/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="ESP32" scheme="http://uerlink.github.io/tags/ESP32/"/>
+    
+    <category term="舵机" scheme="http://uerlink.github.io/tags/%E8%88%B5%E6%9C%BA/"/>
+    
+    <category term="自动控制" scheme="http://uerlink.github.io/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6/"/>
+    
+    <category term="NTP" scheme="http://uerlink.github.io/tags/NTP/"/>
+    
+  </entry>
   
   <entry>
     <title>项目思维</title>
@@ -192,34 +223,6 @@
     
     
     <category term="hexo" scheme="http://uerlink.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《布鲁克林有棵树（果麦经典）》- 贝蒂·史密斯</title>
-    <link href="http://uerlink.github.io/2025/01/05/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B8%83%E9%B2%81%E5%85%8B%E6%9E%97%E6%9C%89%E6%A3%B5%E6%A0%91%EF%BC%88%E6%9E%9C%E9%BA%A6%E7%BB%8F%E5%85%B8%EF%BC%89-%E8%B4%9D%E8%92%82%C2%B7%E5%8F%B2%E5%AF%86%E6%96%AF/"/>
-    <id>http://uerlink.github.io/2025/01/05/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B8%83%E9%B2%81%E5%85%8B%E6%9E%97%E6%9C%89%E6%A3%B5%E6%A0%91%EF%BC%88%E6%9E%9C%E9%BA%A6%E7%BB%8F%E5%85%B8%EF%BC%89-%E8%B4%9D%E8%92%82%C2%B7%E5%8F%B2%E5%AF%86%E6%96%AF/</id>
-    <published>2025-01-04T16:00:00.000Z</published>
-    <updated>2025-01-30T05:38:58.574Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="书本摘要"><a class="markdownIt-Anchor" href="#书本摘要"></a> 书本摘要</h1><blockquote><p>[!abstract] 布鲁克林有棵树（果麦经典）</p><ul><li><img src="https://cdn.weread.qq.com/weread/cover/43/cpplatform_f3vxcjkt7ph8jrpy4jugwr/t7_cpplatform_f3vxcjkt7ph8jrpy4jugwr1678775114.jpg" alt=" 布鲁克林有棵树（果麦经典）|200" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://cdn.weread.qq.com/weread/cover/43/cpplatform_f3vxcjkt7ph8jrpy4jugwr/t7_cpplatform_f3vxcjkt7ph8jrpy4jugwr1678775114.jpg" class="lozad post-image"></li><li>书名： 布鲁克林有棵树（果麦经典）</li><li>作者： 贝蒂·史密斯</li><li>简介： 《布鲁克林有棵树》是美国作家贝蒂·史密斯创作的一部半自传体长篇小说，首次出版于1943年。全书没有怪诞刺激的情节，却以平实细腻的点滴经历打动人心。讲述了20世纪初，小女孩弗朗茜·诺兰在纽约布鲁克林区威廉斯堡的成长经历。她在成长过程中饱经家庭的不幸、同学的歧视和社会的不公，但在亲人的关爱和影响下，她酷爱阅读，坚强不屈，对生活充满了热情，工作之余凭自学考上了大学，终于走出了贫民窟。展现了平凡人努力追求自己的梦想，坦然面对生活的苦难的勇气。</li><li>出版时间 2023-03-01 00:00:00</li><li>ISBN： 9787519470746</li><li>分类： 文学-外国文学</li><li>出版社： 光明日报出版社</li><li>PC地址：<a href="https://weread.qq.com/web/reader/5c932ee0813ab7ae7g017c61">https://weread.qq.com/web/reader/5c932ee0813ab7ae7g017c61</a></li></ul></blockquote><h1 id="摘抄划线"><a class="markdownIt-Anchor" href="#摘抄划线"></a> 摘抄划线</h1><h2 id="导读"><a class="markdownIt-Anchor" href="#导读"></a> 导读</h2><blockquote><p>📌 “孩子必须拥有一样宝贵的东西——想象力。孩子必须有个秘密世界——从未存在过的生灵，都住在里面。有必要让她相信这些，她得先相信这些世上并不存在的东西，然后，当世界丑陋到不堪忍受时，她才能回过头来，住进自己的想象世界。<br />⏱ 2024-12-29 13:33:38 ^3300052237-5-3793-3900</p></blockquote><h3 id="第四章"><a class="markdownIt-Anchor" href="#第四章"></a> 第四章</h3><blockquote><p>📌 穷人总是对囤积大量物品热情无限。<br />⏱ 2024-12-28 19:11:20 ^3300052237-9-2536-2552</p></blockquote><h3 id="第二十七章"><a class="markdownIt-Anchor" href="#第二十七章"></a> 第二十七章</h3><blockquote><p>📌 弗朗茜自能听懂话开始，就没少碰到脏话。对这些人来说，污言秽语其实毫无意义，不过是这些词汇贫乏、不善辞令之人宣泄情绪的方式而已。<br />⏱ 2025-01-03 12:04:23 ^3300052237-32-3955-4018</p></blockquote><h3 id="第三十九章"><a class="markdownIt-Anchor" href="#第三十九章"></a> 第三十九章</h3><blockquote><p>📌 弗朗茜真希望大人别再对自己说这种话。无数要在“未来表示感谢”的东西，已经让她不堪重负。她觉得，自己最美好的青春年华，是不是都得用来寻找那些人，告诉他们：“您当年说得对，非常感谢您。”<br />⏱ 2025-01-04 16:32:16 ^3300052237-44-5693-5784</p></blockquote><blockquote><p>📌 不！不会！如果接受教育会让她羞于面对自己的一切，那她宁愿不接受教育。“<br />⏱ 2025-01-04 16:32:43 ^3300052237-44-6162-6197</p></blockquote><h3 id="第四十八章"><a class="markdownIt-Anchor" href="#第四十八章"></a> 第四十八章</h3><blockquote><p>📌 “唉……再见了，大学。再见了，跟上学有关的一切。”她转开脸，不再去看那片灰蒙蒙的光，闭上了眼。<br />⏱ 2025-01-05 13:21:55 ^3300052237-53-5942-5989</p></blockquote><blockquote><p>📌 “不管你喜不喜欢，也不管你做什么，你总会到二十五岁，那不如在二十五岁前接受教育。”<br />⏱ 2025-01-05 13:27:14 ^3300052237-53-7925-7966</p></blockquote><h1 id="读书笔记"><a class="markdownIt-Anchor" href="#读书笔记"></a> 读书笔记</h1><h2 id="本书评论"><a class="markdownIt-Anchor" href="#本书评论"></a> 本书评论</h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;书本摘要&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#书本摘要&quot;&gt;&lt;/a&gt; 书本摘要&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!abstract] 布鲁克林有棵树（果麦经典）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;img src=&quot;http</summary>
-      
-    
-    
-    
-    <category term="读书笔记" scheme="http://uerlink.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="读书笔记" scheme="http://uerlink.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
