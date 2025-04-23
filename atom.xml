@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2025-04-22T18:14:34.835Z</updated>
+  <updated>2025-04-23T14:38:53.233Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2025-04-23_初学者</title>
+    <link href="http://uerlink.github.io/2025/04/23/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-04-23_%E5%88%9D%E5%AD%A6%E8%80%85/"/>
+    <id>http://uerlink.github.io/2025/04/23/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-04-23_%E5%88%9D%E5%AD%A6%E8%80%85/</id>
+    <published>2025-04-22T16:00:00.000Z</published>
+    <updated>2025-04-23T14:38:53.233Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一个初学者面对新领域的思考"><a class="markdownIt-Anchor" href="#一个初学者面对新领域的思考"></a> 一个初学者面对新领域的思考</h1><h3 id="学不完的行业知识"><a class="markdownIt-Anchor" href="#学不完的行业知识"></a> 学不完的行业知识</h3><p>在社会上人们都有一个共识，想要高工资、好待遇，大多数人都会想到“学习”两个字，最常听到的一句话“去学一门手艺/技术”，但问题是怎么去学，怎么入门？他们不会告诉你。现在人类发展太快了，科技与技术水平的发展，在这一两百年间成指数级上升，要学的知识太多太多。<br />正常情况应该选一个行业去专入学习，把庞大的体系细分化，（我觉得这也是大学专业越来越多了的原因），但问题来了每当我们踏足一片新领域时，我们面对铺天盖地的专有名称和行业基本知识会感到无比彷徨。部分人可以会尝试利用网络去搜索词条，但往往会被其发展数十年的知识背景给吓倒，学一个知识点时其知识又牵扯出多个知识点，如同树干变成枝叶一般，需要学习的内容越来越多。</p><p>教员说过“战略上藐视 战术上重视”</p><p>“初学者不必气馁，任何一个领域或行业都有其专业的知识，<strong>对于这些基本知识，随着学习的不断深入，有些知识自然而然地就懂了，不必刻意去专门学习</strong>，其中最有效的学习方式就是多听多问，多与行业的人交流沟通。”</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;一个初学者面对新领域的思考&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#一个初学者面对新领域的思考&quot;&gt;&lt;/a&gt; 一个初学者面对新领域的思考&lt;/h1&gt;
+&lt;h3 id=&quot;学不完的行业知识&quot;&gt;&lt;a class=&quot;markdownIt-Anc</summary>
+      
+    
+    
+    
+    <category term="迁思回虑" scheme="http://uerlink.github.io/categories/%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/"/>
+    
+    
+    <category term="学习" scheme="http://uerlink.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>自动开关灯控制</title>
@@ -198,31 +223,6 @@
     
     
     <category term="生活日常" scheme="http://uerlink.github.io/tags/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文章格式规范</title>
-    <link href="http://uerlink.github.io/2025/02/01/%E6%B5%8B%E8%AF%95%E5%8C%BA/2025-02-01_%E6%96%87%E7%AB%A0%E6%A0%BC%E5%BC%8F%E8%A7%84%E8%8C%83/"/>
-    <id>http://uerlink.github.io/2025/02/01/%E6%B5%8B%E8%AF%95%E5%8C%BA/2025-02-01_%E6%96%87%E7%AB%A0%E6%A0%BC%E5%BC%8F%E8%A7%84%E8%8C%83/</id>
-    <published>2025-01-31T16:00:00.000Z</published>
-    <updated>2025-01-31T19:23:53.428Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="文件属性格式"><a class="markdownIt-Anchor" href="#文件属性格式"></a> 文件属性格式</h2><h3 id="格式"><a class="markdownIt-Anchor" href="#格式"></a> 格式</h3><pre class="highlight"><code class="hljs markdown">---<br>title: &#123;&#123;title&#125;&#125;<br>date: &#123;&#123;date&#125;&#125;<br>categories: 文档区<br>tags:<br><span class="hljs-bullet">  -</span> <br>banner<span class="hljs-emphasis">_img: </span><br><span class="hljs-emphasis">toc: true</span><br><span class="hljs-emphasis">---</span><br><span class="hljs-emphasis"></span><br><span class="hljs-emphasis">## 副标题</span><br><span class="hljs-emphasis"></span><br><span class="hljs-emphasis">### 三级标题</span><br><span class="hljs-emphasis"></span><br><span class="hljs-emphasis">#### 三级标题</span><br><span class="hljs-emphasis"></span><br></code></pre><h2 id="各种颜色的标签"><a class="markdownIt-Anchor" href="#各种颜色的标签"></a> 各种颜色的标签</h2><h3 id="格式-2"><a class="markdownIt-Anchor" href="#格式-2"></a> 格式</h3><pre class="highlight"><code class="hljs django"><span class="hljs-template-tag">&#123;% <span class="hljs-name">note</span> style %&#125;</span><span class="language-xml"></span><br><span class="language-xml">内容</span><br><span class="language-xml"></span><span class="hljs-template-tag">&#123;% <span class="hljs-name">endnote</span> %&#125;</span><br></code></pre><h3 id="style"><a class="markdownIt-Anchor" href="#style"></a> style</h3><div class="post-note note-primary"><p>primary</p></div><div class="post-note note-success"><p>success</p></div><div class="post-note note-info"><p>info</p></div><div class="post-note note-warning"><p>warning</p></div><div class="post-note note-danger"><p>danger</p></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;文件属性格式&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#文件属性格式&quot;&gt;&lt;/a&gt; 文件属性格式&lt;/h2&gt;
-&lt;h3 id=&quot;格式&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#格式&quot;&gt;&lt;/a&gt; 格式&lt;/h3</summary>
-      
-    
-    
-    
-    <category term="测试区" scheme="http://uerlink.github.io/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/"/>
-    
-    
-    <category term="hexo" scheme="http://uerlink.github.io/tags/hexo/"/>
     
   </entry>
   
