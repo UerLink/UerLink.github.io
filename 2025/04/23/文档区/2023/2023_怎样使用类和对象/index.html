@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <link rel="stylesheet" href="/js/prism/prism.css">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="UerLink_Blog">
+  <link 
+    rel="icon" 
+    href="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png">
+  <title>怎样使用类和对象</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="怎样使用类和对象">
+    
+    
+      <meta 
+        property="og:url" 
+        content="http://uerlink.github.io/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2025-04-23">
+      <meta 
+        property="og:article:modified_time" 
+        content="2025-04-23">
+      <meta 
+        property="og:article:author" 
+        content="UerLink">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="Cplusplus">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="UerLink_Blog" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">UERLINK-博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/books/index.html" 
+        class="navbar-menu-item">
+        
+          书单
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/atom.xml" 
+        class="navbar-menu-item">
+        
+          RSS订阅
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容...(目前仅支持在“首页”时搜索)" />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      怎样使用类和对象
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2025-04-22T16:00:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2025-04-23</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/" 
+          class="post-meta-link">
+          文档区
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>1.6k 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/Cplusplus/" 
+            class="post-meta-link">
+            Cplusplus
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h2 id="对象的初始化"><a class="markdownIt-Anchor" href="#对象的初始化"></a> 对象的初始化</h2>
+<p>不能在类声明中对数据成员进行初始化（因为类不是一个实体，是一个抽象类型，不占用存储空间）</p>
+<pre class="highlight"><code class="hljs c++">Class Time&#123;<br>	<span class="hljs-keyword">public</span>:<br>	<span class="hljs-type">int</span> x,y,z;<br>&#125;;<br>Time t1=&#123;<span class="hljs-number">1</span>,<span class="hljs-number">12</span>,<span class="hljs-number">3</span>&#125;<br></code></pre>
+<h3 id="构造函数"><a class="markdownIt-Anchor" href="#构造函数"></a> 构造函数</h3>
+<p>成员函数包含构造函数，构造函数的<strong>函数名必须和类名一样</strong>不然就变成成员函数了<br />
+如果用户没有在类中定义构造函数，那么系统会自动生成一个<strong>空的</strong>的构造函数<br />
+<em>注意</em>：</p>
+<ol>
+<li>构造函数没有返回值</li>
+<li>构造函数不能调用</li>
+<li>构造函数是在对象<strong>创建之前系统自动调用的</strong></li>
+</ol>
+<h4 id="构造函数实现初始化"><a class="markdownIt-Anchor" href="#构造函数实现初始化"></a> 构造函数实现初始化</h4>
+<p>使用构造函数给成员变量的赋值初始化数据。</p>
+<pre class="highlight"><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>&#123;<br>	<span class="hljs-keyword">public</span>:<br>	<span class="hljs-built_in">Time</span>()&#123;<br>		hour=<span class="hljs-number">0</span>;<br>	&#125;<br>	<span class="hljs-keyword">private</span>:<br>		<span class="hljs-type">int</span> hour;<br>&#125;;<br></code></pre>
+<h4 id="带参数的构造函数实现初始化"><a class="markdownIt-Anchor" href="#带参数的构造函数实现初始化"></a> 带参数的构造函数实现初始化</h4>
+<p>普通形式</p>
+<pre class="highlight"><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>&#123;<br>	<span class="hljs-keyword">public</span>:<br>	<span class="hljs-built_in">Time</span>(<span class="hljs-type">int</span> x)&#123;<br>		hour=x;   <span class="hljs-comment">//不再限定值，类外给什么就是什么</span><br>	&#125;<br>	<span class="hljs-keyword">private</span>:<br>		<span class="hljs-type">int</span> hour;<br>&#125;;<br></code></pre>
+<p>带成员构造表形式（推荐）</p>
+<pre class="highlight"><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>&#123;<br>	<span class="hljs-keyword">public</span>:<br>	<span class="hljs-built_in">Time</span>(<span class="hljs-type">int</span> x):<span class="hljs-built_in">hour</span>(x)&#123;<br>		<br>	&#125;<br>	<span class="hljs-keyword">private</span>:<br>		<span class="hljs-type">int</span> hour;<br>&#125;;<br></code></pre>
+<h4 id="构造函数的重载"><a class="markdownIt-Anchor" href="#构造函数的重载"></a> 构造函数的重载</h4>
+<p>构造函数的重载和函数重载类似。可以实现创建对象的时候是否赋值，赋值类型，赋值个数，来分别调用不同构造函数。</p>
+<p><em>注意</em>：可以不用参数而调用的构造函数，一个类中只能有一个</p>
+<p><em>无参构造函数</em>：（默认的构造函数），如果不自己写无参构造函数，那么系统会自己生成一个<strong>空的</strong>无参构造函数。<br />
+在生成对象的时候，要调用无参的，只能写出 “类名+对象名;”不能写出&quot;类名+对象名()”</p>
+<p><em>有参构造函数</em>：<br />
+注意：<strong>应在声明构造函数的指定默认值</strong>，而不能只在定义构造函数时指定默认值</p>
+<h3 id="析构函数"><a class="markdownIt-Anchor" href="#析构函数"></a> 析构函数</h3>
+<p><em>作用</em>：不是删除对象，而是在系统撤销对象占用的内存<strong>之前</strong>完成一些自定义清理</p>
+<p><em>注意</em>：</p>
+<ol>
+<li>一个类可以有多个构造函数，但只能有一个析构函数</li>
+<li>析构函数不能被重载</li>
+<li>和类名同名+“<strong>~</strong>”符号</li>
+<li><em>越先构造的对象，就越后被析构</em></li>
+</ol>
+<pre class="highlight"><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>&#123;<br>	<span class="hljs-keyword">public</span>:<br>	<span class="hljs-built_in">Time</span>(<span class="hljs-type">int</span> x)&#123;<br>		hour=x;   <span class="hljs-comment">//不再限定值，类外给什么就是什么</span><br>	&#125;<br>	~<span class="hljs-built_in">Time</span>()&#123;    <span class="hljs-comment">//析构函数</span><br>	<br>	<br>	&#125;<br>	<span class="hljs-keyword">private</span>:<br>		<span class="hljs-type">int</span> hour;<br>		<br><br>&#125;;<br></code></pre>
+<h2 id="对象数组"><a class="markdownIt-Anchor" href="#对象数组"></a> 对象数组</h2>
+<p><strong>结构</strong>：类名 + 对象名[] = {x,y,z}</p>
+<p>如果构造函数有多个参数，如果单独赋值</p>
+<pre class="highlight"><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>:<br>&#123;<br>	<br><br>&#125;;<br>T s[<span class="hljs-number">3</span>]=&#123;<br>	<span class="hljs-built_in">box</span>(<span class="hljs-number">12</span>,<span class="hljs-number">13</span>,<span class="hljs-number">14</span>),<br>	<span class="hljs-built_in">box</span>(<span class="hljs-number">121</span>,<span class="hljs-number">124</span>,<span class="hljs-number">124</span>),<br>	<span class="hljs-built_in">box</span>(<span class="hljs-number">123</span>,<span class="hljs-number">513</span>,<span class="hljs-number">12</span>),<br>	<br>&#125;<br><br></code></pre>
+<h2 id="对象指针"><a class="markdownIt-Anchor" href="#对象指针"></a> 对象指针</h2>
+<h3 id="指向对象的指针"><a class="markdownIt-Anchor" href="#指向对象的指针"></a> 指向对象的指针</h3>
+<p><strong>结构</strong>：类名 星号 对象指针名</p>
+<pre class="highlight"><code class="hljs c++">*<span class="hljs-built_in">pt</span><br>(*pt).hour  <span class="hljs-comment">//和 pt-&gt;hour 一样</span><br><br></code></pre>
+<h3 id="指向对象成员的指针"><a class="markdownIt-Anchor" href="#指向对象成员的指针"></a> 指向对象成员的指针</h3>
+<p><strong>结构</strong>：数据类型名 星号 指针变量名</p>
+<h3 id="this指针"><a class="markdownIt-Anchor" href="#this指针"></a> this指针</h3>
+<p>每个成员函数中都包含一个<strong>特殊的指针</strong>，就是<strong>this指针</strong><br />
+指向本类对象的指针，它的值是<strong>当前被调用</strong>的成员函数所在对象的起始地址。</p>
+<pre class="highlight"><code class="hljs C++"><span class="hljs-comment">//对象a</span><br><span class="hljs-keyword">this</span>-&gt;width; <span class="hljs-comment">//和 a.width 效果一样</span><br></code></pre>
+<p>this是隐形的</p>
+<pre class="highlight"><code class="hljs c++"><span class="hljs-comment">//类名：Box</span><br><span class="hljs-comment">//编写的时候</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">Box::a</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">return</span>(width);<br>&#125;<br><br><span class="hljs-comment">//实际情况</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">Box::a</span><span class="hljs-params">(box * <span class="hljs-keyword">this</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">return</span>(<span class="hljs-keyword">this</span>-&gt;width);<br>&#125;<br></code></pre>
+<h2 id="共用数据的保护"><a class="markdownIt-Anchor" href="#共用数据的保护"></a> 共用数据的保护</h2>
+<h3 id="常对象"><a class="markdownIt-Anchor" href="#常对象"></a> 常对象</h3>
+<p><strong>结构</strong>：类名 const 对象名【(实参)】    或者     const 类名 对象名【(实参)】</p>
+<p>定义成常对象后，该对象的数据成员都变成常数据成员了，而且该对象只能调用它的常成员函数</p>
+<p><em>注意</em></p>
+<ol>
+<li>常对象<strong>只能调用常成员函数</strong></li>
+<li>常成员函数可以访问常对象的数据成员</li>
+<li><strong>非</strong>常成员函数，不能引用和修改常对象的数据成员</li>
+</ol>
+<p><img src="../../../../%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A0%A1%E5%86%85%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/2022-2023%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F/C%20%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/%E9%99%84%E4%BB%B6/%E7%AC%AC9%E7%AB%A0_%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/image-20221103095810129.png" alt="500" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="../../../../%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A0%A1%E5%86%85%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/2022-2023%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F/C%20%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/%E9%99%84%E4%BB%B6/%E7%AC%AC9%E7%AB%A0_%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/image-20221103095810129.png" class="lozad post-image"></p>
+<h3 id="常数据成员"><a class="markdownIt-Anchor" href="#常数据成员"></a> 常数据成员</h3>
+<p><strong>结构</strong>：const 类型 数据成员名</p>
+<p><em>注意</em></p>
+<ol>
+<li>将类的某个数据成员声明为常数据成员后，则每个对象而言，该数据成员都是常数</li>
+</ol>
+<h3 id="常成员函数"><a class="markdownIt-Anchor" href="#常成员函数"></a> 常成员函数</h3>
+<p><strong>结构</strong>：类型 函数名 const</p>
+<p><em>注意</em></p>
+<ol>
+<li>常成员函数在声明和编写的时候都必须写上 const</li>
+<li>常成员函数<strong>不能修改</strong>常对象中的数据成员</li>
+</ol>
+<h4 id="mutalbe"><a class="markdownIt-Anchor" href="#mutalbe"></a> mutalbe</h4>
+<p><strong>结构</strong>：mutable int x;<br />
+可以使用mutalbe 把常对象中的某个数据成员，定义成可变的数据成员</p>
+<p>定义常成员函数</p>
+<pre class="highlight"><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-type">const</span></span>;   <span class="hljs-comment">//将函数声明成const</span><br></code></pre>
+<h3 id="对象的赋值"><a class="markdownIt-Anchor" href="#对象的赋值"></a> 对象的赋值</h3>
+<p><strong>结构</strong>：对象2=对象1</p>
+<p><em>注意</em></p>
+<ol>
+<li>只能赋值数据成员，不能赋值成员函数</li>
+<li>不能动态分配对象，否则会赋值报错</li>
+</ol>
+<h3 id="对象的复制"><a class="markdownIt-Anchor" href="#对象的复制"></a> 对象的复制</h3>
+<p><strong>结构</strong>：类名 对象2(对象1)<br />
+也可以写成 类名 对象1=对象2</p>
+<p><em>注意</em></p>
+<ol>
+<li>复制调用的是复制构造函数</li>
+</ol>
+<p><strong>赋值和复制的区别</strong>：<br />
+赋值是已经存在对象，复制是新建对象</p>
+<h3 id="静态数据成员"><a class="markdownIt-Anchor" href="#静态数据成员"></a> 静态数据成员</h3>
+<p><strong>结构</strong>：static 类型 变量名；</p>
+<p>静态数据成员是各对象所共用的，不属于某个对象，但是对象可以引用该静态数据成员</p>
+<p><em>注意</em></p>
+<ol>
+<li>一般数据成员对象建立时分配空间，对象撤销时释放空间，静态数据成员在程序开始时分配空间，整个程序结束后才释放空间</li>
+<li>静态数据成员可以通过类名访问（普通数据成员不能）：<strong>类名::变量名</strong> 必须用 <strong>::</strong></li>
+</ol>
+<h3 id="静态成员函数"><a class="markdownIt-Anchor" href="#静态成员函数"></a> 静态成员函数</h3>
+<p><strong>结构</strong>：static 类型 函数名();</p>
+<p>静态成员函数是类的一部分，而不是对象的一部分，但是对象也可以调用静态成员函数</p>
+<p><em>注意</em></p>
+<ol>
+<li>静态成员函数只能引用静态数据成员</li>
+</ol>
+<h3 id="友元"><a class="markdownIt-Anchor" href="#友元"></a> 友元</h3>
+<p><strong>结构</strong>：friend 类型 函数名(类名 &amp;);</p>
+<p>friend 是写在类中，声明类外的普通函数为友元函数, 友元函数可以引用该类中的public数据成员</p>
+<pre class="highlight"><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>&#123;<br>	<span class="hljs-keyword">public</span>:<br>		<span class="hljs-function"><span class="hljs-keyword">friend</span> <span class="hljs-type">void</span> <span class="hljs-title">dis</span><span class="hljs-params">(Time &amp;)</span></span>;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dis</span><span class="hljs-params">(Time&amp; t)</span></span>;  <span class="hljs-comment">//注意括号中的值</span><br></code></pre>
+<p><em>注意</em></p>
+<ol>
+<li>friend 函数也可以是另一个类中的成员函数（但引用是单项的），注意提前声明</li>
+<li>友元可以访问本类中的私有成员</li>
+<li>不要过多的使用友元</li>
+</ol>
+<h3 id="友元类"><a class="markdownIt-Anchor" href="#友元类"></a> 友元类</h3>
+<p><strong>结构</strong>：friend 类名;<br />
+把整个类声明为友元</p>
+<h3 id="类模板"><a class="markdownIt-Anchor" href="#类模板"></a> 类模板</h3>
+<p><strong>结构</strong>：template&lt;class 虚拟类型名&gt;<br />
+要使用模板时，这一行必须写在类声明前面，注意这一行结尾没有 <strong>;</strong></p>
+<p>也可以使用多个虚拟类型名<br />
+template&lt;class X, class Y ,class Z&gt;</p>
+<p>使用了虚拟类型名的类(类模板)，在创建对象时，<br />
+<strong>格式</strong>：类模板名 &lt;实际类型名&gt; 对象名</p>
+
+  </div>
+  <div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/2025/04/23/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-04-23_%E5%88%9D%E5%AD%A6%E8%80%85/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">初学者 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E6%80%A7/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">类和对象的特性 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text"> 对象的初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text"> 构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 构造函数实现初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 带参数的构造函数实现初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 构造函数的重载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text"> 析构函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84"><span class="toc-number">2.</span> <span class="toc-text"> 对象数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%8C%87%E9%92%88"><span class="toc-number">3.</span> <span class="toc-text"> 对象指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8C%87%E9%92%88"><span class="toc-number">3.1.</span> <span class="toc-text"> 指向对象的指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%90%91%E5%AF%B9%E8%B1%A1%E6%88%90%E5%91%98%E7%9A%84%E6%8C%87%E9%92%88"><span class="toc-number">3.2.</span> <span class="toc-text"> 指向对象成员的指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this%E6%8C%87%E9%92%88"><span class="toc-number">3.3.</span> <span class="toc-text"> this指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B1%E7%94%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BF%9D%E6%8A%A4"><span class="toc-number">4.</span> <span class="toc-text"> 共用数据的保护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.1.</span> <span class="toc-text"> 常对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98"><span class="toc-number">4.2.</span> <span class="toc-text"> 常数据成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text"> 常成员函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mutalbe"><span class="toc-number">4.3.1.</span> <span class="toc-text"> mutalbe</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%B5%8B%E5%80%BC"><span class="toc-number">4.4.</span> <span class="toc-text"> 对象的赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%8D%E5%88%B6"><span class="toc-number">4.5.</span> <span class="toc-text"> 对象的复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98"><span class="toc-number">4.6.</span> <span class="toc-text"> 静态数据成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">4.7.</span> <span class="toc-text"> 静态成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E5%85%83"><span class="toc-number">4.8.</span> <span class="toc-text"> 友元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E5%85%83%E7%B1%BB"><span class="toc-number">4.9.</span> <span class="toc-text"> 友元类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF"><span class="toc-number">4.10.</span> <span class="toc-text"> 类模板</span></a></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">UerLink</p>
+<p class="author-description">“终身学习，不破不立”</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>94</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>7</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>62</span>
+    <span>标签</span>
+  </a>
+</div>
+
+
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text"> 对象的初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text"> 构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 构造函数实现初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 带参数的构造函数实现初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 构造函数的重载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text"> 析构函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84"><span class="toc-number">2.</span> <span class="toc-text"> 对象数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%8C%87%E9%92%88"><span class="toc-number">3.</span> <span class="toc-text"> 对象指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8C%87%E9%92%88"><span class="toc-number">3.1.</span> <span class="toc-text"> 指向对象的指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%90%91%E5%AF%B9%E8%B1%A1%E6%88%90%E5%91%98%E7%9A%84%E6%8C%87%E9%92%88"><span class="toc-number">3.2.</span> <span class="toc-text"> 指向对象成员的指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this%E6%8C%87%E9%92%88"><span class="toc-number">3.3.</span> <span class="toc-text"> this指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B1%E7%94%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BF%9D%E6%8A%A4"><span class="toc-number">4.</span> <span class="toc-text"> 共用数据的保护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.1.</span> <span class="toc-text"> 常对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98"><span class="toc-number">4.2.</span> <span class="toc-text"> 常数据成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text"> 常成员函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mutalbe"><span class="toc-number">4.3.1.</span> <span class="toc-text"> mutalbe</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%B5%8B%E5%80%BC"><span class="toc-number">4.4.</span> <span class="toc-text"> 对象的赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%8D%E5%88%B6"><span class="toc-number">4.5.</span> <span class="toc-text"> 对象的复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98"><span class="toc-number">4.6.</span> <span class="toc-text"> 静态数据成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">4.7.</span> <span class="toc-text"> 静态成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E5%85%83"><span class="toc-number">4.8.</span> <span class="toc-text"> 友元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E5%85%83%E7%B1%BB"><span class="toc-number">4.9.</span> <span class="toc-text"> 友元类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF"><span class="toc-number">4.10.</span> <span class="toc-text"> 类模板</span></a></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/">
+        <div class="categories-list-item">
+          实践项目
+          <span class="categories-list-item-badge">11</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/">
+        <div class="categories-list-item">
+          文档区
+          <span class="categories-list-item-badge">47</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/">
+        <div class="categories-list-item">
+          测试区
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+        <div class="categories-list-item">
+          读书笔记
+          <span class="categories-list-item-badge">15</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+        <div class="categories-list-item">
+          踩坑记录
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/">
+        <div class="categories-list-item">
+          生活日常
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/">
+        <div class="categories-list-item">
+          迁思回虑
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>常用标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" 
+        title="读书笔记">
+        <div class="tags-list-item">读书笔记</div>
+      </a>
+    
+      <a 
+        href="/tags/hexo/" 
+        title="hexo">
+        <div class="tags-list-item">hexo</div>
+      </a>
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
+        href="/tags/AI/" 
+        title="AI">
+        <div class="tags-list-item">AI</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%94%B5%E8%B7%AF/" 
+        title="电路">
+        <div class="tags-list-item">电路</div>
+      </a>
+    
+      <a 
+        href="/tags/PCB/" 
+        title="PCB">
+        <div class="tags-list-item">PCB</div>
+      </a>
+    
+      <a 
+        href="/tags/%E8%8A%AF%E7%89%87/" 
+        title="芯片">
+        <div class="tags-list-item">芯片</div>
+      </a>
+    
+      <a 
+        href="/tags/ESP32/" 
+        title="ESP32">
+        <div class="tags-list-item">ESP32</div>
+      </a>
+    
+      <a 
+        href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" 
+        title="踩坑记录">
+        <div class="tags-list-item">踩坑记录</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%94%BB%E7%94%BB/" 
+        title="画画">
+        <div class="tags-list-item">画画</div>
+      </a>
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/C/" 
+        title="C++">
+        <div class="tags-list-item">C++</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
+        title="数据库">
+        <div class="tags-list-item">数据库</div>
+      </a>
+    
+      <a 
+        href="/tags/C-sharp/" 
+        title="C_sharp">
+        <div class="tags-list-item">C_sharp</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%AC%94%E8%AE%B0/" 
+        title="笔记">
+        <div class="tags-list-item">笔记</div>
+      </a>
+    
+      <a 
+        href="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/" 
+        title="传感器">
+        <div class="tags-list-item">传感器</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text"> 对象的初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text"> 构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 构造函数实现初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 带参数的构造函数实现初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 构造函数的重载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text"> 析构函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84"><span class="toc-number">2.</span> <span class="toc-text"> 对象数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%8C%87%E9%92%88"><span class="toc-number">3.</span> <span class="toc-text"> 对象指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8C%87%E9%92%88"><span class="toc-number">3.1.</span> <span class="toc-text"> 指向对象的指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%90%91%E5%AF%B9%E8%B1%A1%E6%88%90%E5%91%98%E7%9A%84%E6%8C%87%E9%92%88"><span class="toc-number">3.2.</span> <span class="toc-text"> 指向对象成员的指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this%E6%8C%87%E9%92%88"><span class="toc-number">3.3.</span> <span class="toc-text"> this指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B1%E7%94%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BF%9D%E6%8A%A4"><span class="toc-number">4.</span> <span class="toc-text"> 共用数据的保护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.1.</span> <span class="toc-text"> 常对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98"><span class="toc-number">4.2.</span> <span class="toc-text"> 常数据成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text"> 常成员函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mutalbe"><span class="toc-number">4.3.1.</span> <span class="toc-text"> mutalbe</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%B5%8B%E5%80%BC"><span class="toc-number">4.4.</span> <span class="toc-text"> 对象的赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%8D%E5%88%B6"><span class="toc-number">4.5.</span> <span class="toc-text"> 对象的复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98"><span class="toc-number">4.6.</span> <span class="toc-text"> 静态数据成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">4.7.</span> <span class="toc-text"> 静态成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E5%85%83"><span class="toc-number">4.8.</span> <span class="toc-text"> 友元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E5%85%83%E7%B1%BB"><span class="toc-number">4.9.</span> <span class="toc-text"> 友元类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF"><span class="toc-number">4.10.</span> <span class="toc-text"> 类模板</span></a></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-04-23_%E5%88%9D%E5%AD%A6%E8%80%85/"><div class="recent-posts-item-content">初学者</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/"><div class="recent-posts-item-content">怎样使用类和对象</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E6%80%A7/"><div class="recent-posts-item-content">类和对象的特性</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/Linux%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/"><div class="recent-posts-item-content">Linux文件目录操作</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2025
+          
+          
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          UERLINK-博客
+        </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+</footer>
+<script src="/js/prism/prism.js" async></script> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>

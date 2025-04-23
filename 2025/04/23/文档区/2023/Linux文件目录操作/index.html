@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <link rel="stylesheet" href="/js/prism/prism.css">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="UerLink_Blog">
+  <link 
+    rel="icon" 
+    href="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png">
+  <title>Linux文件目录操作</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="Linux文件目录操作">
+    
+    
+      <meta 
+        property="og:url" 
+        content="http://uerlink.github.io/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/Linux%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2025-04-23">
+      <meta 
+        property="og:article:modified_time" 
+        content="2025-04-23">
+      <meta 
+        property="og:article:author" 
+        content="UerLink">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="Linux">
+        
+          <meta 
+            property="og:article:tag" 
+            content="目录结构">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="UerLink_Blog" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">UERLINK-博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/books/index.html" 
+        class="navbar-menu-item">
+        
+          书单
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/atom.xml" 
+        class="navbar-menu-item">
+        
+          RSS订阅
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容...(目前仅支持在“首页”时搜索)" />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      Linux文件目录操作
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2025-04-22T16:00:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2025-04-23</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/" 
+          class="post-meta-link">
+          文档区
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>555 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/Linux/" 
+            class="post-meta-link">
+            Linux
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" 
+            class="post-meta-link">
+            目录结构
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h3 id="linux的目录结构"><a class="markdownIt-Anchor" href="#linux的目录结构"></a> Linux的目录结构</h3>
+<ul>
+<li><strong>/</strong>（根目录）
+<ul>
+<li><strong>bin</strong>（binary的缩写，二进制目录，包括系统管理员和普通管理员使用的Linux命令）</li>
+<li><strong>boot</strong>（存放系统核心文件以及启动时必须读取的文件，包括 Linux 内核）</li>
+<li><strong>dev</strong>（device的缩写，存放外部设备代码文件）</li>
+<li><strong>etc</strong>（etcetera的缩写所有系统管理和维护的配置文件，是Linux系统的中心）</li>
+<li><strong>home</strong>
+<ul>
+<li>用户的目录（目录名以用户的账号命名）</li>
+</ul>
+</li>
+<li><strong>root</strong>（超级管理员ROOT的主目录）</li>
+<li><strong>run</strong>（保存从系统安装到当前的关于系统信息的 文件）</li>
+<li><strong>sbin</strong></li>
+<li><strong>tmp</strong>（临时文件）</li>
+<li><strong>usr</strong> （user的缩写，应用程序存放目录）
+<ul>
+<li><strong>bin</strong></li>
+<li><strong>local</strong></li>
+<li><strong>sbin</strong>（sudo bin超级用户的 linux 命令，类似于/bin）</li>
+<li><strong>tmp</strong></li>
+<li><strong>snap</strong>（软件安装框架的程序文件）</li>
+</ul>
+</li>
+<li><strong>var</strong> （variable的缩写，系统日志，共享文件）
+<ul>
+<li><strong>tmp</strong>（临时文件）</li>
+</ul>
+</li>
+<li><strong>media</strong>（U盘，光盘挂载目录）</li>
+<li><strong>mnt</strong>（移动硬盘挂载目录）</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件目录操作"><a class="markdownIt-Anchor" href="#文件目录操作"></a> 文件/目录操作</h3>
+<blockquote>
+<p>目录就是一个文件</p>
+</blockquote>
+<h4 id="查看文件目录"><a class="markdownIt-Anchor" href="#查看文件目录"></a> 查看文件/目录</h4>
+<p>命令：<strong>l</strong> 或 <strong>ls</strong> —查看文件列表<br />
+命令：<strong>la</strong> 或 <strong>l -a</strong> —查看包括隐藏文件<br />
+命令：<strong>ll</strong> —查看文件列表详细信息<br />
+命令：<strong>pwd</strong> —显示当前目录路径</p>
+<h4 id="切换目录"><a class="markdownIt-Anchor" href="#切换目录"></a> 切换目录</h4>
+<p>命令：<strong>cd 目录名或完整路径</strong> —跳转路径<br />
+命令：<strong>cd -</strong> —回到刚刚访问的目录<br />
+命令：<strong>cd …</strong> —回到上级目录<br />
+命令：<strong>cd</strong> 或 <strong>cd ~</strong> —回到自己的主目录下</p>
+<h4 id="操作文件"><a class="markdownIt-Anchor" href="#操作文件"></a> 操作文件</h4>
+<p><strong>touch 文件名</strong>  —新建文件<br />
+<strong>mkdir 目录名</strong>  —新建目录<br />
+<strong>vim 文件名</strong> —新建文件<br />
+<strong>rm  文件名</strong>  —删除文件<br />
+<strong>rm -rf 目录</strong>   —删除非空目录<br />
+<strong>rmdir 目录名</strong>  —删除空目录<br />
+<strong>cp 文件名  新文件名</strong>  —复制文件<br />
+<strong>mv 文件名 新文件名</strong>  —移动文件<br />
+<strong>cat 文件名</strong> ----显示文件内容<br />
+<strong>head -n 文件名</strong> —显示多少行的文件内容（不输入-n 默认10）<br />
+<strong>tail -n 文件名</strong>  —显示后几行的文件内容<br />
+<strong>wc 文件名</strong> —结果显示 4 个，分别为行数，字数，字节数，文</p>
+<h4 id="创建链接文件"><a class="markdownIt-Anchor" href="#创建链接文件"></a> 创建链接文件</h4>
+<blockquote>
+<p>理解为创建快捷方式</p>
+</blockquote>
+<p><strong>ln -s 原文件 链接文件</strong>  —软链接<br />
+<strong>ln 原文件 链接文件</strong>   —硬链接<br />
+例: ln -s ~/happy.txt ~/桌面/happy</p>
+
+  </div>
+  <div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E6%80%A7/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">类和对象的特性 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">传感器的基本特性 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text"> Linux的目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text"> 文件&#x2F;目录操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text"> 查看文件&#x2F;目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-number">2.2.</span> <span class="toc-text"> 切换目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text"> 操作文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="toc-number">2.4.</span> <span class="toc-text"> 创建链接文件</span></a></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">UerLink</p>
+<p class="author-description">“终身学习，不破不立”</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>94</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>7</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>62</span>
+    <span>标签</span>
+  </a>
+</div>
+
+
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text"> Linux的目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text"> 文件&#x2F;目录操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text"> 查看文件&#x2F;目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-number">2.2.</span> <span class="toc-text"> 切换目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text"> 操作文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="toc-number">2.4.</span> <span class="toc-text"> 创建链接文件</span></a></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/">
+        <div class="categories-list-item">
+          实践项目
+          <span class="categories-list-item-badge">11</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/">
+        <div class="categories-list-item">
+          文档区
+          <span class="categories-list-item-badge">47</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/">
+        <div class="categories-list-item">
+          测试区
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+        <div class="categories-list-item">
+          读书笔记
+          <span class="categories-list-item-badge">15</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+        <div class="categories-list-item">
+          踩坑记录
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/">
+        <div class="categories-list-item">
+          生活日常
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/">
+        <div class="categories-list-item">
+          迁思回虑
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>常用标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" 
+        title="读书笔记">
+        <div class="tags-list-item">读书笔记</div>
+      </a>
+    
+      <a 
+        href="/tags/hexo/" 
+        title="hexo">
+        <div class="tags-list-item">hexo</div>
+      </a>
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
+        href="/tags/AI/" 
+        title="AI">
+        <div class="tags-list-item">AI</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%94%B5%E8%B7%AF/" 
+        title="电路">
+        <div class="tags-list-item">电路</div>
+      </a>
+    
+      <a 
+        href="/tags/PCB/" 
+        title="PCB">
+        <div class="tags-list-item">PCB</div>
+      </a>
+    
+      <a 
+        href="/tags/%E8%8A%AF%E7%89%87/" 
+        title="芯片">
+        <div class="tags-list-item">芯片</div>
+      </a>
+    
+      <a 
+        href="/tags/ESP32/" 
+        title="ESP32">
+        <div class="tags-list-item">ESP32</div>
+      </a>
+    
+      <a 
+        href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" 
+        title="踩坑记录">
+        <div class="tags-list-item">踩坑记录</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%94%BB%E7%94%BB/" 
+        title="画画">
+        <div class="tags-list-item">画画</div>
+      </a>
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/C/" 
+        title="C++">
+        <div class="tags-list-item">C++</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
+        title="数据库">
+        <div class="tags-list-item">数据库</div>
+      </a>
+    
+      <a 
+        href="/tags/C-sharp/" 
+        title="C_sharp">
+        <div class="tags-list-item">C_sharp</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%AC%94%E8%AE%B0/" 
+        title="笔记">
+        <div class="tags-list-item">笔记</div>
+      </a>
+    
+      <a 
+        href="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/" 
+        title="传感器">
+        <div class="tags-list-item">传感器</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text"> Linux的目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text"> 文件&#x2F;目录操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text"> 查看文件&#x2F;目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-number">2.2.</span> <span class="toc-text"> 切换目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text"> 操作文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="toc-number">2.4.</span> <span class="toc-text"> 创建链接文件</span></a></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-04-23_%E5%88%9D%E5%AD%A6%E8%80%85/"><div class="recent-posts-item-content">初学者</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/"><div class="recent-posts-item-content">怎样使用类和对象</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E6%80%A7/"><div class="recent-posts-item-content">类和对象的特性</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/Linux%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/"><div class="recent-posts-item-content">Linux文件目录操作</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2025
+          
+          
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          UERLINK-博客
+        </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+</footer>
+<script src="/js/prism/prism.js" async></script> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>

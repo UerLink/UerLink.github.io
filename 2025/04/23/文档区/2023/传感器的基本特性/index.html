@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <link rel="stylesheet" href="/js/prism/prism.css">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="UerLink_Blog">
+  <link 
+    rel="icon" 
+    href="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png">
+  <title>传感器的基本特性</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="传感器的基本特性">
+    
+    
+      <meta 
+        property="og:url" 
+        content="http://uerlink.github.io/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2025-04-23">
+      <meta 
+        property="og:article:modified_time" 
+        content="2025-04-23">
+      <meta 
+        property="og:article:author" 
+        content="UerLink">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="传感器">
+        
+          <meta 
+            property="og:article:tag" 
+            content="笔记">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="UerLink_Blog" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">UERLINK-博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/books/index.html" 
+        class="navbar-menu-item">
+        
+          书单
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/atom.xml" 
+        class="navbar-menu-item">
+        
+          RSS订阅
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容...(目前仅支持在“首页”时搜索)" />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      传感器的基本特性
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2025-04-22T16:00:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2025-04-23</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/" 
+          class="post-meta-link">
+          文档区
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>549 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/" 
+            class="post-meta-link">
+            传感器
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E7%AC%94%E8%AE%B0/" 
+            class="post-meta-link">
+            笔记
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h1 id="两种特性"><a class="markdownIt-Anchor" href="#两种特性"></a> 两种特性</h1>
+<h2 id="传感器的静态特性"><a class="markdownIt-Anchor" href="#传感器的静态特性"></a> 传感器的静态特性</h2>
+<h3 id="1线性度"><a class="markdownIt-Anchor" href="#1线性度"></a> 1.线性度</h3>
+<p>传感器输入与输出成线性关系的程度</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>γ</mi><mi>L</mi></msub><mo>=</mo><mo>±</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><msub><mi>L</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></mrow><msub><mi>Y</mi><mrow><mi>F</mi><mi>S</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">\gamma_L=\pm\frac{\Delta L_{max}}{Y_{FS}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05556em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord">±</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<h3 id="2灵敏度"><a class="markdownIt-Anchor" href="#2灵敏度"></a> 2.灵敏度</h3>
+<p>传感器在稳态下输出量变化对输入量变换的比值，通常用 K（斜率）或 S 来表示</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>y</mi></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">S_n=\frac{\Delta y}{\Delta x}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.0463299999999998em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603299999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">Δ</span><span class="mord mathnormal">x</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p><em>注意</em>：灵敏度越高，就越容易受到外界干扰，系统的稳定性就越差</p>
+<h3 id="3迟滞"><a class="markdownIt-Anchor" href="#3迟滞"></a> 3.迟滞</h3>
+<p>又称<em>回程误差</em>：在相同测量条件下，对同一大小的输入信号，传感器正负行程的输出信号大小不相等的现象</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>γ</mi><mi>H</mi></msub><mo>=</mo><mfrac><msub><mi mathvariant="normal">Δ</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><msub><mi>Y</mi><mrow><mi>F</mi><mi>S</mi></mrow></msub></mfrac><mo>×</mo><mn>100</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\gamma_H=\frac{\Delta_{max}}{Y_{FS}} \times 100\%
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05556em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.08125em;">H</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord">Δ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">%</span></span></span></span></span></p>
+<h3 id="4重复性"><a class="markdownIt-Anchor" href="#4重复性"></a> 4.重复性</h3>
+<blockquote>
+<p>因为随机误差导致的</p>
+</blockquote>
+<p>表示传感器在输入量按同一方向做“全量程”多次测试时，所取得输入-输出特性曲线一致的程度</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>γ</mi><mi>R</mi></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><msub><mi>R</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></mrow><msub><mi>Y</mi><mrow><mi>F</mi><mi>S</mi></mrow></msub></mfrac><mo>×</mo><mn>100</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\gamma_R=\frac{\Delta R_{max}}{Y_{FS}} \times 100\%
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05556em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">%</span></span></span></span></span></p>
+<h3 id="5漂移"><a class="markdownIt-Anchor" href="#5漂移"></a> 5.漂移</h3>
+<p>传感器在输入量不变的情况下，输出量随着<strong>时间</strong>或<strong>温度</strong>等变换的表象<br />
+<em>注意</em>：漂移与被测量的输入量无关<br />
+<em>标准温度</em>：20℃</p>
+<h4 id="漂移原因"><a class="markdownIt-Anchor" href="#漂移原因"></a> 漂移原因</h4>
+<ol>
+<li><em>时间漂移</em>：传感器自身敏感材料特性和结构参数发生老化
+<ol>
+<li>零点漂移</li>
+<li>灵敏度漂移</li>
+</ol>
+</li>
+<li><em>温度漂移</em>：测试过程中（温度，湿度，压力…）发生变换，导致输出量信号发生变化。<br />
+一般 R 变了，就是温度漂移</li>
+</ol>
+<h3 id="6精度"><a class="markdownIt-Anchor" href="#6精度"></a> 6.精度</h3>
+<h4 id="精密度"><a class="markdownIt-Anchor" href="#精密度"></a> 精密度</h4>
+<p>是比较集中的程度，精密度是随机误差大小的标志<br />
+<em>注意</em>：精密度高不一定准确度就高</p>
+<h4 id="精确度"><a class="markdownIt-Anchor" href="#精确度"></a> 精确度</h4>
+<h4 id="准确度"><a class="markdownIt-Anchor" href="#准确度"></a> 准确度</h4>
+<p>偏移的程度，准确度是系统误差（系统误差可以减小）</p>
+<h3 id="7稳定性"><a class="markdownIt-Anchor" href="#7稳定性"></a> 7.稳定性</h3>
+<p>工作一定次数后，误差值的最大与最小之差</p>
+<h2 id="传感器的动态特性"><a class="markdownIt-Anchor" href="#传感器的动态特性"></a> 传感器的动态特性</h2>
+<p>传感器的动态特性可以从<em>时域</em>和<em>频域</em>两个方面分别采用<em>瞬态响应法</em>和<em>频率响应法</em>来分析</p>
+<h3 id="一阶或二阶传感器的动态特性参数"><a class="markdownIt-Anchor" href="#一阶或二阶传感器的动态特性参数"></a> 一阶或二阶传感器的动态特性参数</h3>
+<h3 id="时间常数"><a class="markdownIt-Anchor" href="#时间常数"></a> 时间常数</h3>
+<h3 id="延迟时间"><a class="markdownIt-Anchor" href="#延迟时间"></a> 延迟时间</h3>
+<h3 id="上升时间"><a class="markdownIt-Anchor" href="#上升时间"></a> 上升时间</h3>
+<h3 id="峰值时间"><a class="markdownIt-Anchor" href="#峰值时间"></a> 峰值时间</h3>
+<h3 id="超调量"><a class="markdownIt-Anchor" href="#超调量"></a> 超调量</h3>
+<h3 id="单位阶跃"><a class="markdownIt-Anchor" href="#单位阶跃"></a> 单位阶跃</h3>
+
+  </div>
+  <div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/Linux%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">Linux文件目录操作 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/%E7%89%A9%E7%90%86%E5%B1%82/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">网络中的物理层 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text"> 两种特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E9%9D%99%E6%80%81%E7%89%B9%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text"> 传感器的静态特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E7%BA%BF%E6%80%A7%E5%BA%A6"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 1.线性度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E7%81%B5%E6%95%8F%E5%BA%A6"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2.灵敏度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E8%BF%9F%E6%BB%9E"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 3.迟滞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E9%87%8D%E5%A4%8D%E6%80%A7"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 4.重复性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E6%BC%82%E7%A7%BB"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 5.漂移</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BC%82%E7%A7%BB%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.1.5.1.</span> <span class="toc-text"> 漂移原因</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E7%B2%BE%E5%BA%A6"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 6.精度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%BE%E5%AF%86%E5%BA%A6"><span class="toc-number">1.1.6.1.</span> <span class="toc-text"> 精密度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%BE%E7%A1%AE%E5%BA%A6"><span class="toc-number">1.1.6.2.</span> <span class="toc-text"> 精确度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E7%A1%AE%E5%BA%A6"><span class="toc-number">1.1.6.3.</span> <span class="toc-text"> 准确度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-number">1.1.7.</span> <span class="toc-text"> 7.稳定性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> 传感器的动态特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E6%88%96%E4%BA%8C%E9%98%B6%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7%E5%8F%82%E6%95%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 一阶或二阶传感器的动态特性参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%B8%B8%E6%95%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 时间常数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 延迟时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E5%8D%87%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 上升时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B3%B0%E5%80%BC%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 峰值时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E8%B0%83%E9%87%8F"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 超调量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E9%98%B6%E8%B7%83"><span class="toc-number">1.2.7.</span> <span class="toc-text"> 单位阶跃</span></a></li></ol></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">UerLink</p>
+<p class="author-description">“终身学习，不破不立”</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>94</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>7</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>62</span>
+    <span>标签</span>
+  </a>
+</div>
+
+
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text"> 两种特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E9%9D%99%E6%80%81%E7%89%B9%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text"> 传感器的静态特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E7%BA%BF%E6%80%A7%E5%BA%A6"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 1.线性度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E7%81%B5%E6%95%8F%E5%BA%A6"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2.灵敏度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E8%BF%9F%E6%BB%9E"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 3.迟滞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E9%87%8D%E5%A4%8D%E6%80%A7"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 4.重复性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E6%BC%82%E7%A7%BB"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 5.漂移</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BC%82%E7%A7%BB%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.1.5.1.</span> <span class="toc-text"> 漂移原因</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E7%B2%BE%E5%BA%A6"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 6.精度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%BE%E5%AF%86%E5%BA%A6"><span class="toc-number">1.1.6.1.</span> <span class="toc-text"> 精密度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%BE%E7%A1%AE%E5%BA%A6"><span class="toc-number">1.1.6.2.</span> <span class="toc-text"> 精确度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E7%A1%AE%E5%BA%A6"><span class="toc-number">1.1.6.3.</span> <span class="toc-text"> 准确度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-number">1.1.7.</span> <span class="toc-text"> 7.稳定性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> 传感器的动态特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E6%88%96%E4%BA%8C%E9%98%B6%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7%E5%8F%82%E6%95%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 一阶或二阶传感器的动态特性参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%B8%B8%E6%95%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 时间常数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 延迟时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E5%8D%87%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 上升时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B3%B0%E5%80%BC%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 峰值时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E8%B0%83%E9%87%8F"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 超调量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E9%98%B6%E8%B7%83"><span class="toc-number">1.2.7.</span> <span class="toc-text"> 单位阶跃</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/">
+        <div class="categories-list-item">
+          实践项目
+          <span class="categories-list-item-badge">11</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/">
+        <div class="categories-list-item">
+          文档区
+          <span class="categories-list-item-badge">47</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/">
+        <div class="categories-list-item">
+          测试区
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+        <div class="categories-list-item">
+          读书笔记
+          <span class="categories-list-item-badge">15</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+        <div class="categories-list-item">
+          踩坑记录
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/">
+        <div class="categories-list-item">
+          生活日常
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/">
+        <div class="categories-list-item">
+          迁思回虑
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>常用标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" 
+        title="读书笔记">
+        <div class="tags-list-item">读书笔记</div>
+      </a>
+    
+      <a 
+        href="/tags/hexo/" 
+        title="hexo">
+        <div class="tags-list-item">hexo</div>
+      </a>
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
+        href="/tags/AI/" 
+        title="AI">
+        <div class="tags-list-item">AI</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%94%B5%E8%B7%AF/" 
+        title="电路">
+        <div class="tags-list-item">电路</div>
+      </a>
+    
+      <a 
+        href="/tags/PCB/" 
+        title="PCB">
+        <div class="tags-list-item">PCB</div>
+      </a>
+    
+      <a 
+        href="/tags/%E8%8A%AF%E7%89%87/" 
+        title="芯片">
+        <div class="tags-list-item">芯片</div>
+      </a>
+    
+      <a 
+        href="/tags/ESP32/" 
+        title="ESP32">
+        <div class="tags-list-item">ESP32</div>
+      </a>
+    
+      <a 
+        href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" 
+        title="踩坑记录">
+        <div class="tags-list-item">踩坑记录</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%94%BB%E7%94%BB/" 
+        title="画画">
+        <div class="tags-list-item">画画</div>
+      </a>
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/C/" 
+        title="C++">
+        <div class="tags-list-item">C++</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
+        title="数据库">
+        <div class="tags-list-item">数据库</div>
+      </a>
+    
+      <a 
+        href="/tags/C-sharp/" 
+        title="C_sharp">
+        <div class="tags-list-item">C_sharp</div>
+      </a>
+    
+      <a 
+        href="/tags/%E7%AC%94%E8%AE%B0/" 
+        title="笔记">
+        <div class="tags-list-item">笔记</div>
+      </a>
+    
+      <a 
+        href="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/" 
+        title="传感器">
+        <div class="tags-list-item">传感器</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text"> 两种特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E9%9D%99%E6%80%81%E7%89%B9%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text"> 传感器的静态特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E7%BA%BF%E6%80%A7%E5%BA%A6"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 1.线性度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E7%81%B5%E6%95%8F%E5%BA%A6"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2.灵敏度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E8%BF%9F%E6%BB%9E"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 3.迟滞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E9%87%8D%E5%A4%8D%E6%80%A7"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 4.重复性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E6%BC%82%E7%A7%BB"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 5.漂移</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BC%82%E7%A7%BB%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.1.5.1.</span> <span class="toc-text"> 漂移原因</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E7%B2%BE%E5%BA%A6"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 6.精度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%BE%E5%AF%86%E5%BA%A6"><span class="toc-number">1.1.6.1.</span> <span class="toc-text"> 精密度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%BE%E7%A1%AE%E5%BA%A6"><span class="toc-number">1.1.6.2.</span> <span class="toc-text"> 精确度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E7%A1%AE%E5%BA%A6"><span class="toc-number">1.1.6.3.</span> <span class="toc-text"> 准确度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-number">1.1.7.</span> <span class="toc-text"> 7.稳定性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> 传感器的动态特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E6%88%96%E4%BA%8C%E9%98%B6%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7%E5%8F%82%E6%95%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 一阶或二阶传感器的动态特性参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%B8%B8%E6%95%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 时间常数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 延迟时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E5%8D%87%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 上升时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B3%B0%E5%80%BC%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 峰值时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E8%B0%83%E9%87%8F"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 超调量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E9%98%B6%E8%B7%83"><span class="toc-number">1.2.7.</span> <span class="toc-text"> 单位阶跃</span></a></li></ol></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-04-23_%E5%88%9D%E5%AD%A6%E8%80%85/"><div class="recent-posts-item-content">初学者</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/"><div class="recent-posts-item-content">怎样使用类和对象</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E6%80%A7/"><div class="recent-posts-item-content">类和对象的特性</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/Linux%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/"><div class="recent-posts-item-content">Linux文件目录操作</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2025
+          
+          
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          UERLINK-博客
+        </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+</footer>
+<script src="/js/prism/prism.js" async></script> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
