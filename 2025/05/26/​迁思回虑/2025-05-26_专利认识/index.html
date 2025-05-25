@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <link rel="stylesheet" href="/js/prism/prism.css">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="UerLink_Blog">
+  <link 
+    rel="icon" 
+    href="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png">
+  <title>专利认识--- 实用新型专利</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="专利认识--- 实用新型专利">
+    
+    
+      <meta 
+        property="og:url" 
+        content="http://uerlink.github.io/2025/05/26/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-05-26_%E4%B8%93%E5%88%A9%E8%AE%A4%E8%AF%86/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2025-05-26">
+      <meta 
+        property="og:article:modified_time" 
+        content="2025-05-26">
+      <meta 
+        property="og:article:author" 
+        content="UerLink">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="专利">
+        
+          <meta 
+            property="og:article:tag" 
+            content="新知识">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="UerLink_Blog" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">UERLINK-博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/books/index.html" 
+        class="navbar-menu-item">
+        
+          书单
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/atom.xml" 
+        class="navbar-menu-item">
+        
+          RSS订阅
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容...(目前仅支持在“首页”时搜索)" />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      专利认识--- 实用新型专利
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2025-05-25T16:00:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2025-05-26</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/" 
+          class="post-meta-link">
+          迁思回虑
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>941 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/%E4%B8%93%E5%88%A9/" 
+            class="post-meta-link">
+            专利
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E6%96%B0%E7%9F%A5%E8%AF%86/" 
+            class="post-meta-link">
+            新知识
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h1 id="实用新型专利"><a class="markdownIt-Anchor" href="#实用新型专利"></a> 实用新型专利</h1>
+<h2 id="新知识"><a class="markdownIt-Anchor" href="#新知识"></a> 新知识</h2>
+<p>今天在学习单片机电源设计时，用到了一款SOC芯片IP5306（支持2.4A的同步升压转换和2.1A的同步开关充电），但是呢！有个缺点在外部电源断开时切换为锂电池供电会出现0.5s的断电，单片机就会掉电复位。我想让它不断电像UPS一样就去搜索实现方案，搜索到一篇实用新型专利，我很好奇这个专利中的电路与我搜索的其他电路只多了一个二极管，假如其他人也想到添加一个二极管，那不就侵权了吗？未免不要太容易。</p>
+<p>才发现实用新型专利还像没啥含金量，电路本身不受保护，保护的只是所用的组合方式。假如涉及到侵权那改改二极管型号就可以了。有的时候一些小公司会鼓励员工多申请实用新型专利，来增加公司的专利数，在外人面前提升公司名气。有趣！0_0<br />
+当然也不是那么差，我只是才了解到这个，随着后续学习可能有新的理解。</p>
+<h2 id="ai回答"><a class="markdownIt-Anchor" href="#ai回答"></a> AI回答</h2>
+<p>实用新型专利与发明专利是我国专利法保护的两种主要类型，二者在保护客体、创造性要求、审查程序等方面存在显著区别。</p>
+<h3 id="一-保护客体"><a class="markdownIt-Anchor" href="#一-保护客体"></a> 一、保护客体</h3>
+<ol>
+<li>
+<p><strong>发明专利</strong><br />
+保护范围涵盖产品、方法及其改进方案。例如：</p>
+<ul>
+<li><strong>产品发明</strong>：新型材料、机械设备等物质形态创新；</li>
+<li><strong>方法发明</strong>：生产工艺、检测技术等流程性创新。<br />
+可涉及无固定形状的物质（如液态、气态）。</li>
+</ul>
+</li>
+<li>
+<p><strong>实用新型专利</strong><br />
+仅保护具有确定形状或构造的实体产品，例如：</p>
+<ul>
+<li>牙刷的结构改进、机械部件的组合优化；</li>
+<li>排除方法类创新（如制造工艺）和未定型产品（如粉末状材料）。</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="二-授权标准"><a class="markdownIt-Anchor" href="#二-授权标准"></a> 二、授权标准</h3>
+<ol>
+<li>
+<p><strong>创造性要求</strong></p>
+<ul>
+<li>发明需具备“突出的实质性特点和显著进步”，强调技术突破性；</li>
+<li>实用新型仅需“实质性特点和进步”，对创新高度要求较低。</li>
+</ul>
+</li>
+<li>
+<p><strong>实用性</strong><br />
+两者均需满足实用性要求，但实用新型更侧重实际应用效果，例如结构优化带来的使用便利性提升。</p>
+</li>
+</ol>
+<hr />
+<h3 id="三-审查程序与周期"><a class="markdownIt-Anchor" href="#三-审查程序与周期"></a> 三、审查程序与周期</h3>
+<ol>
+<li>
+<p><strong>发明专利</strong></p>
+<ul>
+<li><strong>实质审查制</strong>：需通过新颖性、创造性、实用性全面审查，耗时约2-3年；</li>
+<li>包含18个月公开期及可能的期限补偿（如新药专利最长可延长5年保护）。</li>
+</ul>
+</li>
+<li>
+<p><strong>实用新型专利</strong></p>
+<ul>
+<li><strong>初步审查制</strong>：仅审查形式要件和明显缺陷，授权周期短（通常6-12个月）；</li>
+<li>无实质审查，专利权稳定性相对较低，后续可能需补充“专利权评价报告”验证有效性。</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="四-保护期限与费用"><a class="markdownIt-Anchor" href="#四-保护期限与费用"></a> 四、保护期限与费用</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>发明专利</th>
+<th>实用新型专利</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>保护期限</td>
+<td>20年（自申请日起）</td>
+<td>10年（自申请日起）</td>
+</tr>
+<tr>
+<td>申请费用</td>
+<td>约3400元（含实审费）</td>
+<td>约500元</td>
+</tr>
+<tr>
+<td>年费标准</td>
+<td>逐年递增，最高8000元/年</td>
+<td>逐年递增，最高2000元/年</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="五-其他关键差异"><a class="markdownIt-Anchor" href="#五-其他关键差异"></a> 五、其他关键差异</h3>
+<ol>
+<li>
+<p><strong>权利稳定性</strong><br />
+发明因经过实质审查，无效风险较低；实用新型易因缺乏创造性被宣告无效。</p>
+</li>
+<li>
+<p><strong>申请策略</strong><br />
+允许同日申请两者（需声明放弃实用新型），以兼顾快速授权与长期保护。</p>
+</li>
+<li>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>发明适合核心技术或生命周期长的创新；</li>
+<li>实用新型适合结构改进型产品或需快速商业化的技术。</li>
+</ul>
+</li>
+</ol>
+<hr />
+
+  </div>
+  <div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2025/04/28/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-04-28_%E7%94%B5%E7%84%8A%E7%AC%94%E8%AE%B0/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">电焊笔记 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E6%96%B0%E5%9E%8B%E4%B8%93%E5%88%A9"><span class="toc-number">1.</span> <span class="toc-text"> 实用新型专利</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 新知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ai%E5%9B%9E%E7%AD%94"><span class="toc-number">1.2.</span> <span class="toc-text"> AI回答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E4%BF%9D%E6%8A%A4%E5%AE%A2%E4%BD%93"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 一、保护客体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E6%8E%88%E6%9D%83%E6%A0%87%E5%87%86"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 二、授权标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E5%AE%A1%E6%9F%A5%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%91%A8%E6%9C%9F"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 三、审查程序与周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B-%E4%BF%9D%E6%8A%A4%E6%9C%9F%E9%99%90%E4%B8%8E%E8%B4%B9%E7%94%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 四、保护期限与费用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94-%E5%85%B6%E4%BB%96%E5%85%B3%E9%94%AE%E5%B7%AE%E5%BC%82"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 五、其他关键差异</span></a></li></ol></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">UerLink</p>
+<p class="author-description">“终身学习，不破不立”</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>98</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>7</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>66</span>
+    <span>标签</span>
+  </a>
+</div>
+
+
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E6%96%B0%E5%9E%8B%E4%B8%93%E5%88%A9"><span class="toc-number">1.</span> <span class="toc-text"> 实用新型专利</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 新知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ai%E5%9B%9E%E7%AD%94"><span class="toc-number">1.2.</span> <span class="toc-text"> AI回答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E4%BF%9D%E6%8A%A4%E5%AE%A2%E4%BD%93"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 一、保护客体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E6%8E%88%E6%9D%83%E6%A0%87%E5%87%86"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 二、授权标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E5%AE%A1%E6%9F%A5%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%91%A8%E6%9C%9F"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 三、审查程序与周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B-%E4%BF%9D%E6%8A%A4%E6%9C%9F%E9%99%90%E4%B8%8E%E8%B4%B9%E7%94%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 四、保护期限与费用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94-%E5%85%B6%E4%BB%96%E5%85%B3%E9%94%AE%E5%B7%AE%E5%BC%82"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 五、其他关键差异</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/">
+        <div class="categories-list-item">
+          实践项目
+          <span class="categories-list-item-badge">11</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/">
+        <div class="categories-list-item">
+          文档区
+          <span class="categories-list-item-badge">50</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/">
+        <div class="categories-list-item">
+          测试区
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+        <div class="categories-list-item">
+          读书笔记
+          <span class="categories-list-item-badge">15</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+        <div class="categories-list-item">
+          踩坑记录
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/">
+        <div class="categories-list-item">
+          生活日常
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/">
+        <div class="categories-list-item">
+          迁思回虑
+          <span class="categories-list-item-badge">4</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>常用标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E6%97%A7%E7%89%A9%E6%94%B9%E9%80%A0/" 
+        title="旧物改造">
+        <div class="tags-list-item">旧物改造</div>
+      </a>
+    
+      <a 
+        href="/tags/C-sharp/" 
+        title="C_sharp">
+        <div class="tags-list-item">C_sharp</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
+        title="数据库">
+        <div class="tags-list-item">数据库</div>
+      </a>
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
+        href="/tags/Vim/" 
+        title="Vim">
+        <div class="tags-list-item">Vim</div>
+      </a>
+    
+      <a 
+        href="/tags/git/" 
+        title="git">
+        <div class="tags-list-item">git</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%9A%E4%BF%A1/" 
+        title="通信">
+        <div class="tags-list-item">通信</div>
+      </a>
+    
+      <a 
+        href="/tags/C/" 
+        title="C++">
+        <div class="tags-list-item">C++</div>
+      </a>
+    
+      <a 
+        href="/tags/Android/" 
+        title="Android">
+        <div class="tags-list-item">Android</div>
+      </a>
+    
+      <a 
+        href="/tags/api/" 
+        title="api">
+        <div class="tags-list-item">api</div>
+      </a>
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A1%86%E6%9E%B6/" 
+        title="框架">
+        <div class="tags-list-item">框架</div>
+      </a>
+    
+      <a 
+        href="/tags/frask/" 
+        title="frask">
+        <div class="tags-list-item">frask</div>
+      </a>
+    
+      <a 
+        href="/tags/AI/" 
+        title="AI">
+        <div class="tags-list-item">AI</div>
+      </a>
+    
+      <a 
+        href="/tags/GPT/" 
+        title="GPT">
+        <div class="tags-list-item">GPT</div>
+      </a>
+    
+      <a 
+        href="/tags/json/" 
+        title="json">
+        <div class="tags-list-item">json</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E6%96%B0%E5%9E%8B%E4%B8%93%E5%88%A9"><span class="toc-number">1.</span> <span class="toc-text"> 实用新型专利</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 新知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ai%E5%9B%9E%E7%AD%94"><span class="toc-number">1.2.</span> <span class="toc-text"> AI回答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E4%BF%9D%E6%8A%A4%E5%AE%A2%E4%BD%93"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 一、保护客体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E6%8E%88%E6%9D%83%E6%A0%87%E5%87%86"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 二、授权标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E5%AE%A1%E6%9F%A5%E7%A8%8B%E5%BA%8F%E4%B8%8E%E5%91%A8%E6%9C%9F"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 三、审查程序与周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B-%E4%BF%9D%E6%8A%A4%E6%9C%9F%E9%99%90%E4%B8%8E%E8%B4%B9%E7%94%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 四、保护期限与费用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94-%E5%85%B6%E4%BB%96%E5%85%B3%E9%94%AE%E5%B7%AE%E5%BC%82"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 五、其他关键差异</span></a></li></ol></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-05-26</div>
+        <a href="/2025/05/26/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-05-26_%E4%B8%93%E5%88%A9%E8%AE%A4%E8%AF%86/"><div class="recent-posts-item-content">专利认识--- 实用新型专利</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-28</div>
+        <a href="/2025/04/28/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-04-28_%E7%94%B5%E7%84%8A%E7%AC%94%E8%AE%B0/"><div class="recent-posts-item-content">电焊笔记</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-24</div>
+        <a href="/2025/04/24/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-04-24_%E5%AE%9E%E7%94%A8Linux%E5%91%BD%E4%BB%A4/"><div class="recent-posts-item-content">实用Linux命令</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-04-23</div>
+        <a href="/2025/04/23/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-04-23_%E5%88%9D%E5%AD%A6%E8%80%85/"><div class="recent-posts-item-content">初学者</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2025
+          
+          
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          UERLINK-博客
+        </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+</footer>
+<script src="/js/prism/prism.js" async></script> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
