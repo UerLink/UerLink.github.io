@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2025-06-24T15:56:49.717Z</updated>
+  <updated>2025-07-14T08:38:12.978Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>序列生成器</title>
+    <link href="http://uerlink.github.io/2025/07/14/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/2025-07-14_%E5%BA%8F%E5%88%97%E7%94%9F%E6%88%90%E5%99%A8/"/>
+    <id>http://uerlink.github.io/2025/07/14/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/2025-07-14_%E5%BA%8F%E5%88%97%E7%94%9F%E6%88%90%E5%99%A8/</id>
+    <published>2025-07-13T16:00:00.000Z</published>
+    <updated>2025-07-14T08:38:12.978Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="序列生成器"><a class="markdownIt-Anchor" href="#序列生成器"></a> 序列生成器</h1><p>使用python结合tkinter、pandas、webbrowser库写一个生成符号序列和图案序列的小工具</p><h3 id="符号生成效果"><a class="markdownIt-Anchor" href="#符号生成效果"></a> 符号生成效果：</h3><p>可以更改符号和数量</p><p>●●●●●●●●●●●●●●●●●●●●●●○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p><p><img src="https://s2.loli.net/2025/07/14/uCboVyFRLq7AZiD.png" alt="" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://s2.loli.net/2025/07/14/uCboVyFRLq7AZiD.png" class="lozad post-image"><br /><code>[] (附件/2025-07-14_序列生成器/image-20250714163601082.png)</code></p><h3 id="图案生成效果"><a class="markdownIt-Anchor" href="#图案生成效果"></a> 图案生成效果：</h3><p>生成HTML网页，大小为A4纸，点击序列标题可以打开打印界面。修改images的图片可以自定义生成图案。</p><p><img src="https://s2.loli.net/2025/07/14/e1y3gChVfnzM2Qo.png" alt="" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="https://s2.loli.net/2025/07/14/e1y3gChVfnzM2Qo.png" class="lozad post-image"><br /><code>! [](附件/2025-07-14_序列生成器/image-20250714163720383.png)</code></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;序列生成器&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#序列生成器&quot;&gt;&lt;/a&gt; 序列生成器&lt;/h1&gt;
+&lt;p&gt;使用python结合tkinter、pandas、webbrowser库写一个生成符号序列和图案序列的小工具&lt;/p&gt;
+&lt;h3 </summary>
+      
+    
+    
+    
+    <category term="实践项目" scheme="http://uerlink.github.io/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>名句</title>
@@ -204,36 +228,6 @@
     <category term="Cplusplus" scheme="http://uerlink.github.io/tags/Cplusplus/"/>
     
     <category term="笔记" scheme="http://uerlink.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux文件目录操作</title>
-    <link href="http://uerlink.github.io/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_Linux%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/"/>
-    <id>http://uerlink.github.io/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_Linux%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/</id>
-    <published>2025-04-22T16:00:00.000Z</published>
-    <updated>2025-04-23T15:13:02.660Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="linux的目录结构"><a class="markdownIt-Anchor" href="#linux的目录结构"></a> Linux的目录结构</h3><ul><li><strong>/</strong>（根目录）<ul><li><strong>bin</strong>（binary的缩写，二进制目录，包括系统管理员和普通管理员使用的Linux命令）</li><li><strong>boot</strong>（存放系统核心文件以及启动时必须读取的文件，包括 Linux 内核）</li><li><strong>dev</strong>（device的缩写，存放外部设备代码文件）</li><li><strong>etc</strong>（etcetera的缩写所有系统管理和维护的配置文件，是Linux系统的中心）</li><li><strong>home</strong><ul><li>用户的目录（目录名以用户的账号命名）</li></ul></li><li><strong>root</strong>（超级管理员ROOT的主目录）</li><li><strong>run</strong>（保存从系统安装到当前的关于系统信息的 文件）</li><li><strong>sbin</strong></li><li><strong>tmp</strong>（临时文件）</li><li><strong>usr</strong> （user的缩写，应用程序存放目录）<ul><li><strong>bin</strong></li><li><strong>local</strong></li><li><strong>sbin</strong>（sudo bin超级用户的 linux 命令，类似于/bin）</li><li><strong>tmp</strong></li><li><strong>snap</strong>（软件安装框架的程序文件）</li></ul></li><li><strong>var</strong> （variable的缩写，系统日志，共享文件）<ul><li><strong>tmp</strong>（临时文件）</li></ul></li><li><strong>media</strong>（U盘，光盘挂载目录）</li><li><strong>mnt</strong>（移动硬盘挂载目录）</li></ul></li></ul><h3 id="文件目录操作"><a class="markdownIt-Anchor" href="#文件目录操作"></a> 文件/目录操作</h3><blockquote><p>目录就是一个文件</p></blockquote><h4 id="查看文件目录"><a class="markdownIt-Anchor" href="#查看文件目录"></a> 查看文件/目录</h4><p>命令：<strong>l</strong> 或 <strong>ls</strong> —查看文件列表<br />命令：<strong>la</strong> 或 <strong>l -a</strong> —查看包括隐藏文件<br />命令：<strong>ll</strong> —查看文件列表详细信息<br />命令：<strong>pwd</strong> —显示当前目录路径</p><h4 id="切换目录"><a class="markdownIt-Anchor" href="#切换目录"></a> 切换目录</h4><p>命令：<strong>cd 目录名或完整路径</strong> —跳转路径<br />命令：<strong>cd -</strong> —回到刚刚访问的目录<br />命令：<strong>cd …</strong> —回到上级目录<br />命令：<strong>cd</strong> 或 <strong>cd ~</strong> —回到自己的主目录下</p><h4 id="操作文件"><a class="markdownIt-Anchor" href="#操作文件"></a> 操作文件</h4><p><strong>touch 文件名</strong>  —新建文件<br /><strong>mkdir 目录名</strong>  —新建目录<br /><strong>vim 文件名</strong> —新建文件<br /><strong>rm  文件名</strong>  —删除文件<br /><strong>rm -rf 目录</strong>   —删除非空目录<br /><strong>rmdir 目录名</strong>  —删除空目录<br /><strong>cp 文件名  新文件名</strong>  —复制文件<br /><strong>mv 文件名 新文件名</strong>  —移动文件<br /><strong>cat 文件名</strong> ----显示文件内容<br /><strong>head -n 文件名</strong> —显示多少行的文件内容（不输入-n 默认10）<br /><strong>tail -n 文件名</strong>  —显示后几行的文件内容<br /><strong>wc 文件名</strong> —结果显示 4 个，分别为行数，字数，字节数，文</p><h4 id="创建链接文件"><a class="markdownIt-Anchor" href="#创建链接文件"></a> 创建链接文件</h4><blockquote><p>理解为创建快捷方式</p></blockquote><p><strong>ln -s 原文件 链接文件</strong>  —软链接<br /><strong>ln 原文件 链接文件</strong>   —硬链接<br />例: ln -s ~/happy.txt ~/桌面/happy</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;linux的目录结构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#linux的目录结构&quot;&gt;&lt;/a&gt; Linux的目录结构&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;/&lt;/strong&gt;（根目录）
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;b</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="Linux" scheme="http://uerlink.github.io/tags/Linux/"/>
-    
-    <category term="目录结构" scheme="http://uerlink.github.io/tags/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
