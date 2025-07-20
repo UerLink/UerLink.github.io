@@ -6,7 +6,7 @@
   <link href="http://uerlink.github.io/atom.xml" rel="self"/>
   
   <link href="http://uerlink.github.io/"/>
-  <updated>2025-07-14T08:48:29.094Z</updated>
+  <updated>2025-07-20T10:34:51.257Z</updated>
   <id>http://uerlink.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为什么总是感觉忙不过来？</title>
+    <link href="http://uerlink.github.io/2025/07/20/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-07-20_%E4%B8%BA%E4%BB%80%E4%B9%88%E6%80%BB%E6%98%AF%E6%84%9F%E8%A7%89%E5%BF%99%E4%B8%8D%E8%BF%87%E6%9D%A5%EF%BC%9F/"/>
+    <id>http://uerlink.github.io/2025/07/20/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-07-20_%E4%B8%BA%E4%BB%80%E4%B9%88%E6%80%BB%E6%98%AF%E6%84%9F%E8%A7%89%E5%BF%99%E4%B8%8D%E8%BF%87%E6%9D%A5%EF%BC%9F/</id>
+    <published>2025-07-19T16:00:00.000Z</published>
+    <updated>2025-07-20T10:34:51.257Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="对忙不过来问题的探讨"><a class="markdownIt-Anchor" href="#对忙不过来问题的探讨"></a> 对“忙不过来”问题的探讨！</h1><h3 id="感受"><a class="markdownIt-Anchor" href="#感受"></a> 感受</h3><p>每天总是觉得很忙，要做的事情很多很多，一天结束后复盘，却发现事情好像并没有解决多少，效率低下。<br />有时一个问题解决了，但又马上安排另一个问题，任务计划的排得满满当当。</p><h3 id="为什么琐事越来越多"><a class="markdownIt-Anchor" href="#为什么琐事越来越多"></a> 为什么琐事越来越多？</h3><ul><li>重要的事情太难，大脑选择逃避（eg.学习新技能、做项目、…）。</li><li>简单且无需动脑的事情容易上手，给人虚假的成就感。（eg.复制粘贴、整理文件、回消息、…）。</li><li>外界干扰太多，注意力被碎片化，精力不集中！</li></ul><h3 id="解决方法"><a class="markdownIt-Anchor" href="#解决方法"></a> 解决方法：</h3><ul><li>学会区分“重要”与“不重要”（四象限）</li><li>每天先把要紧事情完成，在时间最集中和精力最充沛的时间段完成。</li><li>给锁事限制时间，超出时间就立刻停止！避免别虚假的成就感所鼓动。</li><li>避免无意义，且太长远的规划。类似的计划需要先选择一个计划完成，不要同时进行。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;对忙不过来问题的探讨&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#对忙不过来问题的探讨&quot;&gt;&lt;/a&gt; 对“忙不过来”问题的探讨！&lt;/h1&gt;
+&lt;h3 id=&quot;感受&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#</summary>
+      
+    
+    
+    
+    <category term="迁思回虑" scheme="http://uerlink.github.io/categories/%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>序列生成器</title>
@@ -191,33 +214,6 @@
     <summary type="html">&lt;h2 id=&quot;对象的初始化&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#对象的初始化&quot;&gt;&lt;/a&gt; 对象的初始化&lt;/h2&gt;
 &lt;p&gt;不能在类声明中对数据成员进行初始化（因为类不是一个实体，是一个抽象类型，不占用存储空间）&lt;/p&gt;
 &lt;pre class=</summary>
-      
-    
-    
-    
-    <category term="文档区" scheme="http://uerlink.github.io/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/"/>
-    
-    
-    <category term="Cplusplus" scheme="http://uerlink.github.io/tags/Cplusplus/"/>
-    
-    <category term="笔记" scheme="http://uerlink.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>类和对象的特性</title>
-    <link href="http://uerlink.github.io/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E6%80%A7/"/>
-    <id>http://uerlink.github.io/2025/04/23/%E6%96%87%E6%A1%A3%E5%8C%BA/2023/2023_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E6%80%A7/</id>
-    <published>2025-04-22T16:00:00.000Z</published>
-    <updated>2025-04-23T15:19:06.847Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="类和对象"><a class="markdownIt-Anchor" href="#类和对象"></a> 类和对象</h1><h2 id="关键词解释"><a class="markdownIt-Anchor" href="#关键词解释"></a> 关键词解释</h2><p><strong>对象</strong>：具有<em>属性</em>（数据）和<em>行为</em>（函数）的, 对象是系统的基本单位</p><p><strong>封装</strong>：封把一个对象的一部分属性和功能对外界进行屏蔽，留下少量接口，装把数据和操作代码装到一个对象中</p><p><strong>抽象</strong>：表示同一类事物的本质</p><blockquote><p>类是对象的抽象，对象则是类的具体实</p></blockquote><p><strong>继承与重用</strong>：存在基类（父类）与派生类（子类）</p><p><strong>多态性</strong>：同一个消息，不同的对象有不同的响应</p><h2 id="面向对象"><a class="markdownIt-Anchor" href="#面向对象"></a> 面向对象</h2><blockquote><p>面向对象是一种编程思路和建模思想，与编程语言没有直接关系</p></blockquote><h3 id="区别"><a class="markdownIt-Anchor" href="#区别"></a> 区别</h3><p>区分方法：看是否有一种用户自定义的变量类型</p><h4 id="面向对象对比面向过程的好处"><a class="markdownIt-Anchor" href="#面向对象对比面向过程的好处"></a> 面向对象对比面向过程的好处</h4><ol><li>数据与处理程序分开</li><li>数据和处理过程是隐蔽的</li><li>数据结构改变，不会改变其他的处理过程</li></ol><h2 id="类的声明和对象的定义"><a class="markdownIt-Anchor" href="#类的声明和对象的定义"></a> 类的声明和对象的定义</h2><p><strong>类</strong>：同类型的对象抽取<em>共同性</em></p><blockquote><p>类其实是一种自定义数据类型 , 不占存储空间，对象占空间</p></blockquote><p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>类</mtext><mo>=</mo><mtext>数据</mtext><mo>+</mo><mtext>成员函数</mtext></mrow><annotation encoding="application/x-tex">类 = 数据 + 成员函数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">类</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">据</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">成</span><span class="mord cjk_fallback">员</span><span class="mord cjk_fallback">函</span><span class="mord cjk_fallback">数</span></span></span></span></span></p><p><strong>实例化</strong>：定义对象的过程，new 一个对象</p><h3 id="访问限定符"><a class="markdownIt-Anchor" href="#访问限定符"></a> 访问限定符</h3><p><em>protected</em>：不能被类外访问，允许被“派生类”的成员函数访问<br /><em>private</em>：<br /><em>public</em>：</p><h2 id="定义类和对象"><a class="markdownIt-Anchor" href="#定义类和对象"></a> 定义类和对象</h2><p>1.先声明，再定义<br />2.在声明的同时定义对象</p><pre class="highlight"><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span><br>&#123;<br>.....<br>&#125;stud1,stud2;<br></code></pre><p>3.不出现类名，直接定义对象（不推荐）</p><h3 id="class和struct的区别"><a class="markdownIt-Anchor" href="#class和struct的区别"></a> class和struct的区别</h3><p><em>class</em>：使用class定义类时，默认private<br /><em>struct</em>：使用struct定义类时，默认public</p><h3 id="定义成员函数"><a class="markdownIt-Anchor" href="#定义成员函数"></a> 定义成员函数</h3><p><em>注意</em>构造函数和成员函数不能化等号</p><h4 id="在类内定义"><a class="markdownIt-Anchor" href="#在类内定义"></a> 在类内定义</h4><h4 id="在类外定义"><a class="markdownIt-Anchor" href="#在类外定义"></a> 在类外定义</h4><p>在类中声明函数（也可以声明最前面加上<em>inline</em>，让函数变成内置函数），然后在函数名前面写上 类名+全局作用域限定符（如果声明的时候加上<em>inline</em>就需要在函数最前面再加上<em>inline</em>）</p><pre class="highlight"><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span></span>;<br><span class="hljs-keyword">private</span>:<br><span class="hljs-type">int</span> num;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Student::display</span><span class="hljs-params">()</span></span>&#123;<br>cout&lt;&lt;num;<br>&#125;<br></code></pre><h3 id="成员函数的存储方式"><a class="markdownIt-Anchor" href="#成员函数的存储方式"></a> 成员函数的存储方式</h3><p>使用<strong>sizeof(类名或变量类型)</strong> 可以获取该类对象所占用的字节数</p><blockquote><p>填写类名时，输出的字节数等于该类所有变量占的内存</p></blockquote><pre class="highlight"><code class="hljs CPP">cout&lt;&lt;<span class="hljs-built_in">sizeof</span>(类名或变量类型)&lt;&lt;endl;<br></code></pre><h2 id="对象成员的引用"><a class="markdownIt-Anchor" href="#对象成员的引用"></a> 对象成员的引用</h2><h4 id="通过对象名和成员运算符访问"><a class="markdownIt-Anchor" href="#通过对象名和成员运算符访问"></a> 通过对象名和成员运算符访问</h4><h4 id="通过指针访问对中的成员"><a class="markdownIt-Anchor" href="#通过指针访问对中的成员"></a> 通过指针访问对中的成员</h4><p>对象类型指针</p><blockquote><p>类名 *指针名</p></blockquote><p>指针指向符号 ** -&gt;**  ，p-&gt;hour 等效 t.hour</p><pre class="highlight"><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br><span class="hljs-type">int</span> hour;<br><br>&#125;;<br>Time t,*p;   <span class="hljs-comment">//创建一个对象和对象类型指针</span><br>p = &amp;t;      <span class="hljs-comment">//将对象地址给对象类型指针</span><br>cout&lt;&lt;p-&gt;hour;  <span class="hljs-comment">//也可以使用cout&lt;&lt;p.hour</span><br></code></pre><h4 id="通过对象的引用来访问"><a class="markdownIt-Anchor" href="#通过对象的引用来访问"></a> 通过对象的引用来访问</h4><p>直接引用</p><pre class="highlight"><code class="hljs CPP">Time t1;<br>Time &amp;t2=t1;<br></code></pre><p>在向函数传递时引用</p><pre class="highlight"><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>&#123;<br><br><br>&#125;;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">set</span><span class="hljs-params">(Time&amp;)</span> <span class="hljs-comment">//声明函数</span></span><br><span class="hljs-function"><span class="hljs-title">set</span><span class="hljs-params">(t1)</span></span>;<br><span class="hljs-built_in">set</span>(t2);<br><span class="hljs-built_in">set</span>(t3);<br><br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">set</span><span class="hljs-params">(Time&amp; t)</span></span>&#123;<br><br><br>&#125;<br></code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;类和对象&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#类和对象&quot;&gt;&lt;/a&gt; 类和对象&lt;/h1&gt;
-&lt;h2 id=&quot;关键词解释&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#关键词解释&quot;&gt;&lt;/a&gt; 关键词解释&lt;</summary>
       
     
     
