@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <link rel="stylesheet" href="/js/prism/prism.css">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="UerLink_Blog">
+  <link 
+    rel="icon" 
+    href="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png">
+  <title>电子学会python一级知识笔记</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="电子学会python一级知识笔记">
+    
+    
+      <meta 
+        property="og:url" 
+        content="http://uerlink.github.io/2025/08/31/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-08-31_%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9Apython%E4%B8%80%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2025-08-31">
+      <meta 
+        property="og:article:modified_time" 
+        content="2025-08-31">
+      <meta 
+        property="og:article:author" 
+        content="UerLink">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="python">
+        
+          <meta 
+            property="og:article:tag" 
+            content="考级">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="UerLink_Blog" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">UERLINK-博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/books/index.html" 
+        class="navbar-menu-item">
+        
+          书单
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/atom.xml" 
+        class="navbar-menu-item">
+        
+          RSS订阅
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容...(目前仅支持在“首页”时搜索)" />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      电子学会python一级知识笔记
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2025-08-30T16:00:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2025-08-31</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/" 
+          class="post-meta-link">
+          文档区
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>4.3k 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/python/" 
+            class="post-meta-link">
+            python
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E8%80%83%E7%BA%A7/" 
+            class="post-meta-link">
+            考级
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h2 id="中国电子学会青少年软件编程等级考试"><a class="markdownIt-Anchor" href="#中国电子学会青少年软件编程等级考试"></a> 中国电子学会青少年软件编程等级考试</h2>
+<p>官网：<a target="_blank" rel="noopener" href="http://www.qceit.org.cn">www.qceit.org.cn</a></p>
+<h2 id="编程环境"><a class="markdownIt-Anchor" href="#编程环境"></a> 编程环境</h2>
+<h3 id="python语言的特点"><a class="markdownIt-Anchor" href="#python语言的特点"></a> python语言的特点</h3>
+<ol>
+<li>python是<strong>面向对象</strong>的程序设计语言</li>
+<li>python支持<strong>多个操作系统</strong>的</li>
+<li>python是一种<strong>动态数据类型</strong>程序设计语言</li>
+<li>python是一种<strong>解释型</strong>程序设计语言</li>
+</ol>
+<h4 id="名词解释"><a class="markdownIt-Anchor" href="#名词解释"></a> 名词解释</h4>
+<p><strong>解释器</strong>：Python解释器是一种执行Python代码的软件程序，负责逐行读取、解析并执行用户编写的Python指令，将代码编译为字节码后执行</p>
+<p><strong>编译器</strong>：编译器是将高级语言源代码**（如C/C++）<strong>一次性翻译为机器可执行的低级语言目标代码</strong>（机器码/汇编）的程序</p>
+<p><strong>调试器</strong>：用于基础断点调试，（内置pdb）</p>
+<p><strong>集成开发环境</strong>：又称为IDE，是为开发者提供的一体化软件套件，集成编码、调试、编译、版本控制等工具</p>
+<p><strong>开发环境</strong>：开发环境是涵盖软件开发全流程所需工具与资源的集合，包括硬件、操作系统、语言工具链、协作系统等</p>
+<h3 id="python安装与版本"><a class="markdownIt-Anchor" href="#python安装与版本"></a> python安装与版本</h3>
+<h4 id="python2与python3"><a class="markdownIt-Anchor" href="#python2与python3"></a> python2与python3</h4>
+<ul>
+<li>
+<p>两个版本不兼容，2.x版本的代码需要修改才能在3.x版本上运行</p>
+</li>
+<li>
+<p>目前python的发展方向向着3.x.x的方向发展</p>
+</li>
+<li>
+<p>查询版本号：python -V （V需要大写）</p>
+</li>
+</ul>
+<h5 id="32位x86与64位x64"><a class="markdownIt-Anchor" href="#32位x86与64位x64"></a> 32位（x86）与64位（x64）</h5>
+<p>多少多少位是指CPU能同时处理多少位的数据，例如64位就2^64</p>
+<h4 id="2安装python"><a class="markdownIt-Anchor" href="#2安装python"></a> 2.安装python</h4>
+<p>官网：<a target="_blank" rel="noopener" href="http://www.python.org">www.python.org</a></p>
+<h3 id="常见开发环境"><a class="markdownIt-Anchor" href="#常见开发环境"></a> 常见开发环境</h3>
+<ol>
+<li>海龟编辑器</li>
+<li>Mu Editor</li>
+<li>Visual Studio code</li>
+<li>Jupyter Notebook</li>
+<li>PrCharm</li>
+<li><strong>IDLE</strong></li>
+<li>…</li>
+</ol>
+<h3 id="idle编辑器"><a class="markdownIt-Anchor" href="#idle编辑器"></a> IDLE编辑器</h3>
+<p>IDLE是安装python后自带编辑器</p>
+<h4 id="idle需要掌握的操作"><a class="markdownIt-Anchor" href="#idle需要掌握的操作"></a> IDLE需要掌握的操作</h4>
+<ol>
+<li>新建文件</li>
+<li>保存文件</li>
+<li>编辑代码</li>
+<li>运行代码</li>
+<li>会切换模式</li>
+</ol>
+<p>（<strong>需要自己多多练习</strong>）</p>
+<h4 id="idle的两种模式"><a class="markdownIt-Anchor" href="#idle的两种模式"></a> IDLE的两种模式</h4>
+<ol>
+<li>【Shell】命令行模式：用于逐行执行代码。</li>
+<li>【Edit】编辑模式：用于编写多行的程序，需要保存文件。<br />
+程序编写基本的方法</li>
+</ol>
+<h4 id="格式要求"><a class="markdownIt-Anchor" href="#格式要求"></a> 格式要求</h4>
+<ol>
+<li>缩进用来表示代码执行的层级关系（每级缩进<strong>使用4个空格</strong>）</li>
+<li>单行长度尽量不超过79个字符，超长时用括号换行，并对齐首字符或使用4空格悬挂缩进</li>
+</ol>
+<pre class="highlight"><code class="hljs python"><span class="hljs-comment"># 括号内换行对齐</span><br>result = (value1 + value2 <br>          - value3)<br></code></pre>
+<ol start="3">
+<li>
+<p>运算符两侧尽量加空格：x = y + 1</p>
+</li>
+<li>
+<p>单行注释：用 # 开头   # 注释内容</p>
+</li>
+<li>
+<p>多行注释:</p>
+<pre class="highlight"><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;计算两数之和。</span><br><span class="hljs-string">    参数:</span><br><span class="hljs-string">        a (int): 第一个加数</span><br><span class="hljs-string">        b (int): 第二个加数</span><br><span class="hljs-string">    返回:</span><br><span class="hljs-string">        int: 相加结果</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    <span class="hljs-keyword">return</span> a + b<br></code></pre>
+</li>
+<li>
+<p>字符串标识：单引号（’  '）  双引号（&quot;    &quot;)  ，下面的特殊用法要分清！不要和多行注释混淆</p>
+<pre class="highlight"><code class="hljs python">a =<span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">使用 3 个双引号分别作为注释的开头和结尾</span><br><span class="hljs-string">可以一次性注释多行内容</span><br><span class="hljs-string">这里面的内容全部是注释内容</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre>
+</li>
+<li>
+<p>符号都要用英文的符号</p>
+</li>
+</ol>
+<h2 id="编程基础"><a class="markdownIt-Anchor" href="#编程基础"></a> 编程基础</h2>
+<h3 id="输出语句-print"><a class="markdownIt-Anchor" href="#输出语句-print"></a> 输出语句 print()</h3>
+<p><strong>语法</strong>：<code>print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)</code></p>
+<ul>
+<li><strong><code>*objects</code></strong>：任意数量对象（自动转换为字符串输出）</li>
+<li><strong><code>sep</code></strong>：对象间分隔符（默认空格），如<code>print(1, 2, sep=&quot;|&quot;)</code> → <code>1|2</code></li>
+<li><strong><code>end</code></strong>：输出结束字符（默认换行），如<code>print(&quot;Hi&quot;, end=&quot;!&quot;)</code> → <code>Hi!</code>（不换行）</li>
+<li><strong><code>file</code></strong>：输出目标（默认控制台），可重定向到文件：</li>
+<li><strong><code>flush</code></strong>：强制刷新缓冲区（默认<code>False</code>），实时输出需设为<code>True</code>（如进度条）</li>
+</ul>
+<p><strong>简单用法</strong>：print(内容)</p>
+<h4 id="格式化输出"><a class="markdownIt-Anchor" href="#格式化输出"></a> 格式化输出</h4>
+<ol>
+<li>
+<p>连接符  <strong>+</strong></p>
+<pre class="highlight"><code class="hljs python">a=<span class="hljs-string">&#x27;hi&#x27;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;小明&quot;</span> + a + <span class="hljs-string">&quot;你好&quot;</span>)<br></code></pre>
+</li>
+<li>
+<p>匹配类型符  <strong>%</strong>   类似C语言</p>
+<pre class="highlight"><code class="hljs python">name,age = <span class="hljs-string">&#x27;小明&#x27;</span>,<span class="hljs-number">12</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Name: %s, Age: %d, Score: %.1f&quot;</span> % (name, age, <span class="hljs-number">95.5</span>))<br></code></pre>
+</li>
+</ol>
+<p>​	%s 字符串</p>
+<p>​	%d 整数</p>
+<p>​	%.1f  浮点数（小数），数字表示保留小数点后多少位</p>
+<ol start="3">
+<li>
+<p>f-string（Python ≥3.6推荐），在字符串前加<code>f</code>，变量/表达式用<code>&#123;&#125;</code>嵌入：</p>
+<pre class="highlight"><code class="hljs python">name = <span class="hljs-string">&quot;Alice&quot;</span>; age = <span class="hljs-number">25</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Name: <span class="hljs-subst">&#123;name&#125;</span>, Age: <span class="hljs-subst">&#123;age+<span class="hljs-number">5</span>&#125;</span>&quot;</span>)  <span class="hljs-comment"># 输出：Name: Alice, Age: 30</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Pi: <span class="hljs-subst">&#123;<span class="hljs-number">3.14159</span>:<span class="hljs-number">.2</span>f&#125;</span>&quot;</span>)           <span class="hljs-comment"># 保留2位小数：Pi: 3.14</span><br></code></pre>
+</li>
+</ol>
+<h3 id="输入语句-input"><a class="markdownIt-Anchor" href="#输入语句-input"></a> 输入语句 input()</h3>
+<p>**语法：**user_input = input(提示内容)</p>
+<p>**注意：**用户输入的内容 <strong>始终为字符串类型</strong></p>
+<p>查看数据类型的函数：type(数据)</p>
+<p><strong>执行流程</strong>：</p>
+<ol>
+<li>程序暂停执行，等待用户输入；</li>
+<li>用户按回车键后，输入内容以字符串形式返回；</li>
+<li>程序继续执行后续代码</li>
+</ol>
+<h4 id="多值输入与分割处理"><a class="markdownIt-Anchor" href="#多值输入与分割处理"></a> 多值输入与分割处理</h4>
+<p>若需一次输入多个数据，可用 <code>split()</code> 分割字符串，结合 <code>map()</code> 批量转换类型：</p>
+<pre class="highlight"><code class="hljs python"><span class="hljs-comment"># 示例：输入 &quot;10 20 30&quot;，按空格分割并转为整数列表</span><br>nums = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;输入三个数（空格分隔）：&quot;</span>).split()))<br><br><span class="hljs-comment"># 或直接解包赋值</span><br>a, b, c = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">float</span>, <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;输入三个浮点数（逗号分隔）：&quot;</span>).split(<span class="hljs-string">&#x27;,&#x27;</span>))<br></code></pre>
+<p><code>split()</code> 默认按空格分割，可指定分隔符如 <code>split(',')</code></p>
+<h3 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h3>
+<p><strong>变量的本质</strong></p>
+<ul>
+<li>变量是数据的标签（引用），指向内存中存储的值，无需声明类型，赋值即创建</li>
+<li>动态类型：变量类型由赋予的值自动推断，可随时重新赋值为不同类型</li>
+</ul>
+<pre class="highlight"><code class="hljs python">x = <span class="hljs-number">10</span>        <span class="hljs-comment"># x 为整数（int）</span><br>x = <span class="hljs-string">&quot;Python&quot;</span>  <span class="hljs-comment"># 重新赋值为字符串（str）</span><br></code></pre>
+<p><strong>变量作用域</strong></p>
+<ul>
+<li>局部变量：在函数内部定义，作用域仅限于函数内</li>
+<li>全局变量：在函数外定义，需用 <code>global</code> 关键字在函数内修改</li>
+</ul>
+<pre class="highlight"><code class="hljs python">global_var = <span class="hljs-number">20</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">modify</span>():<br>    <span class="hljs-keyword">global</span> global_var<br>    global_var = <span class="hljs-number">30</span><br></code></pre>
+<p><strong>赋值</strong></p>
+<ul>
+<li>
+<p>单数据赋值 <code>a=1</code></p>
+</li>
+<li>
+<p>多数据赋值 <code>a, b, c = 1, 2, &quot;text&quot;</code></p>
+</li>
+<li>
+<p>链式赋值：<code>a = b = c = 0</code></p>
+</li>
+<li>
+<p>快速交换变量值：<code>a, b = b, a</code></p>
+</li>
+</ul>
+<p>注意：不要混淆 <code>=</code>（赋值）和 <code>==</code>（比较）</p>
+<h4 id="变量名命名规则"><a class="markdownIt-Anchor" href="#变量名命名规则"></a> 变量名命名规则</h4>
+<p><strong>强制规则</strong></p>
+<ol>
+<li>
+<p>组成字符：字母（a-z, A-Z）、数字（0-9）、下划线 <code>_</code>，<strong>不能以数字开头</strong></p>
+</li>
+<li>
+<p>区分大小写（如 <code>name</code> 和 <code>Name</code> 不同）</p>
+</li>
+<li>
+<p>禁止使用<strong>关键字</strong>（如 <code>if</code>、<code>for</code>、<code>class</code>）</p>
+</li>
+</ol>
+<pre class="highlight"><code class="hljs python"><span class="hljs-keyword">import</span> keyword<br><span class="hljs-built_in">print</span>(keyword.kwlist) <span class="hljs-comment"># 查看所有关键字/保留字</span><br></code></pre>
+<p><strong>命名规范</strong></p>
+<ul>
+<li>
+<p>变量名：小写字母 + 下划线分隔（蛇形命名法），如 <code>student_name</code></p>
+</li>
+<li>
+<p>常量名：全大写，如 <code>MAX_SIZE</code></p>
+</li>
+<li>
+<p>类名：首字母大写的驼峰式，如 <code>ClassName</code></p>
+</li>
+<li>
+<p>避免：单字符名（除简单循环变量）、内置函数名（如 <code>list</code>、<code>str</code>）</p>
+</li>
+</ul>
+<h4 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型"></a> 数据类型</h4>
+<p>向变量中存放的东西叫数据，Python 数据类型分为基本类型和复合类型，通过 <code>type()</code> 函数可查看类型。</p>
+<ol>
+<li><strong>基本数据类型</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">特性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong><code>int</code></strong></td>
+<td style="text-align:center">整数（无大小限制）</td>
+<td style="text-align:center"><code>x = 42</code></td>
+<td style="text-align:center">支持算术运算</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><code>float</code></strong></td>
+<td style="text-align:center">浮点数（小数）</td>
+<td style="text-align:center"><code>y = 3.14</code></td>
+<td style="text-align:center">科学计数法（<code>2e5</code>）</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><code>str</code></strong></td>
+<td style="text-align:center">字符串（文本）</td>
+<td style="text-align:center"><code>s = &quot;Hello&quot;</code></td>
+<td style="text-align:center">支持切片、格式化</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><code>bool</code></strong></td>
+<td style="text-align:center">布尔值（逻辑值）</td>
+<td style="text-align:center"><code>flag = True</code></td>
+<td style="text-align:center">仅 <code>True</code>/<code>False</code></td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><strong>复合数据类型</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">特性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong><code>list</code></strong></td>
+<td style="text-align:center">有序集合</td>
+<td style="text-align:center"><code>lst = [1, &quot;a&quot;, True]</code></td>
+<td style="text-align:center">支持增删、切片</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><code>tuple</code></strong></td>
+<td style="text-align:center">不可变有序集合</td>
+<td style="text-align:center"><code>tup = (1, 2, &quot;b&quot;)</code></td>
+<td style="text-align:center">访问快，内存占用小</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><code>set</code></strong></td>
+<td style="text-align:center">无序唯一元素集合</td>
+<td style="text-align:center"><code>s = &#123;1, 2, 3&#125;</code></td>
+<td style="text-align:center">自动去重，支持集合运算</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><code>dict</code></strong></td>
+<td style="text-align:center">键值对映射</td>
+<td style="text-align:center"><code>d = &#123;&quot;name&quot;: &quot;Alice&quot;&#125;</code></td>
+<td style="text-align:center">键必须为不可变类型</td>
+</tr>
+</tbody>
+</table>
+<h4 id="字符串和数值型变量"><a class="markdownIt-Anchor" href="#字符串和数值型变量"></a> 字符串和数值型变量</h4>
+<h5 id="数值型变量"><a class="markdownIt-Anchor" href="#数值型变量"></a> 数值型变量</h5>
+<p>用于存储数字，分为整型（<code>int</code>）、浮点型（<code>float</code>）和复数型（<code>complex</code>）</p>
+<p>常用操作：</p>
+<ul>
+<li>
+<p>算术运算：<code>+</code>（加）、<code>-</code>（减）、<code>*</code>（乘）、<code>/</code>（除，返回浮点）、<code>//</code>（整除）、<code>%</code>（取余）、<code>**</code>（幂运算）</p>
+</li>
+<li>
+<p>位运算：<code>|</code>（按位或）、<code>&amp;</code>（按位与）、<code>&lt;&lt;</code>（左移）等</p>
+</li>
+</ul>
+<h5 id="字符串"><a class="markdownIt-Anchor" href="#字符串"></a> 字符串</h5>
+<p>用于存储文本数据，由字符序列组成，用单引号（<code>''</code>）、双引号（<code>&quot;&quot;</code>）或三引号（<code>''' '''</code>）定义，用三引号定义跨行文本</p>
+<p>常用操作：</p>
+<ul>
+<li><code>+</code> 拼接（<code>&quot;Hello&quot; + &quot;World&quot;</code>）</li>
+<li><code>*</code> 重复（<code>&quot;Hi&quot; * 3 → &quot;HiHiHi&quot;</code>）</li>
+<li>切片</li>
+</ul>
+<pre class="highlight"><code class="hljs python">s = <span class="hljs-string">&quot;Python&quot;</span><br><span class="hljs-built_in">print</span>(s[<span class="hljs-number">1</span>:<span class="hljs-number">4</span>])  <span class="hljs-comment"># 输出：yth（切片）</span><br></code></pre>
+<h4 id="变量类型转换"><a class="markdownIt-Anchor" href="#变量类型转换"></a> 变量类型转换</h4>
+<p>使用转换函数可以对数据进行转换</p>
+<ul>
+<li>int()</li>
+<li>float()</li>
+<li>str()</li>
+<li>bool()</li>
+<li>list()</li>
+<li>tuple()</li>
+<li>set()</li>
+<li>dict()</li>
+</ul>
+<h5 id="转换函数详解"><a class="markdownIt-Anchor" href="#转换函数详解"></a> 转换函数详解</h5>
+<p><strong><code>int(x)</code></strong></p>
+<ul>
+<li>
+<p><strong>功能</strong>：将数字字符串、浮点数或布尔值转换为整数。</p>
+<pre class="highlight"><code class="hljs python"><span class="hljs-built_in">int</span>(<span class="hljs-string">&quot;42&quot;</span>)      <span class="hljs-comment"># 42（字符串 → 整数）</span><br><span class="hljs-built_in">int</span>(<span class="hljs-number">3.99</span>)      <span class="hljs-comment"># 3（浮点数 → 整数，截断小数）</span><br><span class="hljs-built_in">int</span>(<span class="hljs-literal">True</span>)      <span class="hljs-comment"># 1（布尔值 → 整数）</span><br></code></pre>
+</li>
+</ul>
+<p><strong><code>float(x)</code></strong></p>
+<ul>
+<li>
+<p><strong>功能</strong>：将<strong>数字</strong>字符串、整数或布尔值转换为浮点数。</p>
+<pre class="highlight"><code class="hljs python"><span class="hljs-built_in">float</span>(<span class="hljs-string">&quot;3.14&quot;</span>)  <span class="hljs-comment"># 3.14（字符串 → 浮点数）</span><br><span class="hljs-built_in">float</span>(<span class="hljs-number">5</span>)       <span class="hljs-comment"># 5.0（整数 → 浮点数）</span><br><span class="hljs-built_in">float</span>(<span class="hljs-literal">False</span>)   <span class="hljs-comment"># 0.0（布尔值 → 浮点数）</span><br></code></pre>
+</li>
+</ul>
+<p><strong><code>str(x)</code></strong></p>
+<ul>
+<li>
+<p><strong>功能</strong>：将任意类型（数值、列表、字典等）转换为字符串。</p>
+<pre class="highlight"><code class="hljs python"><span class="hljs-built_in">str</span>(<span class="hljs-number">100</span>)       <span class="hljs-comment"># &quot;100&quot;（整数 → 字符串）</span><br><span class="hljs-built_in">str</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>])    <span class="hljs-comment"># &quot;[1, 2]&quot;（列表 → 字符串）</span><br></code></pre>
+</li>
+</ul>
+<p><strong><code>bool(x)</code></strong></p>
+<ul>
+<li>
+<p><strong>功能</strong>：将值转换为布尔值（<code>True</code>/<code>False</code>）。</p>
+</li>
+<li>
+<p>规则：</p>
+<ul>
+<li><code>False</code>：空值（<code>0</code>、<code>&quot;&quot;</code>、<code>[]</code>、<code>&#123;&#125;</code>、<code>None</code>）。</li>
+<li><code>True</code>：非空值（如 <code>1</code>、<code>&quot;abc&quot;</code>、<code>[1]</code>）。</li>
+</ul>
+<pre class="highlight"><code class="hljs python"><span class="hljs-built_in">bool</span>(<span class="hljs-number">0</span>)        <span class="hljs-comment"># False</span><br><span class="hljs-built_in">bool</span>(<span class="hljs-string">&quot;Hello&quot;</span>)  <span class="hljs-comment"># True</span><br>```[<span class="hljs-number">2</span>,<span class="hljs-number">6</span>](@ref)<br></code></pre>
+</li>
+</ul>
+<p><strong>list(iterable)</strong></p>
+<ul>
+<li>
+<p><strong>功能</strong>：将可迭代对象（字符串、元组、集合）转换为列表。</p>
+<pre class="highlight"><code class="hljs python"><span class="hljs-built_in">list</span>(<span class="hljs-string">&quot;abc&quot;</span>)    <span class="hljs-comment"># [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]（字符串 → 列表）</span><br><span class="hljs-built_in">list</span>((<span class="hljs-number">1</span>, <span class="hljs-number">2</span>))   <span class="hljs-comment"># [1, 2]（元组 → 列表）</span><br>```[<span class="hljs-number">1</span>,<span class="hljs-number">5</span>](@ref)<br></code></pre>
+</li>
+</ul>
+<p><strong>tuple(iterable)</strong></p>
+<ul>
+<li>
+<p><strong>功能</strong>：将可迭代对象转换为元组。</p>
+<pre class="highlight"><code class="hljs python"><span class="hljs-built_in">tuple</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>])  <span class="hljs-comment"># (1, 2)（列表 → 元组）</span><br>```[<span class="hljs-number">1</span>,<span class="hljs-number">5</span>](@ref)<br></code></pre>
+</li>
+</ul>
+<p><strong>dict(iterable)</strong></p>
+<ul>
+<li>
+<p><strong>功能</strong>：将键值对序列（列表元组、嵌套列表）转换为字典。</p>
+<pre class="highlight"><code class="hljs python"><span class="hljs-built_in">dict</span>([(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-number">1</span>), (<span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-number">2</span>)])  <span class="hljs-comment"># &#123;&#x27;a&#x27;: 1, &#x27;b&#x27;: 2&#125;</span><br>```[<span class="hljs-number">2</span>,<span class="hljs-number">6</span>](@ref)<br></code></pre>
+</li>
+</ul>
+<h2 id="数学运算"><a class="markdownIt-Anchor" href="#数学运算"></a> 数学运算</h2>
+<h3 id="运算符"><a class="markdownIt-Anchor" href="#运算符"></a> 运算符</h3>
+<p>通过系统掌握这些运算符的分类及特性，可显著提升代码的简洁性与执行效率。建议结合具体场景（如数值计算、条件分支、数据结构操作）深化理解。</p>
+<ol>
+<li><strong>算数运算符</strong></li>
+<li><strong>比较运算符</strong></li>
+<li><strong>赋值运算符</strong></li>
+<li><strong>逻辑运算符</strong></li>
+<li>位运算符</li>
+<li>成员运算符</li>
+<li>身份运算符</li>
+</ol>
+<h4 id="算数运算符"><a class="markdownIt-Anchor" href="#算数运算符"></a> 算数运算符</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">输出结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:center">加</td>
+<td style="text-align:center"><code>5 + 3</code></td>
+<td style="text-align:center"><code>8</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-</code></td>
+<td style="text-align:center">减</td>
+<td style="text-align:center"><code>8 - 3</code></td>
+<td style="text-align:center"><code>5</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:center">乘</td>
+<td style="text-align:center"><code>4 * 3</code></td>
+<td style="text-align:center"><code>12</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/</code></td>
+<td style="text-align:center">除</td>
+<td style="text-align:center"><code>10 / 2</code></td>
+<td style="text-align:center"><code>5.0</code> (浮点数)</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>%</code></td>
+<td style="text-align:center">取模</td>
+<td style="text-align:center"><code>10 % 3</code></td>
+<td style="text-align:center"><code>1</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>**</code></td>
+<td style="text-align:center">幂运算</td>
+<td style="text-align:center"><code>2 ** 3</code></td>
+<td style="text-align:center"><code>8</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>//</code></td>
+<td style="text-align:center">整除</td>
+<td style="text-align:center"><code>10 // 3</code></td>
+<td style="text-align:center"><code>3</code> (向下取整)</td>
+</tr>
+</tbody>
+</table>
+<p>注意：除号是这个斜杠  <strong>/</strong>  （向左划下） 不是   \</p>
+<h4 id="赋值运算符"><a class="markdownIt-Anchor" href="#赋值运算符"></a> 赋值运算符</h4>
+<p>为变量赋值或更新值</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">等价形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>=</code></td>
+<td style="text-align:center">简单赋值</td>
+<td style="text-align:center"><code>x = 10</code></td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>+=</code></td>
+<td style="text-align:center">加法赋值（自加）</td>
+<td style="text-align:center"><code>x += 3</code></td>
+<td style="text-align:center"><code>x = x + 3</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-=</code></td>
+<td style="text-align:center">减法赋值（自减）</td>
+<td style="text-align:center"><code>x -= 2</code></td>
+<td style="text-align:center"><code>x = x - 2</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*=</code></td>
+<td style="text-align:center">乘法赋值（自乘）</td>
+<td style="text-align:center"><code>x *= 2</code></td>
+<td style="text-align:center"><code>x = x * 2</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/=</code></td>
+<td style="text-align:center">除法赋值（自除）</td>
+<td style="text-align:center"><code>x /= 4</code></td>
+<td style="text-align:center"><code>x = x / 4</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="比较运算符"><a class="markdownIt-Anchor" href="#比较运算符"></a> <strong>比较运算符</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>==</code></td>
+<td style="text-align:center">等于</td>
+<td style="text-align:center"><code>5 == 5</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>!=</code></td>
+<td style="text-align:center">不等于</td>
+<td style="text-align:center"><code>5 != 3</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;</code></td>
+<td style="text-align:center">大于</td>
+<td style="text-align:center"><code>5 &gt; 3</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;</code></td>
+<td style="text-align:center">小于</td>
+<td style="text-align:center"><code>3 &lt; 5</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;=</code></td>
+<td style="text-align:center">大于等于</td>
+<td style="text-align:center"><code>5 &gt;= 5</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;=</code></td>
+<td style="text-align:center">小于等于</td>
+<td style="text-align:center"><code>3 &lt;= 5</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+</tbody>
+</table>
+<p>注意：</p>
+<ul>
+<li>
+<p>比较值并返回布尔值（<code>True/False</code>）：</p>
+</li>
+<li>
+<p><strong>应用</strong>：条件判断、循环控制</p>
+</li>
+</ul>
+<h4 id="逻辑运算符"><a class="markdownIt-Anchor" href="#逻辑运算符"></a> 逻辑运算符</h4>
+<p>组合布尔条件：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>and</code></td>
+<td style="text-align:center">与</td>
+<td style="text-align:center"><code>True and False</code></td>
+<td style="text-align:center"><code>False</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>or</code></td>
+<td style="text-align:center">或</td>
+<td style="text-align:center"><code>True or False</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>not</code></td>
+<td style="text-align:center">非</td>
+<td style="text-align:center"><code>not True</code></td>
+<td style="text-align:center"><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><code>and</code>：一假即假（短路特性：左侧为假时跳过右侧计算）</p>
+</li>
+<li>
+<p><code>or</code>：一真即真（左侧为真时跳过右侧计算）</p>
+</li>
+</ul>
+<p>非布尔值规则：</p>
+<ul>
+<li><code>0 and 3</code> → <code>0</code>；<code>1 and 3</code> → <code>3</code></li>
+<li><code>0 or 4</code> → <code>4</code>；<code>1 or 5</code> → <code>1</code></li>
+</ul>
+<p>位运算符</p>
+<p>直接操作二进制位：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">结果（二进制）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&amp;</code></td>
+<td style="text-align:center">按位与</td>
+<td style="text-align:center"><code>9 &amp; 5</code></td>
+<td style="text-align:center"><code>1 (00000001)</code></td>
+</tr>
+<tr>
+<td style="text-align:center">`</td>
+<td style="text-align:center">`</td>
+<td style="text-align:center">按位或</td>
+<td style="text-align:center">`9</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>^</code></td>
+<td style="text-align:center">按位异或</td>
+<td style="text-align:center"><code>9 ^ 5</code></td>
+<td style="text-align:center"><code>12 (00001100)</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>~</code></td>
+<td style="text-align:center">按位取反</td>
+<td style="text-align:center"><code>~9</code></td>
+<td style="text-align:center">补码结果</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;&lt;</code></td>
+<td style="text-align:center">左移</td>
+<td style="text-align:center"><code>9 &lt;&lt; 2</code></td>
+<td style="text-align:center"><code>36 (00100100)</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;&gt;</code></td>
+<td style="text-align:center">右移</td>
+<td style="text-align:center"><code>9 &gt;&gt; 2</code></td>
+<td style="text-align:center"><code>2 (00000010)</code></td>
+</tr>
+</tbody>
+</table>
+<p>成员运算符</p>
+<p>检测元素是否在序列中：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>in</code></td>
+<td style="text-align:center">存在于序列</td>
+<td style="text-align:center"><code>2 in [1, 2, 3]</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>not in</code></td>
+<td style="text-align:center">不存在</td>
+<td style="text-align:center"><code>&quot;a&quot; not in &quot;hello&quot;</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>适用类型</strong>：列表、字符串、元组、字典（仅检测键）</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="运算符优先级"><a class="markdownIt-Anchor" href="#运算符优先级"></a> 运算符优先级</h4>
+<p>从高到低：</p>
+<ol>
+<li><code>**</code>（幂运算）</li>
+<li><code>~</code>、<code>+</code>、<code>-</code>（取反、正负号）</li>
+<li><code>*</code>、<code>/</code>、<code>%</code>、<code>//</code></li>
+<li><code>+</code>、<code>-</code></li>
+<li><code>&lt;&lt;</code>、<code>&gt;&gt;</code>（位移）</li>
+<li><code>&amp;</code>、<code>^</code>、<code>|</code>（位运算）</li>
+<li><code>==</code>、<code>!=</code>、<code>&gt;</code>等（比较）</li>
+<li><code>not</code>、<code>and</code>、<code>or</code>（逻辑）<br />
+​<strong>提示</strong>​：使用 <code>()</code> 显式指定优先级，如 <code>(2+3)*4</code></li>
+</ol>
+<h3 id="表达式"><a class="markdownIt-Anchor" href="#表达式"></a> 表达式</h3>
+<p>Python表达式是由操作数（变量、常量、函数调用）和运算符组成的代码单元，用于计算或生成值</p>
+<ol>
+<li><strong>算数表达式</strong></li>
+<li><strong>比较表达式</strong></li>
+<li><strong>逻辑表达式</strong></li>
+<li><strong>赋值表达式</strong></li>
+<li>成员表达式</li>
+<li>Lambda表达式</li>
+<li>三元表达式</li>
+<li>身份表达式</li>
+<li>…</li>
+</ol>
+<p><strong>算数表达式</strong>：用于数值计算，返回数值结果</p>
+<pre class="highlight"><code class="hljs python">result = <span class="hljs-number">10</span> + <span class="hljs-number">5</span> * <span class="hljs-number">2</span>   <span class="hljs-comment"># 结果为20（优先级：乘法先于加法）</span><br><span class="hljs-built_in">print</span>(<span class="hljs-number">9</span> % <span class="hljs-number">4</span>)          <span class="hljs-comment"># 取余，输出1</span><br></code></pre>
+<p><strong>比较表达式</strong>：比较操作数并返回布尔值（<code>True/False</code>）</p>
+<pre class="highlight"><code class="hljs python">a, b = <span class="hljs-number">5</span>, <span class="hljs-number">3</span><br><span class="hljs-built_in">print</span>(a &gt; b)  <span class="hljs-comment"># True</span><br></code></pre>
+<p><strong>逻辑表达式</strong>：组合布尔值，返回布尔值或操作数</p>
+<pre class="highlight"><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-literal">True</span> <span class="hljs-keyword">and</span> <span class="hljs-literal">False</span>)  <span class="hljs-comment"># False</span><br><span class="hljs-built_in">print</span>(<span class="hljs-number">0</span> <span class="hljs-keyword">or</span> <span class="hljs-number">4</span>)          <span class="hljs-comment"># 4（非布尔值规则）</span><br></code></pre>
+<p><strong>赋值表达式</strong>：</p>
+<pre class="highlight"><code class="hljs python">x = <span class="hljs-number">10</span><br>x *= <span class="hljs-number">2</span>      <span class="hljs-comment"># x = 20</span><br></code></pre>
+<p><strong>成员表达式</strong>：检测元素是否在容器中，<code>in</code>（存在）、<code>not in</code>（不存在）</p>
+<pre class="highlight"><code class="hljs python">lst = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br><span class="hljs-built_in">print</span>(<span class="hljs-number">2</span> <span class="hljs-keyword">in</span> lst)       <span class="hljs-comment"># True</span><br>dct = &#123;<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Alice&quot;</span>&#125;<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> dct)  <span class="hljs-comment"># True（仅检查键）</span><br></code></pre>
+<p><strong>三元表达式</strong>：</p>
+<pre class="highlight"><code class="hljs python">max_val = a <span class="hljs-keyword">if</span> a &gt; b <span class="hljs-keyword">else</span> b  <span class="hljs-comment"># 返回a和b中的较大值</span><br></code></pre>
+<p><strong>Lambda表达式</strong>：匿名函数</p>
+<pre class="highlight"><code class="hljs python">add = <span class="hljs-keyword">lambda</span> x, y: x + y<br><span class="hljs-built_in">print</span>(add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))  <span class="hljs-comment"># 5</span><br></code></pre>
+<h2 id="计算思维"><a class="markdownIt-Anchor" href="#计算思维"></a> 计算思维</h2>
+<p>python一级需要掌握：</p>
+<ul>
+<li>编写顺序执行的程序</li>
+<li>分析简单的逻辑运算</li>
+<li>比较运算中的结果</li>
+</ul>
+<h3 id="程序流程图"><a class="markdownIt-Anchor" href="#程序流程图"></a> 程序流程图</h3>
+<p>程序流程图又称<strong>程序框图</strong>，是用统一规定的标准符号描述程序运行具体步骤的图形表示。 程序框图的设计是在处理流程图的基础上，通过对输入输出数据和处理过程的详细分析，将计算机的主要运行步骤和内容标识出来。</p>
+<h4 id="标准符号"><a class="markdownIt-Anchor" href="#标准符号"></a> <strong>标准符号</strong></h4>
+<p><img src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626183802674.png" alt="image-20250626183802674" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626183802674.png" class="lozad post-image"></p>
+<h4 id="基本结构"><a class="markdownIt-Anchor" href="#基本结构"></a> <strong>基本结构</strong></h4>
+<ul>
+<li>
+<p>顺序型<br />
+<img src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626183947663.png" alt="image-20250626183947663" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626183947663.png" class="lozad post-image"></p>
+</li>
+<li>
+<p>选择型：由某个逻辑判断式的取值决定选择两个处理中的一个<br />
+<img src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626184030885.png" alt="image-20250626184030885" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626184030885.png" class="lozad post-image"></p>
+</li>
+<li>
+<p>先判断的循环（while）：在循环控制条件成立时，重复执行特定的处理</p>
+<ul>
+<li><img src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626184202523.png" alt="image-20250626184202523" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626184202523.png" class="lozad post-image"></li>
+</ul>
+</li>
+<li>
+<p>后判断的循环（until）：重复执行某些特定的处理，直至控制条件成立</p>
+<ul>
+<li><img src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626184306659.png" alt="image-20250626184306659" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626184306659.png" class="lozad post-image"></li>
+</ul>
+</li>
+<li>
+<p>多情况型（case）选择：列举多种处理情况，根据控制变量的取值，选择执行其一<br />
+<img src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626184350074.png" alt="image-20250626184350074" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626184350074.png" class="lozad post-image"></p>
+</li>
+</ul>
+<p>案例：</p>
+<p><img src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626184445261.png" alt="image-20250626184445261" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626184445261.png" class="lozad post-image"></p>
+<h2 id="turtle库"><a class="markdownIt-Anchor" href="#turtle库"></a> Turtle库</h2>
+<h3 id="第三方库"><a class="markdownIt-Anchor" href="#第三方库"></a> 第三方库</h3>
+<p>Python第三方库是由社区开发者（非Python官方团队）创建和维护的可重用代码包，用于扩展Python标准库的功能，覆盖数据分析、Web开发、机器学习等广泛领域。它们通过简化复杂操作、提供高效工具，显著提升开发效率和代码质量。</p>
+<p><strong>什么是第三方库</strong><br />
+第三方库是独立开发者或组织发布的代码集合，需通过包管理工具（如<code>pip</code>）安装。它们不属于Python标准库，但提供标准库未覆盖的特定功能（如高级数学计算、网络爬虫等）</p>
+<p><strong>python环境如何安装第三方库</strong></p>
+<ul>
+<li>
+<p>安装命令：<code>pip install 库名</code>（例如 <code>pip install requests</code>）</p>
+</li>
+<li>
+<p>版本控制：<code>pip install 库名==版本号</code>（如 <code>pip install pandas==1.3.5</code>）</p>
+</li>
+<li>
+<p>虚拟环境：使用<code>venv</code>或<code>virtualenv</code>隔离项目依赖，避免版本冲突</p>
+</li>
+</ul>
+<p><strong>常见第三方库</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>领域</strong></th>
+<th style="text-align:center"><strong>库名称</strong></th>
+<th style="text-align:center"><strong>主要作用</strong></th>
+<th style="text-align:center"><strong>典型场景</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>🌐 网络请求</strong></td>
+<td style="text-align:center"><code>requests</code></td>
+<td style="text-align:center">简化HTTP请求发送与响应处理，支持GET/POST等方法</td>
+<td style="text-align:center">API调用、网页数据抓取**1</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>📈 数据分析</strong></td>
+<td style="text-align:center"><code>pandas</code></td>
+<td style="text-align:center">提供<code>DataFrame</code>数据结构，支持数据清洗、转换、聚合分析</td>
+<td style="text-align:center">结构化数据处理、CSV/Excel操作</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>numpy</code></td>
+<td style="text-align:center">高效处理多维数组和矩阵运算，支持科学计算</td>
+<td style="text-align:center">数值模拟、线性代数运算</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>📊 数据可视化</strong></td>
+<td style="text-align:center"><code>matplotlib</code></td>
+<td style="text-align:center">绘制2D图表（折线图、散点图等）</td>
+<td style="text-align:center">数据结果可视化</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>pyecharts</code></td>
+<td style="text-align:center">生成交互式Echarts图表</td>
+<td style="text-align:center">动态数据展示</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>🤖 机器学习</strong></td>
+<td style="text-align:center"><code>scikit-learn</code></td>
+<td style="text-align:center">提供经典机器学习算法（分类、回归、聚类）</td>
+<td style="text-align:center">模型训练与评估</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>TensorFlow</code></td>
+<td style="text-align:center">深度学习框架，支持神经网络构建</td>
+<td style="text-align:center">图像识别、自然语言处理</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>🧠 NLP处理</strong></td>
+<td style="text-align:center"><code>nltk</code></td>
+<td style="text-align:center">自然语言处理工具包（分词、词性标注）</td>
+<td style="text-align:center">文本分析、情感识别</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>spaCy</code></td>
+<td style="text-align:center">工业级NLP库，支持实体识别、句法分析</td>
+<td style="text-align:center">大规模文本处理</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>🕷️ 网络爬虫</strong></td>
+<td style="text-align:center"><code>scrapy</code></td>
+<td style="text-align:center">分布式爬虫框架，支持数据自动抓取与结构化存储</td>
+<td style="text-align:center">网站数据批量采集</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>beautifulsoup4</code></td>
+<td style="text-align:center">解析HTML/XML文档，提取特定内容</td>
+<td style="text-align:center">网页内容抽取</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>🌐 Web开发</strong></td>
+<td style="text-align:center"><code>Django</code></td>
+<td style="text-align:center">全功能Web框架（ORM、模板引擎、用户认证）</td>
+<td style="text-align:center">企业级应用开发</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>Flask</code></td>
+<td style="text-align:center">轻量级Web框架，灵活扩展</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="导入库的方式"><a class="markdownIt-Anchor" href="#导入库的方式"></a> 导入库的方式</h4>
+<ul>
+<li>全量导入：<code>import pandas as pd</code></li>
+<li>按需导入：<code>from datetime import date</code></li>
+</ul>
+<h3 id="turetle库导入"><a class="markdownIt-Anchor" href="#turetle库导入"></a> Turetle库导入</h3>
+<pre class="highlight"><code class="hljs python"><span class="hljs-keyword">import</span> turtle  <span class="hljs-comment"># 推荐方式，避免命名冲突</span><br><span class="hljs-comment"># 或</span><br><span class="hljs-keyword">from</span> turtle <span class="hljs-keyword">import</span> *  <span class="hljs-comment"># 直接调用函数（小型项目适用）</span><br></code></pre>
+<h4 id="画布设置"><a class="markdownIt-Anchor" href="#画布设置"></a> 画布设置</h4>
+<pre class="highlight"><code class="hljs python">screen = turtle.Screen()  <span class="hljs-comment"># 创建画布</span><br>screen.title(<span class="hljs-string">&quot;我的绘图&quot;</span>)   <span class="hljs-comment"># 设置窗口标题</span><br>screen.bgcolor(<span class="hljs-string">&quot;lightblue&quot;</span>)  <span class="hljs-comment"># 设置背景色</span><br><br><br>pen = turtle.Turtle()     <span class="hljs-comment"># 创建画笔对象</span><br>pen.shape(<span class="hljs-string">&quot;turtle&quot;</span>)       <span class="hljs-comment"># 设置画笔形状（海龟/箭头等）</span><br>pen.speed(<span class="hljs-number">5</span>)              <span class="hljs-comment"># 设置速度（1-10，10最快）</span><br></code></pre>
+<p><strong>创建画布对象：</strong></p>
+<p><code>screen = turtle.Screen()  # 创建画布</code></p>
+<p>画布名  =  海龟库中的Screen()方法</p>
+<p><strong>设置画布状态：</strong></p>
+<ul>
+<li>清空画布：<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/turtle.html#turtle.clear" title="turtle.clear"><code>clear()</code></a></li>
+<li>重置画布：<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/turtle.html#turtle.reset" title="turtle.reset"><code>reset()</code></a></li>
+<li>设置画布颜色：<code>bgcolor()</code></li>
+<li>设置画布大小：<code>screensize()</code>
+<ul>
+<li><img src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626193129642.png" alt="image-20250626193129642" / srcset="https://s2.loli.net/2024/03/18/YVbUifPl92JZX5B.gif" data-src="./python%E4%B8%80%E7%BA%A7.assets/image-20250626193129642.png" class="lozad post-image"></li>
+<li>注意：设置的是画布的大小并不是窗口的大小</li>
+</ul>
+</li>
+</ul>
+<h4 id="画笔海龟设置"><a class="markdownIt-Anchor" href="#画笔海龟设置"></a> 画笔（海龟）设置</h4>
+<p><strong>创建画笔（海龟）对象的两种方式：</strong></p>
+<ol>
+<li><code>pen = turtle.Pen()</code></li>
+<li><code>pen = turtle.Turtle()</code></li>
+</ol>
+<p><strong>设置画笔（海龟）的参数：</strong></p>
+<ul>
+<li>
+<p>颜色：<code>pencolor()</code></p>
+</li>
+<li>
+<p>填充颜色：<code>fillcolor()</code></p>
+<ul>
+<li>
+<pre class="highlight"><code class="python">pen.begin_fill()         <span class="hljs-comment"># 开始填充</span>
+<span class="hljs-comment"># 绘制图形（如正方形）</span>
+<span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):
+    pen.forward(<span class="hljs-number">100</span>)
+    pen.right(<span class="hljs-number">90</span>)
+pen.end_fill()           <span class="hljs-comment"># 结束填充</span>
+&lt;!--code￼<span class="hljs-number">27</span>--&gt;
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="highlight"><code class="hljs python"><span class="hljs-comment"># 五角星</span><br><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>):<br>    pen.forward(<span class="hljs-number">150</span>)<br>    pen.right(<span class="hljs-number">144</span>)  <span class="hljs-comment"># 转角144°</span><br></code></pre>
+<h4 id="多画笔海龟"><a class="markdownIt-Anchor" href="#多画笔海龟"></a> 多画笔（海龟）</h4>
+<pre class="highlight"><code class="hljs python">t1 = turtle.Turtle()  <span class="hljs-comment"># 海龟1画三角形</span><br>t2 = turtle.Turtle()  <span class="hljs-comment"># 海龟2画正方形</span><br></code></pre>
+
+  </div>
+  <div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2025/08/01/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-08-01_%E5%8E%86%E5%8F%B2%E7%9A%84%E4%BD%9C%E7%94%A8/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">历史的作用 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9A%E9%9D%92%E5%B0%91%E5%B9%B4%E8%BD%AF%E4%BB%B6%E7%BC%96%E7%A8%8B%E7%AD%89%E7%BA%A7%E8%80%83%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text"> 中国电子学会青少年软件编程等级考试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text"> 编程环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#python%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> python语言的特点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 名词解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python%E5%AE%89%E8%A3%85%E4%B8%8E%E7%89%88%E6%9C%AC"><span class="toc-number">2.2.</span> <span class="toc-text"> python安装与版本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#python2%E4%B8%8Epython3"><span class="toc-number">2.2.1.</span> <span class="toc-text"> python2与python3</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#32%E4%BD%8Dx86%E4%B8%8E64%E4%BD%8Dx64"><span class="toc-number">2.2.1.1.</span> <span class="toc-text"> 32位（x86）与64位（x64）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%AE%89%E8%A3%85python"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.安装python</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">2.3.</span> <span class="toc-text"> 常见开发环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#idle%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">2.4.</span> <span class="toc-text"> IDLE编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#idle%E9%9C%80%E8%A6%81%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">2.4.1.</span> <span class="toc-text"> IDLE需要掌握的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#idle%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.4.2.</span> <span class="toc-text"> IDLE的两种模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E8%A6%81%E6%B1%82"><span class="toc-number">2.4.3.</span> <span class="toc-text"> 格式要求</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text"> 编程基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5-print"><span class="toc-number">3.1.</span> <span class="toc-text"> 输出语句 print()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 格式化输出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5-input"><span class="toc-number">3.2.</span> <span class="toc-text"> 输入语句 input()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%80%BC%E8%BE%93%E5%85%A5%E4%B8%8E%E5%88%86%E5%89%B2%E5%A4%84%E7%90%86"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 多值输入与分割处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.</span> <span class="toc-text"> 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">3.3.1.</span> <span class="toc-text"> 变量名命名规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.3.2.</span> <span class="toc-text"> 数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E5%80%BC%E5%9E%8B%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.3.</span> <span class="toc-text"> 字符串和数值型变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.3.1.</span> <span class="toc-text"> 数值型变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">3.3.3.2.</span> <span class="toc-text"> 字符串</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">3.3.4.</span> <span class="toc-text"> 变量类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.3.4.1.</span> <span class="toc-text"> 转换函数详解</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-number">4.</span> <span class="toc-text"> 数学运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.</span> <span class="toc-text"> 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 算数运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 赋值运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.3.</span> <span class="toc-text"> 比较运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.4.</span> <span class="toc-text"> 逻辑运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">4.1.5.</span> <span class="toc-text"> 运算符优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.2.</span> <span class="toc-text"> 表达式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4"><span class="toc-number">5.</span> <span class="toc-text"> 计算思维</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">5.1.</span> <span class="toc-text"> 程序流程图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E7%AC%A6%E5%8F%B7"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 标准符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">5.1.2.</span> <span class="toc-text"> 基本结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#turtle%E5%BA%93"><span class="toc-number">6.</span> <span class="toc-text"> Turtle库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93"><span class="toc-number">6.1.</span> <span class="toc-text"> 第三方库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E5%BA%93%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 导入库的方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#turetle%E5%BA%93%E5%AF%BC%E5%85%A5"><span class="toc-number">6.2.</span> <span class="toc-text"> Turetle库导入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%BB%E5%B8%83%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.2.1.</span> <span class="toc-text"> 画布设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%BB%E7%AC%94%E6%B5%B7%E9%BE%9F%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.2.2.</span> <span class="toc-text"> 画笔（海龟）设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%94%BB%E7%AC%94%E6%B5%B7%E9%BE%9F"><span class="toc-number">6.2.3.</span> <span class="toc-text"> 多画笔（海龟）</span></a></li></ol></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">UerLink</p>
+<p class="author-description">“终身学习，不破不立”</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>105</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>7</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>69</span>
+    <span>标签</span>
+  </a>
+</div>
+
+
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9A%E9%9D%92%E5%B0%91%E5%B9%B4%E8%BD%AF%E4%BB%B6%E7%BC%96%E7%A8%8B%E7%AD%89%E7%BA%A7%E8%80%83%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text"> 中国电子学会青少年软件编程等级考试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text"> 编程环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#python%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> python语言的特点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 名词解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python%E5%AE%89%E8%A3%85%E4%B8%8E%E7%89%88%E6%9C%AC"><span class="toc-number">2.2.</span> <span class="toc-text"> python安装与版本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#python2%E4%B8%8Epython3"><span class="toc-number">2.2.1.</span> <span class="toc-text"> python2与python3</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#32%E4%BD%8Dx86%E4%B8%8E64%E4%BD%8Dx64"><span class="toc-number">2.2.1.1.</span> <span class="toc-text"> 32位（x86）与64位（x64）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%AE%89%E8%A3%85python"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.安装python</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">2.3.</span> <span class="toc-text"> 常见开发环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#idle%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">2.4.</span> <span class="toc-text"> IDLE编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#idle%E9%9C%80%E8%A6%81%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">2.4.1.</span> <span class="toc-text"> IDLE需要掌握的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#idle%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.4.2.</span> <span class="toc-text"> IDLE的两种模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E8%A6%81%E6%B1%82"><span class="toc-number">2.4.3.</span> <span class="toc-text"> 格式要求</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text"> 编程基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5-print"><span class="toc-number">3.1.</span> <span class="toc-text"> 输出语句 print()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 格式化输出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5-input"><span class="toc-number">3.2.</span> <span class="toc-text"> 输入语句 input()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%80%BC%E8%BE%93%E5%85%A5%E4%B8%8E%E5%88%86%E5%89%B2%E5%A4%84%E7%90%86"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 多值输入与分割处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.</span> <span class="toc-text"> 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">3.3.1.</span> <span class="toc-text"> 变量名命名规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.3.2.</span> <span class="toc-text"> 数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E5%80%BC%E5%9E%8B%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.3.</span> <span class="toc-text"> 字符串和数值型变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.3.1.</span> <span class="toc-text"> 数值型变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">3.3.3.2.</span> <span class="toc-text"> 字符串</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">3.3.4.</span> <span class="toc-text"> 变量类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.3.4.1.</span> <span class="toc-text"> 转换函数详解</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-number">4.</span> <span class="toc-text"> 数学运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.</span> <span class="toc-text"> 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 算数运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 赋值运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.3.</span> <span class="toc-text"> 比较运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.4.</span> <span class="toc-text"> 逻辑运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">4.1.5.</span> <span class="toc-text"> 运算符优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.2.</span> <span class="toc-text"> 表达式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4"><span class="toc-number">5.</span> <span class="toc-text"> 计算思维</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">5.1.</span> <span class="toc-text"> 程序流程图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E7%AC%A6%E5%8F%B7"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 标准符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">5.1.2.</span> <span class="toc-text"> 基本结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#turtle%E5%BA%93"><span class="toc-number">6.</span> <span class="toc-text"> Turtle库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93"><span class="toc-number">6.1.</span> <span class="toc-text"> 第三方库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E5%BA%93%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 导入库的方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#turetle%E5%BA%93%E5%AF%BC%E5%85%A5"><span class="toc-number">6.2.</span> <span class="toc-text"> Turetle库导入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%BB%E5%B8%83%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.2.1.</span> <span class="toc-text"> 画布设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%BB%E7%AC%94%E6%B5%B7%E9%BE%9F%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.2.2.</span> <span class="toc-text"> 画笔（海龟）设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%94%BB%E7%AC%94%E6%B5%B7%E9%BE%9F"><span class="toc-number">6.2.3.</span> <span class="toc-text"> 多画笔（海龟）</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/">
+        <div class="categories-list-item">
+          实践项目
+          <span class="categories-list-item-badge">12</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/">
+        <div class="categories-list-item">
+          文档区
+          <span class="categories-list-item-badge">53</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/">
+        <div class="categories-list-item">
+          测试区
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+        <div class="categories-list-item">
+          读书笔记
+          <span class="categories-list-item-badge">15</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+        <div class="categories-list-item">
+          踩坑记录
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/">
+        <div class="categories-list-item">
+          生活日常
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/">
+        <div class="categories-list-item">
+          迁思回虑
+          <span class="categories-list-item-badge">7</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>常用标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E6%97%A7%E7%89%A9%E6%94%B9%E9%80%A0/" 
+        title="旧物改造">
+        <div class="tags-list-item">旧物改造</div>
+      </a>
+    
+      <a 
+        href="/tags/C-sharp/" 
+        title="C_sharp">
+        <div class="tags-list-item">C_sharp</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
+        title="数据库">
+        <div class="tags-list-item">数据库</div>
+      </a>
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
+        href="/tags/Vim/" 
+        title="Vim">
+        <div class="tags-list-item">Vim</div>
+      </a>
+    
+      <a 
+        href="/tags/git/" 
+        title="git">
+        <div class="tags-list-item">git</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%9A%E4%BF%A1/" 
+        title="通信">
+        <div class="tags-list-item">通信</div>
+      </a>
+    
+      <a 
+        href="/tags/C/" 
+        title="C++">
+        <div class="tags-list-item">C++</div>
+      </a>
+    
+      <a 
+        href="/tags/Android/" 
+        title="Android">
+        <div class="tags-list-item">Android</div>
+      </a>
+    
+      <a 
+        href="/tags/api/" 
+        title="api">
+        <div class="tags-list-item">api</div>
+      </a>
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A1%86%E6%9E%B6/" 
+        title="框架">
+        <div class="tags-list-item">框架</div>
+      </a>
+    
+      <a 
+        href="/tags/frask/" 
+        title="frask">
+        <div class="tags-list-item">frask</div>
+      </a>
+    
+      <a 
+        href="/tags/AI/" 
+        title="AI">
+        <div class="tags-list-item">AI</div>
+      </a>
+    
+      <a 
+        href="/tags/GPT/" 
+        title="GPT">
+        <div class="tags-list-item">GPT</div>
+      </a>
+    
+      <a 
+        href="/tags/json/" 
+        title="json">
+        <div class="tags-list-item">json</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9A%E9%9D%92%E5%B0%91%E5%B9%B4%E8%BD%AF%E4%BB%B6%E7%BC%96%E7%A8%8B%E7%AD%89%E7%BA%A7%E8%80%83%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text"> 中国电子学会青少年软件编程等级考试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text"> 编程环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#python%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> python语言的特点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 名词解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python%E5%AE%89%E8%A3%85%E4%B8%8E%E7%89%88%E6%9C%AC"><span class="toc-number">2.2.</span> <span class="toc-text"> python安装与版本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#python2%E4%B8%8Epython3"><span class="toc-number">2.2.1.</span> <span class="toc-text"> python2与python3</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#32%E4%BD%8Dx86%E4%B8%8E64%E4%BD%8Dx64"><span class="toc-number">2.2.1.1.</span> <span class="toc-text"> 32位（x86）与64位（x64）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%AE%89%E8%A3%85python"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.安装python</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">2.3.</span> <span class="toc-text"> 常见开发环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#idle%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">2.4.</span> <span class="toc-text"> IDLE编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#idle%E9%9C%80%E8%A6%81%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">2.4.1.</span> <span class="toc-text"> IDLE需要掌握的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#idle%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.4.2.</span> <span class="toc-text"> IDLE的两种模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E8%A6%81%E6%B1%82"><span class="toc-number">2.4.3.</span> <span class="toc-text"> 格式要求</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text"> 编程基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5-print"><span class="toc-number">3.1.</span> <span class="toc-text"> 输出语句 print()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 格式化输出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5-input"><span class="toc-number">3.2.</span> <span class="toc-text"> 输入语句 input()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%80%BC%E8%BE%93%E5%85%A5%E4%B8%8E%E5%88%86%E5%89%B2%E5%A4%84%E7%90%86"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 多值输入与分割处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.</span> <span class="toc-text"> 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">3.3.1.</span> <span class="toc-text"> 变量名命名规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.3.2.</span> <span class="toc-text"> 数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E5%80%BC%E5%9E%8B%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.3.</span> <span class="toc-text"> 字符串和数值型变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.3.1.</span> <span class="toc-text"> 数值型变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">3.3.3.2.</span> <span class="toc-text"> 字符串</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">3.3.4.</span> <span class="toc-text"> 变量类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.3.4.1.</span> <span class="toc-text"> 转换函数详解</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-number">4.</span> <span class="toc-text"> 数学运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.</span> <span class="toc-text"> 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 算数运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 赋值运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.3.</span> <span class="toc-text"> 比较运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.1.4.</span> <span class="toc-text"> 逻辑运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">4.1.5.</span> <span class="toc-text"> 运算符优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.2.</span> <span class="toc-text"> 表达式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%80%9D%E7%BB%B4"><span class="toc-number">5.</span> <span class="toc-text"> 计算思维</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">5.1.</span> <span class="toc-text"> 程序流程图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E7%AC%A6%E5%8F%B7"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 标准符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">5.1.2.</span> <span class="toc-text"> 基本结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#turtle%E5%BA%93"><span class="toc-number">6.</span> <span class="toc-text"> Turtle库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93"><span class="toc-number">6.1.</span> <span class="toc-text"> 第三方库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E5%BA%93%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 导入库的方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#turetle%E5%BA%93%E5%AF%BC%E5%85%A5"><span class="toc-number">6.2.</span> <span class="toc-text"> Turetle库导入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%BB%E5%B8%83%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.2.1.</span> <span class="toc-text"> 画布设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%BB%E7%AC%94%E6%B5%B7%E9%BE%9F%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.2.2.</span> <span class="toc-text"> 画笔（海龟）设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%94%BB%E7%AC%94%E6%B5%B7%E9%BE%9F"><span class="toc-number">6.2.3.</span> <span class="toc-text"> 多画笔（海龟）</span></a></li></ol></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-08-31</div>
+        <a href="/2025/08/31/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-08-31_%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9Apython%E4%B8%80%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/"><div class="recent-posts-item-content">电子学会python一级知识笔记</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-08-01</div>
+        <a href="/2025/08/01/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-08-01_%E5%8E%86%E5%8F%B2%E7%9A%84%E4%BD%9C%E7%94%A8/"><div class="recent-posts-item-content">历史的作用</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-08-01</div>
+        <a href="/2025/08/01/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-08-01_%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/"><div class="recent-posts-item-content">实用软件</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-07-26</div>
+        <a href="/2025/07/26/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-07-26_%E7%99%BD%E5%90%8D%E5%8D%95%E8%B5%9B%E4%BA%8B/"><div class="recent-posts-item-content">白名单赛事</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2025
+          
+          
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          UERLINK-博客
+        </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+</footer>
+<script src="/js/prism/prism.js" async></script> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
