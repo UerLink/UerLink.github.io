@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <link rel="stylesheet" href="/js/prism/prism.css">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="UerLink_Blog">
+  <link 
+    rel="icon" 
+    href="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png">
+  <title>电子学会python二级知识笔记</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="电子学会python二级知识笔记">
+    
+    
+      <meta 
+        property="og:url" 
+        content="http://uerlink.github.io/2025/08/31/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-08-31_%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9Apython%E4%BA%8C%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2025-08-31">
+      <meta 
+        property="og:article:modified_time" 
+        content="2025-08-31">
+      <meta 
+        property="og:article:author" 
+        content="UerLink">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="python">
+        
+          <meta 
+            property="og:article:tag" 
+            content="考级">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="UerLink_Blog" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="https://s2.loli.net/2024/03/18/e2gODtGZFh4QNwS.png" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">UERLINK-博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/books/index.html" 
+        class="navbar-menu-item">
+        
+          书单
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/atom.xml" 
+        class="navbar-menu-item">
+        
+          RSS订阅
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容...(目前仅支持在“首页”时搜索)" />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      电子学会python二级知识笔记
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2025-08-30T16:00:00.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2025-08-31</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/" 
+          class="post-meta-link">
+          文档区
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>5.1k 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/python/" 
+            class="post-meta-link">
+            python
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E8%80%83%E7%BA%A7/" 
+            class="post-meta-link">
+            考级
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h1 id="python二级复习文档"><a class="markdownIt-Anchor" href="#python二级复习文档"></a> python二级复习文档</h1>
+<h2 id="二级考试标准"><a class="markdownIt-Anchor" href="#二级考试标准"></a> 二级考试标准</h2>
+<p><a target="_blank" rel="noopener" href="https://www.qceit.org.cn/bos/default.html">中国电子学会考评中心网站</a></p>
+<h3 id="考试标准"><a class="markdownIt-Anchor" href="#考试标准"></a> 考试标准：</h3>
+<p>1、了解与掌握如下的python编程的进阶知识，并会使用： 1)知道如下几种数据类型：列表、元组、字典、字符串、range、集合六大 内置核心数据类型； 2)理解列表类型的概念，掌握它的基础用法及操作：访问/更新、获取元素 个数、遍历、转换为列表型数据、添加和删除、连接、排序等等； 3)理解元组类型的概念，理解元组和列表的不同，掌握它的基础用法及操 作：元组的声明与赋值、元组的访问与更新、元组的遍历、添加、删除、排序 等等； 4)理解字符串类型的概念，掌握它的基础用法及操作：字符串的分割、结 合、替换、检索、长度获取。</p>
+<p>2、会编写较为复杂的Python程序，掌握Python编程的控制语句： 1)理解选择结构语句的功能和写法，能够完成简单选择结构的程序； 2)掌握程序的单分支结构，理解二分支、多分支结构语句； 3)理解循环结构语句的功能和写法，能够完成简单循环结构的程序；理解 for循环、while循环、break和continue循环控制结构语句； 4)理解range类型的概念，掌握它的基础用法及操作。</p>
+<p>![image-20250703103208938](file:///C:/Users/UerLi/OneDrive/%E4%B8%AA%E4%BA%BA%E7%AE%A1%E7%90%86/%E5%B7%A5%E4%BD%9C%E5%8C%BA/%E7%BC%96%E7%A8%8B%E6%95%99%E5%AD%A6/%E3%80%902%E3%80%91%E8%AF%BE%E4%BB%B6/python%20%E4%B8%AD%E5%9B%BD%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9A%E8%80%83%E7%BA%A7%E8%B5%84%E6%96%99%E3%80%90%E5%B7%B2%E6%95%B4%E7%90%86%E3%80%91/python%E4%BA%8C%E7%BA%A7%E8%AF%BE%E4%BB%B6/python%E4%BA%8C%E7%BA%A7.assets/image-20250703103208938.png?lastModify=1756574658) ![image-20250703103217839](file:///C:/Users/UerLi/OneDrive/%E4%B8%AA%E4%BA%BA%E7%AE%A1%E7%90%86/%E5%B7%A5%E4%BD%9C%E5%8C%BA/%E7%BC%96%E7%A8%8B%E6%95%99%E5%AD%A6/%E3%80%902%E3%80%91%E8%AF%BE%E4%BB%B6/python%20%E4%B8%AD%E5%9B%BD%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9A%E8%80%83%E7%BA%A7%E8%B5%84%E6%96%99%E3%80%90%E5%B7%B2%E6%95%B4%E7%90%86%E3%80%91/python%E4%BA%8C%E7%BA%A7%E8%AF%BE%E4%BB%B6/python%E4%BA%8C%E7%BA%A7.assets/image-20250703103217839.png?lastModify=1756574658)</p>
+<p>![image-20250703103112015](file:///C:/Users/UerLi/OneDrive/%E4%B8%AA%E4%BA%BA%E7%AE%A1%E7%90%86/%E5%B7%A5%E4%BD%9C%E5%8C%BA/%E7%BC%96%E7%A8%8B%E6%95%99%E5%AD%A6/%E3%80%902%E3%80%91%E8%AF%BE%E4%BB%B6/python%20%E4%B8%AD%E5%9B%BD%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9A%E8%80%83%E7%BA%A7%E8%B5%84%E6%96%99%E3%80%90%E5%B7%B2%E6%95%B4%E7%90%86%E3%80%91/python%E4%BA%8C%E7%BA%A7%E8%AF%BE%E4%BB%B6/python%E4%BA%8C%E7%BA%A7.assets/image-20250703103112015.png?lastModify=1756574658)</p>
+<h2 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型"></a> 数据类型</h2>
+<p>字符串、列表、元组、集合、字典、range</p>
+<h3 id="字符串"><a class="markdownIt-Anchor" href="#字符串"></a> 字符串</h3>
+<p><strong>📜 字符串定义与创建</strong></p>
+<p>字符串是字符序列，用单引号<code>' '</code>、双引号<code>&quot; &quot;</code>或三引号<code>''' '''</code>/<code>&quot;&quot;&quot; &quot;&quot;&quot;</code>定义</p>
+<p>s1 = ‘单引号字符串’  <br />
+ s2 = “双引号字符串”  <br />
+ s3 = ‘’‘多行字符串<br />
+ 支持换行<br />
+ 支持换行<br />
+ ‘’’<br />
+ s4 = “”&quot;<br />
+ 多行字符串<br />
+ 支持换行<br />
+ “”&quot;</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li><strong>有序序列</strong>：支持索引（从0开始）和切片操作</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>操作类型</strong></th>
+<th><strong>语法/方法</strong></th>
+<th><strong>示例</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>拼接</strong></td>
+<td><code>+</code></td>
+<td><code>&quot;Hi&quot; + &quot;!&quot; → &quot;Hi!&quot;</code></td>
+<td>连接字符串</td>
+</tr>
+<tr>
+<td><strong>重复</strong></td>
+<td><code>*</code></td>
+<td><code>&quot;A&quot; * 3 → &quot;AAA&quot;</code></td>
+<td>重复字符串多次</td>
+</tr>
+<tr>
+<td><strong>长度</strong></td>
+<td><code>len()</code></td>
+<td><code>len(&quot;abc&quot;) → 3</code></td>
+<td>获取字符数量</td>
+</tr>
+<tr>
+<td><strong>索引</strong></td>
+<td><code>[index]</code></td>
+<td><code>&quot;Python&quot;[1] → 'y'</code></td>
+<td>获取单个字符（支持负索引）</td>
+</tr>
+<tr>
+<td><strong>切片</strong></td>
+<td><code>[start:stop:step]</code></td>
+<td><code>&quot;Python&quot;[1:4] → 'yth'</code></td>
+<td>获取子串（左闭右开）</td>
+</tr>
+<tr>
+<td><strong>存在检查</strong></td>
+<td><code>in</code> / <code>not in</code></td>
+<td><code>&quot;th&quot; in &quot;Python&quot; → True</code></td>
+<td>判断子串是否存在</td>
+</tr>
+</tbody>
+</table>
+<h4 id="实用方法"><a class="markdownIt-Anchor" href="#实用方法"></a> 实用方法</h4>
+<ol>
+<li><strong>大小写转换</strong></li>
+</ol>
+<ul>
+<li>
+<p><code>upper()</code>：全转大写 → <code>&quot;hello&quot;.upper() → &quot;HELLO&quot;</code></p>
+</li>
+<li>
+<p><code>lower()</code>：全转小写 → <code>&quot;HELLO&quot;.lower() → &quot;hello&quot;</code></p>
+</li>
+<li>
+<p><code>title()</code>：单词首字母大写 → <code>&quot;hello world&quot;.title() → &quot;Hello World&quot;</code></p>
+</li>
+</ul>
+<ol start="2">
+<li><strong>空白处理</strong></li>
+</ol>
+<ul>
+<li>
+<p><code>strip()</code>：移除首尾空白 → <code>&quot; text &quot;.strip() → &quot;text&quot;</code></p>
+</li>
+<li>
+<p><code>lstrip()</code>/<code>rstrip()</code>：仅移除左/右侧空白</p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>搜索与替换</strong></li>
+</ol>
+<ul>
+<li>
+<p><code>find(sub)</code>：返回子串首次位置（无则-1）→ <code>&quot;apple&quot;.find('p') → 1</code></p>
+</li>
+<li>
+<p><code>index(sub)</code>：类似<code>find()</code>，但无子串时报错 → <code>&quot;apple&quot;.index('z') ❌ ValueError</code></p>
+</li>
+<li>
+<p><code>replace(old, new)</code>：替换子串 → <code>&quot;cat&quot;.replace('c', 'b') → &quot;bat&quot;</code></p>
+</li>
+<li>
+<p><code>count(sub)</code>：统计子串出现次数 → <code>&quot;apple&quot;.count('p') → 2</code></p>
+</li>
+</ul>
+<ol start="4">
+<li><strong>分割与连接</strong></li>
+</ol>
+<ul>
+<li>
+<p><code>split(sep)</code>：按分隔符拆分 → <code>&quot;a,b,c&quot;.split(',') → ['a','b','c']</code></p>
+</li>
+<li>
+<p><code>join(iterable)</code>：连接可迭代对象 → <code>&quot;,&quot;.join(['a','b']) → &quot;a,b&quot;</code></p>
+</li>
+</ul>
+<h4 id="字符串连接-重复"><a class="markdownIt-Anchor" href="#字符串连接-重复"></a> 字符串连接、重复</h4>
+<p>print(“A” + “B” )    #“AB”<br />
+ print(“A” * 3 )    #“AAA”</p>
+<h4 id="占位符-格式化输出"><a class="markdownIt-Anchor" href="#占位符-格式化输出"></a> 占位符% （格式化输出)</h4>
+<p>result = “格式化字符串 % 值1”             # 单个值<br />
+ result = “格式化字符串 % (值1, 值2)”      # 多个值<br />
+ ​<br />
+ name = “Alice”<br />
+ print(“Hello, %s!” % name)  # 输出：Hello, Alice!</p>
+<p>常用占位符：</p>
+<table>
+<thead>
+<tr>
+<th><code>%s</code></th>
+<th>字符串</th>
+<th><code>&quot;%s&quot; % &quot;abc&quot;</code></th>
+<th><code>&quot;abc&quot;</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%d</code></td>
+<td>整数</td>
+<td><code>&quot;%d&quot; % 42</code></td>
+<td><code>&quot;42&quot;</code></td>
+</tr>
+<tr>
+<td><code>%f</code></td>
+<td>浮点数</td>
+<td><code>&quot;%f&quot; % 3.14159</code></td>
+<td><code>&quot;3.141590&quot;</code>（默认6位小数）</td>
+</tr>
+<tr>
+<td><code>%e</code>/<code>%E</code></td>
+<td>科学计数法</td>
+<td><code>&quot;%e&quot; % 1000</code></td>
+<td><code>&quot;1.000000e+03&quot;</code></td>
+</tr>
+<tr>
+<td><code>%o</code></td>
+<td>八进制整数</td>
+<td><code>&quot;%o&quot; % 10</code></td>
+<td><code>&quot;12&quot;</code>（即八进制的12）</td>
+</tr>
+<tr>
+<td><code>%x</code>/<code>%X</code></td>
+<td>十六进制整数</td>
+<td><code>&quot;%x&quot; % 255</code></td>
+<td><code>&quot;ff&quot;</code></td>
+</tr>
+<tr>
+<td><code>%%</code></td>
+<td>输出百分号<code>%</code></td>
+<td><code>&quot;50%%&quot;</code></td>
+<td><code>&quot;50%&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p>浮点数指定小数位数</p>
+<p>print(“%.3f” % 3.14159)  # 保留3位小数 → <code>&quot;3.142&quot;</code></p>
+<p>字符串截取字符数</p>
+<p>print(“%.3s” % “Python”)  # 截取前3字符 → <code>&quot;Pyt&quot;</code></p>
+<h4 id="format函数-格式化输出"><a class="markdownIt-Anchor" href="#format函数-格式化输出"></a> format()函数 （格式化输出）</h4>
+<ol>
+<li><strong>位置参数与索引</strong></li>
+</ol>
+<p># 按顺序替换<br />
+ s1 = “{} {}”.format(“Hello”, “Python”)  # 输出: “Hello Python”<br />
+ # 指定索引顺序<br />
+ s2 = “{1} {0}”.format(“Hello”, “Python”)  # 输出: “Python Hello”(@ref)<br />
+ # 重复使用索引<br />
+ s3 = “{0} is powerful, {0} is easy”.format(“Python”)  # 输出: “Python is powerful, Python is easy”</p>
+<ol start="2">
+<li><strong>关键字参数</strong></li>
+</ol>
+<p>s4 = “Name: {name}, Age: {age}”.format(name=“Alice”, age=25)  # 输出: “Name: Alice, Age: 25”</p>
+<h5 id="数字格式化"><a class="markdownIt-Anchor" href="#数字格式化"></a> 数字格式化</h5>
+<p>精度控制</p>
+<p># 保留2位小数<br />
+ num = 3.14159<br />
+ s5 = “Pi ≈ {:.2f}”.format(num)  # 输出: “Pi ≈ 3.14”<br />
+ # 百分比显示<br />
+ s6 = “Ratio: {:.0%}”.format(0.25)  # 输出: “Ratio: 25%”</p>
+<p>千位分隔符</p>
+<p>s7 = “{:,}”.format(1000000)  # 输出: “1,000,000”</p>
+<h1 id="组合使用千位分隔保留小数"><a class="markdownIt-Anchor" href="#组合使用千位分隔保留小数"></a> 组合使用：千位分隔+保留小数</h1>
+<p>s8 = “Value: {:,.2f}”.format(12345.6789)  # 输出: “Value: 12,345.68”</p>
+<p>进制转换</p>
+<p>s9 = “Hex: 0x{:X}”.format(255)  # 输出: “Hex: 0xFF”（十六进制）<br />
+s10 = “Bin: {:b}”.format(10)    # 输出: “Bin: 1010”（二进制）</p>
+<h5 id="文本对齐与填充"><a class="markdownIt-Anchor" href="#文本对齐与填充"></a> 文本对齐与填充</h5>
+<p>对齐方式</p>
+<h1 id="左对齐宽度10"><a class="markdownIt-Anchor" href="#左对齐宽度10"></a> 左对齐（宽度10）</h1>
+<p>s11 = “{:&lt;10}”.format(“Left”)    # 输出: &quot;Left      &quot;</p>
+<h1 id="右对齐宽度10"><a class="markdownIt-Anchor" href="#右对齐宽度10"></a> 右对齐（宽度10）</h1>
+<p>s12 = “{:&gt;10}”.format(“Right”)   # 输出: &quot;     Right&quot;</p>
+<h1 id="居中对齐宽度10用填充"><a class="markdownIt-Anchor" href="#居中对齐宽度10用填充"></a> 居中对齐（宽度10，用*填充）</h1>
+<p>s13 = “{:*^10}”.format(“Center”) # 输出: “<strong>Center</strong>”</p>
+<p>符号控制</p>
+<h1 id="强制显示正负号"><a class="markdownIt-Anchor" href="#强制显示正负号"></a> 强制显示正负号</h1>
+<p>s14 = “{:+d}”.format(10)   # 输出: “+10” <a href="@ref">1</a><br />
+s15 = “{:+d}”.format(-10)  # 输出: “-10” <a href="@ref">1</a></p>
+<hr />
+<h3 id="列表"><a class="markdownIt-Anchor" href="#列表"></a> 列表</h3>
+<p><strong>📚 Python列表的概念</strong></p>
+<p>Python列表（List）是一种<strong>有序、可变</strong>的数据结构，用于存储一组元素（可包含不同类型），通过方括号 <code>[]</code> 定义</p>
+<p>特点：</p>
+<ul>
+<li>
+<p><strong>有序性</strong>：元素按插入顺序存储，支持索引访问（正索引从0开始，负索引从-1开始）</p>
+</li>
+<li>
+<p><strong>可变性</strong>：支持动态增删改元素</p>
+</li>
+<li>
+<p><strong>支持嵌套</strong>：可包含子列表（多维列表）</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>操作类型</strong></th>
+<th><strong>方法</strong></th>
+<th><strong>示例</strong></th>
+<th><strong>适用场景</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>增加</strong></td>
+<td><code>append()</code>/<code>extend()</code></td>
+<td><code>lst.append(4)</code></td>
+<td>末尾添加单个或多个元素</td>
+</tr>
+<tr>
+<td></td>
+<td><code>insert()</code></td>
+<td><code>lst.insert(1, 0)</code></td>
+<td>指定位置插入元素</td>
+</tr>
+<tr>
+<td><strong>删除</strong></td>
+<td><code>remove()</code>/<code>pop()</code></td>
+<td><code>lst.remove(2)</code></td>
+<td>按值删除或按索引删除并返回</td>
+</tr>
+<tr>
+<td></td>
+<td><code>del</code></td>
+<td><code>del lst[0]</code></td>
+<td>按索引或切片删除</td>
+</tr>
+<tr>
+<td><strong>查找</strong></td>
+<td><code>in</code>/<code>index()</code></td>
+<td><code>if 3 in lst</code></td>
+<td>判断存在或获取位置</td>
+</tr>
+<tr>
+<td></td>
+<td>切片</td>
+<td><code>lst[1:3]</code></td>
+<td>获取子列表</td>
+</tr>
+<tr>
+<td><strong>修改</strong></td>
+<td>索引赋值</td>
+<td><code>lst[0] = 10</code></td>
+<td>修改单个元素</td>
+</tr>
+<tr>
+<td></td>
+<td>循环遍历</td>
+<td><code>for i in range(len(lst)): ...</code></td>
+<td>条件性批量修改</td>
+</tr>
+</tbody>
+</table>
+<h4 id="增加操作"><a class="markdownIt-Anchor" href="#增加操作"></a> 增加操作</h4>
+<ol>
+<li><strong><code>append()</code></strong>：在末尾添加单个元素</li>
+</ol>
+<p>nums = [1, 2]<br />
+nums.append(3)  # [1, 2, 3]</p>
+<ol start="2">
+<li><strong><code>extend()</code></strong>：将可迭代对象（如列表）的所有元素追加到末尾</li>
+</ol>
+<p>nums = [1, 2]<br />
+nums.extend([4, 5])  # [1, 2, 3, 4, 5]</p>
+<ol start="3">
+<li><strong><code>insert()</code></strong>：在指定索引位置插入元素</li>
+</ol>
+<p>nums = [1, 2]<br />
+nums.insert(1, 1.5)  # [1, 1.5, 2, 3, 4, 5]</p>
+<ol start="4">
+<li><strong>切片赋值</strong>：通过切片替换或插入多个元素</li>
+</ol>
+<p>nums = [1, 2]<br />
+nums[1:1] = [0, 0]  # 在索引1处插入[0, 0]</p>
+<h4 id="删除操作"><a class="markdownIt-Anchor" href="#删除操作"></a> 删除操作</h4>
+<ol>
+<li><strong><code>remove()</code></strong>：删除第一个匹配的元素值，不存在则报错</li>
+</ol>
+<p>lst = [1, 2, 2, 3]<br />
+lst.remove(2)  # [1, 2, 3]</p>
+<ol start="2">
+<li><strong><code>pop()</code></strong>：删除指定索引的元素并返回该元素（默认删除末尾）</li>
+</ol>
+<p>lst = [1, 2, 2, 3]<br />
+popped = lst.pop(0)  # 删除索引0的元素</p>
+<ol start="3">
+<li><strong><code>del</code>语句</strong>：按索引或切片删除元素</li>
+</ol>
+<p>lst = [1, 2, 2, 3]<br />
+del lst[1]     # 删除索引1<br />
+del lst[0:2]   # 删除前两个元素</p>
+<ol start="4">
+<li><strong><code>clear()</code></strong>：清空整个列表</li>
+</ol>
+<p>lst = [1, 2, 2, 3]<br />
+lst.clear()  # []</p>
+<h4 id="查找操作"><a class="markdownIt-Anchor" href="#查找操作"></a> 查找操作</h4>
+<ol>
+<li><strong>索引访问</strong>：通过索引获取元素（支持正负索引）</li>
+</ol>
+<p>lst = [1, 2, 3, 4]<br />
+print(lst[0])   # 第一个元素<br />
+print(lst[-1])  # 最后一个元素</p>
+<ol start="2">
+<li><strong>切片操作</strong>：获取子列表</li>
+</ol>
+<p>lst = [1, 2, 3, 4]<br />
+sub = lst[1:3]   # 索引1到2的子列表</p>
+<ol start="3">
+<li><strong><code>in</code>运算符</strong>：判断元素是否存在</li>
+</ol>
+<p>lst = [1, 2, 3, 4]<br />
+if 3 in lst: print(“存在”)</p>
+<ol start="4">
+<li><strong><code>index()</code></strong>：返回元素首次出现的索引号（编号），不存在则报错</li>
+</ol>
+<p>lst = [1, 2, 3, 4]<br />
+idx = lst.index(3)  # 返回3的索引</p>
+<ol start="5">
+<li><strong><code>count()</code></strong>：统计元素出现次数</li>
+</ol>
+<p>lst = [1, 2, 3, 4]<br />
+count = lst.count(2)  # 2出现的次数</p>
+<h4 id="修改操作"><a class="markdownIt-Anchor" href="#修改操作"></a> 修改操作</h4>
+<ol>
+<li><strong>直接索引赋值</strong>：修改单个元素</li>
+</ol>
+<p>lst = [1, 2, 3, 4]<br />
+lst[0] = “new”  # 修改索引0的元素</p>
+<ol start="2">
+<li><strong>切片赋值</strong>：替换多个元素</li>
+</ol>
+<p>lst = [1, 2, 3, 4]<br />
+lst[1:3] = [“a”, “b”]  # 替换索引1-2的元素</p>
+<ol start="3">
+<li><strong>循环遍历修改</strong>：根据条件批量修改</li>
+</ol>
+<p>lst = [1, 2, 3, 4]<br />
+for i in range(len(lst)):<br />
+if lst[i] % 2 == 0:<br />
+lst[i] *= 2  # 偶数元素加倍</p>
+<hr />
+<h3 id="元组"><a class="markdownIt-Anchor" href="#元组"></a> 元组</h3>
+<h4 id="元组与列表的异同"><a class="markdownIt-Anchor" href="#元组与列表的异同"></a> 元组与列表的异同</h4>
+<p>共同点：</p>
+<ul>
+<li>
+<p><strong>有序结构</strong>：均按插入顺序存储元素，支持索引（正/负）和切片操作</p>
+</li>
+<li>
+<p><strong>异构性</strong>：可混合存储不同类型的数据（如数字、字符串、其他容器）</p>
+</li>
+<li>
+<p><strong>操作符支持</strong>：均支持 <code>+</code>（拼接）、<code>*</code>（重复）、<code>in</code>（成员检查）、<code>len()</code>（长度）等操作</p>
+</li>
+</ul>
+<p>区别点：</p>
+<ul>
+<li>
+<p>列表可变，元组不可变</p>
+</li>
+<li>
+<p>列表定义用方括号 <code>[]</code>，元组定义用圆括号 <code>()</code>，而且单元素需加逗号 <code>(x,)</code></p>
+</li>
+</ul>
+<h4 id="访问元组"><a class="markdownIt-Anchor" href="#访问元组"></a> 访问元组</h4>
+<ol>
+<li>索引访问</li>
+</ol>
+<p>t = (10, 20, 30)<br />
+print(t[0])   # 10（正索引）<br />
+print(t[-1])  # 30（负索引）</p>
+<ol start="2">
+<li>切片操作</li>
+</ol>
+<p>t = (‘a’, ‘b’, ‘c’, ‘d’)<br />
+print(t[1:3])  # (‘b’, ‘c’)  # 左闭右开<br />
+print(t[::2])  # (‘a’, ‘c’)  # 步长为2</p>
+<ol start="3">
+<li>循环遍历</li>
+</ol>
+<p>for item in t:  # 同时获取值<br />
+print(item)</p>
+<p>for idx, item in enumerate(t):  # 同时获取索引和值<br />
+print(f&quot;Index {idx}: {item}&quot;)</p>
+<h4 id="修改元组元素"><a class="markdownIt-Anchor" href="#修改元组元素"></a> 修改元组元素</h4>
+<p>！！！元组不可直接修改，但可通过间接方法生成新元组</p>
+<ol>
+<li>创建新元组替换元素</li>
+</ol>
+<p>t = (1, 2, 3)<br />
+new_t = (10,) + t[1:]  # 替换首元素 → (10, 2, 3)</p>
+<ol start="2">
+<li>借助列表转换修改</li>
+</ol>
+<p>t = (1, 2, 3)<br />
+temp_list = list(t)<br />
+temp_list[1] = 20  # 修改元素<br />
+new_t = tuple(temp_list)  # (1, 20, 3)</p>
+<h4 id="删除元组元素"><a class="markdownIt-Anchor" href="#删除元组元素"></a> 删除元组元素</h4>
+<p>！！！元组不支持直接删除元素，但可通过以下方式间接实现：</p>
+<ol>
+<li>创建新元组跳过元素</li>
+</ol>
+<p>t = (1, 2, 3, 4)<br />
+new_t = t[:2] + t[3:]  # 删除索引2的元素 → (1, 2, 4) <a href="@ref">8,10</a></p>
+<ol start="2">
+<li>转换为列表删除后转回</li>
+</ol>
+<p>t = (1, 2, 3, 4)<br />
+temp_list = list(t)<br />
+temp_list.remove(3)  # 删除值为3的元素<br />
+new_t = tuple(temp_list)  # (1, 2, 4)</p>
+<ol start="3">
+<li>删除整个元组</li>
+</ol>
+<p>t = (1, 2, 3)<br />
+del t  # 删除元组对象<br />
+print(t)  # ❌ NameError: name ‘t’ is not defined</p>
+<hr />
+<h3 id="集合set"><a class="markdownIt-Anchor" href="#集合set"></a> 集合（set）</h3>
+<p>定义：通过{}创建或set()</p>
+<h1 id="非空集合"><a class="markdownIt-Anchor" href="#非空集合"></a> 非空集合</h1>
+<p>s1 = {1, 2, 3}                 # 花括号直接创建<br />
+s2 = set([4, 5, 6])            # 从列表转换（自动去重）<br />
+s3 = set(“hello”)               # 从字符串创建 → {‘h’, ‘e’, ‘l’, ‘o’}</p>
+<h1 id="空集合必须用-set"><a class="markdownIt-Anchor" href="#空集合必须用-set"></a> 空集合（必须用 set()）</h1>
+<p>empty_set = set()               # ✅ 正确<br />
+not_set = {}                    # ❌ 这是空字典</p>
+<p>特点：</p>
+<ul>
+<li>
+<p>集合（Set）是一种<strong>无序、可变、元素唯一</strong>的数据结构，用于存储不重复的数据项</p>
+</li>
+<li>
+<p>元素无固定顺序，不支持索引访问（如 <code>s[0]</code> 会报错）</p>
+</li>
+<li>
+<p><strong>元素唯一</strong></p>
+</li>
+</ul>
+<h4 id="添加元素"><a class="markdownIt-Anchor" href="#添加元素"></a> 添加元素</h4>
+<ol>
+<li><code>add()</code>：添加单个元素</li>
+</ol>
+<p>s = {1, 2}<br />
+s.add(3)                     # {1, 2, 3}</p>
+<ol start="2">
+<li><code>update()</code>：添加多个元素（支持列表、元组等可迭代对象）</li>
+</ol>
+<p>s.update([3, 4], (5,))       # {1, 2, 3, 4, 5}</p>
+<h4 id="删除元素"><a class="markdownIt-Anchor" href="#删除元素"></a> 删除元素</h4>
+<ol>
+<li><code>remove()</code>：删除指定元素（元素不存在时报 <code>KeyError</code>）</li>
+</ol>
+<p>s = {1,2,3,4,5}<br />
+s.remove(2)                  # {1, 3, 4, 5}</p>
+<ol start="2">
+<li><code>discard()</code>：删除指定元素（元素不存在时不报错）</li>
+</ol>
+<p>s.discard(10)                # 无副作用</p>
+<ol start="3">
+<li><code>pop()</code>：随机删除并返回一个元素</li>
+</ol>
+<p>s = {1,2,3,4,5}<br />
+item = s.pop()               # 随机删除一个元素</p>
+<ol start="4">
+<li><code>clear()</code>：清空集合</li>
+</ol>
+<p>s.clear()                    # set()</p>
+<h4 id="查询元素"><a class="markdownIt-Anchor" href="#查询元素"></a> 查询元素</h4>
+<ol>
+<li><strong>成员检查</strong>：<code>in</code> 操作符</li>
+</ol>
+<p>s = {1,2,3,4,5}<br />
+print(3 in s)                # True</p>
+<ol start="2">
+<li><strong>遍历元素</strong>：（无序）</li>
+</ol>
+<p>for item in s:<br />
+print(item)              # 无序输出所有元素</p>
+<h4 id="集合运算数学操作"><a class="markdownIt-Anchor" href="#集合运算数学操作"></a> 集合运算（数学操作）</h4>
+<ol>
+<li>**并集（Union）**返回两集合所有唯一元素。</li>
+</ol>
+<p>A = {1, 2}; B = {2, 3}<br />
+A | B                        # {1, 2, 3}<br />
+A.union(B)                   # 同上</p>
+<ol start="2">
+<li>**交集（Intersection）**返回两集合共有元素。</li>
+</ol>
+<p>A &amp; B                        # {2}<br />
+A.intersection(B)            # 同上</p>
+<ol start="3">
+<li><strong>子集/超集判断</strong>：</li>
+</ol>
+<p>C = {1, 2}<br />
+C &lt;= A                       # True（子集）<br />
+A &gt;= C                       # True（超集）</p>
+<h4 id="应用场景"><a class="markdownIt-Anchor" href="#应用场景"></a> 应用场景</h4>
+<p>快速去除列表中的重复项：</p>
+<p>lst = [1, 2, 2, 3]<br />
+unique_lst = list(set(lst))   # [1, 2, 3]</p>
+<h3 id="字典"><a class="markdownIt-Anchor" href="#字典"></a> 字典</h3>
+<p>核心概念：</p>
+<ul>
+<li>
+<p>字典（Dictionary）是键值对（<code>key-value</code>）的无序集合（Python 3.7+ 保留插入顺序）</p>
+</li>
+<li>
+<p><strong>键（Key）</strong>：必须唯一且不可变（字符串、数字、元组等）</p>
+</li>
+<li>
+<p><strong>值（Value）</strong>：可为任意数据类型（包括嵌套字典）</p>
+</li>
+</ul>
+<h4 id="创建字典"><a class="markdownIt-Anchor" href="#创建字典"></a> 创建字典</h4>
+<table>
+<thead>
+<tr>
+<th><strong>方法</strong></th>
+<th><strong>示例</strong></th>
+<th><strong>适用场景</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>花括号 <code>&#123;&#125;</code></strong></td>
+<td><code>d1 = &#123;&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25&#125;</code></td>
+<td>直接定义键值对</td>
+</tr>
+<tr>
+<td><strong><code>dict()</code> 构造函数</strong></td>
+<td><code>d2 = dict(name=&quot;Bob&quot;, age=30)</code> 或 <code>d3 = dict([(&quot;name&quot;, &quot;Charlie&quot;)])</code></td>
+<td>动态生成或转换其他数据结构</td>
+</tr>
+</tbody>
+</table>
+<p>⚠️注意：空字典需用 <code>&#123;&#125;</code> 或 <code>dict()</code>，不可用 <code>&#123; &#125;</code> 表示空集合</p>
+<h4 id="访问字典"><a class="markdownIt-Anchor" href="#访问字典"></a> 访问字典</h4>
+<ol>
+<li><strong>直接访问</strong></li>
+</ol>
+<ul>
+<li>
+<p>通过键获取值：<code>d[&quot;name&quot;]</code></p>
+</li>
+<li>
+<p>❌ 键不存在时报 <code>KeyError</code></p>
+</li>
+</ul>
+<ol start="2">
+<li><strong>安全访问</strong></li>
+</ol>
+<ul>
+<li><code>get(key, default=None)</code>：键不存在时返回默认值</li>
+</ul>
+<p>age = d.get(“age”, 0)  # 若&quot;age&quot;不存在，返回0</p>
+<ul>
+<li>in<code>关键字检查键是否存在：</code>if “name” in d:</li>
+</ul>
+<ol start="3">
+<li><strong>获取键值的方法</strong></li>
+</ol>
+<ul>
+<li>
+<p><code>keys()</code>：返回所有键（<code>dict_keys</code> 类型）</p>
+</li>
+<li>
+<p><code>values()</code>：返回所有值（<code>dict_values</code> 类型）</p>
+</li>
+<li>
+<p><code>items()</code>：返回键值对元组（<code>dict_items</code> 类型）</p>
+</li>
+</ul>
+<ol start="4">
+<li><strong>遍历字典</strong></li>
+</ol>
+<p>for key in d: …                 # 遍历键<br />
+for value in d.values(): …      # 遍历值<br />
+for key, value in d.items(): …  # 遍历键值对</p>
+<h4 id="字典修改"><a class="markdownIt-Anchor" href="#字典修改"></a> 字典修改</h4>
+<ol>
+<li><strong>直接修改值</strong></li>
+</ol>
+<p>d[“age”] = 31  # 键存在：修改值；键不存在：添加新键值对</p>
+<ol start="2">
+<li><strong>批量更新</strong></li>
+</ol>
+<ul>
+<li><code>update()</code>：合并其他字典或可迭代对象</li>
+</ul>
+<p>d.update({“age”: 32, “city”: “Paris”})  # 更新多个键值对</p>
+<ol start="3">
+<li>遍历修改</li>
+</ol>
+<p>for key in d:<br />
+if key == “age”:<br />
+d[key] *= 2  # 将&quot;age&quot;值翻倍</p>
+<h4 id="字典删除"><a class="markdownIt-Anchor" href="#字典删除"></a> 字典删除</h4>
+<table>
+<thead>
+<tr>
+<th><strong>方法</strong></th>
+<th><strong>示例</strong></th>
+<th><strong>特点</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>del</code> 语句</strong></td>
+<td><code>del d[&quot;name&quot;]</code></td>
+<td>直接删除键值对，键不存在时报 <code>KeyError</code></td>
+</tr>
+<tr>
+<td><strong><code>pop(key)</code></strong></td>
+<td><code>value = d.pop(&quot;age&quot;)</code></td>
+<td>删除并返回值，可设默认值避免报错</td>
+</tr>
+<tr>
+<td><strong><code>popitem()</code></strong></td>
+<td><code>k, v = d.popitem()</code></td>
+<td>删除并返回最后插入的键值对（Python 3.7+）</td>
+</tr>
+<tr>
+<td><strong><code>clear()</code></strong></td>
+<td><code>d.clear()</code></td>
+<td>清空字典 → <code>&#123;&#125;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="range"><a class="markdownIt-Anchor" href="#range"></a> range</h3>
+<p>在Python中，<code>range</code>是一种<strong>不可变的序列类型</strong>，专门用于生成整数序列。它通过<code>range()</code>函数创建</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>
+<p><code>range</code>是Python内置的<strong>不可变序列类型</strong>（类似元组），用于生成整数序列</p>
+</li>
+<li>
+<p>返回<code>range</code>对象（如<code>range(0, 5)</code>），而非实际列表，需用<code>list()</code>或<code>tuple()</code>转换后才能查看具体元素</p>
+</li>
+<li>
+<p><strong>不可变性</strong>：创建后无法修改元素（如<code>range(5)[0] = 10</code>会报错）</p>
+</li>
+</ul>
+<h4 id="range的定义方法"><a class="markdownIt-Anchor" href="#range的定义方法"></a> range的定义方法</h4>
+<p>通过<code>range()</code>函数定义，支持三种参数组合：</p>
+<table>
+<thead>
+<tr>
+<th><strong>参数形式</strong></th>
+<th><strong>语法</strong></th>
+<th><strong>示例</strong></th>
+<th><strong>生成序列</strong></th>
+<th><strong>适用场景</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>单参数</strong></td>
+<td><code>range(stop)</code></td>
+<td><code>range(5)</code></td>
+<td><code>[0, 1, 2, 3, 4]</code></td>
+<td>从0开始到<code>stop-1</code>的循环</td>
+</tr>
+<tr>
+<td><strong>双参数</strong></td>
+<td><code>range(start, stop)</code></td>
+<td><code>range(2, 6)</code></td>
+<td><code>[2, 3, 4, 5]</code></td>
+<td>指定起始和结束范围</td>
+</tr>
+<tr>
+<td><strong>三参数（含步长）</strong></td>
+<td><code>range(start, stop, step)</code></td>
+<td><code>range(1, 10, 2)</code></td>
+<td><code>[1, 3, 5, 7, 9]</code></td>
+<td>自定义步长或倒序（负步长）</td>
+</tr>
+</tbody>
+</table>
+<p>参数说明：</p>
+<ul>
+<li>
+<p><code>start</code>**：起始值（包含），默认</p>
+</li>
+<li>
+<p><strong><code>stop</code></strong>：结束值（不包含），必填</p>
+</li>
+<li>
+<p><strong><code>step</code></strong>：步长（默认<code>1</code>），若为负则递减（如<code>range(10, 0, -1)</code>生成<code>[10,9,...,1]</code>）</p>
+</li>
+</ul>
+<h5 id="应用场景-2"><a class="markdownIt-Anchor" href="#应用场景-2"></a> 应用场景</h5>
+<ol>
+<li><strong>控制循环次数</strong></li>
+</ol>
+<p>for i in range(3):  # 循环3次<br />
+print(“Hello”)  # 输出：Hello（重复3次）</p>
+<ol start="2">
+<li><strong>遍历序列索引</strong></li>
+</ol>
+<p>fruits = [“apple”, “banana”, “cherry”]<br />
+for i in range(len(fruits)):  # 遍历索引<br />
+print(f&quot;Index {i}: {fruits[i]}&quot;)</p>
+<ol start="3">
+<li><strong>生成数值序列</strong></li>
+</ol>
+<p>even_numbers = list(range(0, 10, 2))  # [0, 2, 4, 6, 8]</p>
+<h3 id="类型转换"><a class="markdownIt-Anchor" href="#类型转换"></a> 类型转换</h3>
+<h4 id="隐式转换自动"><a class="markdownIt-Anchor" href="#隐式转换自动"></a> 隐式转换（自动）</h4>
+<ol>
+<li><strong>数字类型提升</strong> :整数（<code>int</code>）与浮点数（<code>float</code>）运算 → 自动转为 <code>float</code></li>
+</ol>
+<p>result = 5 + 3.14  # 8.14（float）</p>
+<ol start="2">
+<li><strong>布尔值参与运算</strong>:True<code>转为</code>1<code>，</code>False<code>转为</code>0</li>
+</ol>
+<p>result = True + 2.5  # 3.5（float）</p>
+<p><strong>局限</strong>：不支持字符串与数字的隐式转换（如 <code>&quot;10&quot; + 5</code> 报错 <code>TypeError</code>）</p>
+<h4 id="显示转换手动"><a class="markdownIt-Anchor" href="#显示转换手动"></a> 显示转换（手动）</h4>
+<p>通过内置函数强制转换数据类型：</p>
+<p><strong>1. 基础类型转换函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数</strong></th>
+<th><strong>作用</strong></th>
+<th><strong>示例</strong></th>
+<th><strong>注意事项</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int(x)</code></td>
+<td>转整数</td>
+<td><code>int(&quot;42&quot;) → 42</code></td>
+<td>字符串需为数字格式</td>
+</tr>
+<tr>
+<td><code>float(x)</code></td>
+<td>转浮点数</td>
+<td><code>float(&quot;3.14&quot;) → 3.14</code></td>
+<td>支持科学计数法字符串</td>
+</tr>
+<tr>
+<td><code>str(x)</code></td>
+<td>转字符串</td>
+<td><code>str(100) → &quot;100&quot;</code></td>
+<td>任意类型均可转换</td>
+</tr>
+<tr>
+<td><code>bool(x)</code></td>
+<td>转布尔值</td>
+<td><code>bool(0) → False</code></td>
+<td>空容器/0/<code>None</code> 为 <code>False</code></td>
+</tr>
+<tr>
+<td><code>complex(real, imag)</code></td>
+<td>创建复数</td>
+<td><code>complex(3, 4) → (3+4j)</code></td>
+<td><code>imag</code> 默认为 0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. 容器类型转换函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数</strong></th>
+<th><strong>作用</strong></th>
+<th><strong>示例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list(seq)</code></td>
+<td>转列表</td>
+<td><code>list((1, 2)) → [1, 2]</code></td>
+</tr>
+<tr>
+<td><code>tuple(seq)</code></td>
+<td>转元组</td>
+<td><code>tuple([1, 2]) → (1, 2)</code></td>
+</tr>
+<tr>
+<td><code>set(seq)</code></td>
+<td>转集合（自动去重）</td>
+<td><code>set([1, 1, 2]) → &#123;1, 2&#125;</code></td>
+</tr>
+<tr>
+<td><code>dict(seq)</code></td>
+<td>转字典</td>
+<td><code>dict([('a', 1), ('b', 2)]) → &#123;'a':1&#125;</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. 特殊转换函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><code>chr(x)</code></th>
+<th>ASCII 码 → 字符</th>
+<th><code>chr(65) → 'A'</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ord(x)</code></td>
+<td>字符 → ASCII 码</td>
+<td><code>ord('A') → 65</code></td>
+</tr>
+<tr>
+<td><code>hex(x)</code></td>
+<td>整数 → 十六进制字符串</td>
+<td><code>hex(255) → '0xff'</code></td>
+</tr>
+<tr>
+<td><code>oct(x)</code></td>
+<td>整数 → 八进制字符串</td>
+<td><code>oct(64) → '0o100'</code></td>
+</tr>
+<tr>
+<td><code>eval(s)</code></td>
+<td>字符串 → Python 表达式结果</td>
+<td><code>eval(&quot;2 * 3&quot;) → 6</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="流程控制"><a class="markdownIt-Anchor" href="#流程控制"></a> 流程控制</h2>
+<p>三大结构：</p>
+<ul>
+<li>
+<p>顺序结构</p>
+</li>
+<li>
+<p>分支结构</p>
+</li>
+<li>
+<p>循环结构</p>
+</li>
+</ul>
+<h3 id="顺序结构"><a class="markdownIt-Anchor" href="#顺序结构"></a> 顺序结构</h3>
+<h3 id="分支结构条件判断语句"><a class="markdownIt-Anchor" href="#分支结构条件判断语句"></a> 分支结构（条件判断语句）</h3>
+<p>关键字： <code>if</code>、<code>elif</code>、<code>else</code></p>
+<p>关键特性：</p>
+<ul>
+<li><strong>缩进敏感</strong>：代码块通过缩进（通常4空格）定义</li>
+</ul>
+<p>if x &gt; 0:<br />
+print(“正数”)  # 正确缩进<br />
+print(“此处无论条件如何都会执行”)  # 无缩进，不属于 if 代码块</p>
+<ul>
+<li><strong>条件表达式</strong>：支持比较运算符（<code>==</code>, <code>&gt;</code>, <code>&lt;=</code> 等）和逻辑运算符（<code>and</code>, <code>or</code>, <code>not</code>）</li>
+</ul>
+<p>if age &gt;= 18 and (has_license or is_exempt):<br />
+print(“允许驾驶”)</p>
+<ul>
+<li><strong>三元表达式</strong>：简化单行条件赋值</li>
+</ul>
+<p>result = “通过” if score &gt;= 60 else “未通过”</p>
+<p>语法：</p>
+<h1 id="单分支"><a class="markdownIt-Anchor" href="#单分支"></a> 单分支</h1>
+<p>if condition:<br />
+# 条件为 True 时执行</p>
+<h1 id="双分支"><a class="markdownIt-Anchor" href="#双分支"></a> 双分支</h1>
+<p>if condition:<br />
+# True 时执行<br />
+else:<br />
+# False 时执行</p>
+<h1 id="多分支"><a class="markdownIt-Anchor" href="#多分支"></a> 多分支</h1>
+<p>if condition1:<br />
+# 条件1为 True<br />
+elif condition2:<br />
+# 条件1为 False 且条件2为 True<br />
+else:<br />
+# 所有条件为 False</p>
+<h3 id="循环结构循环语句"><a class="markdownIt-Anchor" href="#循环结构循环语句"></a> 循环结构（循环语句）</h3>
+<p>用于重复执行代码块，分为 <code>for</code> 循环和 <code>while</code> 循环。</p>
+<h4 id="for-循环"><a class="markdownIt-Anchor" href="#for-循环"></a> <strong>for 循环</strong></h4>
+<p>遍历序列（列表、字符串等）或可迭代对象。</p>
+<h1 id="遍历列表"><a class="markdownIt-Anchor" href="#遍历列表"></a> 遍历列表</h1>
+<p>fruits = [“apple”, “banana”]<br />
+for fruit in fruits:<br />
+print(fruit)  # 依次输出 apple, banana</p>
+<h1 id="遍历字典"><a class="markdownIt-Anchor" href="#遍历字典"></a> 遍历字典</h1>
+<p>user = {“name”: “Alice”, “age”: 25}<br />
+for key, value in user.items():<br />
+print(key, value)  # 输出 name Alice, age 25</p>
+<p><strong><code>range()</code> 函数</strong>：生成整数序列，控制循环次数。</p>
+<p>for i in range(3):          # 0,1,2<br />
+for i in range(1, 10, 2):   # 1,3,5,7,9（步长2）</p>
+<h4 id="while-循环"><a class="markdownIt-Anchor" href="#while-循环"></a> <strong>while 循环</strong></h4>
+<p>条件为 <code>True</code> 时重复执行，适用于循环次数未知的场景。</p>
+<p>count = 0<br />
+while count &lt; 3:<br />
+print(count)  # 输出 0,1,2<br />
+count += 1</p>
+<p><strong>避免无限循环</strong>：需确保条件最终变为 <code>False</code></p>
+<p>while True:<br />
+user_input = input(“输入 ‘exit’ 退出：”)<br />
+if user_input == “exit”:<br />
+break  # 强制退出</p>
+<h5 id="循环控制语句"><a class="markdownIt-Anchor" href="#循环控制语句"></a> 循环控制语句</h5>
+<p><strong><code>break</code></strong>：立即终止整个循环</p>
+<p>for i in range(10):<br />
+if i == 5:<br />
+break  # 终止于 i=5</p>
+<p><strong><code>continue</code></strong>：跳过当前迭代，进入下一次循环</p>
+<p>for i in range(5):<br />
+if i == 2:<br />
+continue  # 跳过 i=2<br />
+print(i)      # 输出 0,1,3,4</p>
+<p><strong><code>else</code></strong>：循环正常结束（非 <code>break</code> 退出）时执行</p>
+<p>for i in range(3):<br />
+print(i)<br />
+else:<br />
+print(“循环完成”)  # 输出 0,1,2,循环完成</p>
+<h3 id="嵌套结构"><a class="markdownIt-Anchor" href="#嵌套结构"></a> 嵌套结构</h3>
+<p>条件与循环可多层嵌套，但需控制复杂度（建议不超过3层）</p>
+<h1 id="嵌套循环打印九九乘法表"><a class="markdownIt-Anchor" href="#嵌套循环打印九九乘法表"></a> 嵌套循环（打印九九乘法表）</h1>
+<p>for i in range(1, 10):<br />
+for j in range(1, i+1):<br />
+print(f&quot;{i}<em>{j}={i</em>j}“, end=”\t&quot;)<br />
+print()  # 换行<a href="@ref">11</a></p>
+<h1 id="条件嵌套"><a class="markdownIt-Anchor" href="#条件嵌套"></a> 条件嵌套</h1>
+<p>if temp &gt; 30:<br />
+if humidity &gt; 70:<br />
+print(“高温高湿警报！”)<br />
+else:<br />
+print(“高温干燥”)</p>
+<h4 id="关键注意事项"><a class="markdownIt-Anchor" href="#关键注意事项"></a> <strong>关键注意事项</strong></h4>
+<ul>
+<li>
+<p><strong>缩进一致</strong>：缩进错误引发 <code>IndentationError</code></p>
+</li>
+<li>
+<p><strong>避免无限循环</strong>：确保 <code>while</code> 循环条件可变为 <code>False</code></p>
+</li>
+<li>
+<p><strong>运算符误用</strong>：<code>=</code>（赋值）与 <code>==</code>（相等比较）区分</p>
+</li>
+<li>
+<p><strong>类型错误</strong>：避免不同类型比较（如 <code>&quot;5&quot; &gt; 3</code>）</p>
+</li>
+</ul>
+
+  </div>
+  <div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/2025/08/31/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-08-31_%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9Apython%E4%B8%80%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">电子学会python一级知识笔记 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2025/08/01/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-08-01_%E5%8E%86%E5%8F%B2%E7%9A%84%E4%BD%9C%E7%94%A8/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">历史的作用 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E4%BA%8C%E7%BA%A7%E5%A4%8D%E4%B9%A0%E6%96%87%E6%A1%A3"><span class="toc-number">1.</span> <span class="toc-text"> python二级复习文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E8%80%83%E8%AF%95%E6%A0%87%E5%87%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 二级考试标准</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E8%AF%95%E6%A0%87%E5%87%86"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 考试标准：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 实用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5-%E9%87%8D%E5%A4%8D"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 字符串连接、重复</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%A0%E4%BD%8D%E7%AC%A6-%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 占位符% （格式化输出)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#format%E5%87%BD%E6%95%B0-%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> format()函数 （格式化输出）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">1.2.1.4.1.</span> <span class="toc-text"> 数字格式化</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%8D%83%E4%BD%8D%E5%88%86%E9%9A%94%E4%BF%9D%E7%95%99%E5%B0%8F%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> 组合使用：千位分隔+保留小数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%AF%B9%E9%BD%90%E4%B8%8E%E5%A1%AB%E5%85%85"><span class="toc-number">2.0.0.0.1.</span> <span class="toc-text"> 文本对齐与填充</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B7%A6%E5%AF%B9%E9%BD%90%E5%AE%BD%E5%BA%A610"><span class="toc-number">3.</span> <span class="toc-text"> 左对齐（宽度10）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%B3%E5%AF%B9%E9%BD%90%E5%AE%BD%E5%BA%A610"><span class="toc-number">4.</span> <span class="toc-text"> 右对齐（宽度10）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%85%E4%B8%AD%E5%AF%B9%E9%BD%90%E5%AE%BD%E5%BA%A610%E7%94%A8%E5%A1%AB%E5%85%85"><span class="toc-number">5.</span> <span class="toc-text"> 居中对齐（宽度10，用*填充）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E6%98%BE%E7%A4%BA%E6%AD%A3%E8%B4%9F%E5%8F%B7"><span class="toc-number">6.</span> <span class="toc-text"> 强制显示正负号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">6.0.1.</span> <span class="toc-text"> 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.1.</span> <span class="toc-text"> 增加操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.2.</span> <span class="toc-text"> 删除操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.3.</span> <span class="toc-text"> 查找操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.4.</span> <span class="toc-text"> 修改操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%BB%84"><span class="toc-number">6.0.2.</span> <span class="toc-text"> 元组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%BB%84%E4%B8%8E%E5%88%97%E8%A1%A8%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-number">6.0.2.1.</span> <span class="toc-text"> 元组与列表的异同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%85%83%E7%BB%84"><span class="toc-number">6.0.2.2.</span> <span class="toc-text"> 访问元组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%85%83%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-number">6.0.2.3.</span> <span class="toc-text"> 修改元组元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-number">6.0.2.4.</span> <span class="toc-text"> 删除元组元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88set"><span class="toc-number">6.0.3.</span> <span class="toc-text"> 集合（set）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%9E%E7%A9%BA%E9%9B%86%E5%90%88"><span class="toc-number">7.</span> <span class="toc-text"> 非空集合</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A9%BA%E9%9B%86%E5%90%88%E5%BF%85%E9%A1%BB%E7%94%A8-set"><span class="toc-number">8.</span> <span class="toc-text"> 空集合（必须用 set()）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="toc-number">8.0.0.1.</span> <span class="toc-text"> 添加元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-number">8.0.0.2.</span> <span class="toc-text"> 删除元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%85%83%E7%B4%A0"><span class="toc-number">8.0.0.3.</span> <span class="toc-text"> 查询元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C"><span class="toc-number">8.0.0.4.</span> <span class="toc-text"> 集合运算（数学操作）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">8.0.0.5.</span> <span class="toc-text"> 应用场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8"><span class="toc-number">8.0.1.</span> <span class="toc-text"> 字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%97%E5%85%B8"><span class="toc-number">8.0.1.1.</span> <span class="toc-text"> 创建字典</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%AD%97%E5%85%B8"><span class="toc-number">8.0.1.2.</span> <span class="toc-text"> 访问字典</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E4%BF%AE%E6%94%B9"><span class="toc-number">8.0.1.3.</span> <span class="toc-text"> 字典修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E5%88%A0%E9%99%A4"><span class="toc-number">8.0.1.4.</span> <span class="toc-text"> 字典删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#range"><span class="toc-number">8.0.2.</span> <span class="toc-text"> range</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#range%E7%9A%84%E5%AE%9A%E4%B9%89%E6%96%B9%E6%B3%95"><span class="toc-number">8.0.2.1.</span> <span class="toc-text"> range的定义方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-2"><span class="toc-number">8.0.2.1.1.</span> <span class="toc-text"> 应用场景</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">8.0.3.</span> <span class="toc-text"> 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E8%87%AA%E5%8A%A8"><span class="toc-number">8.0.3.1.</span> <span class="toc-text"> 隐式转换（自动）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%89%8B%E5%8A%A8"><span class="toc-number">8.0.3.2.</span> <span class="toc-text"> 显示转换（手动）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">8.1.</span> <span class="toc-text"> 流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="toc-number">8.1.1.</span> <span class="toc-text"> 顺序结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-number">8.1.2.</span> <span class="toc-text"> 分支结构（条件判断语句）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E5%88%86%E6%94%AF"><span class="toc-number">9.</span> <span class="toc-text"> 单分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8C%E5%88%86%E6%94%AF"><span class="toc-number">10.</span> <span class="toc-text"> 双分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF"><span class="toc-number">11.</span> <span class="toc-text"> 多分支</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">11.0.1.</span> <span class="toc-text"> 循环结构（循环语句）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for-%E5%BE%AA%E7%8E%AF"><span class="toc-number">11.0.1.1.</span> <span class="toc-text"> for 循环</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%88%97%E8%A1%A8"><span class="toc-number">12.</span> <span class="toc-text"> 遍历列表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%AD%97%E5%85%B8"><span class="toc-number">13.</span> <span class="toc-text"> 遍历字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#while-%E5%BE%AA%E7%8E%AF"><span class="toc-number">13.0.0.1.</span> <span class="toc-text"> while 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">13.0.0.1.1.</span> <span class="toc-text"> 循环控制语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E7%BB%93%E6%9E%84"><span class="toc-number">13.0.1.</span> <span class="toc-text"> 嵌套结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF%E6%89%93%E5%8D%B0%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8"><span class="toc-number">14.</span> <span class="toc-text"> 嵌套循环（打印九九乘法表）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%B5%8C%E5%A5%97"><span class="toc-number">15.</span> <span class="toc-text"> 条件嵌套</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">15.0.0.1.</span> <span class="toc-text"> 关键注意事项</span></a></li></ol></li></ol></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://s2.loli.net/2024/11/06/U4ACVORWyHq92Xn.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">UerLink</p>
+<p class="author-description">“终身学习，不破不立”</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>106</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>7</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>69</span>
+    <span>标签</span>
+  </a>
+</div>
+
+
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E4%BA%8C%E7%BA%A7%E5%A4%8D%E4%B9%A0%E6%96%87%E6%A1%A3"><span class="toc-number">1.</span> <span class="toc-text"> python二级复习文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E8%80%83%E8%AF%95%E6%A0%87%E5%87%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 二级考试标准</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E8%AF%95%E6%A0%87%E5%87%86"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 考试标准：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 实用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5-%E9%87%8D%E5%A4%8D"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 字符串连接、重复</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%A0%E4%BD%8D%E7%AC%A6-%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 占位符% （格式化输出)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#format%E5%87%BD%E6%95%B0-%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> format()函数 （格式化输出）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">1.2.1.4.1.</span> <span class="toc-text"> 数字格式化</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%8D%83%E4%BD%8D%E5%88%86%E9%9A%94%E4%BF%9D%E7%95%99%E5%B0%8F%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> 组合使用：千位分隔+保留小数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%AF%B9%E9%BD%90%E4%B8%8E%E5%A1%AB%E5%85%85"><span class="toc-number">2.0.0.0.1.</span> <span class="toc-text"> 文本对齐与填充</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B7%A6%E5%AF%B9%E9%BD%90%E5%AE%BD%E5%BA%A610"><span class="toc-number">3.</span> <span class="toc-text"> 左对齐（宽度10）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%B3%E5%AF%B9%E9%BD%90%E5%AE%BD%E5%BA%A610"><span class="toc-number">4.</span> <span class="toc-text"> 右对齐（宽度10）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%85%E4%B8%AD%E5%AF%B9%E9%BD%90%E5%AE%BD%E5%BA%A610%E7%94%A8%E5%A1%AB%E5%85%85"><span class="toc-number">5.</span> <span class="toc-text"> 居中对齐（宽度10，用*填充）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E6%98%BE%E7%A4%BA%E6%AD%A3%E8%B4%9F%E5%8F%B7"><span class="toc-number">6.</span> <span class="toc-text"> 强制显示正负号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">6.0.1.</span> <span class="toc-text"> 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.1.</span> <span class="toc-text"> 增加操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.2.</span> <span class="toc-text"> 删除操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.3.</span> <span class="toc-text"> 查找操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.4.</span> <span class="toc-text"> 修改操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%BB%84"><span class="toc-number">6.0.2.</span> <span class="toc-text"> 元组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%BB%84%E4%B8%8E%E5%88%97%E8%A1%A8%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-number">6.0.2.1.</span> <span class="toc-text"> 元组与列表的异同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%85%83%E7%BB%84"><span class="toc-number">6.0.2.2.</span> <span class="toc-text"> 访问元组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%85%83%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-number">6.0.2.3.</span> <span class="toc-text"> 修改元组元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-number">6.0.2.4.</span> <span class="toc-text"> 删除元组元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88set"><span class="toc-number">6.0.3.</span> <span class="toc-text"> 集合（set）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%9E%E7%A9%BA%E9%9B%86%E5%90%88"><span class="toc-number">7.</span> <span class="toc-text"> 非空集合</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A9%BA%E9%9B%86%E5%90%88%E5%BF%85%E9%A1%BB%E7%94%A8-set"><span class="toc-number">8.</span> <span class="toc-text"> 空集合（必须用 set()）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="toc-number">8.0.0.1.</span> <span class="toc-text"> 添加元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-number">8.0.0.2.</span> <span class="toc-text"> 删除元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%85%83%E7%B4%A0"><span class="toc-number">8.0.0.3.</span> <span class="toc-text"> 查询元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C"><span class="toc-number">8.0.0.4.</span> <span class="toc-text"> 集合运算（数学操作）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">8.0.0.5.</span> <span class="toc-text"> 应用场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8"><span class="toc-number">8.0.1.</span> <span class="toc-text"> 字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%97%E5%85%B8"><span class="toc-number">8.0.1.1.</span> <span class="toc-text"> 创建字典</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%AD%97%E5%85%B8"><span class="toc-number">8.0.1.2.</span> <span class="toc-text"> 访问字典</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E4%BF%AE%E6%94%B9"><span class="toc-number">8.0.1.3.</span> <span class="toc-text"> 字典修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E5%88%A0%E9%99%A4"><span class="toc-number">8.0.1.4.</span> <span class="toc-text"> 字典删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#range"><span class="toc-number">8.0.2.</span> <span class="toc-text"> range</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#range%E7%9A%84%E5%AE%9A%E4%B9%89%E6%96%B9%E6%B3%95"><span class="toc-number">8.0.2.1.</span> <span class="toc-text"> range的定义方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-2"><span class="toc-number">8.0.2.1.1.</span> <span class="toc-text"> 应用场景</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">8.0.3.</span> <span class="toc-text"> 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E8%87%AA%E5%8A%A8"><span class="toc-number">8.0.3.1.</span> <span class="toc-text"> 隐式转换（自动）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%89%8B%E5%8A%A8"><span class="toc-number">8.0.3.2.</span> <span class="toc-text"> 显示转换（手动）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">8.1.</span> <span class="toc-text"> 流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="toc-number">8.1.1.</span> <span class="toc-text"> 顺序结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-number">8.1.2.</span> <span class="toc-text"> 分支结构（条件判断语句）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E5%88%86%E6%94%AF"><span class="toc-number">9.</span> <span class="toc-text"> 单分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8C%E5%88%86%E6%94%AF"><span class="toc-number">10.</span> <span class="toc-text"> 双分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF"><span class="toc-number">11.</span> <span class="toc-text"> 多分支</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">11.0.1.</span> <span class="toc-text"> 循环结构（循环语句）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for-%E5%BE%AA%E7%8E%AF"><span class="toc-number">11.0.1.1.</span> <span class="toc-text"> for 循环</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%88%97%E8%A1%A8"><span class="toc-number">12.</span> <span class="toc-text"> 遍历列表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%AD%97%E5%85%B8"><span class="toc-number">13.</span> <span class="toc-text"> 遍历字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#while-%E5%BE%AA%E7%8E%AF"><span class="toc-number">13.0.0.1.</span> <span class="toc-text"> while 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">13.0.0.1.1.</span> <span class="toc-text"> 循环控制语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E7%BB%93%E6%9E%84"><span class="toc-number">13.0.1.</span> <span class="toc-text"> 嵌套结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF%E6%89%93%E5%8D%B0%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8"><span class="toc-number">14.</span> <span class="toc-text"> 嵌套循环（打印九九乘法表）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%B5%8C%E5%A5%97"><span class="toc-number">15.</span> <span class="toc-text"> 条件嵌套</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">15.0.0.1.</span> <span class="toc-text"> 关键注意事项</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/">
+        <div class="categories-list-item">
+          实践项目
+          <span class="categories-list-item-badge">12</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%96%87%E6%A1%A3%E5%8C%BA/">
+        <div class="categories-list-item">
+          文档区
+          <span class="categories-list-item-badge">54</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/">
+        <div class="categories-list-item">
+          测试区
+          <span class="categories-list-item-badge">10</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+        <div class="categories-list-item">
+          读书笔记
+          <span class="categories-list-item-badge">15</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+        <div class="categories-list-item">
+          踩坑记录
+          <span class="categories-list-item-badge">6</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/">
+        <div class="categories-list-item">
+          生活日常
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/">
+        <div class="categories-list-item">
+          迁思回虑
+          <span class="categories-list-item-badge">7</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>常用标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E6%97%A7%E7%89%A9%E6%94%B9%E9%80%A0/" 
+        title="旧物改造">
+        <div class="tags-list-item">旧物改造</div>
+      </a>
+    
+      <a 
+        href="/tags/C-sharp/" 
+        title="C_sharp">
+        <div class="tags-list-item">C_sharp</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
+        title="数据库">
+        <div class="tags-list-item">数据库</div>
+      </a>
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
+        href="/tags/Vim/" 
+        title="Vim">
+        <div class="tags-list-item">Vim</div>
+      </a>
+    
+      <a 
+        href="/tags/git/" 
+        title="git">
+        <div class="tags-list-item">git</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%80%9A%E4%BF%A1/" 
+        title="通信">
+        <div class="tags-list-item">通信</div>
+      </a>
+    
+      <a 
+        href="/tags/C/" 
+        title="C++">
+        <div class="tags-list-item">C++</div>
+      </a>
+    
+      <a 
+        href="/tags/Android/" 
+        title="Android">
+        <div class="tags-list-item">Android</div>
+      </a>
+    
+      <a 
+        href="/tags/api/" 
+        title="api">
+        <div class="tags-list-item">api</div>
+      </a>
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%A1%86%E6%9E%B6/" 
+        title="框架">
+        <div class="tags-list-item">框架</div>
+      </a>
+    
+      <a 
+        href="/tags/frask/" 
+        title="frask">
+        <div class="tags-list-item">frask</div>
+      </a>
+    
+      <a 
+        href="/tags/AI/" 
+        title="AI">
+        <div class="tags-list-item">AI</div>
+      </a>
+    
+      <a 
+        href="/tags/GPT/" 
+        title="GPT">
+        <div class="tags-list-item">GPT</div>
+      </a>
+    
+      <a 
+        href="/tags/json/" 
+        title="json">
+        <div class="tags-list-item">json</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E4%BA%8C%E7%BA%A7%E5%A4%8D%E4%B9%A0%E6%96%87%E6%A1%A3"><span class="toc-number">1.</span> <span class="toc-text"> python二级复习文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E8%80%83%E8%AF%95%E6%A0%87%E5%87%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 二级考试标准</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E8%AF%95%E6%A0%87%E5%87%86"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 考试标准：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 实用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5-%E9%87%8D%E5%A4%8D"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 字符串连接、重复</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%A0%E4%BD%8D%E7%AC%A6-%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 占位符% （格式化输出)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#format%E5%87%BD%E6%95%B0-%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> format()函数 （格式化输出）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">1.2.1.4.1.</span> <span class="toc-text"> 数字格式化</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%8D%83%E4%BD%8D%E5%88%86%E9%9A%94%E4%BF%9D%E7%95%99%E5%B0%8F%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> 组合使用：千位分隔+保留小数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%AF%B9%E9%BD%90%E4%B8%8E%E5%A1%AB%E5%85%85"><span class="toc-number">2.0.0.0.1.</span> <span class="toc-text"> 文本对齐与填充</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B7%A6%E5%AF%B9%E9%BD%90%E5%AE%BD%E5%BA%A610"><span class="toc-number">3.</span> <span class="toc-text"> 左对齐（宽度10）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%B3%E5%AF%B9%E9%BD%90%E5%AE%BD%E5%BA%A610"><span class="toc-number">4.</span> <span class="toc-text"> 右对齐（宽度10）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%85%E4%B8%AD%E5%AF%B9%E9%BD%90%E5%AE%BD%E5%BA%A610%E7%94%A8%E5%A1%AB%E5%85%85"><span class="toc-number">5.</span> <span class="toc-text"> 居中对齐（宽度10，用*填充）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E6%98%BE%E7%A4%BA%E6%AD%A3%E8%B4%9F%E5%8F%B7"><span class="toc-number">6.</span> <span class="toc-text"> 强制显示正负号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">6.0.1.</span> <span class="toc-text"> 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.1.</span> <span class="toc-text"> 增加操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.2.</span> <span class="toc-text"> 删除操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.3.</span> <span class="toc-text"> 查找操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">6.0.1.4.</span> <span class="toc-text"> 修改操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%BB%84"><span class="toc-number">6.0.2.</span> <span class="toc-text"> 元组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%BB%84%E4%B8%8E%E5%88%97%E8%A1%A8%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-number">6.0.2.1.</span> <span class="toc-text"> 元组与列表的异同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%85%83%E7%BB%84"><span class="toc-number">6.0.2.2.</span> <span class="toc-text"> 访问元组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%85%83%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-number">6.0.2.3.</span> <span class="toc-text"> 修改元组元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-number">6.0.2.4.</span> <span class="toc-text"> 删除元组元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88set"><span class="toc-number">6.0.3.</span> <span class="toc-text"> 集合（set）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%9E%E7%A9%BA%E9%9B%86%E5%90%88"><span class="toc-number">7.</span> <span class="toc-text"> 非空集合</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A9%BA%E9%9B%86%E5%90%88%E5%BF%85%E9%A1%BB%E7%94%A8-set"><span class="toc-number">8.</span> <span class="toc-text"> 空集合（必须用 set()）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="toc-number">8.0.0.1.</span> <span class="toc-text"> 添加元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-number">8.0.0.2.</span> <span class="toc-text"> 删除元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%85%83%E7%B4%A0"><span class="toc-number">8.0.0.3.</span> <span class="toc-text"> 查询元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97%E6%95%B0%E5%AD%A6%E6%93%8D%E4%BD%9C"><span class="toc-number">8.0.0.4.</span> <span class="toc-text"> 集合运算（数学操作）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">8.0.0.5.</span> <span class="toc-text"> 应用场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8"><span class="toc-number">8.0.1.</span> <span class="toc-text"> 字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%97%E5%85%B8"><span class="toc-number">8.0.1.1.</span> <span class="toc-text"> 创建字典</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%AD%97%E5%85%B8"><span class="toc-number">8.0.1.2.</span> <span class="toc-text"> 访问字典</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E4%BF%AE%E6%94%B9"><span class="toc-number">8.0.1.3.</span> <span class="toc-text"> 字典修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E5%88%A0%E9%99%A4"><span class="toc-number">8.0.1.4.</span> <span class="toc-text"> 字典删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#range"><span class="toc-number">8.0.2.</span> <span class="toc-text"> range</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#range%E7%9A%84%E5%AE%9A%E4%B9%89%E6%96%B9%E6%B3%95"><span class="toc-number">8.0.2.1.</span> <span class="toc-text"> range的定义方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-2"><span class="toc-number">8.0.2.1.1.</span> <span class="toc-text"> 应用场景</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">8.0.3.</span> <span class="toc-text"> 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E8%87%AA%E5%8A%A8"><span class="toc-number">8.0.3.1.</span> <span class="toc-text"> 隐式转换（自动）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E8%BD%AC%E6%8D%A2%E6%89%8B%E5%8A%A8"><span class="toc-number">8.0.3.2.</span> <span class="toc-text"> 显示转换（手动）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">8.1.</span> <span class="toc-text"> 流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="toc-number">8.1.1.</span> <span class="toc-text"> 顺序结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-number">8.1.2.</span> <span class="toc-text"> 分支结构（条件判断语句）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E5%88%86%E6%94%AF"><span class="toc-number">9.</span> <span class="toc-text"> 单分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8C%E5%88%86%E6%94%AF"><span class="toc-number">10.</span> <span class="toc-text"> 双分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF"><span class="toc-number">11.</span> <span class="toc-text"> 多分支</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">11.0.1.</span> <span class="toc-text"> 循环结构（循环语句）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for-%E5%BE%AA%E7%8E%AF"><span class="toc-number">11.0.1.1.</span> <span class="toc-text"> for 循环</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%88%97%E8%A1%A8"><span class="toc-number">12.</span> <span class="toc-text"> 遍历列表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%AD%97%E5%85%B8"><span class="toc-number">13.</span> <span class="toc-text"> 遍历字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#while-%E5%BE%AA%E7%8E%AF"><span class="toc-number">13.0.0.1.</span> <span class="toc-text"> while 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">13.0.0.1.1.</span> <span class="toc-text"> 循环控制语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E7%BB%93%E6%9E%84"><span class="toc-number">13.0.1.</span> <span class="toc-text"> 嵌套结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF%E6%89%93%E5%8D%B0%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8"><span class="toc-number">14.</span> <span class="toc-text"> 嵌套循环（打印九九乘法表）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%B5%8C%E5%A5%97"><span class="toc-number">15.</span> <span class="toc-text"> 条件嵌套</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">15.0.0.1.</span> <span class="toc-text"> 关键注意事项</span></a></li></ol></li></ol></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-08-31</div>
+        <a href="/2025/08/31/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-08-31_%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9Apython%E4%B8%80%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/"><div class="recent-posts-item-content">电子学会python一级知识笔记</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-08-31</div>
+        <a href="/2025/08/31/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-08-31_%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9Apython%E4%BA%8C%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/"><div class="recent-posts-item-content">电子学会python二级知识笔记</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-08-01</div>
+        <a href="/2025/08/01/%E2%80%8B%E8%BF%81%E6%80%9D%E5%9B%9E%E8%99%91/2025-08-01_%E5%8E%86%E5%8F%B2%E7%9A%84%E4%BD%9C%E7%94%A8/"><div class="recent-posts-item-content">历史的作用</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2025-08-01</div>
+        <a href="/2025/08/01/%E6%96%87%E6%A1%A3%E5%8C%BA/2025/2025-08-01_%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/"><div class="recent-posts-item-content">实用软件</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2025
+          
+          
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          UERLINK-博客
+        </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+</footer>
+<script src="/js/prism/prism.js" async></script> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
